@@ -144,6 +144,15 @@
             line-height: 1.6;
         }
 
+        /* Enhanced contact styling */
+        .contact-email {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
         .contact-link {
             color: #ccc;
             text-decoration: none;
@@ -159,6 +168,55 @@
 
         .contact-link:active {
             transform: translateY(0);
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ccc;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .copy-btn.copied {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.error {
+            background: #f44336;
         }
 
         .market-grid {
@@ -310,6 +368,16 @@
             .partners-grid, .market-grid, .capabilities-grid, .values-top-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-email {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .copy-btn {
+                align-self: flex-start;
+            }
         }
     </style>
 </head>
@@ -325,6 +393,9 @@
         <div class="nav-dot" onclick="scrollToSlide(6)"></div>
         <div class="nav-dot" onclick="scrollToSlide(7)"></div>
     </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
 
     <!-- Slide 1: Title -->
     <section class="slide slide-1" id="slide-0">
@@ -601,8 +672,14 @@
                     <strong>Key Networks:</strong><br>
                     Entertainment (YG, AOMG, SM), Premium retail (Shinsegae, Boontheshop, Kasina)<br><br>
                     <strong>Contact:</strong><br>
-                    <a href="mailto:mike.kim@conduitasia.com?subject=Partnership%20Inquiry%20-%20Korea%20Operations&body=Hello%20Mike,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20Conduit%20%26%20Co's%20services%20for%20Korea%20market%20expansion.%0D%0A%0D%0ABest%20regards," class="contact-link">mike.kim@conduitasia.com</a><br>
-                    <a href="tel:+821041268389" class="contact-link">+82-10-4126-8389</a>
+                    <div class="contact-email">
+                        <a href="mailto:mike.kim@conduitasia.com?subject=Partnership Inquiry - Korea Operations" class="contact-link">mike.kim@conduitasia.com</a>
+                        <button class="copy-btn" onclick="copyToClipboard('mike.kim@conduitasia.com', this)">Copy</button>
+                    </div>
+                    <div class="contact-email">
+                        <a href="tel:+821041268389" class="contact-link">+82-10-4126-8389</a>
+                        <button class="copy-btn" onclick="copyToClipboard('+82-10-4126-8389', this)">Copy</button>
+                    </div>
                 </div>
             </div>
             <div class="partner-card">
@@ -615,8 +692,14 @@
                     <strong>Key Networks:</strong><br>
                     China-based commercial properties, joint ventures, lifestyle brand networks<br><br>
                     <strong>Contact:</strong><br>
-                    <a href="mailto:wei.kan@conduitasia.com?subject=Partnership%20Inquiry%20-%20China/Japan%20Operations&body=Hello%20Wei,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20Conduit%20%26%20Co's%20services%20for%20China/Japan%20market%20expansion.%0D%0A%0D%0ABest%20regards," class="contact-link">wei.kan@conduitasia.com</a><br>
-                    <a href="tel:+8618521001498" class="contact-link">+86-185-2100-1498</a>
+                    <div class="contact-email">
+                        <a href="mailto:wei.kan@conduitasia.com?subject=Partnership Inquiry - China/Japan Operations" class="contact-link">wei.kan@conduitasia.com</a>
+                        <button class="copy-btn" onclick="copyToClipboard('wei.kan@conduitasia.com', this)">Copy</button>
+                    </div>
+                    <div class="contact-email">
+                        <a href="tel:+8618521001498" class="contact-link">+86-185-2100-1498</a>
+                        <button class="copy-btn" onclick="copyToClipboard('+86-185-2100-1498', this)">Copy</button>
+                    </div>
                 </div>
             </div>
             <div class="partner-card">
@@ -629,8 +712,14 @@
                     <strong>Key Networks:</strong><br>
                     Global fashion, music, sport, academic and art connections<br><br>
                     <strong>Contact:</strong><br>
-                    <a href="mailto:tyler.fonda@conduitasia.com?subject=Partnership%20Inquiry%20-%20US%20Operations&body=Hello%20Tyler,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20Conduit%20%26%20Co's%20services%20for%20US%20market%20expansion%20and%20cultural%20validation.%0D%0A%0D%0ABest%20regards," class="contact-link">tyler.fonda@conduitasia.com</a><br>
-                    <a href="tel:+19175146183" class="contact-link">+1-917-514-6183</a>
+                    <div class="contact-email">
+                        <a href="mailto:tyler.fonda@conduitasia.com?subject=Partnership Inquiry - US Operations" class="contact-link">tyler.fonda@conduitasia.com</a>
+                        <button class="copy-btn" onclick="copyToClipboard('tyler.fonda@conduitasia.com', this)">Copy</button>
+                    </div>
+                    <div class="contact-email">
+                        <a href="tel:+19175146183" class="contact-link">+1-917-514-6183</a>
+                        <button class="copy-btn" onclick="copyToClipboard('+1-917-514-6183', this)">Copy</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -663,6 +752,46 @@
         }, { threshold: 0.5 });
 
         slides.forEach(slide => observer.observe(slide));
-    </script>
-</body>
-</html>
+
+        // Copy to clipboard function
+        function copyToClipboard(text, button) {
+            // Try modern clipboard API first
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showSuccess(button, text);
+                }).catch(() => {
+                    fallbackCopy(text, button);
+                });
+            } else {
+                fallbackCopy(text, button);
+            }
+        }
+
+        function fallbackCopy(text, button) {
+            // Fallback method for older browsers or non-HTTPS
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showSuccess(button, text);
+            } catch (err) {
+                showError();
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function showSuccess(button, text) {
+            // Update button
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            
+            //
