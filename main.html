@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduit & Co. - We Bridge the Culture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            color: white;
+        }
+
+        .slide-1 {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+        }
+
+        .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 800px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .values-top-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .values-bottom-card {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .partner-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-card-wide {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .partner-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .partner-title {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .partner-expertise {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .market-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #fff;
+            transition: all 0.3s ease;
+        }
+
+        .market-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+        }
+
+        .market-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .market-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .market-desc {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .capability-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .capability-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .capability-list {
+            list-style: none;
+        }
+
+        .capability-list li {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .capability-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #fff;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .value-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .value-desc {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .methodology-highlight {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .methodology-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .method-step {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .method-step:hover {
+            transform: translateY(-3px);
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-flag {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .contact-region {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-expertise {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+        }
+
+        .engagement-options {
+            max-width: 800px;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .engagement-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .engagement-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .engagement-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .engagement-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .engagement-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .engagement-desc {
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .navigation {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .main-title, .section-title {
+                font-size: 2rem;
+            }
+            
+            .slide {
+                padding: 1rem;
+            }
+            
+            .partners-grid, .market-grid, .capabilities-grid, .values-top-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(1)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(6)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(7)"></div>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <section class="slide slide-1" id="slide-0">
+        <div class="logo fade-in">Conduit</div>
+        <div class="tagline fade-in">We Bridge the Culture</div>
+        <div class="subtitle fade-in">
+            Creating new waves of influence through localized go-to-market strategies that connect premium brands with core influential communities across Asia and Global markets.
+        </div>
+        <div class="stats-row fade-in">
+            <div class="stat-item">
+                <span class="stat-number">7+</span>
+                <span class="stat-label">Years Collaboration</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Key Markets</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Years Combined Experience</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Overview -->
+    <section class="slide slide-2" id="slide-1">
+        <div class="main-title fade-in">Expert Collective Overview</div>
+        <div class="subtitle fade-in" style="max-width: 900px; margin-bottom: 3rem;">
+            Conduit & Co. is a specialized expert collective founded by three industry veterans who have collaborated across Nike, Converse, Moncler, and Stüssy projects. We bridge cultural gaps for premium brands expanding across US, China, Korea, and Japan markets.
+        </div>
+        <div class="stats-row fade-in">
+            <div class="stat-item">
+                <span class="stat-number">$470B+</span>
+                <span class="stat-label">Total Market Access</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Founding Partners</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Network Specialists</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Founding Partners -->
+    <section class="slide slide-3" id="slide-2">
+        <div class="section-title fade-in">Founding Partners</div>
+        <div class="partners-grid fade-in">
+            <div class="partner-card">
+                <div class="partner-name">Wei Kan</div>
+                <div class="partner-title">Managing Director - China</div>
+                <div class="partner-expertise">
+                    <strong>20+ years APAC/GC Marketing</strong><br><br>
+                    <strong>Expertise:</strong> China market development, creative commerce, brand strategy<br><br>
+                    <strong>Platform:</strong> China-based commercial properties, joint ventures, lifestyle brand networks, premium retail partnerships
+                </div>
+            </div>
+            <div class="partner-card">
+                <div class="partner-name">Mike Kim</div>
+                <div class="partner-title">Managing Director - Korea</div>
+                <div class="partner-expertise">
+                    <strong>15+ years Global Marketing Executive</strong><br><br>
+                    <strong>Expertise:</strong> Korean market penetration, celebrity partnerships, retail development<br><br>
+                    <strong>Platform:</strong> Entertainment (YG, AOMG, SM), Premium retail (Shinsegae, Boontheshop, Kasina)
+                </div>
+            </div>
+            <div class="partner-card">
+                <div class="partner-name">Tyler Fonda</div>
+                <div class="partner-title">Managing Director - US</div>
+                <div class="partner-expertise">
+                    <strong>20+ years Global Marketing</strong><br><br>
+                    <strong>Expertise:</strong> Global creative leadership, cultural validation, brand strategy<br><br>
+                    <strong>Network:</strong> Global fashion, music, sport, academic and art connections
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Market Expertise -->
+    <section class="slide slide-4" id="slide-3">
+        <div class="section-title fade-in">Market Expertise</div>
+        <div class="market-grid fade-in">
+            <div class="market-card">
+                <div class="market-title">China Operations</div>
+                <div class="market-value">$420B</div>
+                <div class="market-desc">
+                    Retail commercial properties (Tier 1 & 2 cities)<br>
+                    Cultural agenda setters, premium lifestyle evolution opportunities<br>
+                    Post-luxury consumer trends, creative commerce development
+                </div>
+            </div>
+            <div class="market-card">
+                <div class="market-title">Korea Operations</div>
+                <div class="market-value">$7.28B</div>
+                <div class="market-desc">
+                    $6.2B outdoor + $1.08B fishing apparel markets<br>
+                    New luxury & street culture extensions<br>
+                    Entertainment and designer networks
+                </div>
+            </div>
+            <div class="market-card">
+                <div class="market-title">US Operations</div>
+                <div class="market-value">$45B</div>
+                <div class="market-desc">
+                    Outdoor recreation, heritage brand headquarters<br>
+                    Future culture shapers<br>
+                    Performance-to-lifestyle transformation
+                </div>
+            </div>
+            <div class="market-card">
+                <div class="market-title">Japan Access</div>
+                <div class="market-value">Network</div>
+                <div class="market-desc">
+                    Technical innovation, heritage brand collaboration<br>
+                    Craftsmanship-focused consumers<br>
+                    Quality-driven premium positioning
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Capabilities -->
+    <section class="slide slide-5" id="slide-4">
+        <div class="section-title fade-in">Core Capabilities</div>
+        <div class="capabilities-grid fade-in">
+            <div class="capability-card">
+                <div class="capability-title">"Bridge the Culture" Methodology</div>
+                <ul class="capability-list">
+                    <li>Cultural Translation: US/EU-Asia adaptation</li>
+                    <li>Performance to Lifestyle Evolution</li>
+                    <li>Youth Culture Access</li>
+                    <li>Network-Driven Growth</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Strategic Brand Assessment</div>
+                <ul class="capability-list">
+                    <li>Brand Compatibility Matrix</li>
+                    <li>Partner Classification System</li>
+                    <li>Target Profile Optimization</li>
+                    <li>Whitespace Analysis</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Multi-Market Retail Development</div>
+                <ul class="capability-list">
+                    <li>Premium Channel Access</li>
+                    <li>Multi-brand Boutique Network</li>
+                    <li>E-commerce Platform Integration</li>
+                    <li>Experiential Retail</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Integrated Marketing Execution</div>
+                <ul class="capability-list">
+                    <li>Influencer & Celebrity Partnerships</li>
+                    <li>Content Production Infrastructure</li>
+                    <li>Cultural Moment Creation</li>
+                    <li>Strategic Brand Collaborations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Network -->
+    <section class="slide slide-6" id="slide-5">
+        <div class="section-title fade-in">Global Network</div>
+        <div class="capabilities-grid fade-in">
+            <div class="capability-card">
+                <div class="capability-title">Retail Partners</div>
+                <ul class="capability-list">
+                    <li>China: SKP/SKP-S, DSM Beijing, Lane Crawford</li>
+                    <li>Korea: Shinsegae, Hyundai, Boontheshop</li>
+                    <li>Japan: Premium technical retailers</li>
+                    <li>US: Multi-brand boutiques, department stores</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Entertainment & Culture</div>
+                <ul class="capability-list">
+                    <li>Korea: YG Entertainment, AOMG, SM</li>
+                    <li>China: Cultural content creators</li>
+                    <li>Cross-Market: DJ and music communities</li>
+                    <li>Global: Street culture creators</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Design Collaborations</div>
+                <ul class="capability-list">
+                    <li>Korean: Ader Error, This Is Never That</li>
+                    <li>Established: Nike/Converse projects</li>
+                    <li>Emerging: Next-generation designers</li>
+                    <li>Heritage: Brand intersections</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Media & Communications</div>
+                <ul class="capability-list">
+                    <li>Korea: GQ, Vogue, VISLA</li>
+                    <li>China: NOWRE ecosystem, RedNote</li>
+                    <li>Global: Fashion and lifestyle media</li>
+                    <li>Digital: Established relationships</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Values -->
+    <section class="slide slide-7" id="slide-6">
+        <div class="section-title fade-in">Our Values</div>
+        <div class="values-top-grid fade-in">
+            <div class="partner-card">
+                <div class="partner-name">Authentic Cultural Intelligence</div>
+                <div class="partner-title">East-West Cultural Dynamics</div>
+                <div class="partner-expertise">
+                    Deep, lived understanding of cross-cultural dynamics enabling genuine brand localization rather than surface-level adaptation.<br><br>
+                    <strong>Key Capabilities:</strong><br>
+                    • Cultural nuance identification<br>
+                    • Authentic brand translation<br>
+                    • Local relevance without dilution<br>
+                    • Consumer behavior insights
+                </div>
+            </div>
+            <div class="partner-card">
+                <div class="partner-name">Relationship-Driven Growth</div>
+                <div class="partner-title">Network-Based Expansion</div>
+                <div class="partner-expertise">
+                    Leveraging established personal and professional relationships to accelerate brand development and create sustainable market presence.<br><br>
+                    <strong>Key Capabilities:</strong><br>
+                    • 7+ years collaborative history<br>
+                    • Cross-industry connections<br>
+                    • Trust-based partnerships<br>
+                    • Accelerated market entry
+                </div>
+            </div>
+            <div class="partner-card">
+                <div class="partner-name">Collaborative Innovation</div>
+                <div class="partner-title">Collective Intelligence</div>
+                <div class="partner-expertise">
+                    Combining individual expertise with collective intelligence to solve complex cross-cultural brand challenges.<br><br>
+                    <strong>Key Capabilities:</strong><br>
+                    • Multi-market perspective<br>
+                    • Integrated solution design<br>
+                    • Knowledge sharing systems<br>
+                    • Innovation through diversity
+                </div>
+            </div>
+        </div>
+        <div class="values-bottom-card fade-in">
+            <div class="partner-card partner-card-wide">
+                <div class="partner-name">Sustainable Impact</div>
+                <div class="partner-title">Long-term Brand Equity</div>
+                <div class="partner-expertise">
+                    Focus on building lasting brand equity and cultural relevance rather than short-term market exploitation. We believe in creating meaningful connections that drive both immediate results and sustainable growth across all markets.<br><br>
+                    <strong>Key Capabilities:</strong> Brand equity development • Cultural relevance building • Performance accountability • Continuous optimization • Long-term partnership focus • ROI-driven strategies
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Contact -->
+    <section class="slide slide-8" id="slide-7">
+        <div class="section-title fade-in">Partnership Inquiries</div>
+        <div class="subtitle fade-in" style="margin-bottom: 3rem; max-width: 800px;">
+            Ready to bridge cultures and transform your brand's global presence? Connect with our regional experts to explore partnership opportunities.
+        </div>
+        <div class="partners-grid fade-in">
+            <div class="partner-card">
+                <div class="partner-name">Mike Kim</div>
+                <div class="partner-title">Managing Director - Korea</div>
+                <div class="partner-expertise">
+                    <strong>15+ years Global Marketing Executive</strong><br><br>
+                    <strong>Market Focus:</strong> Korea Operations<br>
+                    Korean market penetration, celebrity partnerships, retail development<br><br>
+                    <strong>Key Networks:</strong><br>
+                    Entertainment (YG, AOMG, SM), Premium retail (Shinsegae, Boontheshop, Kasina)<br><br>
+                    <strong>Contact:</strong><br>
+                    mike.kim@conduitasia.com<br>
+                    +82-10-4126-8389
+                </div>
+            </div>
+            <div class="partner-card">
+                <div class="partner-name">Wei Kan</div>
+                <div class="partner-title">Managing Director - China/Japan</div>
+                <div class="partner-expertise">
+                    <strong>20+ years APAC/GC Marketing</strong><br><br>
+                    <strong>Market Focus:</strong> China/Japan Operations<br>
+                    China market development, creative commerce, brand strategy<br><br>
+                    <strong>Key Networks:</strong><br>
+                    China-based commercial properties, joint ventures, lifestyle brand networks<br><br>
+                    <strong>Contact:</strong><br>
+                    wei.kan@conduitasia.com<br>
+                    +86-185-2100-1498
+                </div>
+            </div>
+            <div class="partner-card">
+                <div class="partner-name">Tyler Fonda</div>
+                <div class="partner-title">Managing Director - US</div>
+                <div class="partner-expertise">
+                    <strong>20+ years Global Marketing</strong><br><br>
+                    <strong>Market Focus:</strong> US Operations<br>
+                    Global creative leadership, cultural validation, brand strategy<br><br>
+                    <strong>Key Networks:</strong><br>
+                    Global fashion, music, sport, academic and art connections<br><br>
+                    <strong>Contact:</strong><br>
+                    tyler.fonda@conduitasia.com<br>
+                    +1-917-514-6183
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollToSlide(index) {
+            const slide = document.getElementById(`slide-${index}`);
+            slide.scrollIntoView({ behavior: 'smooth' });
+            
+            // Update navigation
+            document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Intersection Observer for navigation
+        const slides = document.querySelectorAll('.slide');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slides).indexOf(entry.target);
+                    navDots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+
+        // Animate elements on scroll
+        const animatedElements = document.querySelectorAll('.fade-in');
+        const elementObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(el => elementObserver.observe(el));
+    </script>
+</body>
+</html>
