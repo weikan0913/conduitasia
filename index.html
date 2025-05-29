@@ -794,4 +794,52 @@
             button.textContent = 'Copied!';
             button.classList.add('copied');
             
-            //
+            // Show toast notification
+            const toast = document.getElementById('toast');
+            toast.textContent = `Copied: ${text}`;
+            toast.classList.remove('error');
+            toast.classList.add('show');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+                toast.classList.remove('show');
+            }, 2000);
+        }
+
+        function showError() {
+            const toast = document.getElementById('toast');
+            toast.textContent = 'Copy failed. Please select and copy manually.';
+            toast.classList.add('error', 'show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show', 'error');
+            }, 3000);
+        }
+
+        // Optional: Add keyboard shortcuts for better UX
+        document.addEventListener('keydown', function(e) {
+            // Press 'c' to scroll to contact section
+            if (e.key === 'c' && !e.ctrlKey && !e.metaKey) {
+                scrollToSlide(7);
+            }
+            
+            // Arrow keys for navigation
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                const currentActive = document.querySelector('.nav-dot.active');
+                const currentIndex = Array.from(navDots).indexOf(currentActive);
+                const nextIndex = Math.min(currentIndex + 1, navDots.length - 1);
+                scrollToSlide(nextIndex);
+            }
+            
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                const currentActive = document.querySelector('.nav-dot.active');
+                const currentIndex = Array.from(navDots).indexOf(currentActive);
+                const prevIndex = Math.max(currentIndex - 1, 0);
+                scrollToSlide(prevIndex);
+            }
+        });
+    </script>
+</body>
+</html>
