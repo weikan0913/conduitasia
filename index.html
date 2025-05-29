@@ -144,7 +144,6 @@
             line-height: 1.6;
         }
 
-        /* Email and phone link styles */
         .contact-link {
             color: #ccc;
             text-decoration: none;
@@ -312,19 +311,6 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
@@ -342,12 +328,12 @@
 
     <!-- Slide 1: Title -->
     <section class="slide slide-1" id="slide-0">
-        <div class="logo fade-in">Conduit</div>
-        <div class="tagline fade-in">We Bridge Culture</div>
-        <div class="subtitle fade-in">
+        <div class="logo">Conduit</div>
+        <div class="tagline">We Bridge Culture</div>
+        <div class="subtitle">
             Creating new waves of influence through localized go-to-market strategies that connect premium brands with core influential communities across Asia and Global markets.
         </div>
-        <div class="stats-row fade-in">
+        <div class="stats-row">
             <div class="stat-item">
                 <span class="stat-number">7+</span>
                 <span class="stat-label">Years Collaboration</span>
@@ -365,11 +351,11 @@
 
     <!-- Slide 2: Overview -->
     <section class="slide slide-2" id="slide-1">
-        <div class="main-title fade-in">Expert Collective Overview</div>
-        <div class="subtitle fade-in" style="max-width: 900px; margin-bottom: 3rem;">
+        <div class="main-title">Expert Collective Overview</div>
+        <div class="subtitle" style="max-width: 900px; margin-bottom: 3rem;">
             Conduit & Co. is a specialized expert collective founded by three industry veterans who have collaborated across Nike, Converse, Moncler, and Stüssy projects. We bridge cultural gaps for premium brands expanding across US, China, Korea, and Japan markets.
         </div>
-        <div class="stats-row fade-in">
+        <div class="stats-row">
             <div class="stat-item">
                 <span class="stat-number">$470B+</span>
                 <span class="stat-label">Total Market Access</span>
@@ -387,8 +373,8 @@
 
     <!-- Slide 3: Founding Partners -->
     <section class="slide slide-3" id="slide-2">
-        <div class="section-title fade-in">Founding Partners</div>
-        <div class="partners-grid fade-in">
+        <div class="section-title">Founding Partners</div>
+        <div class="partners-grid">
             <div class="partner-card">
                 <div class="partner-name">Wei Kan</div>
                 <div class="partner-title">Managing Director - China</div>
@@ -421,8 +407,8 @@
 
     <!-- Slide 4: Market Expertise -->
     <section class="slide slide-4" id="slide-3">
-        <div class="section-title fade-in">Market Expertise</div>
-        <div class="market-grid fade-in">
+        <div class="section-title">Market Expertise</div>
+        <div class="market-grid">
             <div class="market-card">
                 <div class="market-title">China Operations</div>
                 <div class="market-value">$420B</div>
@@ -464,8 +450,8 @@
 
     <!-- Slide 5: Capabilities -->
     <section class="slide slide-5" id="slide-4">
-        <div class="section-title fade-in">Core Capabilities</div>
-        <div class="capabilities-grid fade-in">
+        <div class="section-title">Core Capabilities</div>
+        <div class="capabilities-grid">
             <div class="capability-card">
                 <div class="capability-title">"Bridge Culture" Methodology</div>
                 <ul class="capability-list">
@@ -507,8 +493,8 @@
 
     <!-- Slide 6: Network -->
     <section class="slide slide-6" id="slide-5">
-        <div class="section-title fade-in">Global Network</div>
-        <div class="capabilities-grid fade-in">
+        <div class="section-title">Global Network</div>
+        <div class="capabilities-grid">
             <div class="capability-card">
                 <div class="capability-title">Retail Partners</div>
                 <ul class="capability-list">
@@ -550,8 +536,8 @@
 
     <!-- Slide 7: Values -->
     <section class="slide slide-7" id="slide-6">
-        <div class="section-title fade-in">Our Values</div>
-        <div class="values-top-grid fade-in">
+        <div class="section-title">Our Values</div>
+        <div class="values-top-grid">
             <div class="partner-card">
                 <div class="partner-name">Authentic Cultural Intelligence</div>
                 <div class="partner-title">East-West Cultural Dynamics</div>
@@ -589,7 +575,7 @@
                 </div>
             </div>
         </div>
-        <div class="values-bottom-card fade-in">
+        <div class="values-bottom-card">
             <div class="partner-card partner-card-wide">
                 <div class="partner-name">Sustainable Impact</div>
                 <div class="partner-title">Long-term Brand Equity</div>
@@ -603,8 +589,8 @@
 
     <!-- Slide 8: Contact -->
     <section class="slide slide-8" id="slide-7">
-        <div class="section-title fade-in">Partnership Inquiries</div>
-        <div class="partners-grid fade-in">
+        <div class="section-title">Partnership Inquiries</div>
+        <div class="partners-grid">
             <div class="partner-card">
                 <div class="partner-name">Mike Kim</div>
                 <div class="partner-title">Managing Director - Korea</div>
@@ -677,18 +663,6 @@
         }, { threshold: 0.5 });
 
         slides.forEach(slide => observer.observe(slide));
-
-        // Animate elements on scroll
-        const animatedElements = document.querySelectorAll('.fade-in');
-        const elementObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        animatedElements.forEach(el => elementObserver.observe(el));
     </script>
 </body>
 </html>
