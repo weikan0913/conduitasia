@@ -144,6 +144,24 @@
             line-height: 1.6;
         }
 
+        /* Email and phone link styles */
+        .contact-link {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            transform: translateY(-1px);
+        }
+
+        .contact-link:active {
+            transform: translateY(0);
+        }
+
         .market-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -224,236 +242,6 @@
             position: absolute;
             left: 0;
             color: #fff;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        .value-card {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .value-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .value-desc {
-            font-size: 0.9rem;
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        .methodology-highlight {
-            max-width: 1000px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .methodology-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .methodology-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .method-step {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .method-step:hover {
-            transform: translateY(-3px);
-        }
-
-        .step-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-desc {
-            font-size: 0.85rem;
-            color: #ccc;
-            line-height: 1.4;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        .contact-card {
-            text-align: center;
-            padding: 2.5rem 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-flag {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .contact-region {
-            font-size: 1rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-expertise {
-            font-size: 0.9rem;
-            color: #aaa;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .contact-info {
-            font-size: 0.9rem;
-        }
-
-        .contact-info a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #fff;
-        }
-
-        .engagement-options {
-            max-width: 800px;
-            width: 100%;
-            margin-bottom: 3rem;
-        }
-
-        .engagement-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .engagement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .engagement-card {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            transition: background 0.3s ease;
-        }
-
-        .engagement-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .engagement-icon {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .engagement-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .engagement-desc {
-            font-size: 0.85rem;
-            color: #ccc;
-            line-height: 1.4;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cta-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .cta-subtitle {
-            font-size: 1.1rem;
-            color: #aaa;
-            font-style: italic;
         }
 
         .navigation {
@@ -830,8 +618,8 @@
                     <strong>Key Networks:</strong><br>
                     Entertainment (YG, AOMG, SM), Premium retail (Shinsegae, Boontheshop, Kasina)<br><br>
                     <strong>Contact:</strong><br>
-                    mike.kim@conduitasia.com<br>
-                    +82-10-4126-8389
+                    <a href="mailto:mike.kim@conduitasia.com?subject=Partnership Inquiry - Korea Operations&body=Hello Mike,%0D%0A%0D%0AI'm interested in learning more about Conduit & Co's services for Korea market expansion.%0D%0A%0D%0ABest regards," class="contact-link">mike.kim@conduitasia.com</a><br>
+                    <a href="tel:+82104126389" class="contact-link">+82-10-4126-8389</a>
                 </div>
             </div>
             <div class="partner-card">
@@ -844,8 +632,8 @@
                     <strong>Key Networks:</strong><br>
                     China-based commercial properties, joint ventures, lifestyle brand networks<br><br>
                     <strong>Contact:</strong><br>
-                    wei.kan@conduitasia.com<br>
-                    +86-185-2100-1498
+                    <a href="mailto:wei.kan@conduitasia.com?subject=Partnership Inquiry - China/Japan Operations&body=Hello Wei,%0D%0A%0D%0AI'm interested in learning more about Conduit & Co's services for China/Japan market expansion.%0D%0A%0D%0ABest regards," class="contact-link">wei.kan@conduitasia.com</a><br>
+                    <a href="tel:+86185210014988" class="contact-link">+86-185-2100-1498</a>
                 </div>
             </div>
             <div class="partner-card">
@@ -858,8 +646,8 @@
                     <strong>Key Networks:</strong><br>
                     Global fashion, music, sport, academic and art connections<br><br>
                     <strong>Contact:</strong><br>
-                    tyler.fonda@conduitasia.com<br>
-                    +1-917-514-6183
+                    <a href="mailto:tyler.fonda@conduitasia.com?subject=Partnership Inquiry - US Operations&body=Hello Tyler,%0D%0A%0D%0AI'm interested in learning more about Conduit & Co's services for US market expansion and cultural validation.%0D%0A%0D%0ABest regards," class="contact-link">tyler.fonda@conduitasia.com</a><br>
+                    <a href="tel:+19175146183" class="contact-link">+1-917-514-6183</a>
                 </div>
             </div>
         </div>
