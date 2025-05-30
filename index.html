@@ -40,7 +40,7 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
         }
 
-        .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
+        .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8, .slide-9 {
             background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
         }
 
@@ -294,6 +294,10 @@
             color: #fff;
         }
 
+        .capability-list li strong {
+            color: #fff;
+        }
+
         /* Smooth scrolling with progress indicator */
         .scroll-progress {
             position: fixed;
@@ -407,6 +411,7 @@
         <div class="nav-dot" onclick="scrollToSlide(5)"></div>
         <div class="nav-dot" onclick="scrollToSlide(6)"></div>
         <div class="nav-dot" onclick="scrollToSlide(7)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(8)"></div>
     </div>
 
     <!-- Toast notification -->
@@ -675,8 +680,40 @@
         </div>
     </section>
 
-    <!-- Slide 8: Contact -->
+    <!-- Slide 8: Engagement Model -->
     <section class="slide slide-8" id="slide-7">
+        <div class="section-title">Engagement Model</div>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="capability-title">Strategic Partnership Structure</div>
+                <ul class="capability-list">
+                    <li><strong>Strategic Advisory Partnership:</strong> Comprehensive market assessment, quarterly reviews, network access</li>
+                    <li><strong>Market Entry Partnership:</strong> Full-service execution, local team development, channel optimization</li>
+                    <li><strong>Project-Based Consulting:</strong> Focused initiatives, cultural moments, defined deliverables</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Deliverables Framework</div>
+                <ul class="capability-list">
+                    <li><strong>Strategic Assessment Package:</strong> Market analysis, brand positioning, consumer segmentation</li>
+                    <li><strong>Implementation Package:</strong> 12-month calendar, KOL mapping, financial projections</li>
+                    <li><strong>Network Access Package:</strong> Retail introductions, celebrity connections, media relationships</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-title">Quality Assurance Process</div>
+                <ul class="capability-list">
+                    <li><strong>Cultural Validation:</strong> Native market expertise ensuring authentic approach</li>
+                    <li><strong>Performance Accountability:</strong> Clear KPIs and milestone tracking</li>
+                    <li><strong>Brand Consistency:</strong> Cross-market coordination maintaining integrity</li>
+                    <li><strong>Relationship Sustainability:</strong> Long-term partnership focus</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Contact -->
+    <section class="slide slide-9" id="slide-8">
         <div class="section-title">Contact Us</div>
         <div class="subtitle" style="max-width: 600px; margin-bottom: 3rem; text-align: center;">
             Ready to bridge cultures and expand your brand globally? Get in touch with our team for partnership inquiries.
@@ -766,112 +803,3 @@
                         dot.classList.toggle('active', i === index);
                     });
                 }
-            });
-        }, { threshold: 0.5 });
-
-        slides.forEach(slide => observer.observe(slide));
-
-        // Enhanced copy function with subtle interaction
-        function copyContact(text, element) {
-            // Prevent the link from being triggered when clicking the copy icon
-            event.stopPropagation();
-            
-            // Try modern clipboard API first
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(() => {
-                    showCopySuccess(element, text);
-                }).catch(() => {
-                    fallbackCopy(text, element);
-                });
-            } else {
-                fallbackCopy(text, element);
-            }
-        }
-
-        function fallbackCopy(text, element) {
-            // Fallback method for older browsers or non-HTTPS
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed';
-            textArea.style.left = '-999999px';
-            textArea.style.top = '-999999px';
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                showCopySuccess(element, text);
-            } catch (err) {
-                showError();
-            }
-            
-            document.body.removeChild(textArea);
-        }
-
-        function showCopySuccess(element, text) {
-            // Update icon
-            const icon = element.querySelector('.copy-icon');
-            const originalIcon = icon.textContent;
-            icon.textContent = '✓';
-            icon.classList.add('copied');
-            
-            // Show toast notification
-            const toast = document.getElementById('toast');
-            toast.textContent = `Copied: ${text}`;
-            toast.classList.remove('error');
-            toast.classList.add('show');
-            
-            // Reset after 2 seconds
-            setTimeout(() => {
-                icon.textContent = originalIcon;
-                icon.classList.remove('copied');
-                toast.classList.remove('show');
-            }, 2000);
-        }
-
-        function showError() {
-            const toast = document.getElementById('toast');
-            toast.textContent = 'Copy failed. Please select and copy manually.';
-            toast.classList.add('error', 'show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show', 'error');
-            }, 3000);
-        }
-
-        // Optional: Add keyboard shortcuts for better UX
-        document.addEventListener('keydown', function(e) {
-            // Press 'c' to scroll to contact section
-            if (e.key === 'c' && !e.ctrlKey && !e.metaKey) {
-                scrollToSlide(7);
-            }
-            
-            // Arrow keys for navigation
-            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                const currentActive = document.querySelector('.nav-dot.active');
-                const currentIndex = Array.from(navDots).indexOf(currentActive);
-                const nextIndex = Math.min(currentIndex + 1, navDots.length - 1);
-                scrollToSlide(nextIndex);
-            }
-            
-            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                const currentActive = document.querySelector('.nav-dot.active');
-                const currentIndex = Array.from(navDots).indexOf(currentActive);
-                const prevIndex = Math.max(currentIndex - 1, 0);
-                scrollToSlide(prevIndex);
-            }
-        });
-
-        // Scroll progress indicator
-        function updateScrollProgress() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollProgress = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollProgress').style.width = scrollProgress + '%';
-        }
-
-        window.addEventListener('scroll', updateScrollProgress);
-    </script>
-</body>
-</html>
