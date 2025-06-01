@@ -816,4 +816,15 @@
         // Scroll progress
         window.addEventListener('scroll', () => {
             const scrollProgress = document.getElementById('scrollProgress');
-            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Smooth scrolling for navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize first slide as active
+            document.querySelector('.nav-dot').classList.add('active');
+        });
+    </script>
+</body>
+</html>
