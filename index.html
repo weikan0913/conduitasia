@@ -730,12 +730,6 @@
                             <span class="copy-icon">📋</span>
                         </div>
                     </div>
-                    <div class="contact-email">
-                        <div class="contact-item" onclick="copyContact('+82-10-4126-8389', this)">
-                            <a href="tel:+821041268389" class="contact-link">+82-10-4126-8389</a>
-                            <span class="copy-icon">📋</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="partner-card">
@@ -749,12 +743,6 @@
                             <span class="copy-icon">📋</span>
                         </div>
                     </div>
-                    <div class="contact-email">
-                        <div class="contact-item" onclick="copyContact('+86-185-2100-1498', this)">
-                            <a href="tel:+8618521001498" class="contact-link">+86-185-2100-1498</a>
-                            <span class="copy-icon">📋</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="partner-card">
@@ -765,12 +753,6 @@
                     <div class="contact-email">
                         <div class="contact-item" onclick="copyContact('tyler.fonda@conduitasia.com', this)">
                             <a href="mailto:tyler.fonda@conduitasia.com?subject=Partnership Inquiry - US Operations" class="contact-link">tyler.fonda@conduitasia.com</a>
-                            <span class="copy-icon">📋</span>
-                        </div>
-                    </div>
-                    <div class="contact-email">
-                        <div class="contact-item" onclick="copyContact('+1-917-514-6183', this)">
-                            <a href="tel:+19175146183" class="contact-link">+1-917-514-6183</a>
                             <span class="copy-icon">📋</span>
                         </div>
                     </div>
@@ -790,11 +772,34 @@
             });
         }
 
+        // Copy function for contact info
+        function copyContact(text, element) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copied to clipboard!');
+                const icon = element.querySelector('.copy-icon');
+                icon.classList.add('copied');
+                setTimeout(() => {
+                    icon.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                showToast('Failed to copy', 'error');
+            });
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type} show`;
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
         // Intersection Observer for navigation
         const slides = document.querySelectorAll('.slide');
         const navDots = document.querySelectorAll('.nav-dot');
 
-        // Simplified intersection observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -803,3 +808,12 @@
                         dot.classList.toggle('active', i === index);
                     });
                 }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+
+        // Scroll progress
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
