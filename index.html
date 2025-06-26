@@ -91,23 +91,30 @@
             gap: 2rem;
             max-width: 1200px;
             width: 100%;
-            justify-items: center;
+            justify-items: stretch;
+            align-items: start;
         }
 
         .content-grid-2x2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1000px;
             width: 100%;
+            justify-items: stretch;
+            align-items: stretch;
         }
 
         .content-grid-4 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1000px;
             width: 100%;
+            justify-items: stretch;
+            align-items: stretch;
         }
 
         .content-card {
@@ -116,10 +123,12 @@
             border-radius: 15px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            height: fit-content;
-            min-height: 250px;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .content-card-wide {
@@ -145,6 +154,7 @@
             font-size: 0.9rem;
             color: #ccc;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .list-item {
@@ -365,9 +375,11 @@
         }
 
         /* Mobile responsiveness */
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
             .content-grid-2x2, .content-grid-4 {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                max-width: 600px;
             }
         }
 
@@ -386,6 +398,8 @@
             
             .content-grid, .content-grid-2x2, .content-grid-4 {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                max-width: 100%;
             }
 
             .bio-section {
@@ -511,7 +525,7 @@
     <!-- Slide 4: Services -->
     <section class="slide slide-4" id="slide-3">
         <div class="section-title">Services</div>
-        <div class="content-grid">
+        <div class="content-grid-4">
             <div class="content-card">
                 <div class="card-title">Strategic Brand Consulting</div>
                 <div class="card-subtitle">Brand Transformation Strategy</div>
@@ -574,7 +588,7 @@
     <!-- Slide 6: Approach -->
     <section class="slide slide-6" id="slide-5">
         <div class="section-title">Cultural Bridge Methodology</div>
-        <div class="content-grid">
+        <div class="content-grid-4">
             <div class="content-card">
                 <div class="card-title">Cultural Intelligence Assessment</div>
                 <div class="card-content">
@@ -614,7 +628,7 @@
     <!-- Slide 7: Geography & Network -->
     <section class="slide slide-7" id="slide-6">
         <div class="section-title">Geography & Network</div>
-        <div class="content-grid">
+        <div class="content-grid-4">
             <div class="content-card">
                 <div class="card-title">China</div>
                 <div class="card-subtitle">Shanghai-based Operations</div>
