@@ -483,8 +483,8 @@
         <div class="bio-section">
             <!-- Option 1: Use actual photo (recommended) -->
             <div class="bio-image">
-                <img src="wei-kan-photo.jpg" alt="Wei Kan" style="display: none;" id="profilePhoto">
-                <span id="initials">WK</span>
+                <img src="wei-kan-photo.jpg" alt="Wei Kan" id="profilePhoto" onload="showPhoto()" onerror="showInitials()">
+                <span id="initials" style="display: block;">WK</span>
             </div>
             <!-- Option 2: If you prefer background image, uncomment below and comment above -->
             <!--
@@ -794,6 +794,17 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.nav-dot').classList.add('active');
         });
+
+        // Photo display functions
+        function showPhoto() {
+            document.getElementById('profilePhoto').style.display = 'block';
+            document.getElementById('initials').style.display = 'none';
+        }
+
+        function showInitials() {
+            document.getElementById('profilePhoto').style.display = 'none';
+            document.getElementById('initials').style.display = 'block';
+        }
     </script>
 </body>
 </html>
