@@ -87,7 +87,24 @@
 
         .content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            justify-items: center;
+        }
+
+        .content-grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .content-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             max-width: 1200px;
             width: 100%;
@@ -99,6 +116,10 @@
             border-radius: 15px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            height: fit-content;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
         }
 
         .content-card-wide {
@@ -344,6 +365,12 @@
         }
 
         /* Mobile responsiveness */
+        @media (max-width: 1024px) {
+            .content-grid-2x2, .content-grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .logo-text {
                 font-size: 2.5rem;
@@ -357,7 +384,7 @@
                 padding: 1rem;
             }
             
-            .content-grid {
+            .content-grid, .content-grid-2x2, .content-grid-4 {
                 grid-template-columns: 1fr;
             }
 
@@ -368,6 +395,10 @@
 
             .bio-image {
                 margin: 0 auto;
+            }
+
+            .content-card {
+                min-height: auto;
             }
         }
     </style>
@@ -441,7 +472,7 @@
     <!-- Slide 3: Core Expertise -->
     <section class="slide slide-3" id="slide-2">
         <div class="section-title">Core Expertise</div>
-        <div class="content-grid">
+        <div class="content-grid-4">
             <div class="content-card">
                 <div class="card-title">Cultural Intelligence</div>
                 <div class="card-content">
