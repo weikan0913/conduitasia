@@ -378,6 +378,8 @@
         .bio-image.no-image {
             background: linear-gradient(135deg, #333, #666);
             border: 2px solid rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
         .bio-content {
@@ -481,16 +483,7 @@
     <section class="slide slide-2" id="slide-1">
         <div class="main-title">About Wei Kan</div>
         <div class="bio-section">
-            <!-- Option 1: Use actual photo (recommended) -->
-            <div class="bio-image">
-                <img src="wei-kan-photo.jpg" alt="Wei Kan" id="profilePhoto" onload="showPhoto()" onerror="showInitials()">
-                <span id="initials" style="display: block;">WK</span>
-            </div>
-            <!-- Option 2: If you prefer background image, uncomment below and comment above -->
-            <!--
-            <div class="bio-image" style="background-image: url('wei-kan-photo.jpg');">
-            </div>
-            -->
+            <div class="bio-image no-image">WK</div>
             <div class="bio-content">
                 <div class="bio-title">Born in Taiwan. Educated in New York. Seasoned in Shanghai.</div>
                 <p>With over 20 years of global marketing leadership across Nike, Converse, Yahoo, and premium lifestyle brands, I help ambitious companies navigate complex cultural landscapes and unlock authentic growth in Asia-Pacific markets.</p>
@@ -794,17 +787,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.nav-dot').classList.add('active');
         });
-
-        // Photo display functions
-        function showPhoto() {
-            document.getElementById('profilePhoto').style.display = 'block';
-            document.getElementById('initials').style.display = 'none';
-        }
-
-        function showInitials() {
-            document.getElementById('profilePhoto').style.display = 'none';
-            document.getElementById('initials').style.display = 'block';
-        }
     </script>
 </body>
 </html>
