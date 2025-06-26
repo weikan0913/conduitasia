@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conduit & Co. - We Bridge Culture</title>
+    <title>Wei Kan Consulting - Bridging Culture, Building Brands</title>
     <style>
         * {
             margin: 0;
@@ -40,15 +40,18 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
         }
 
-        .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8, .slide-9 {
+        .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
             background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
         }
 
-        .logo-image {
-            max-width: 400px;
-            width: 80%;
-            height: auto;
-            margin-bottom: 2rem;
+        .logo-text {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
         }
 
         .tagline {
@@ -82,7 +85,7 @@
             color: #fff;
         }
 
-        .partners-grid {
+        .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
@@ -90,21 +93,7 @@
             width: 100%;
         }
 
-        .values-top-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-
-        .values-bottom-card {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .partner-card {
+        .content-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
             border-radius: 15px;
@@ -112,31 +101,52 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .partner-card-wide {
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        .content-card-wide {
+            grid-column: 1 / -1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .partner-name {
+        .card-title {
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
             color: #fff;
         }
 
-        .partner-title {
+        .card-subtitle {
             font-size: 1.1rem;
             color: #888;
             margin-bottom: 1rem;
         }
 
-        .partner-expertise {
+        .card-content {
             font-size: 0.9rem;
             color: #ccc;
             line-height: 1.6;
         }
 
-        /* Enhanced contact styling with subtle copy function */
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .list-item:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #fff;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Contact styling */
         .contact-email {
             position: relative;
             display: block;
@@ -214,91 +224,7 @@
             background: #f44336;
         }
 
-        .market-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .market-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #fff;
-        }
-
-        .market-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .market-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .market-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .market-desc {
-            font-size: 0.9rem;
-            color: #ccc;
-            line-height: 1.5;
-        }
-
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .capability-card {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .capability-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .capability-list {
-            list-style: none;
-        }
-
-        .capability-list li {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .capability-list li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: #fff;
-        }
-
-        .capability-list li strong {
-            color: #fff;
-        }
-
-        /* Smooth scrolling with progress indicator */
+        /* Scroll progress */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -318,7 +244,6 @@
             z-index: 1000;
         }
 
-        /* Simplified navigation dots - only interactive elements keep animations */
         .nav-dot {
             width: 12px;
             height: 12px;
@@ -367,10 +292,61 @@
             letter-spacing: 1px;
         }
 
-        /* Enhanced mobile responsiveness */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .bio-image {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        /* If using actual image */
+        .bio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* If no image, show initials */
+        .bio-image.no-image {
+            background: linear-gradient(135deg, #333, #666);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bio-content {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .bio-title {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .logo-image {
-                max-width: 300px;
+            .logo-text {
+                font-size: 2.5rem;
             }
             
             .main-title, .section-title {
@@ -381,18 +357,17 @@
                 padding: 1rem;
             }
             
-            .partners-grid, .market-grid, .capabilities-grid, .values-top-grid {
+            .content-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-email {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 6px;
+            .bio-section {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .contact-item {
-                justify-content: space-between;
+            .bio-image {
+                margin: 0 auto;
             }
         }
     </style>
@@ -411,7 +386,6 @@
         <div class="nav-dot" onclick="scrollToSlide(5)"></div>
         <div class="nav-dot" onclick="scrollToSlide(6)"></div>
         <div class="nav-dot" onclick="scrollToSlide(7)"></div>
-        <div class="nav-dot" onclick="scrollToSlide(8)"></div>
     </div>
 
     <!-- Toast notification -->
@@ -419,345 +393,262 @@
 
     <!-- Slide 1: Title -->
     <section class="slide slide-1" id="slide-0">
-        <!-- Logo image -->
-        <img src="conduit-logo.png" alt="Conduit Logo" class="logo-image" />
-        
-        <div class="tagline">We Bridge Culture</div>
+        <div class="logo-text">WEI KAN</div>
+        <div class="tagline">Bridging Culture, Building Brands</div>
         <div class="subtitle">
-            Creating new waves of influence through localized go-to-market strategies that connect premium brands with core influential communities across Asia and Global markets.
+            Strategic Brand Consultant | Cultural Intelligence Expert | Asia Market Specialist<br><br>
+            Helping ambitious companies navigate complex cultural landscapes and unlock authentic growth in Asia-Pacific markets.
         </div>
         <div class="stats-row">
             <div class="stat-item">
-                <span class="stat-number">7+</span>
-                <span class="stat-label">Years Collaboration</span>
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number">4</span>
                 <span class="stat-label">Key Markets</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Years Combined Experience</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 2: Overview -->
-    <section class="slide slide-2" id="slide-1">
-        <div class="main-title">Expert Collective Overview</div>
-        <div class="subtitle" style="max-width: 900px; margin-bottom: 3rem;">
-            Conduit & Co. is a specialized expert collective founded by three industry veterans who have collaborated across Nike, Converse, Moncler, and Stüssy projects. We bridge cultural gaps for premium brands expanding across US, China, Korea, and Japan markets.
-        </div>
-        <div class="stats-row">
-            <div class="stat-item">
                 <span class="stat-number">$470B+</span>
-                <span class="stat-label">Total Market Access</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">3</span>
-                <span class="stat-label">Founding Partners</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">∞</span>
-                <span class="stat-label">Network Specialists</span>
+                <span class="stat-label">Market Access</span>
             </div>
         </div>
     </section>
 
-    <!-- Slide 3: Founding Partners -->
+    <!-- Slide 2: About -->
+    <section class="slide slide-2" id="slide-1">
+        <div class="main-title">About Wei Kan</div>
+        <div class="bio-section">
+            <!-- Option 1: Use actual photo (recommended) -->
+            <div class="bio-image">
+                <img src="wei-kan-photo.jpg" alt="Wei Kan" style="display: none;" id="profilePhoto">
+                <span id="initials">WK</span>
+            </div>
+            <!-- Option 2: If you prefer background image, uncomment below and comment above -->
+            <!--
+            <div class="bio-image" style="background-image: url('wei-kan-photo.jpg');">
+            </div>
+            -->
+            <div class="bio-content">
+                <div class="bio-title">Born in Taiwan. Educated in New York. Seasoned in Shanghai.</div>
+                <p>With over 20 years of global marketing leadership across Nike, Converse, Yahoo, and premium lifestyle brands, I help ambitious companies navigate complex cultural landscapes and unlock authentic growth in Asia-Pacific markets.</p>
+                <br>
+                <p>My expertise spans cultural intelligence, premium brand strategy, market entry & expansion, and cross-cultural leadership. I specialize in bridging East-West cultural dynamics to create sustainable business growth through authentic brand connections.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Core Expertise -->
     <section class="slide slide-3" id="slide-2">
-        <div class="section-title">Founding Partners</div>
-        <div class="partners-grid">
-            <div class="partner-card">
-                <div class="partner-name">Wei Kan</div>
-                <div class="partner-title">Managing Director - China</div>
-                <div class="partner-expertise">
-                    <strong>20+ years APAC/GC Marketing</strong><br><br>
-                    <strong>Expertise:</strong> China market development, creative commerce, brand strategy<br><br>
-                    <strong>Platform:</strong> China-based commercial properties, joint ventures, lifestyle brand networks, premium retail partnerships
+        <div class="section-title">Core Expertise</div>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-title">Cultural Intelligence</div>
+                <div class="card-content">
+                    <div class="list-item">East-West cultural translation and adaptation</div>
+                    <div class="list-item">Consumer behavior insights across China, Korea, Japan, Taiwan</div>
+                    <div class="list-item">Authentic localization without brand dilution</div>
                 </div>
             </div>
-            <div class="partner-card">
-                <div class="partner-name">Mike Kim</div>
-                <div class="partner-title">Managing Director - Korea</div>
-                <div class="partner-expertise">
-                    <strong>15+ years Global Marketing Executive</strong><br><br>
-                    <strong>Expertise:</strong> Korean market penetration, celebrity partnerships, retail development<br><br>
-                    <strong>Platform:</strong> Entertainment (YG, AOMG, SM), Premium retail (Shinsegae, Boontheshop, Kasina)
+            <div class="content-card">
+                <div class="card-title">Premium Brand Strategy</div>
+                <div class="card-content">
+                    <div class="list-item">Brand positioning and narrative development</div>
+                    <div class="list-item">Performance-to-lifestyle brand evolution</div>
+                    <div class="list-item">P&L management and growth optimization</div>
                 </div>
             </div>
-            <div class="partner-card">
-                <div class="partner-name">Tyler Fonda</div>
-                <div class="partner-title">Managing Director - US</div>
-                <div class="partner-expertise">
-                    <strong>20+ years Global Marketing</strong><br><br>
-                    <strong>Expertise:</strong> Global creative leadership, cultural validation, brand strategy<br><br>
-                    <strong>Network:</strong> Global fashion, music, sport, academic and art connections
+            <div class="content-card">
+                <div class="card-title">Market Entry & Expansion</div>
+                <div class="card-content">
+                    <div class="list-item">Asia-Pacific market development and scaling</div>
+                    <div class="list-item">Retail partnership strategy and execution</div>
+                    <div class="list-item">Digital ecosystem design and optimization</div>
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="card-title">Cross-Cultural Leadership</div>
+                <div class="card-content">
+                    <div class="list-item">International team management (30+ professionals)</div>
+                    <div class="list-item">Stakeholder alignment across diverse markets</div>
+                    <div class="list-item">Change management in complex environments</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: Market Expertise -->
+    <!-- Slide 4: Services -->
     <section class="slide slide-4" id="slide-3">
-        <div class="section-title">Market Expertise</div>
-        <div class="market-grid">
-            <div class="market-card">
-                <div class="market-title">China Operations</div>
-                <div class="market-value">$420B</div>
-                <div class="market-desc">
-                    Retail commercial properties (Tier 1 & 2 cities)<br>
-                    Cultural agenda setters, premium lifestyle evolution opportunities<br>
-                    Post-luxury consumer trends, creative commerce development
+        <div class="section-title">Services</div>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-title">Strategic Brand Consulting</div>
+                <div class="card-subtitle">Brand Transformation Strategy</div>
+                <div class="card-content">
+                    Market opportunity assessment • Brand positioning optimization • Consumer segmentation strategy • Cultural adaptation framework development
                 </div>
             </div>
-            <div class="market-card">
-                <div class="market-title">Korea Operations</div>
-                <div class="market-value">$7.28B</div>
-                <div class="market-desc">
-                    $6.2B outdoor + $1.08B fishing apparel markets<br>
-                    New luxury & street culture extensions<br>
-                    Entertainment and designer networks
+            <div class="content-card">
+                <div class="card-title">Cultural Intelligence Advisory</div>
+                <div class="card-subtitle">Cross-Cultural Brand Development</div>
+                <div class="card-content">
+                    Cultural insight analysis • Authentic brand storytelling • Community engagement strategy • Cultural moment creation and activation
                 </div>
             </div>
-            <div class="market-card">
-                <div class="market-title">US Operations</div>
-                <div class="market-value">$45B</div>
-                <div class="market-desc">
-                    Outdoor recreation, heritage brand headquarters<br>
-                    Future culture shapers<br>
-                    Performance-to-lifestyle transformation
+            <div class="content-card">
+                <div class="card-title">Market Entry & Expansion</div>
+                <div class="card-subtitle">Implementation Partnership</div>
+                <div class="card-content">
+                    Market analysis and entry strategy • Partnership facilitation • Go-to-market planning • Performance measurement frameworks
                 </div>
             </div>
-            <div class="market-card">
-                <div class="market-title">Japan Access</div>
-                <div class="market-value">Network</div>
-                <div class="market-desc">
-                    Technical innovation, heritage brand collaboration<br>
-                    Craftsmanship-focused consumers<br>
-                    Quality-driven premium positioning
+            <div class="content-card">
+                <div class="card-title">Executive Cultural Coaching</div>
+                <div class="card-subtitle">Leadership Development</div>
+                <div class="card-content">
+                    Cross-cultural leadership development • Cultural competency training • Communication and negotiation skills • Change management guidance
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 5: Capabilities -->
+    <!-- Slide 5: Experience Highlights -->
     <section class="slide slide-5" id="slide-4">
-        <div class="section-title">Core Capabilities</div>
-        <div class="capabilities-grid">
-            <div class="capability-card">
-                <div class="capability-title">"Bridge Culture" Methodology</div>
-                <ul class="capability-list">
-                    <li>Cultural Translation: US/EU-Asia adaptation</li>
-                    <li>Performance to Lifestyle Evolution</li>
-                    <li>Youth Culture Access</li>
-                    <li>Network-Driven Growth</li>
-                </ul>
+        <div class="section-title">Experience Highlights</div>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-title">Nike & Converse Asia-Pacific</div>
+                <div class="card-subtitle">Regional Marketing Leadership</div>
+                <div class="card-content">
+                    Led brand strategy across China, Korea, Japan • Managed P&L for multiple categories • Developed cultural marketing frameworks driving 30%+ brand awareness growth • Built and led teams of 30+ marketing professionals
+                </div>
             </div>
-            <div class="capability-card">
-                <div class="capability-title">Strategic Brand Assessment</div>
-                <ul class="capability-list">
-                    <li>Brand Compatibility Matrix</li>
-                    <li>Partner Classification System</li>
-                    <li>Target Profile Optimization</li>
-                    <li>Whitespace Analysis</li>
-                </ul>
+            <div class="content-card">
+                <div class="card-title">Digital Innovation Leadership</div>
+                <div class="card-subtitle">Yahoo & Technology Ventures</div>
+                <div class="card-content">
+                    Pioneered digital marketing in emerging Asian markets • Led platform development and UX optimization • Managed strategic partnerships with technology and media companies
+                </div>
             </div>
-            <div class="capability-card">
-                <div class="capability-title">Multi-Market Retail Development</div>
-                <ul class="capability-list">
-                    <li>Premium Channel Access</li>
-                    <li>Multi-brand Boutique Network</li>
-                    <li>E-commerce Platform Integration</li>
-                    <li>Experiential Retail</li>
-                </ul>
-            </div>
-            <div class="capability-card">
-                <div class="capability-title">Integrated Marketing Execution</div>
-                <ul class="capability-list">
-                    <li>Influencer & Celebrity Partnerships</li>
-                    <li>Content Production Infrastructure</li>
-                    <li>Cultural Moment Creation</li>
-                    <li>Strategic Brand Collaborations</li>
-                </ul>
+            <div class="content-card content-card-wide">
+                <div class="card-title">Premium Lifestyle Brands</div>
+                <div class="card-subtitle">Brand Transformation & Growth</div>
+                <div class="card-content">
+                    Consulted for emerging and established lifestyle brands on Asia expansion • Developed brand positioning strategies for premium outdoor and streetwear brands • Created cultural collaboration frameworks with local designers and influencers • Generated measurable business impact through authentic brand storytelling
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 6: Network -->
+    <!-- Slide 6: Approach -->
     <section class="slide slide-6" id="slide-5">
-        <div class="section-title">Global Network</div>
-        <div class="capabilities-grid">
-            <div class="capability-card">
-                <div class="capability-title">Retail Partners</div>
-                <ul class="capability-list">
-                    <li>China: SKP/SKP-S, DSM Beijing, Lane Crawford</li>
-                    <li>Korea: Shinsegae, Hyundai, Boontheshop</li>
-                    <li>Japan: Premium technical retailers</li>
-                    <li>US: Multi-brand boutiques, department stores</li>
-                </ul>
+        <div class="section-title">Cultural Bridge Methodology</div>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-title">Cultural Intelligence Assessment</div>
+                <div class="card-content">
+                    Deep dive into target market cultural dynamics, consumer behaviors, and competitive landscape to identify authentic positioning opportunities.
+                </div>
             </div>
-            <div class="capability-card">
-                <div class="capability-title">Entertainment & Culture</div>
-                <ul class="capability-list">
-                    <li>Korea: YG Entertainment, AOMG, SM</li>
-                    <li>China: Cultural content creators</li>
-                    <li>Cross-Market: DJ and music communities</li>
-                    <li>Global: Street culture creators</li>
-                </ul>
+            <div class="content-card">
+                <div class="card-title">Strategic Framework Development</div>
+                <div class="card-content">
+                    Create comprehensive brand strategy that respects cultural nuances while maintaining global brand integrity and business objectives.
+                </div>
             </div>
-            <div class="capability-card">
-                <div class="capability-title">Design Collaborations</div>
-                <ul class="capability-list">
-                    <li>Korean: Ader Error, This Is Never That</li>
-                    <li>Established: Nike/Converse projects</li>
-                    <li>Emerging: Next-generation designers</li>
-                    <li>Heritage: Brand intersections</li>
-                </ul>
+            <div class="content-card">
+                <div class="card-title">Partnership Ecosystem Design</div>
+                <div class="card-content">
+                    Leverage extensive network across retail, media, entertainment, and creative communities to build sustainable market presence.
+                </div>
             </div>
-            <div class="capability-card">
-                <div class="capability-title">Media & Communications</div>
-                <ul class="capability-list">
-                    <li>Korea: GQ, Vogue, VISLA</li>
-                    <li>China: NOWRE ecosystem, RedNote</li>
-                    <li>Global: Fashion and lifestyle media</li>
-                    <li>Digital: Established relationships</li>
-                </ul>
+            <div class="content-card">
+                <div class="card-title">Implementation & Optimization</div>
+                <div class="card-content">
+                    Execute strategy through structured project management with continuous performance monitoring and cultural feedback integration.
+                </div>
+            </div>
+        </div>
+        <div class="content-card content-card-wide" style="margin-top: 2rem;">
+            <div class="card-title">Success Principles</div>
+            <div class="card-content">
+                <span class="highlight">Authenticity Over Appropriation:</span> Genuine cultural understanding and respect<br>
+                <span class="highlight">Relationships Over Transactions:</span> Long-term partnership approach<br>
+                <span class="highlight">Integration Over Isolation:</span> Seamless blend of global strategy with local execution<br>
+                <span class="highlight">Impact Over Activity:</span> Measurable business results through cultural relevance
             </div>
         </div>
     </section>
 
-    <!-- Slide 7: Values -->
+    <!-- Slide 7: Geography & Network -->
     <section class="slide slide-7" id="slide-6">
-        <div class="section-title">Our Values</div>
-        <div class="values-top-grid">
-            <div class="partner-card">
-                <div class="partner-name">Authentic Cultural Intelligence</div>
-                <div class="partner-title">East-West Cultural Dynamics</div>
-                <div class="partner-expertise">
-                    Deep, lived understanding of cross-cultural dynamics enabling genuine brand localization rather than surface-level adaptation.<br><br>
-                    <strong>Key Capabilities:</strong><br>
-                    • Cultural nuance identification<br>
-                    • Authentic brand translation<br>
-                    • Local relevance without dilution<br>
-                    • Consumer behavior insights
+        <div class="section-title">Geography & Network</div>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-title">China</div>
+                <div class="card-subtitle">Shanghai-based Operations</div>
+                <div class="card-content">
+                    Deep market knowledge and established relationships across retail, media, and creative industries. Access to $420B retail commercial properties market.
                 </div>
             </div>
-            <div class="partner-card">
-                <div class="partner-name">Relationship-Driven Growth</div>
-                <div class="partner-title">Network-Based Expansion</div>
-                <div class="partner-expertise">
-                    Leveraging established personal and professional relationships to accelerate brand development and create sustainable market presence.<br><br>
-                    <strong>Key Capabilities:</strong><br>
-                    • 7+ years collaborative history<br>
-                    • Cross-industry connections<br>
-                    • Trust-based partnerships<br>
-                    • Accelerated market entry
+            <div class="content-card">
+                <div class="card-title">Korea</div>
+                <div class="card-subtitle">Entertainment & Fashion Networks</div>
+                <div class="card-content">
+                    Comprehensive network spanning entertainment, fashion, and lifestyle sectors with proven track record in brand collaborations. $7.28B market access.
                 </div>
             </div>
-            <div class="partner-card">
-                <div class="partner-name">Collaborative Innovation</div>
-                <div class="partner-title">Collective Intelligence</div>
-                <div class="partner-expertise">
-                    Combining individual expertise with collective intelligence to solve complex cross-cultural brand challenges.<br><br>
-                    <strong>Key Capabilities:</strong><br>
-                    • Multi-market perspective<br>
-                    • Integrated solution design<br>
-                    • Knowledge sharing systems<br>
-                    • Innovation through diversity
+            <div class="content-card">
+                <div class="card-title">Japan</div>
+                <div class="card-subtitle">Technical & Heritage Expertise</div>
+                <div class="card-content">
+                    Strategic partnerships with technical and lifestyle brand communities. Focus on craftsmanship and quality-driven premium positioning.
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="card-title">Taiwan</div>
+                <div class="card-subtitle">Native Cultural Understanding</div>
+                <div class="card-content">
+                    Native cultural understanding and established business relationships. Bridge between traditional Chinese culture and modern lifestyle trends.
                 </div>
             </div>
         </div>
-        <div class="values-bottom-card">
-            <div class="partner-card partner-card-wide">
-                <div class="partner-name">Sustainable Impact</div>
-                <div class="partner-title">Long-term Brand Equity</div>
-                <div class="partner-expertise">
-                    Focus on building lasting brand equity and cultural relevance rather than short-term market exploitation. We believe in creating meaningful connections that drive both immediate results and sustainable growth across all markets.<br><br>
-                    <strong>Key Capabilities:</strong> Brand equity development • Cultural relevance building • Performance accountability • Continuous optimization • Long-term partnership focus • ROI-driven strategies
-                </div>
+        <div class="content-card content-card-wide" style="margin-top: 2rem;">
+            <div class="card-title">Global Connections</div>
+            <div class="card-content">
+                <span class="highlight">United States:</span> East and West Coast brand headquarters and creative communities<br>
+                <span class="highlight">Europe:</span> Premium lifestyle and technical brand relationships<br>
+                <span class="highlight">Southeast Asia:</span> Emerging market expertise and partnership opportunities
             </div>
         </div>
     </section>
 
-    <!-- Slide 8: Engagement Model -->
+    <!-- Slide 8: Contact -->
     <section class="slide slide-8" id="slide-7">
-        <div class="section-title">Engagement Model</div>
-        <div class="capabilities-grid">
-            <div class="capability-card">
-                <div class="capability-title">Strategic Partnership Structure</div>
-                <ul class="capability-list">
-                    <li><strong>Strategic Advisory Partnership:</strong> Comprehensive market assessment, quarterly reviews, network access</li>
-                    <li><strong>Market Entry Partnership:</strong> Full-service execution, local team development, channel optimization</li>
-                    <li><strong>Project-Based Consulting:</strong> Focused initiatives, cultural moments, defined deliverables</li>
-                </ul>
-            </div>
-            <div class="capability-card">
-                <div class="capability-title">Deliverables Framework</div>
-                <ul class="capability-list">
-                    <li><strong>Strategic Assessment Package:</strong> Market analysis, brand positioning, consumer segmentation</li>
-                    <li><strong>Implementation Package:</strong> 12-month calendar, KOL mapping, financial projections</li>
-                    <li><strong>Network Access Package:</strong> Retail introductions, celebrity connections, media relationships</li>
-                </ul>
-            </div>
-            <div class="capability-card">
-                <div class="capability-title">Quality Assurance Process</div>
-                <ul class="capability-list">
-                    <li><strong>Cultural Validation:</strong> Native market expertise ensuring authentic approach</li>
-                    <li><strong>Performance Accountability:</strong> Clear KPIs and milestone tracking</li>
-                    <li><strong>Brand Consistency:</strong> Cross-market coordination maintaining integrity</li>
-                    <li><strong>Relationship Sustainability:</strong> Long-term partnership focus</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 9: Contact -->
-    <section class="slide slide-9" id="slide-8">
-        <div class="section-title">Contact Us</div>
+        <div class="section-title">Contact</div>
         <div class="subtitle" style="max-width: 600px; margin-bottom: 3rem; text-align: center;">
-            Ready to bridge cultures and expand your brand globally? Get in touch with our team for partnership inquiries.
+            Ready to bridge cultures and expand your brand authentically? Let's discuss your strategic challenges and opportunities.
         </div>
-        <div class="partners-grid">
-            <div class="partner-card">
-                <div class="partner-name">Mike Kim</div>
-                <div class="partner-title">Managing Director - Korea</div>
-                <div class="partner-expertise">
-                    <strong>Contact:</strong><br>
-                    <div class="contact-email">
-                        <div class="contact-item" onclick="copyContact('mike.kim@conduitasia.com', this)">
-                            <a href="mailto:mike.kim@conduitasia.com?subject=Partnership Inquiry - Korea Operations" class="contact-link">mike.kim@conduitasia.com</a>
-                            <span class="copy-icon">📋</span>
-                        </div>
+        <div class="content-card content-card-wide" style="max-width: 600px;">
+            <div class="card-title">Wei Kan</div>
+            <div class="card-subtitle">Strategic Brand Consultant</div>
+            <div class="card-content">
+                <strong>Contact:</strong><br>
+                <div class="contact-email">
+                    <div class="contact-item" onclick="copyContact('wei.kan@conduitasia.com', this)">
+                        <a href="mailto:wei.kan@conduitasia.com?subject=Strategic Brand Consulting Inquiry" class="contact-link">wei.kan@conduitasia.com</a>
+                        <span class="copy-icon">📋</span>
                     </div>
                 </div>
+                <br>
+                <strong>Location:</strong> Shanghai, China (Hong Kong/Singapore available)<br>
+                <strong>Languages:</strong> Chinese (Native), English (Fluent)<br><br>
+                <strong>Initial Consultation:</strong> 30-minute complimentary strategy conversation to assess mutual fit and discuss specific challenges and opportunities.<br><br>
+                <strong>Response Time:</strong> All inquiries answered within 24 hours. Initial consultation scheduled within 48 hours of confirmed interest.
             </div>
-            <div class="partner-card">
-                <div class="partner-name">Wei Kan</div>
-                <div class="partner-title">Managing Director - China</div>
-                <div class="partner-expertise">
-                    <strong>Contact:</strong><br>
-                    <div class="contact-email">
-                        <div class="contact-item" onclick="copyContact('wei.kan@conduitasia.com', this)">
-                            <a href="mailto:wei.kan@conduitasia.com?subject=Partnership Inquiry - China Operations" class="contact-link">wei.kan@conduitasia.com</a>
-                            <span class="copy-icon">📋</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="partner-card">
-                <div class="partner-name">Tyler Fonda</div>
-                <div class="partner-title">Managing Director - US</div>
-                <div class="partner-expertise">
-                    <strong>Contact:</strong><br>
-                    <div class="contact-email">
-                        <div class="contact-item" onclick="copyContact('tyler.fonda@conduitasia.com', this)">
-                            <a href="mailto:tyler.fonda@conduitasia.com?subject=Partnership Inquiry - US Operations" class="contact-link">tyler.fonda@conduitasia.com</a>
-                            <span class="copy-icon">📋</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="subtitle" style="margin-top: 2rem; font-style: italic;">
+            "Authentic cultural connection creates sustainable business growth. My role is to help brands discover and express their truth across diverse markets while building meaningful relationships with communities that matter."
         </div>
     </section>
 
@@ -820,9 +711,8 @@
             scrollProgress.style.width = scrollPercent + '%';
         });
 
-        // Smooth scrolling for navigation
+        // Initialize first slide as active
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize first slide as active
             document.querySelector('.nav-dot').classList.add('active');
         });
     </script>
