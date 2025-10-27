@@ -6,6 +6,12 @@
     <title>Conduit Asia - Cross-Cultural Brand Strategy & Business Intelligence</title>
     <meta name="description" content="Boutique brand consultancy bridging East-West markets. 20+ years Fortune 500 APAC experience. Expert in cultural intelligence and premium brand strategy.">
     <meta name="keywords" content="brand strategy consultant, Asia Pacific markets, cultural intelligence, consumer insights, China market expert, cross-cultural consulting, Conduit Asia">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -18,151 +24,301 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #333;
             background: #000;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Logo Styles */
+        .logo-container {
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-circle:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-dot:hover::before {
+            opacity: 1;
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(1.2);
+        }
+
+        .nav-dot.active {
+            background: #fff;
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #0A3D62 0%, #FFC300 50%, #38A169 100%);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1002;
+            opacity: 0;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast.error {
+            background: rgba(239, 68, 68, 0.95);
+            color: white;
+        }
+
+        /* Slide Base */
         .slide {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
             position: relative;
             color: white;
         }
 
         .slide-1 {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #000 0%, #0f0f0f 100%);
             text-align: center;
         }
 
-        .slide-2 {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+        .slide-2, .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
+            background: linear-gradient(135deg, #0a0a0a 0%, #000 50%, #0a0a0a 100%);
         }
 
-        .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
-        }
-
+        /* Typography */
         .logo-text {
-            font-size: 4rem;
-            font-weight: bold;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #888);
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            font-weight: 300;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
         .subtitle {
-            font-size: 1.1rem;
-            color: #ccc;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: #b0b0b0;
             max-width: 800px;
             text-align: center;
             line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .main-title {
-            font-size: 3rem;
-            margin-bottom: 2rem;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 3rem;
             text-align: center;
-            background: linear-gradient(45deg, #fff, #888);
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            margin-bottom: 3rem;
             text-align: center;
             color: #fff;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
+        /* Content Grid */
         .content-grid-4 {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
             width: 100%;
         }
 
         .content-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 12px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            height: 300px;
-            min-height: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0A3D62 0%, #FFC300 50%, #38A169 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .content-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .content-card:hover::before {
+            opacity: 1;
         }
 
         .content-card-wide {
             grid-column: 1 / -1;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            height: auto !important;
-            min-height: auto !important;
+            width: 100%;
         }
 
         .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
             color: #fff;
+            letter-spacing: -0.01em;
         }
 
         .card-subtitle {
-            font-size: 1.1rem;
-            color: #888;
+            font-size: 1rem;
+            color: #999;
             margin-bottom: 1rem;
+            font-weight: 400;
         }
 
         .card-content {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #ccc;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .list-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 0.4rem;
-            padding-left: 1rem;
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
             position: relative;
-            font-size: 0.85rem;
-            line-height: 1.4;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .list-item:before {
             content: "▸";
             position: absolute;
             left: 0;
-            color: #fff;
+            color: #FFC300;
+            font-size: 0.8rem;
         }
 
         .highlight {
             color: #fff;
-            font-weight: bold;
+            font-weight: 600;
         }
 
+        /* Credentials */
         .credentials-row {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
             margin: 2rem 0;
             gap: 2rem;
@@ -172,426 +328,401 @@
             text-align: center;
             margin: 1rem;
             min-width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .credential-item:hover {
+            transform: scale(1.05);
         }
 
         .credential-title {
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1.2rem;
+            font-weight: 600;
             color: #fff;
             display: block;
             margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .credential-detail {
-            font-size: 0.9rem;
-            color: #888;
-            line-height: 1.4;
-        }
-
-        .bio-section {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            max-width: 1200px;
-            width: 100%;
-            align-items: center;
-        }
-
-        .bio-image {
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #333, #666);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #fff;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .bio-content {
-            color: #ccc;
-            line-height: 1.8;
-        }
-
-        .bio-title {
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        /* Navigation */
-        .navigation {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-
-        .nav-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 8px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-dot:hover {
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-        }
-
-        .nav-dot.active {
-            background: #fff;
-            transform: scale(1.2);
+            font-size: 0.95rem;
+            color: #999;
+            line-height: 1.6;
         }
 
         /* Contact */
         .contact-item {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.5rem;
             cursor: pointer;
-            padding: 8px 12px;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            transition: background-color 0.2s ease;
-            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            margin: 0.5rem 0;
         }
 
         .contact-item:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .contact-link {
-            color: #ccc;
+            color: #FFC300;
             text-decoration: none;
-            flex: 1;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .contact-link:hover {
-            color: #fff;
+            color: #FFD84D;
         }
 
         .copy-icon {
-            width: 16px;
-            height: 16px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-            cursor: pointer;
-            color: #888;
+            font-size: 1rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
         }
 
         .contact-item:hover .copy-icon {
             opacity: 1;
-        }
-
-        .copy-icon:hover {
-            color: #fff;
+            transform: scale(1.1);
         }
 
         .copy-icon.copied {
-            color: #4CAF50;
-            opacity: 1;
+            animation: copyPulse 0.6s ease;
         }
 
-        .toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 6px;
-            z-index: 2000;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: all 0.3s ease;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #fff, #888);
-            z-index: 2000;
-            transition: width 0.1s ease;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 900px) {
-            .content-grid-4 {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                max-width: 600px;
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes copyPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .logo-text {
-                font-size: 2.5rem;
+            .nav-container {
+                right: 1rem;
             }
-            
-            .main-title, .section-title {
-                font-size: 2rem;
-            }
-            
+
             .slide {
-                padding: 1rem;
+                padding: 3rem 1.5rem;
             }
-            
+
             .content-grid-4 {
                 grid-template-columns: 1fr;
-                max-width: 100%;
-            }
-
-            .bio-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .bio-image {
-                margin: 0 auto;
+                gap: 1rem;
             }
 
             .content-card {
-                min-height: auto;
-                height: auto;
+                padding: 1.5rem;
+            }
+
+            .credentials-row {
+                gap: 1rem;
+            }
+
+            .credential-item {
+                min-width: 150px;
+                margin: 0.5rem;
+            }
+
+            .logo-circle {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                display: none;
+            }
+
+            .slide {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-container,
+            .scroll-progress,
+            .toast {
+                display: none;
+            }
+
+            .slide {
+                page-break-after: always;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Scroll progress indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Navigation -->
-    <div class="navigation">
-        <div class="nav-dot active" data-slide="0"></div>
-        <div class="nav-dot" data-slide="1"></div>
-        <div class="nav-dot" data-slide="2"></div>
-        <div class="nav-dot" data-slide="3"></div>
-        <div class="nav-dot" data-slide="4"></div>
-        <div class="nav-dot" data-slide="5"></div>
-        <div class="nav-dot" data-slide="6"></div>
-        <div class="nav-dot" data-slide="7"></div>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="progress-bar" id="scrollProgress"></div>
     </div>
 
-    <!-- Toast notification -->
-    <div id="toast" class="toast"></div>
+    <!-- Navigation Dots -->
+    <nav class="nav-container">
+        <div class="nav-dot active" title="Home"></div>
+        <div class="nav-dot" title="About"></div>
+        <div class="nav-dot" title="Services"></div>
+        <div class="nav-dot" title="Expertise"></div>
+        <div class="nav-dot" title="Credentials"></div>
+        <div class="nav-dot" title="Market Experience"></div>
+        <div class="nav-dot" title="Process"></div>
+        <div class="nav-dot" title="Contact"></div>
+    </nav>
 
-    <!-- Slide 1: Title -->
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Slide 1: Hero -->
     <section class="slide slide-1" id="slide-0">
-        <div class="logo-text">CONDUIT ASIA</div>
-        <div class="tagline">East-West Business Intelligence</div>
-        <div class="subtitle">
-            Cross-Cultural Brand Strategy Consultancy | 20+ Years Fortune 500 APAC Experience<br><br>
-            Helping premium brands bridge East-West markets through deep cultural intelligence and proven strategic frameworks that drive sustainable growth in Asia's most dynamic markets.
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="conduitasia-logo.png" alt="Conduit Asia Logo" style="width: 120px; height: 120px; border-radius: 50%;">
+            </div>
+        </div>
+        <h1 class="logo-text">Conduit Asia</h1>
+        <p class="tagline">Cross-Cultural Brand Strategy & Business Intelligence</p>
+        <p class="subtitle">
+            Boutique consultancy bridging East-West markets through authentic cultural intelligence and proven strategic expertise. 20+ years of Fortune 500 APAC experience transforming brands through deep cultural understanding and market mastery.
+        </p>
+    </section>
+
+    <!-- Slide 2: Founder -->
+    <section class="slide slide-2" id="slide-1">
+        <h2 class="main-title">Wei Kan, Founder & Principal Consultant</h2>
+        <div class="subtitle" style="max-width: 900px; margin-bottom: 3rem;">
+            Conduit Asia was founded by Wei Kan, former Nike/Converse marketing executive with hands-on P&L management experience across China, Korea, Japan, and Taiwan. We've successfully navigated economic downturns, cultural shifts, and competitive battles while building sustainable brand growth in the world's most dynamic markets.
         </div>
         <div class="credentials-row">
             <div class="credential-item">
-                <span class="credential-title">Conduit International</span>
-                <span class="credential-detail">Hong Kong Based • Asia Focused</span>
+                <span class="credential-title">Nike/Converse</span>
+                <span class="credential-detail">APAC Marketing Leadership<br>P&L Management</span>
             </div>
             <div class="credential-item">
-                <span class="credential-title">Cultural Intelligence</span>
-                <span class="credential-detail">China • Korea • Japan • Taiwan</span>
+                <span class="credential-title">20+ Years</span>
+                <span class="credential-detail">Asia-Pacific<br>Market Experience</span>
             </div>
             <div class="credential-item">
-                <span class="credential-title">Strategic Advisory</span>
-                <span class="credential-detail">Premium Brand Positioning</span>
+                <span class="credential-title">4 Markets</span>
+                <span class="credential-detail">China, Korea, Japan, Taiwan<br>Direct Leadership</span>
+            </div>
+            <div class="credential-item">
+                <span class="credential-title">Fortune 500</span>
+                <span class="credential-detail">Strategic Leadership<br>Proven Track Record</span>
+            </div>
+        </div>
+        <div class="content-card content-card-wide">
+            <div class="card-title">Why Cultural Intelligence Matters</div>
+            <div class="card-content">
+                Success in Asia requires more than translation—it demands authentic cultural adaptation, deep market understanding, and proven strategic execution. Our expertise comes from decades of real market battles, economic cycles, and cultural evolution, not theoretical frameworks.
+            </div>
+        </div>
+        <div class="content-card content-card-wide" style="margin-top: 1.5rem;">
+            <div class="card-title">Thought Leadership & Insights</div>
+            <div class="card-content" style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <span style="flex: 1; min-width: 300px;">
+                    Explore in-depth articles on cross-cultural brand strategy, Asian market intelligence, and cultural adaptation best practices on Medium.
+                </span>
+                <a href="https://medium.com/@wei.kan/" target="_blank" rel="noopener noreferrer" 
+                   style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; 
+                          background: rgba(255, 195, 0, 0.1); border: 1px solid #FFC300; border-radius: 6px; 
+                          color: #FFC300; text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+                          white-space: nowrap;"
+                   onmouseover="this.style.background='rgba(255, 195, 0, 0.2)'; this.style.transform='translateY(-2px)';"
+                   onmouseout="this.style.background='rgba(255, 195, 0, 0.1)'; this.style.transform='translateY(0)';">
+                    Read on Medium <span style="font-size: 1.2rem;">→</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Slide 2: About -->
-    <section class="slide slide-2" id="slide-1">
-        <div class="main-title">Bridging Cultures, Building Brands</div>
-        <div class="bio-section">
-            <div class="bio-image">CA</div>
-            <div class="bio-content">
-                <div class="bio-title">Founded on 20+ Years of APAC Market Leadership</div>
-                <p>Conduit Asia was founded by Wei Kan, former Nike/Converse marketing executive with hands-on P&L management experience across China, Korea, Japan, and Taiwan. We've successfully navigated economic downturns, cultural shifts, and competitive battles while building sustainable brand growth in the world's most dynamic markets.</p>
-                <br>
-                <p><strong>Why Cultural Intelligence Matters:</strong> Success in Asia requires more than translation—it demands authentic cultural adaptation, deep market understanding, and proven strategic execution. Our expertise comes from decades of real market battles, economic cycles, and cultural evolution, not theoretical frameworks.</p>
-                <br>
-                <p><strong>Boutique Consultancy Advantage:</strong> As a specialized consultancy focused on cross-cultural strategy, we provide unfiltered strategic guidance based on real experience, cultural authenticity, and proven market success without corporate politics or large agency limitations.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 3: Core Services -->
+    <!-- Slide 3: Services Overview -->
     <section class="slide slide-3" id="slide-2">
-        <div class="section-title">Strategic Consulting Services</div>
+        <h2 class="section-title">Strategic Consulting Services</h2>
         <div class="content-grid-4">
             <div class="content-card">
-                <div class="card-title">Market Entry Strategy</div>
-                <div class="card-subtitle">APAC Market Assessment & Planning</div>
+                <div class="card-title">Brand Strategy & Positioning</div>
+                <div class="card-subtitle">Cultural Adaptation & Market Entry</div>
                 <div class="card-content">
-                    <div class="list-item">Comprehensive market analysis based on 20+ years direct experience</div>
-                    <div class="list-item">Cultural adaptation frameworks without brand dilution</div>
-                    <div class="list-item">Consumer behavior assessment and cultural insight mapping</div>
-                    <div class="list-item">Risk evaluation and mitigation planning for sustainable entry</div>
-                    <div class="list-item">Competitive positioning strategy for cultural relevance</div>
+                    <div class="list-item">Cultural positioning strategy and authentic brand narrative development</div>
+                    <div class="list-item">Market entry planning and competitive differentiation frameworks</div>
+                    <div class="list-item">Brand architecture design for diverse Asian markets</div>
+                    <div class="list-item">Premium brand positioning and cultural resonance strategies</div>
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Cultural Risk Management</div>
-                <div class="card-subtitle">Crisis Prevention & Response</div>
+                <div class="card-title">Business Intelligence & Insights</div>
+                <div class="card-subtitle">Market Analysis & Consumer Understanding</div>
                 <div class="card-content">
-                    <div class="list-item">Cultural crisis response framework development</div>
-                    <div class="list-item">Stakeholder communication strategy for APAC markets</div>
-                    <div class="list-item">Reputation protection and cultural sensitivity protocols</div>
-                    <div class="list-item">Crisis escalation prevention and rapid response planning</div>
-                    <div class="list-item">Cultural pitfall identification and avoidance strategies</div>
+                    <div class="list-item">Deep consumer behavior analysis and cultural trend interpretation</div>
+                    <div class="list-item">Competitive landscape evaluation and strategic opportunity assessment</div>
+                    <div class="list-item">Market sizing, growth potential analysis, and entry barriers evaluation</div>
+                    <div class="list-item">Regional cultural nuances and market-specific consumer insights</div>
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Executive Advisory</div>
-                <div class="card-subtitle">Leadership & Strategic Guidance</div>
+                <div class="card-title">Go-to-Market Execution</div>
+                <div class="card-subtitle">Strategic Implementation & Guidance</div>
                 <div class="card-content">
-                    <div class="list-item">C-suite cultural intelligence development</div>
-                    <div class="list-item">Strategic advisory for APAC expansion planning</div>
-                    <div class="list-item">Board-level market guidance and strategy consultation</div>
-                    <div class="list-item">Executive coaching for Asian market leadership</div>
-                    <div class="list-item">Cultural decision-making frameworks and methodologies</div>
+                    <div class="list-item">Marketing strategy development and culturally adapted campaign planning</div>
+                    <div class="list-item">Channel strategy optimization and distribution partner evaluation</div>
+                    <div class="list-item">Launch planning and phased market entry strategic guidance</div>
+                    <div class="list-item">Team structure recommendations and capability building frameworks</div>
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Brand Transformation</div>
-                <div class="card-subtitle">Cultural Brand Positioning</div>
+                <div class="card-title">Performance & Growth</div>
+                <div class="card-subtitle">Strategic Optimization & Scaling</div>
                 <div class="card-content">
-                    <div class="list-item">Cross-cultural brand positioning and narrative development</div>
-                    <div class="list-item">Cultural consumer psychology insights and applications</div>
-                    <div class="list-item">Brand evolution strategy for performance-to-lifestyle transition</div>
-                    <div class="list-item">Authentic storytelling frameworks for Asian markets</div>
-                    <div class="list-item">Long-term brand growth planning and cultural integration</div>
+                    <div class="list-item">Business performance diagnostics and growth opportunity identification</div>
+                    <div class="list-item">Marketing effectiveness analysis and ROI optimization strategies</div>
+                    <div class="list-item">Cultural adaptation refinement and message resonance improvement</div>
+                    <div class="list-item">Sustainable growth frameworks and market expansion planning</div>
                 </div>
             </div>
         </div>
         <div class="content-card content-card-wide" style="margin-top: 2rem;">
-            <div class="card-title">Conduit Asia Advantage</div>
+            <div class="card-title">Boutique Consultancy Advantage</div>
             <div class="card-content">
-                <span class="highlight">Specialized Expertise:</span> Focused on cross-cultural brand strategy, not general consulting • 
-                <span class="highlight">Proven Frameworks:</span> Market-tested strategies based on real P&L management and measurable results • 
-                <span class="highlight">Cultural Authenticity:</span> Native market understanding from lived business experience across Asia-Pacific • 
-                <span class="highlight">Boutique Approach:</span> Direct partner engagement without layers of junior consultants
+                As a specialized consultancy focused on cross-cultural strategy, we provide unfiltered strategic guidance based on real experience, cultural authenticity, and proven market success without corporate politics or large agency limitations.
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: Experience Highlights -->
+    <!-- Slide 4: Core Expertise -->
     <section class="slide slide-4" id="slide-3">
-        <div class="section-title">Proven Market Experience</div>
+        <h2 class="section-title">Core Strategic Expertise</h2>
         <div class="content-grid-4">
             <div class="content-card">
-                <div class="card-title">Fortune 500 Leadership</div>
-                <div class="card-subtitle">Asia Market P&L Management</div>
+                <div class="card-title">Cultural Intelligence</div>
+                <div class="card-subtitle">Deep Understanding Beyond Translation</div>
                 <div class="card-content">
-                    Managed USD 500M+ annual P&L across multiple product categories and market segments. Led comprehensive brand strategy through economic downturns, competitive disruption, and rapid market evolution while maintaining sustainable growth and authentic brand positioning.
+                    <div class="list-item"><span class="highlight">Cultural Decoding:</span> Understanding subtle cultural signals, consumer motivations, and unspoken market dynamics that determine brand success or failure</div>
+                    <div class="list-item"><span class="highlight">Authentic Adaptation:</span> Moving beyond surface-level localization to create genuine cultural resonance and meaningful brand connections</div>
+                    <div class="list-item"><span class="highlight">Market Sensitivity:</span> Navigating cultural sensitivities, political dynamics, and social trends with strategic awareness and practical wisdom</div>
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Crisis & Volatility Navigation</div>
-                <div class="card-subtitle">Resilient Strategy Development</div>
+                <div class="card-title">Strategic Marketing</div>
+                <div class="card-subtitle">Integrated Brand Building</div>
                 <div class="card-content">
-                    Successfully navigated brands through SARS outbreak, multiple economic crises, trade disputes, and competitive battles. Developed resilient business strategies and crisis communication frameworks for uncertain market conditions and cultural sensitivities.
+                    <div class="list-item"><span class="highlight">360° Strategy:</span> Comprehensive marketing approach from positioning to execution, integrating traditional and digital touchpoints</div>
+                    <div class="list-item"><span class="highlight">Campaign Development:</span> Creative strategy and cultural storytelling that resonates authentically with diverse Asian audiences</div>
+                    <div class="list-item"><span class="highlight">Channel Optimization:</span> Strategic channel planning and partner ecosystem development for maximum market impact</div>
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Cultural Market Leadership</div>
-                <div class="card-subtitle">Authentic Local Adaptation</div>
+                <div class="card-title">Business Leadership</div>
+                <div class="card-subtitle">P&L Management & Growth</div>
                 <div class="card-content">
-                    Deep, native understanding of Greater China market dynamics, Korean cultural influence, and Japanese premium consumer psychology. Proven ability to adapt Western brands for Asian markets without losing core brand integrity or authentic positioning.
+                    <div class="list-item"><span class="highlight">Financial Accountability:</span> Direct P&L management experience building sustainable, profitable business growth in complex markets</div>
+                    <div class="list-item"><span class="highlight">Team Building:</span> Cross-cultural team leadership, talent development, and high-performance culture creation</div>
+                    <div class="list-item"><span class="highlight">Strategic Decision-Making:</span> Balancing short-term market pressures with long-term brand building and sustainable growth objectives</div>
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Digital Innovation Pioneer</div>
-                <div class="card-subtitle">Early Platform Development</div>
+                <div class="card-title">Market Navigation</div>
+                <div class="card-subtitle">Competitive & Operational Excellence</div>
                 <div class="card-content">
-                    Led digital marketing innovation in emerging Asian markets during early internet adoption phases. Pioneered platform development and UX optimization strategies that maintained cultural relevance while driving measurable business growth and consumer engagement.
+                    <div class="list-item"><span class="highlight">Competitive Strategy:</span> Market share battles, positioning warfare, and strategic differentiation in crowded competitive landscapes</div>
+                    <div class="list-item"><span class="highlight">Crisis Management:</span> Navigating market volatility, economic downturns, and unexpected cultural or political challenges</div>
+                    <div class="list-item"><span class="highlight">Partnership Building:</span> Distributor relationships, retail partnerships, and ecosystem development for market success</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 5: Strategic Approach -->
+    <!-- Slide 5: Professional Background -->
     <section class="slide slide-5" id="slide-4">
-        <div class="section-title">Strategic Methodology</div>
-        <div class="content-card content-card-wide" style="margin-bottom: 3rem;">
-            <div class="card-title">Conduit Framework</div>
-            <div class="card-content" style="text-align: center; font-size: 1rem; line-height: 1.8;">
-                <span class="highlight">Deep Market Intelligence</span> → <span class="highlight">Cultural Strategy Development</span> → <span class="highlight">Risk Assessment & Planning</span> → <span class="highlight">Implementation Excellence</span>
-            </div>
-        </div>
+        <h2 class="section-title">Professional Background & Credentials</h2>
         <div class="content-grid-4">
             <div class="content-card">
-                <div class="card-title">1. Market Intelligence Analysis</div>
+                <div class="card-title">Nike/Converse</div>
+                <div class="card-subtitle">APAC Marketing Leadership</div>
                 <div class="card-content">
-                    Comprehensive market assessment using 20+ years of direct regional experience. Deep-dive consumer behavior analysis, competitive landscape evaluation, and cultural insight development based on proven market understanding and lived business experience.
+                    Led brand marketing, consumer insights, and strategic planning across China, Korea, Japan, and Taiwan. Direct P&L accountability, team leadership, and strategic execution in the world's most competitive athletic footwear and apparel markets.
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">2. Cultural Strategy Framework</div>
+                <div class="card-title">Brand Building</div>
+                <div class="card-subtitle">Fortune 500 Experience</div>
                 <div class="card-content">
-                    Development of comprehensive cultural adaptation strategy that respects local nuances while maintaining global brand integrity. Strategic positioning that leverages cultural intelligence for authentic market connection and sustainable competitive advantage.
+                    Comprehensive brand strategy development, positioning framework creation, and integrated marketing execution for premium lifestyle brands. Experience spanning product launches, market expansion, and competitive repositioning initiatives.
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">3. Risk Assessment & Mitigation</div>
+                <div class="card-title">Market Leadership</div>
+                <div class="card-subtitle">P&L & Team Management</div>
                 <div class="card-content">
-                    Identification of potential cultural and market pitfalls based on direct experience with both successes and failures. Development of comprehensive risk mitigation strategies and contingency planning for sustainable market growth and protection.
+                    Direct profit and loss responsibility managing multi-million dollar budgets, cross-functional teams, and strategic partnerships. Experience building high-performance teams and driving sustainable business growth in dynamic markets.
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">4. Implementation Excellence</div>
+                <div class="card-title">Cultural Expertise</div>
+                <div class="card-subtitle">Asia-Pacific Market Mastery</div>
                 <div class="card-content">
-                    Practical implementation roadmaps based on actual market experience and proven execution frameworks. Strategic guidance with realistic timelines, performance measurement systems, and continuous optimization based on market feedback and cultural insights.
+                    20+ years living and working across APAC markets, with deep cultural fluency in Chinese business environments and practical understanding of Korean, Japanese, and Taiwanese market dynamics. Native Mandarin speaker, fluent English.
                 </div>
             </div>
         </div>
         <div class="content-card content-card-wide" style="margin-top: 2rem;">
-            <div class="card-title">Core Strategic Principles</div>
+            <div class="card-title">Proven Track Record</div>
             <div class="card-content">
-                <span class="highlight">Experience Over Theory:</span> Market-tested strategies based on 20+ years of direct P&L management rather than academic frameworks • 
-                <span class="highlight">Cultural Intelligence:</span> Native market understanding developed through lived business experience, not theoretical cultural studies • 
-                <span class="highlight">Honest Assessment:</span> Unfiltered insights and recommendations without corporate politics or consultant optimism • 
-                <span class="highlight">Sustainable Growth:</span> Long-term brand building and market development over short-term tactical wins
+                <span class="highlight">Market Performance:</span> Successfully launched multiple product lines and marketing campaigns driving significant revenue growth and market share gains • 
+                <span class="highlight">Brand Transformation:</span> Led brand repositioning initiatives that strengthened cultural relevance and competitive differentiation • 
+                <span class="highlight">Team Development:</span> Built and mentored high-performing marketing teams across multiple markets, developing future leaders and strategic capabilities • 
+                <span class="highlight">Cultural Navigation:</span> Successfully managed brands through cultural sensitivities, political challenges, and rapidly evolving consumer landscapes
             </div>
         </div>
     </section>
 
-    <!-- Slide 6: Market Expertise -->
+    <!-- Slide 6: Market Experience -->
     <section class="slide slide-6" id="slide-5">
-        <div class="section-title">APAC Market Intelligence</div>
+        <h2 class="section-title">Market-Specific Experience & Cultural Intelligence</h2>
         <div class="content-grid-4">
             <div class="content-card">
                 <div class="card-title">Greater China Market</div>
-                <div class="card-subtitle">15+ Years Direct Leadership</div>
+                <div class="card-subtitle">Multi-Decade Strategic Leadership</div>
                 <div class="card-content">
-                    Managed brands through China's transformation from manufacturing economy to consumption powerhouse. Deep understanding of consumer behavior evolution, regulatory landscape changes, cultural shifts, and their impact on international brand strategy and market positioning.
+                    Deep expertise in China's unique digital ecosystem, consumer behavior, and cultural dynamics. Experience with both tier-1 mega-cities and emerging market complexities. Understanding of regulatory environment, competitive landscape, and authentic brand building approaches.
                 </div>
             </div>
             <div class="content-card">
-                <div class="card-title">Korea Cultural Influence</div>
-                <div class="card-subtitle">K-Culture & Regional Trends</div>
+                <div class="card-title">Taiwan Market</div>
+                <div class="card-subtitle">Cultural Depth & Consumer Insight</div>
+                <div class="card-content">
+                    Native cultural understanding and consumer behavior expertise. Strategic insights into Taiwan's sophisticated market dynamics, unique consumer preferences, and regional competitive positioning. Bridges Greater China perspectives with distinct local market characteristics.
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="card-title">Korea Market</div>
+                <div class="card-subtitle">Trend Leadership & Cultural Innovation</div>
                 <div class="card-content">
                     Strategic understanding of Korea's outsized influence on Asian pop culture, consumer trends, and regional market dynamics. Experience in leveraging Korean cultural elements and innovation for broader Asian market applications and authentic brand storytelling.
                 </div>
@@ -624,7 +755,7 @@
 
     <!-- Slide 7: Engagement Process -->
     <section class="slide slide-7" id="slide-6">
-        <div class="section-title">Strategic Engagement Process</div>
+        <h2 class="section-title">Strategic Engagement Process</h2>
         <div class="content-grid-4">
             <div class="content-card">
                 <div class="card-title">1. Strategic Assessment</div>
@@ -665,11 +796,11 @@
 
     <!-- Slide 8: Contact -->
     <section class="slide slide-8" id="slide-7">
-        <div class="section-title">Strategic Partnership Inquiry</div>
-        <div class="subtitle" style="max-width: 600px; margin-bottom: 3rem; text-align: center;">
+        <h2 class="section-title">Strategic Partnership Inquiry</h2>
+        <div class="subtitle" style="max-width: 700px; margin-bottom: 3rem; text-align: center;">
             Ready to bridge East-West markets with proven cultural intelligence? Let's discuss your brand's APAC opportunities and strategic challenges.
         </div>
-        <div class="content-card content-card-wide" style="max-width: 600px;">
+        <div class="content-card content-card-wide" style="max-width: 700px;">
             <div class="card-title">Conduit Asia</div>
             <div class="card-subtitle">Cross-Cultural Brand Strategy Consultancy</div>
             <div class="card-content">
@@ -681,6 +812,12 @@
                     <span class="copy-icon">📋</span>
                 </div>
                 <br>
+                <strong>Insights & Thought Leadership:</strong><br>
+                <div class="contact-item">
+                    <a href="https://medium.com/@wei.kan/" target="_blank" rel="noopener noreferrer" class="contact-link">Medium - Cultural Intelligence & Brand Strategy Articles</a>
+                    <span class="copy-icon">📝</span>
+                </div>
+                <br>
                 <strong>Legal Entity:</strong> Conduit International Limited (Hong Kong)<br>
                 <strong>Practice Focus:</strong> Selective partnerships with premium brands<br>
                 <strong>Geographic Expertise:</strong> China, Korea, Japan, Taiwan, APAC region<br>
@@ -690,7 +827,7 @@
                 <strong>Response Commitment:</strong> All serious strategic inquiries answered within 24 hours. Initial consultations scheduled based on project scope and strategic alignment.
             </div>
         </div>
-        <div class="subtitle" style="margin-top: 2rem; font-style: italic;">
+        <div class="subtitle" style="margin-top: 3rem; font-style: italic; opacity: 0.9;">
             "We don't just translate brands—we build authentic cultural bridges that create sustainable market success. That's the Conduit difference."
         </div>
     </section>
