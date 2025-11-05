@@ -199,34 +199,18 @@
             line-height: 1.4;
         }
 
-        .bio-section {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            max-width: 1200px;
-            width: 100%;
-            align-items: center;
-        }
-
-        .bio-image {
-            /* 原本的 inline style 已移至此處 */
-            width: 300px;
-            height: 300px;
-            border-radius: 15px;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .bio-content {
+        .bio-content-full {
+            max-width: 900px;
             color: #ccc;
             line-height: 1.8;
+            text-align: left;
         }
 
         .bio-title {
             font-size: 2rem;
             color: #fff;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         /* Navigation */
@@ -338,7 +322,6 @@
             transition: width 0.1s ease;
         }
 
-        /* 從 inline 移出的樣式 */
         .logo-container {
             margin-bottom: 2rem;
         }
@@ -413,18 +396,13 @@
                 max-width: 100%;
             }
 
-            .bio-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .bio-image {
-                margin: 0 auto 2rem auto; /* 在 mobile 上增加一點下邊距 */
-            }
-
             .content-card {
                 min-height: auto;
                 height: auto;
+            }
+
+            .navigation {
+                display: none;
             }
         }
     </style>
@@ -446,9 +424,6 @@
     <div id="toast" class="toast"></div>
 
     <section class="slide slide-1" id="slide-0">
-        <div class="logo-container">
-            <img src="logo.png" alt="Conduit Asia Logo">
-        </div>
         <div class="logo-text">CONDUIT ASIA</div>
         <div class="tagline">East-West Business Intelligence</div>
         <div class="subtitle">
@@ -473,18 +448,15 @@
 
     <section class="slide slide-2" id="slide-1">
         <div class="main-title">Bridging Cultures, Building Brands</div>
-        <div class="bio-section">
-            <img src="wei-kan-photo.jpg" alt="Wei Kan" class="bio-image">
-            <div class="bio-content">
-                <div class="bio-title">Founded on 20+ Years of APAC Market Leadership</div>
-                <p>Conduit Asia was founded by Wei Kan, former Nike/Converse marketing executive with hands-on P&L management experience across China, Korea, Japan, and Taiwan. We've successfully navigated economic downturns, cultural shifts, and competitive battles while building sustainable brand growth in the world's most dynamic markets.</p>
-                <br>
-                <p><strong>Why Cultural Intelligence Matters:</strong> Success in Asia requires more than translation—it demands authentic cultural adaptation, deep market understanding, and proven strategic execution. Our expertise comes from decades of real market battles, economic cycles, and cultural evolution, not theoretical frameworks.</p>
-                <br>
-                <p><strong>Boutique Consultancy Advantage:</strong> As a specialized consultancy focused on cross-cultural strategy, we provide unfiltered strategic guidance based on real experience, cultural authenticity, and proven market success without corporate politics or large agency limitations.</p>
-                <br>
-                <p><strong>Thought Leadership:</strong> Explore in-depth articles on cross-cultural brand strategy, Asian market intelligence, and cultural adaptation best practices on <a href="https://medium.com/@wei.kan/" target="_blank" rel="noopener noreferrer" class="link-highlight">Medium</a>.</p>
-            </div>
+        <div class="bio-content-full">
+            <div class="bio-title">Founded on 20+ Years of APAC Market Leadership</div>
+            <p>Conduit Asia was founded by Wei Kan, former Nike/Converse marketing executive with hands-on P&L management experience across China, Korea, Japan, and Taiwan. We've successfully navigated economic downturns, cultural shifts, and competitive battles while building sustainable brand growth in the world's most dynamic markets.</p>
+            <br>
+            <p><strong>Why Cultural Intelligence Matters:</strong> Success in Asia requires more than translation—it demands authentic cultural adaptation, deep market understanding, and proven strategic execution. Our expertise comes from decades of real market battles, economic cycles, and cultural evolution, not theoretical frameworks.</p>
+            <br>
+            <p><strong>Boutique Consultancy Advantage:</strong> As a specialized consultancy focused on cross-cultural strategy, we provide unfiltered strategic guidance based on real experience, cultural authenticity, and proven market success without corporate politics or large agency limitations.</p>
+            <br>
+            <p><strong>Thought Leadership:</strong> Explore in-depth articles on cross-cultural brand strategy, Asian market intelligence, and cultural adaptation best practices on <a href="https://medium.com/@wei.kan/" target="_blank" rel="noopener noreferrer" class="link-highlight">Medium</a>.</p>
         </div>
     </section>
 
@@ -729,7 +701,6 @@
                 <strong>Insights & Thought Leadership:</strong><br>
                 <div class="contact-item">
                     <a href="https://medium.com/@wei.kan/" target="_blank" rel="noopener noreferrer" class="contact-link">Medium - Cultural Intelligence & Brand Strategy Articles</a>
-                    <span class="copy-icon">📝</span>
                 </div>
                 <br>
                 <strong>Legal Entity:</strong> Conduit International Limited (Hong Kong)<br>
