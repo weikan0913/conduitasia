@@ -5,377 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conduit Asia</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             background: #000;
             color: #fff;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
-        
-        .slide {
-            min-height: 100vh;
-            padding: 60px 20px;
-            max-width: 1200px;
+
+        .container {
+            max-width: 800px;
             margin: 0 auto;
-        }
-        
-        h1 {
-            font-size: 48px;
-            text-align: center;
-            color: #fff;
-            margin: 40px 0 20px 0;
-        }
-        
-        h2 {
-            font-size: 36px;
-            text-align: center;
-            color: #fff;
-            margin: 40px 0;
-        }
-        
-        h3 {
-            font-size: 24px;
-            color: #fff;
-            margin: 20px 0 10px 0;
-        }
-        
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #ccc;
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .tagline {
-            font-size: 24px;
-            color: #aaa;
-            text-align: center;
-        }
-        
-        .credentials-bar {
+            padding: 0 40px;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 60px;
-            margin: 60px 0;
-            flex-wrap: wrap;
         }
-        
-        .credential {
-            text-align: center;
-        }
-        
-        .credential-number {
-            font-size: 48px;
-            font-weight: bold;
-            color: #fff;
-            display: block;
-        }
-        
-        .credential-label {
+
+        .logo {
             font-size: 14px;
-            color: #888;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            display: block;
+            margin-bottom: 80px;
+            opacity: 0.5;
         }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+
+        h1 {
+            font-size: 56px;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 40px;
+            line-height: 1.2;
         }
-        
-        .service-card {
-            background: #222;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #333;
-        }
-        
-        .service-card:hover {
-            background: #333;
-            border-color: #555;
-        }
-        
-        .service-subtitle {
-            color: #888;
-            font-style: italic;
-            margin: 10px 0;
-        }
-        
-        .service-points {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        
-        .service-points li {
-            padding: 8px 0;
-            color: #ccc;
-        }
-        
-        .service-points li:before {
-            content: "→ ";
-            color: #888;
-        }
-        
-        .process-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin: 60px 0;
-        }
-        
-        .process-step {
-            text-align: center;
-        }
-        
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: #fff;
-            color: #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-        
-        .process-title {
+
+        .tagline {
             font-size: 20px;
-            color: #fff;
-            margin: 10px 0;
-        }
-        
-        .process-desc {
             color: #888;
+            margin-bottom: 60px;
+            font-weight: 300;
         }
-        
-        .contact-box {
-            max-width: 600px;
-            margin: 60px auto;
-            padding: 40px;
-            background: #222;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-        
-        .contact-name {
-            font-size: 32px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        
-        .contact-title {
+
+        .description {
             font-size: 18px;
-            color: #888;
-            margin-bottom: 30px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
-        
-        .contact-email {
-            display: inline-block;
-            font-size: 20px;
-            color: #000;
-            background: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-        
-        .contact-email:hover {
-            background: #ddd;
-        }
-        
-        .contact-info {
-            color: #888;
-            margin-top: 30px;
-        }
-        
-        .contact-info strong {
-            color: #fff;
-        }
-        
-        .highlight-box {
-            background: #222;
-            border-left: 4px solid #fff;
-            padding: 30px;
-            margin: 30px 0;
-        }
-        
+
         .highlight {
             color: #fff;
-            font-weight: bold;
+        }
+
+        .contact {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .email {
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .email:hover {
+            opacity: 0.6;
+        }
+
+        .footer {
+            margin-top: 100px;
+            padding-bottom: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 30px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .email {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
-
-<!-- Slide 1: Hero -->
-<div class="slide">
-    <h1>CONDUIT ASIA</h1>
-    <p class="tagline">East-West Business Intelligence</p>
-    <p>
-        We help premium brands win in Asia through cultural intelligence, not translation.<br>
-        20+ years Fortune 500 experience. Real P&L management. Actual results.
-    </p>
-    <div class="credentials-bar">
-        <div class="credential">
-            <span class="credential-number">20+</span>
-            <span class="credential-label">Years Experience</span>
-        </div>
-        <div class="credential">
-            <span class="credential-number">4</span>
-            <span class="credential-label">Core Markets</span>
-        </div>
-        <div class="credential">
-            <span class="credential-number">500</span>
-            <span class="credential-label">Fortune 500 Scale</span>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 2: About & Services -->
-<div class="slide">
-    <h2>Experience Meets Intelligence</h2>
-    
-    <p>
-        <span class="highlight">Founded by Wei Kan</span>, former Nike/Converse APAC executive who transformed regional business performance. 
-        We've navigated economic downturns, cultural shifts, and competitive battles while building sustainable growth.
-    </p>
-    
-    <div class="highlight-box">
-        <p>
-            Success in Asia requires more than translation—it demands <span class="highlight">authentic cultural adaptation</span> backed by real market experience. 
-            We bridge this gap with proven frameworks from decades of actual P&L management.
+    <div class="container">
+        <div class="logo">Conduit Asia</div>
+        
+        <h1>East-West<br>Business Intelligence</h1>
+        
+        <p class="tagline">Cultural strategy for premium brands in Asia</p>
+        
+        <p class="description">
+            We help international brands succeed in Asia through <span class="highlight">cultural intelligence</span>, 
+            not translation. Founded by <span class="highlight">Wei Kan</span>, former Nike and Converse APAC executive 
+            with 20+ years of Fortune 500 leadership experience.
         </p>
-    </div>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <h3>Market Entry</h3>
-            <p class="service-subtitle">90-Day Strategic Blueprint</p>
-            <ul class="service-points">
-                <li>Cultural adaptation frameworks</li>
-                <li>Risk assessment from experience</li>
-                <li>Competitive positioning</li>
-            </ul>
-        </div>
-
-        <div class="service-card">
-            <h3>Crisis Management</h3>
-            <p class="service-subtitle">Protect Your Investment</p>
-            <ul class="service-points">
-                <li>Cultural crisis prevention</li>
-                <li>Rapid response protocols</li>
-                <li>Reputation protection</li>
-            </ul>
-        </div>
-
-        <div class="service-card">
-            <h3>Executive Advisory</h3>
-            <p class="service-subtitle">C-Suite Direct</p>
-            <ul class="service-points">
-                <li>Board-level guidance</li>
-                <li>Cultural intelligence</li>
-                <li>APAC leadership coaching</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 3: Approach & Markets -->
-<div class="slide">
-    <h2>Proven Methodology</h2>
-    
-    <div class="process-flow">
-        <div class="process-step">
-            <div class="process-number">1</div>
-            <h3 class="process-title">Intelligence</h3>
-            <p class="process-desc">Market assessment from 20+ years experience</p>
-        </div>
-        <div class="process-step">
-            <div class="process-number">2</div>
-            <h3 class="process-title">Strategy</h3>
-            <p class="process-desc">Cultural adaptation with brand integrity</p>
-        </div>
-        <div class="process-step">
-            <div class="process-number">3</div>
-            <h3 class="process-title">Mitigation</h3>
-            <p class="process-desc">Identify pitfalls before they happen</p>
-        </div>
-        <div class="process-step">
-            <div class="process-number">4</div>
-            <h3 class="process-title">Execution</h3>
-            <p class="process-desc">Practical roadmaps that deliver results</p>
-        </div>
-    </div>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <h3>Greater China</h3>
-            <ul class="service-points">
-                <li>15+ years direct leadership</li>
-                <li>Managed through transformation</li>
-                <li>Deep regulatory understanding</li>
-            </ul>
-        </div>
-
-        <div class="service-card">
-            <h3>Korea & Japan</h3>
-            <ul class="service-points">
-                <li>K-culture influence leverage</li>
-                <li>Premium market psychology</li>
-                <li>Long-term relationship building</li>
-            </ul>
-        </div>
-
-        <div class="service-card">
-            <h3>Cross-Cultural Bridge</h3>
-            <ul class="service-points">
-                <li>Western methodology + Eastern wisdom</li>
-                <li>Lived experience, not theory</li>
-                <li>Navigate what others miss</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 4: Contact -->
-<div class="slide">
-    <h2>Let's Build Your Asia Success</h2>
-    
-    <p>
-        Ready to transform your brand's Asia strategy?<br>
-        Let's discuss how cultural intelligence can drive your growth.
-    </p>
-
-    <div class="contact-box">
-        <div class="contact-name">Wei Kan</div>
-        <div class="contact-title">Founder & Principal Consultant</div>
         
-        <a href="mailto:wei.kan@conduitasia.com" class="contact-email">
-            wei.kan@conduitasia.com
-        </a>
-        
-        <div class="contact-info">
-            <p><strong>Hong Kong | Shanghai | Serving APAC</strong></p>
-            <p>Former Nike/Converse APAC Executive</p>
-            <p>20+ Years Cross-Cultural Business Leadership</p>
+        <p class="description">
+            Specializing in market entry strategy, brand localization, and executive advisory 
+            for companies navigating Greater China, Korea, Japan, and Southeast Asia.
+        </p>
+
+        <div class="contact">
+            <div class="contact-label">Get in Touch</div>
+            <a href="mailto:wei.kan@conduitasia.com" class="email">wei.kan@conduitasia.com</a>
+        </div>
+
+        <div class="footer">
+            Hong Kong · Shanghai · Serving APAC
         </div>
     </div>
-
-    <p style="font-style: italic; margin-top: 40px;">
-        "Not translation. Transformation."
-    </p>
-</div>
-
 </body>
 </html>
