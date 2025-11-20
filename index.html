@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conduit Asia - Cross-Cultural Brand Strategy & Business Intelligence</title>
-    <meta name="description" content="Boutique brand consultancy bridging East-West markets. 20+ years Fortune 500 APAC experience. Expert in cultural intelligence and premium brand strategy.">
-    <meta name="keywords" content="brand strategy consultant, Asia Pacific markets, cultural intelligence, consumer insights, China market expert, cross-cultural consulting, Conduit Asia">
+    <title>Conduit Asia | Strategic Cultural Intelligence</title>
+    <meta name="description" content="Strategic cross-cultural consulting for Fortune 500 leaders. Managing $500M-$1B scale complexities in APAC markets.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
+        /* --- 1. CORE VARIABLES & RESET --- */
+        :root {
+            --bg-color: #050505;
+            --bg-secondary: #0f0f0f;
+            --text-main: #F2F2F2;
+            --text-muted: #888888;
+            --accent-gold: #C6A87C; /* Muted Gold/Bronze for luxury feel */
+            --border-light: rgba(255, 255, 255, 0.1);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -19,536 +34,507 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
             line-height: 1.6;
-            color: #fff;
-            background: #000;
+            font-weight: 300;
             overflow-x: hidden;
         }
 
-        .slide {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 3rem 2rem;
-            position: relative;
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
-        }
-
-        /* Typography */
-        .hero-title {
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #999);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 3px;
-            text-align: center;
-        }
-
-        .tagline {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+        /* --- 2. TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 400;
             color: #fff;
-            font-weight: 300;
-            text-align: center;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #aaa;
-            max-width: 700px;
-            text-align: center;
-            line-height: 1.8;
-            margin-bottom: 3rem;
+        .display-text {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .display-text em {
+            font-family: var(--font-heading);
+            font-style: italic;
+            color: var(--accent-gold);
         }
 
         .section-title {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        /* Credentials Bar */
-        .credentials-bar {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .credential {
-            text-align: center;
-        }
-
-        .credential-number {
             font-size: 2.5rem;
-            font-weight: bold;
-            color: #fff;
-            display: block;
+            margin-bottom: 1rem;
         }
 
-        .credential-label {
-            font-size: 0.9rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .lead-text {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
         }
 
-        /* Cards Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        a {
+            text-decoration: none;
+            color: inherit;
             transition: all 0.3s ease;
         }
 
-        .service-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.8rem;
-            color: #fff;
-        }
-
-        .service-subtitle {
-            font-size: 1rem;
-            color: #888;
-            margin-bottom: 1.2rem;
-        }
-
-        .service-points {
-            list-style: none;
-        }
-
-        .service-points li {
-            padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: 0.6rem;
-            color: #ccc;
-            font-size: 0.95rem;
-        }
-
-        .service-points li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #fff;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 900px;
-            text-align: center;
+        /* --- 3. UTILITIES & COMPONENTS --- */
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 2rem;
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            background: transparent;
+            cursor: pointer;
         }
 
-        .highlight-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--bg-color);
         }
 
-        .highlight {
-            color: #fff;
+        .btn-gold {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 4. NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-gold);
+        }
+
+        /* --- 5. HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            /* Subtle texture background */
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 70%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
             font-weight: 600;
         }
 
-        /* Process Flow */
-        .process-flow {
+        .hero-stats {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 3rem auto;
-            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
         }
 
-        .process-step {
-            text-align: center;
-            flex: 1;
-            min-width: 180px;
-        }
-
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
+        .stat-item p {
+            font-family: var(--font-heading);
             font-size: 1.5rem;
-            font-weight: bold;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .process-title {
-            font-size: 1.2rem;
             color: #fff;
-            margin-bottom: 0.5rem;
         }
 
-        .process-desc {
-            font-size: 0.9rem;
-            color: #888;
+        .stat-item span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
         }
 
-        /* Contact Section */
-        .contact-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3rem;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: 0 auto;
+        /* --- 6. CREDIBILITY STRIP --- */
+        .credibility {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .logo-wall {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.4;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .client-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        /* --- 7. SERVICES (THE EXPERTISE) --- */
+        .services {
+            padding: 8rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px; /* For border effect */
+            background: var(--border-light); /* Creates the grid lines */
+            border: 1px solid var(--border-light);
+        }
+
+        .service-card {
+            background: var(--bg-color);
+            padding: 3rem 2.5rem;
+            transition: background 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            background: #0A0A0A;
+        }
+
+        .service-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .service-link {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 3px;
+        }
+
+        /* --- 8. ABOUT / FOUNDER --- */
+        .founder {
+            padding: 6rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founder-content h2 {
+            margin-bottom: 2rem;
+        }
+
+        .founder-content p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .quote-box {
+            border-left: 2px solid var(--accent-gold);
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .quote-box p {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        /* --- 9. CTA / FOOTER --- */
+        .cta-section {
+            padding: 8rem 0;
             text-align: center;
         }
 
-        .contact-name {
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
+        .cta-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .contact-title {
-            font-size: 1.1rem;
-            color: #888;
-            margin-bottom: 2rem;
+        footer {
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0;
+            text-align: center;
+            color: #555;
+            font-size: 0.8rem;
         }
 
-        .contact-email {
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.3rem;
-            padding: 1rem 2rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-
-        .contact-email:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #fff;
-        }
-
-        .contact-info {
-            color: #888;
-            font-size: 0.95rem;
-        }
-
-        /* Navigation */
-        .navigation {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-
-        .nav-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 10px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-dot:hover {
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(1.2);
-        }
-
-        .nav-dot.active {
-            background: #fff;
-            transform: scale(1.3);
-        }
-
-        /* Responsive */
-        .logo-container {
-            margin-bottom: 2rem;
-        }
-
-        .logo-img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-
-            .logo-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 1.3rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .navigation {
-                display: none;
-            }
-
-            .process-flow {
-                flex-direction: column;
-            }
+            .display-text { font-size: 3rem; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .nav-links { display: none; } /* Simple hide for this snippet */
+            .founder-grid { grid-template-columns: 1fr; }
+            .cta-title { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <div class="navigation">
-        <div class="nav-dot active" data-slide="0"></div>
-        <div class="nav-dot" data-slide="1"></div>
-        <div class="nav-dot" data-slide="2"></div>
-        <div class="nav-dot" data-slide="3"></div>
-    </div>
 
-    <!-- Slide 1: Hero -->
-    <section class="slide" id="slide-0">
-        <div class="logo-container">
-            <img src="logo.png" alt="Conduit Asia Logo" class="logo-img">
-        </div>
-        <h1 class="hero-title">CONDUIT ASIA</h1>
-        <p class="tagline">East-West Business Intelligence</p>
-        <p class="subtitle">
-            We help premium brands win in Asia through cultural intelligence, not translation.<br>
-            20+ years Fortune 500 experience. Real P&L management. Actual results.
-        </p>
-        <div class="credentials-bar">
-            <div class="credential">
-                <span class="credential-number">20+</span>
-                <span class="credential-label">Years Experience</span>
-            </div>
-            <div class="credential">
-                <span class="credential-number">4</span>
-                <span class="credential-label">Core Markets</span>
-            </div>
-            <div class="credential">
-                <span class="credential-number">500</span>
-                <span class="credential-label">Fortune 500 Scale</span>
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="logo">CONDUIT ASIA.</div>
+            <div class="nav-links">
+                <a href="#expertise">Expertise</a>
+                <a href="#founder">About</a>
+                <a href="#contact" class="btn btn-gold" style="padding: 0.5rem 1.5rem; border: 1px solid var(--accent-gold);">Book Briefing</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- Slide 2: About & Services -->
-    <section class="slide" id="slide-1">
-        <h2 class="section-title">Experience Meets Intelligence</h2>
-        
-        <div class="about-content">
-            <p class="about-text">
-                <span class="highlight">Founded by Wei Kan</span>, former Nike/Converse APAC executive who transformed regional business performance. 
-                We've navigated economic downturns, cultural shifts, and competitive battles while building sustainable growth.
+    <section class="hero">
+        <div class="container hero-content reveal">
+            <span class="eyebrow">Executive Strategic Consultancy</span>
+            <h1 class="display-text">
+                Bridging the Gap Between <br>
+                <em>Western Strategy</em> and <br>
+                <em>Eastern Reality.</em>
+            </h1>
+            <p class="lead-text">
+                We help premium brands navigate the complexity of Asian markets. 
+                Cultural intelligence backed by real-world operational experience.
             </p>
             
-            <div class="highlight-box">
-                <p class="about-text">
-                    Success in Asia requires more than translation—it demands <span class="highlight">authentic cultural adaptation</span> backed by real market experience. 
-                    We bridge this gap with proven frameworks from decades of actual P&L management.
+            <div style="margin-top: 3rem;">
+                <a href="#contact" class="btn btn-gold">Executive Briefing</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <p>$500M - $1B</p>
+                    <span>P&L & Project Scope Managed</span>
+                </div>
+                <div class="stat-item">
+                    <p>20+ Years</p>
+                    <span>Fortune 500 Leadership</span>
+                </div>
+                <div class="stat-item">
+                    <p>4 Key Markets</p>
+                    <span>Greater China, Korea, Japan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="credibility">
+        <div class="container">
+            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.8rem; letter-spacing: 2px; color: #555; text-transform: uppercase;">Trusted expertise built at</p>
+            <div class="logo-wall reveal">
+                <span class="client-text">Nike</span>
+                <span class="client-text">Converse</span>
+                <span class="client-text">Fortune 500 Clients</span>
+                <span class="client-text">Global Retailers</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="expertise">
+        <div class="container">
+            <div class="section-header reveal">
+                <div>
+                    <span class="eyebrow">Core Expertise</span>
+                    <h2 class="section-title">Strategic Interventions</h2>
+                </div>
+                <p class="lead-text" style="font-size: 1rem;">
+                    We don't just deliver slides. We provide execution frameworks based on decades of managing P&L in the region.
                 </p>
             </div>
-        </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <h3 class="service-title">Market Entry</h3>
-                <p class="service-subtitle">90-Day Strategic Blueprint</p>
-                <ul class="service-points">
-                    <li>Cultural adaptation frameworks</li>
-                    <li>Risk assessment from experience</li>
-                    <li>Competitive positioning</li>
-                </ul>
-            </div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-icon">01</div>
+                    <h3>Cultural Intelligence & Strategy</h3>
+                    <p>Moving beyond translation to authentic cultural resonance. Positioning your brand to win the hearts of sophisticated Asian consumers.</p>
+                    <a href="#" class="service-link">Explore Framework</a>
+                </div>
 
-            <div class="service-card">
-                <h3 class="service-title">Crisis Management</h3>
-                <p class="service-subtitle">Protect Your Investment</p>
-                <ul class="service-points">
-                    <li>Cultural crisis prevention</li>
-                    <li>Rapid response protocols</li>
-                    <li>Reputation protection</li>
-                </ul>
-            </div>
+                <div class="service-card">
+                    <div class="service-icon">02</div>
+                    <h3>Market Entry & Expansion</h3>
+                    <p>Risk-mitigated go-to-market strategies. We build the roadmap from entry to scale, navigating regulatory and competitive hurdles.</p>
+                    <a href="#" class="service-link">View Methodology</a>
+                </div>
 
-            <div class="service-card">
-                <h3 class="service-title">Executive Advisory</h3>
-                <p class="service-subtitle">C-Suite Direct</p>
-                <ul class="service-points">
-                    <li>Board-level guidance</li>
-                    <li>Cultural intelligence</li>
-                    <li>APAC leadership coaching</li>
-                </ul>
+                <div class="service-card">
+                    <div class="service-icon">03</div>
+                    <h3>Brand Positioning</h3>
+                    <p>Defining your premium edge in saturated markets. Aligning global brand DNA with local market expectations.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">04</div>
+                    <h3>Executive Advisory</h3>
+                    <p>Confidential sounding board for C-Suite leaders managing APAC portfolios. Coaching on cultural nuances and leadership dynamics.</p>
+                    <a href="#" class="service-link">Advisory Details</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 3: Approach & Markets -->
-    <section class="slide" id="slide-2">
-        <h2 class="section-title">Proven Methodology</h2>
-        
-        <div class="process-flow">
-            <div class="process-step">
-                <div class="process-number">1</div>
-                <h3 class="process-title">Intelligence</h3>
-                <p class="process-desc">Market assessment from 20+ years experience</p>
-            </div>
-            <div class="process-step">
-                <div class="process-number">2</div>
-                <h3 class="process-title">Strategy</h3>
-                <p class="process-desc">Cultural adaptation with brand integrity</p>
-            </div>
-            <div class="process-step">
-                <div class="process-number">3</div>
-                <h3 class="process-title">Mitigation</h3>
-                <p class="process-desc">Identify pitfalls before they happen</p>
-            </div>
-            <div class="process-step">
-                <div class="process-number">4</div>
-                <h3 class="process-title">Execution</h3>
-                <p class="process-desc">Practical roadmaps that deliver results</p>
-            </div>
-        </div>
-
-        <div class="services-grid" style="margin-top: 4rem;">
-            <div class="service-card">
-                <h3 class="service-title">Greater China</h3>
-                <ul class="service-points">
-                    <li>15+ years direct leadership</li>
-                    <li>Managed through transformation</li>
-                    <li>Deep regulatory understanding</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3 class="service-title">Korea & Japan</h3>
-                <ul class="service-points">
-                    <li>K-culture influence leverage</li>
-                    <li>Premium market psychology</li>
-                    <li>Long-term relationship building</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3 class="service-title">Cross-Cultural Bridge</h3>
-                <ul class="service-points">
-                    <li>Western methodology + Eastern wisdom</li>
-                    <li>Lived experience, not theory</li>
-                    <li>Navigate what others miss</li>
-                </ul>
+    <section class="founder" id="founder">
+        <div class="container">
+            <div class="founder-grid reveal">
+                <div class="founder-content">
+                    <span class="eyebrow">The Perspective</span>
+                    <h2 class="section-title">Operator, Not Just Advisor.</h2>
+                    <p>
+                        Most consultants offer theory. I offer scars and successes from the arena. 
+                        Having held executive leadership roles driving <strong>$500M to $1B USD</strong> in business scope across Asia, I understand the pressure of the P&L.
+                    </p>
+                    <p>
+                        I founded Conduit Asia to bridge the critical gap I saw repeatedly: Western headquarters failing to grasp the speed and nuance of the East, and local teams struggling to communicate upward.
+                    </p>
+                    <div class="quote-box">
+                        <p>"Success in Asia isn't about translating your language. It's about translating your value."</p>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 500;">
+                        WEI KAN &mdash; FOUNDER & PRINCIPAL
+                    </p>
+                </div>
+                <div style="background: #151515; height: 500px; width: 100%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-light);">
+                    <span style="color: #333; text-transform: uppercase; letter-spacing: 2px;">[ Founder Portrait / Abstract Visual ]</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: Contact -->
-    <section class="slide" id="slide-3">
-        <h2 class="section-title">Let's Build Your Asia Success</h2>
-        
-        <p class="subtitle" style="margin-bottom: 3rem;">
-            Ready to transform your brand's Asia strategy?<br>
-            Let's discuss how cultural intelligence can drive your growth.
-        </p>
-
-        <div class="contact-box">
-            <div class="contact-name">Wei Kan</div>
-            <div class="contact-title">Founder & Principal Consultant</div>
-            
-            <a href="mailto:wei.kan@conduitasia.com?subject=Strategic Consulting Inquiry" class="contact-email">
-                wei.kan@conduitasia.com
+    <section class="cta-section" id="contact">
+        <div class="container reveal">
+            <h2 class="cta-title">Clarity in Complexity.</h2>
+            <p class="lead-text" style="margin: 0 auto 3rem auto;">
+                High-level strategic guidance for your next Asia initiative.<br>
+                Limited availability for Q3/Q4 2025.
+            </p>
+            <a href="mailto:wei.kan@conduitasia.com?subject=Executive%20Briefing%20Inquiry" class="btn btn-gold" style="padding: 1.2rem 3rem; font-size: 1rem;">
+                Schedule Executive Briefing
             </a>
-            
-            <div class="contact-info">
-                <p><strong>Hong Kong | Shanghai | Serving APAC</strong></p>
-                <p style="margin-top: 1rem;">Former Nike/Converse APAC Executive</p>
-                <p>20+ Years Cross-Cultural Business Leadership</p>
-            </div>
+            <p style="margin-top: 2rem; font-size: 0.85rem; color: #555;">
+                Direct C-Level Inquiry Line
+            </p>
         </div>
-
-        <p class="subtitle" style="margin-top: 3rem; font-style: italic;">
-            "Not translation. Transformation."
-        </p>
     </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Conduit Asia. All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; color: #333;">Hong Kong | Shanghai | APAC</p>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const navDots = document.querySelectorAll('.nav-dot');
-            const slides = document.querySelectorAll('.slide');
+            const reveals = document.querySelectorAll('.reveal');
 
-            // Navigation dots click
-            navDots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    const targetSlide = document.getElementById(`slide-${index}`);
-                    if (targetSlide) {
-                        targetSlide.scrollIntoView({ behavior: 'smooth' });
-                        navDots.forEach(d => d.classList.remove('active'));
-                        dot.classList.add('active');
+            const revealOnScroll = function() {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
                     }
                 });
-            });
+            };
 
-            // Update active dot on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const index = Array.from(slides).indexOf(entry.target);
-                        navDots.forEach((dot, i) => {
-                            dot.classList.toggle('active', i === index);
-                        });
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            slides.forEach(slide => observer.observe(slide));
+            window.addEventListener('scroll', revealOnScroll);
+            // Trigger once on load
+            revealOnScroll();
         });
     </script>
 </body>
