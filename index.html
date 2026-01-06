@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conduit Asia</title>
+    <title>Conduit Asia | East-West Business Intelligence</title>
     <style>
         * {
             margin: 0;
@@ -14,154 +14,103 @@
             background: #000;
             color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
             overflow-x: hidden;
         }
         .container {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 40px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 80px;
-            padding-bottom: 80px;
+            padding: 80px 40px;
         }
         .logo {
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             opacity: 0.5;
         }
         h1 {
-            font-size: 56px;
+            font-size: 42px;
             font-weight: 300;
             letter-spacing: -0.02em;
-            margin-bottom: 40px;
+            margin-bottom: 16px;
             line-height: 1.2;
         }
         h2 {
-            font-size: 14px;
+            font-size: 12px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #666;
-            margin-bottom: 30px;
-            margin-top: 80px;
-        }
-        h3 {
-            font-size: 22px;
-            font-weight: 400;
-            margin-bottom: 12px;
-            color: #fff;
+            color: #555;
+            margin: 50px 0 20px;
         }
         .tagline {
-            font-size: 20px;
-            color: #888;
-            margin-bottom: 60px;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
             font-weight: 300;
         }
         .description {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #ccc;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #999;
             margin-bottom: 40px;
             font-weight: 300;
         }
         .highlight {
             color: #fff;
         }
-        .services-intro {
-            font-size: 18px;
-            color: #ccc;
-            margin-bottom: 50px;
-            font-weight: 300;
-        }
-        .service-group {
-            margin-bottom: 60px;
-        }
-        .service-item {
-            margin-bottom: 30px;
-            padding-left: 0;
-        }
-        .service-item p {
-            font-size: 16px;
-            color: #888;
-            font-weight: 300;
-        }
-        .service-list {
+        .list {
             list-style: none;
             padding: 0;
+            margin-bottom: 20px;
         }
-        .service-list li {
-            font-size: 16px;
+        .list li {
+            font-size: 15px;
             color: #888;
             font-weight: 300;
-            margin-bottom: 8px;
-            padding-left: 20px;
+            margin-bottom: 6px;
+            padding-left: 18px;
             position: relative;
         }
-        .service-list li:before {
+        .list li:before {
             content: "—";
             position: absolute;
             left: 0;
             color: #444;
         }
-        .divider {
-            border: none;
-            border-top: 1px solid #222;
-            margin: 80px 0;
+        .service-row {
+            font-size: 15px;
+            color: #888;
+            font-weight: 300;
+            margin-bottom: 6px;
         }
-        .contact {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid #222;
+        .service-row span {
+            color: #ccc;
         }
-        .contact-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .email {
-            font-size: 24px;
+        .cta {
+            display: inline-block;
+            font-size: 17px;
             color: #fff;
             text-decoration: none;
-            transition: opacity 0.3s ease;
-            display: inline-block;
+            margin-top: 50px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #444;
+            transition: border-color 0.3s ease;
         }
-        .email:hover {
-            opacity: 0.6;
+        .cta:hover {
+            border-color: #fff;
         }
         .footer {
-            margin-top: 100px;
-            padding-bottom: 40px;
-            font-size: 14px;
-            color: #666;
+            margin-top: 60px;
+            font-size: 12px;
+            color: #444;
         }
         @media (max-width: 768px) {
             .container {
-                padding: 60px 30px;
+                padding: 60px 28px;
             }
             h1 {
-                font-size: 36px;
-            }
-            h3 {
-                font-size: 20px;
-            }
-            .tagline {
-                font-size: 18px;
-            }
-            .description {
-                font-size: 16px;
-            }
-            .services-intro {
-                font-size: 16px;
-            }
-            .email {
-                font-size: 20px;
+                font-size: 32px;
             }
         }
     </style>
@@ -170,64 +119,32 @@
     <div class="container">
         <div class="logo">Conduit Asia</div>
         
-        <h1>East-West<br>Business Intelligence</h1>
-        
-        <p class="tagline">Cultural strategy for premium brands in Asia</p>
+        <h1>China Market Intelligence</h1>
+        <p class="tagline">Sports · Lifestyle · Youth Culture</p>
         
         <p class="description">
-            We help international brands succeed in Asia through <span class="highlight">cultural intelligence</span>, 
-            not translation. Founded by <span class="highlight">Wei Kan</span>, former Nike and Converse APAC executive 
-            with 20+ years of Fortune 500 leadership experience.
+            We help international brands and investors make sense of China — through focused briefings, not 200-page decks.
         </p>
 
-        <hr class="divider">
+        <h2>Intelligence Briefings</h2>
+        <ul class="list">
+            <li>Consumer landscape and behavior shifts</li>
+            <li>Category-specific competitive analysis</li>
+            <li>Channel strategy — what works, what doesn't</li>
+            <li>Entry or optimization recommendations</li>
+        </ul>
 
-        <h2>How We Help</h2>
+        <h2>Strategic Projects</h2>
+        <p class="service-row"><span>Market Entry</span> — How to get in, who to target, how to win</p>
+        <p class="service-row"><span>Category Growth</span> — When you're in the market but not winning</p>
+        <p class="service-row"><span>Brand Transformation</span> — When positioning needs to evolve for local markets</p>
+
+        <h2>Advisory Retainer</h2>
+        <p class="service-row">For brands that need an external brain who gets Asia. Monthly alignment, on-demand advisory.</p>
+
+        <a href="mailto:wei.kan@conduitasia.com" class="cta">Let's Talk →</a>
         
-        <p class="services-intro">
-            From first market entry to ongoing strategic advisory.<br>
-            Senior expertise. No agency overhead. Flexible engagement.
-        </p>
-
-        <div class="service-group">
-            <h3>Strategic Projects</h3>
-            <div class="service-item">
-                <p><span class="highlight">Market Entry Strategy</span> — How to get in, who to target, how to win.</p>
-            </div>
-            <div class="service-item">
-                <p><span class="highlight">Category Growth Strategy</span> — When you're in the market but not winning.</p>
-            </div>
-            <div class="service-item">
-                <p><span class="highlight">Brand Transformation Strategy</span> — When your positioning needs to evolve for local markets.</p>
-            </div>
-            <div class="service-item">
-                <p><span class="highlight">Market Opportunity Assessment</span> — A quick, reliable read on whether an opportunity is worth pursuing.</p>
-            </div>
-        </div>
-
-        <div class="service-group">
-            <h3>Strategic Advisory Retainer</h3>
-            <p class="service-item">For brands that need an external brain who gets Asia. Monthly strategic alignment, on-demand advisory, quarterly deep dives.</p>
-        </div>
-
-        <div class="service-group">
-            <h3>Execution Services</h3>
-            <p style="font-size: 16px; color: #888; font-weight: 300; margin-bottom: 15px;">Strategy by Conduit Asia, execution by specialist partners.</p>
-            <ul class="service-list">
-                <li>Social media strategy & management</li>
-                <li>Hyperlocal creative & design</li>
-                <li>IP & brand collaboration</li>
-            </ul>
-        </div>
-
-        <div class="contact">
-            <div class="contact-label">Let's Talk</div>
-            <a href="mailto:wei.kan@conduitasia.com" class="email">wei.kan@conduitasia.com</a>
-        </div>
-        
-        <div class="footer">
-            Hong Kong · Shanghai · Serving APAC
-        </div>
+        <div class="footer">Hong Kong · Shanghai</div>
     </div>
 </body>
 </html>
