@@ -14,7 +14,7 @@
             background: #000;
             color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
         }
         .container {
@@ -30,148 +30,208 @@
             opacity: 0.5;
         }
         h1 {
-            font-size: 36px;
-            font-weight: 300;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
-            margin-bottom: 8px;
-            line-height: 1.1;
         }
-        h2 {
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin: 28px 0 10px;
-        }
-        .tagline {
+        .subtitle {
             font-size: 14px;
-            color: #666;
-            margin-bottom: 24px;
-            font-weight: 300;
+            letter-spacing: 0.15em;
+            opacity: 0.4;
+            margin-bottom: 40px;
         }
         .bio {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #aaa;
+            font-size: 17px;
+            line-height: 1.7;
+            opacity: 0.85;
             margin-bottom: 16px;
-            font-weight: 300;
         }
-        .description {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #999;
-            margin-bottom: 24px;
-            font-weight: 300;
+        .positioning {
+            font-size: 17px;
+            line-height: 1.7;
+            opacity: 0.65;
+            margin-bottom: 40px;
         }
-        .list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 8px;
-        }
-        .list li {
-            font-size: 13px;
-            color: #888;
-            font-weight: 300;
-            margin-bottom: 3px;
-            padding-left: 16px;
-            position: relative;
-        }
-        .list li:before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: #444;
-        }
-        .service-row {
-            font-size: 13px;
-            color: #888;
-            font-weight: 300;
-            margin-bottom: 3px;
-        }
-        .service-row span {
-            color: #ccc;
-        }
-        .cta {
+        .cta-link {
             display: inline-block;
-            font-size: 15px;
             color: #fff;
             text-decoration: none;
-            margin-top: 28px;
+            font-size: 15px;
+            letter-spacing: 0.05em;
             padding-bottom: 2px;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
             transition: border-color 0.3s ease;
+            margin-bottom: 80px;
         }
-        .cta:hover {
-            border-color: #fff;
+        .cta-link:hover {
+            border-color: rgba(255,255,255,0.8);
         }
-        .footer {
-            margin-top: 32px;
+
+        /* Divider */
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin-bottom: 60px;
+        }
+
+        /* How We Work section */
+        .section-label {
             font-size: 11px;
-            color: #444;
-            line-height: 1.8;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            opacity: 0.35;
+            margin-bottom: 40px;
         }
-        .footer a {
-            color: #444;
+
+        .service-block {
+            margin-bottom: 48px;
+        }
+        .service-block h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: -0.01em;
+        }
+        .service-tag {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.35;
+            margin-bottom: 8px;
+        }
+        .service-block p {
+            font-size: 16px;
+            line-height: 1.65;
+            opacity: 0.7;
+        }
+
+        /* Flow indicator */
+        .flow {
+            font-size: 13px;
+            opacity: 0.25;
+            margin-bottom: 48px;
+            padding-left: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .media-cite {
+            font-size: 13px;
+            opacity: 0.3;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+        .footer-contact {
+            font-size: 15px;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+        .footer-contact a {
+            color: #fff;
             text-decoration: none;
-            border-bottom: 1px solid #333;
-            transition: color 0.3s ease, border-color 0.3s ease;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
         }
-        .footer a:hover {
-            color: #888;
-            border-color: #888;
+        .footer-contact a:hover {
+            border-color: rgba(255,255,255,0.6);
         }
-        @media (max-width: 768px) {
+        .footer-geo {
+            font-size: 13px;
+            opacity: 0.25;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 600px) {
             .container {
-                padding: 40px 28px;
-            }
-            h1 {
-                font-size: 28px;
+                padding: 36px 24px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+
         <div class="logo">Conduit Asia</div>
 
         <h1>Asia. From the Inside.</h1>
-        <p class="tagline">Sports · Lifestyle · Youth Culture · APAC</p>
+
+        <div class="subtitle">Sports · Lifestyle · Youth Culture · APAC</div>
 
         <p class="bio">
             Wei Kan brings 20+ years of brand marketing leadership across Asia, including 15 years at Nike and Converse, where he scaled Converse Asia into a regional market leader. You work directly with Wei Kan, not handed off to a junior team.
         </p>
 
-        <p class="description">
-            Conduit Asia helps international brands navigate Asian markets, and Asian brands find their footing globally. Through focused strategy, not 200-page decks.
+        <p class="positioning">
+            Conduit Asia helps international brands build and grow in Asian markets, and Asian brands expand their presence globally. Two directions, one requirement: cultural intelligence that only comes from being inside both worlds.
         </p>
 
-        <a href="mailto:wei.kan@conduitasia.com" class="cta">Get in touch →</a>
+        <a href="mailto:wei.kan@conduitasia.com" class="cta-link">Get in touch →</a>
 
-        <h2>Intelligence Briefings</h2>
-        <ul class="list">
-            <li>Consumer landscape and behavior shifts</li>
-            <li>Category-specific competitive analysis</li>
-            <li>Channel strategy: what works, what doesn't</li>
-            <li>Entry or optimization recommendations</li>
-        </ul>
+        <div class="divider"></div>
 
-        <h2>Strategic Projects</h2>
-        <p class="service-row"><span>Market Entry</span> — How to get in, who to target, how to win</p>
-        <p class="service-row"><span>Category Growth</span> — When you're in the market but not winning</p>
-        <p class="service-row"><span>Brand Transformation</span> — When positioning needs to evolve for local markets</p>
+        <div class="section-label">How We Work</div>
 
-        <h2>Network & Partnerships</h2>
-        <p class="service-row">Connecting the right players across the value chain — brands, designers, manufacturers, and distributors — based on strategic fit, not just availability.</p>
+        <div class="service-block">
+            <div class="service-tag">Where every engagement starts</div>
+            <h2>Strategic Diagnostic</h2>
+            <p>
+                A focused, paid session to understand your specific situation: not a general conversation. You share your context in advance, we dig into your challenge together, and you receive a written Strategic Assessment Brief within 48 hours with initial observations and recommended directions.
+            </p>
+        </div>
 
-        <h2>Advisory Retainer</h2>
-        <p class="service-row">Monthly alignment and on-demand advisory for brands that need an external brain who genuinely gets Asia.</p>
+        <div class="flow">↓</div>
+
+        <div class="service-block">
+            <div class="service-tag">One-time deep dive</div>
+            <h2>Market Intelligence Briefing</h2>
+            <p>
+                When your team needs to answer a specific strategic question before committing budget or direction. Whether entering Asia or expanding internationally: competitive landscape, consumer insight, channel assessment, delivered as a written briefing with presentation.
+            </p>
+        </div>
+
+        <div class="service-block">
+            <div class="service-tag">Ongoing partnership</div>
+            <h2>Strategic Advisory Retainer</h2>
+            <p>
+                For brands that need a strategic partner who understands both sides of the East-West equation. Monthly advisory with regular strategic alignment sessions, on-the-ground cultural intelligence, and market judgment.
+            </p>
+        </div>
+
+        <div class="service-block">
+            <div class="service-tag">Full engagement</div>
+            <h2>Market Entry &amp; Brand Internationalization</h2>
+            <p>
+                For international brands entering Asia and Asian brands going global. From diagnosis to go-to-market roadmap, including positioning, channel strategy, media and KOL coordination, and local activation. Strategic lead with execution support through our partner network of creative, manufacturing, and activation specialists.
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="service-block">
+            <p>
+                We also work with investment research firms, management consultancies, and creative agencies as a specialist resource on APAC consumer markets, brand dynamics, and cultural intelligence.
+            </p>
+        </div>
 
         <div class="footer">
-            As cited by Het Financieele Dagblad<br><br>
-            For consulting, media, and research inquiries:<br>
-            <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a><br><br>
-            Hong Kong · Shanghai
+            <div class="media-cite">Regularly consulted by international business media on Asia consumer and brand strategy. As cited by Het Financieele Dagblad.</div>
+
+            <div class="footer-contact">
+                For consulting, media, and research inquiries:
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
+            </div>
+
+            <div class="footer-geo">Hong Kong · Shanghai</div>
         </div>
+
     </div>
 </body>
 </html>
