@@ -4,234 +4,647 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conduit Asia | Asia. From the Inside.</title>
+    <meta name="description" content="Cross-cultural brand strategy for international brands entering Asia and Asian brands going global. Founded by Wei Kan, former Nike and Converse APAC executive.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-dark: #0F0F0F;
+            --card-dark: #1A1A1A;
+            --warm-white: #F2F1EC;
+            --mid-gray: #888880;
+            --dusty-violet: #7D6B8A;
+            --text-light: #F2F1EC;
+            --text-dark: #0F0F0F;
+            --text-muted: #888880;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            background: #000;
-            color: #fff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 50px 40px;
-        }
-        .logo {
-            font-size: 12px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            opacity: 0.5;
-        }
-        h1 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 600;
-            line-height: 1.15;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        .subtitle {
-            font-size: 14px;
-            letter-spacing: 0.15em;
-            opacity: 0.4;
-            margin-bottom: 40px;
-        }
-        .bio {
-            font-size: 17px;
-            line-height: 1.7;
-            opacity: 0.85;
-            margin-bottom: 16px;
-        }
-        .positioning {
-            font-size: 17px;
-            line-height: 1.7;
-            opacity: 0.65;
-            margin-bottom: 40px;
-        }
-        .cta-link {
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-            font-size: 15px;
-            letter-spacing: 0.05em;
-            padding-bottom: 2px;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            transition: border-color 0.3s ease;
-            margin-bottom: 80px;
-        }
-        .cta-link:hover {
-            border-color: rgba(255,255,255,0.8);
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
 
-        /* Divider */
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Logo Mark ── */
+        .logo-mark {
+            display: inline-block;
+        }
+
+        .logo-mark svg {
+            height: 32px;
+            width: auto;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .nav-brand-text {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .nav-contact {
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-contact:hover {
+            color: var(--dusty-violet);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 48px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--dusty-violet);
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.15;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        .hero-intro {
+            max-width: 580px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--mid-gray);
+            margin-bottom: 20px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 32px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            text-decoration: none;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--dusty-violet);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            color: var(--dusty-violet);
+        }
+
+        /* ── Divider ── */
         .divider {
-            width: 40px;
+            width: 24px;
+            height: 3px;
+            background: var(--dusty-violet);
+        }
+
+        .section-divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .section-divider .line {
+            width: 100%;
             height: 1px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(136, 136, 128, 0.15);
+        }
+
+        /* ── Services ── */
+        .services {
+            padding: 100px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-header {
+            margin-bottom: 80px;
+        }
+
+        .services-header .divider {
+            margin-bottom: 24px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--dusty-violet);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: clamp(28px, 3.5vw, 40px);
+            line-height: 1.3;
+            color: var(--text-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .service-card {
+            background: var(--card-dark);
+            padding: 48px;
+            transition: background 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: #1f1f1f;
+        }
+
+        .service-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dusty-violet);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.3;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--mid-gray);
+        }
+
+        /* ── About / Wei Kan ── */
+        .about {
+            background: var(--warm-white);
+            color: var(--text-dark);
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about .divider {
+            margin-bottom: 24px;
+        }
+
+        .about .section-label {
+            color: var(--dusty-violet);
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: clamp(28px, 3.5vw, 40px);
+            line-height: 1.3;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #444;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-credentials {
+            padding-top: 12px;
+        }
+
+        .credential-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(15, 15, 15, 0.08);
+        }
+
+        .credential-item:first-child {
+            border-top: 1px solid rgba(15, 15, 15, 0.08);
+        }
+
+        .credential-role {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .credential-detail {
+            font-size: 13px;
+            color: var(--mid-gray);
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Also Work With ── */
+        .also {
+            background: var(--warm-white);
+            color: var(--text-dark);
+            padding: 0 48px 100px;
+        }
+
+        .also-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 60px;
+            border-top: 1px solid rgba(15, 15, 15, 0.08);
+        }
+
+        .also p {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #444;
+            max-width: 680px;
+        }
+
+        .also .section-label {
+            margin-bottom: 20px;
+        }
+
+        /* ── Footer ── */
+        footer {
+            padding: 80px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 60px;
         }
 
-        /* How We Work section */
-        .section-label {
-            font-size: 11px;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            opacity: 0.35;
-            margin-bottom: 40px;
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        .service-block {
-            margin-bottom: 48px;
-        }
-        .service-block h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: -0.01em;
-        }
-        .service-tag {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.35;
-            margin-bottom: 8px;
-        }
-        .service-block p {
-            font-size: 16px;
-            line-height: 1.65;
-            opacity: 0.7;
-        }
-
-        /* Flow indicator */
-        .flow {
+        .footer-brand-text {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
             font-size: 13px;
-            opacity: 0.25;
-            margin-bottom: 48px;
-            padding-left: 2px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-light);
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-        .media-cite {
-            font-size: 13px;
-            opacity: 0.3;
-            margin-bottom: 32px;
-            font-style: italic;
-        }
-        .footer-contact {
-            font-size: 15px;
-            opacity: 0.5;
-            margin-bottom: 8px;
-        }
         .footer-contact a {
-            color: #fff;
+            display: block;
+            font-size: 15px;
+            color: var(--text-light);
             text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-        .footer-contact a:hover {
-            border-color: rgba(255,255,255,0.6);
-        }
-        .footer-geo {
-            font-size: 13px;
-            opacity: 0.25;
-            margin-top: 24px;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
         }
 
-        @media (max-width: 600px) {
-            .container {
+        .footer-contact a:hover {
+            color: var(--dusty-violet);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 32px;
+            border-top: 1px solid rgba(136, 136, 128, 0.15);
+        }
+
+        .footer-locations {
+            font-size: 13px;
+            color: var(--mid-gray);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-media {
+            text-align: right;
+        }
+
+        .footer-media-label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dusty-violet);
+            margin-bottom: 8px;
+        }
+
+        .footer-media-list {
+            font-size: 13px;
+            color: var(--mid-gray);
+            line-height: 1.6;
+        }
+
+        .footer-legal {
+            margin-top: 48px;
+            font-size: 11px;
+            color: rgba(136, 136, 128, 0.5);
+        }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 24px;
+            }
+
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .services {
+                padding: 60px 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
                 padding: 36px 24px;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 60px 24px;
+            }
+
+            .also {
+                padding: 0 24px 60px;
+            }
+
+            footer {
+                padding: 60px 24px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .footer-media {
+                text-align: left;
+            }
+
+            .section-divider {
+                padding: 0 24px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
 
-        <div class="logo">Conduit Asia</div>
+    <!-- Navigation -->
+    <nav id="nav">
+        <a href="#" class="nav-brand">
+            <span class="logo-mark">
+                <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/>
+                    <line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/>
+                </svg>
+            </span>
+            <span class="nav-brand-text">Conduit Asia</span>
+        </a>
+        <a href="mailto:wei.kan@conduitasia.com" class="nav-contact">wei.kan@conduitasia.com</a>
+    </nav>
 
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-label">Cross-Cultural Brand Strategy</div>
         <h1>Asia. From the Inside.</h1>
-
-        <div class="subtitle">Sports · Lifestyle · Youth Culture · APAC</div>
-
-        <p class="bio">
-            Wei Kan brings 20+ years of brand marketing leadership across Asia, including 15 years at Nike and Converse, where he scaled Converse Asia into a regional market leader. You work directly with Wei Kan, not handed off to a junior team.
+        <p class="hero-intro">
+            For international brands building presence in Asian markets, and Asian brands expanding globally. Both require cultural intelligence that only comes from being inside both worlds.
         </p>
-
-        <p class="positioning">
-            Conduit Asia helps international brands build and grow in Asian markets, and Asian brands expand their presence globally. Two directions, one requirement: cultural intelligence that only comes from being inside both worlds.
+        <p class="hero-intro" style="max-width: 520px;">
+            Wei Kan brings 20+ years of brand marketing leadership across Asia, including 15 years at Nike and Converse. You work directly with Wei Kan, not handed off to a junior team.
         </p>
+        <a href="mailto:wei.kan@conduitasia.com" class="hero-cta">Get in touch</a>
+    </section>
 
-        <a href="mailto:wei.kan@conduitasia.com" class="cta-link">Get in touch →</a>
+    <div class="section-divider"><div class="line"></div></div>
 
-        <div class="divider"></div>
-
-        <div class="section-label">How We Work</div>
-
-        <div class="service-block">
-            <div class="service-tag">Where every engagement starts</div>
-            <h2>Strategic Diagnostic</h2>
-            <p>
-                A focused, paid session to understand your specific situation: not a general conversation. You share your context in advance, we dig into your challenge together, and you receive a written Strategic Assessment Brief within 48 hours with initial observations and recommended directions.
-            </p>
+    <!-- Services -->
+    <section class="services">
+        <div class="services-header fade-in">
+            <div class="divider"></div>
+            <div class="section-label">How We Work</div>
+            <h2 class="section-title">From diagnosis to market.</h2>
         </div>
 
-        <div class="flow">↓</div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-tag">Where every engagement starts</div>
+                <h3>Strategic Diagnostic</h3>
+                <p>A focused, paid session to understand your specific situation. You share your context in advance, we dig into your challenge together, and you receive a written Strategic Assessment Brief within 48 hours with initial observations and recommended directions.</p>
+            </div>
 
-        <div class="service-block">
-            <div class="service-tag">One-time deep dive</div>
-            <h2>Market Intelligence Briefing</h2>
-            <p>
-                When your team needs to answer a specific strategic question before committing budget or direction. Whether entering Asia or expanding internationally: competitive landscape, consumer insight, channel assessment, delivered as a written briefing with presentation.
-            </p>
+            <div class="service-card fade-in">
+                <div class="service-tag">One-time deep dive</div>
+                <h3>Market Intelligence Briefing</h3>
+                <p>When your team needs to answer a specific strategic question before committing budget or direction. Competitive landscape, consumer insight, channel assessment, delivered as a written briefing with presentation.</p>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-tag">Ongoing partnership</div>
+                <h3>Strategic Advisory Retainer</h3>
+                <p>For brands that need a strategic partner who understands both sides of the East-West equation. Monthly advisory with regular strategic alignment sessions, on-the-ground cultural intelligence, and market judgment.</p>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-tag">Full engagement</div>
+                <h3>Market Entry &amp; Brand Internationalization</h3>
+                <p>From diagnosis to go-to-market roadmap: positioning, channel strategy, media and KOL coordination, and local activation. Strategic lead with execution support through our partner network.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="service-block">
-            <div class="service-tag">Ongoing partnership</div>
-            <h2>Strategic Advisory Retainer</h2>
-            <p>
-                For brands that need a strategic partner who understands both sides of the East-West equation. Monthly advisory with regular strategic alignment sessions, on-the-ground cultural intelligence, and market judgment.
-            </p>
+    <!-- About -->
+    <section class="about">
+        <div class="about-inner">
+            <div class="about-left fade-in">
+                <div class="divider"></div>
+                <div class="section-label">About</div>
+                <h2>Wei Kan</h2>
+                <div class="about-text">
+                    <p>Founder and Principal Consultant at Conduit Asia. 20+ years of brand marketing leadership across Asia-Pacific, with deep operational experience scaling businesses in Greater China, Southeast Asia, Korea, and Japan.</p>
+                    <p>Conduit Asia works with premium brands navigating the complexities of cross-cultural market strategy. We also serve as a specialist resource for investment research firms, management consultancies, and creative agencies on APAC consumer markets and brand dynamics.</p>
+                </div>
+            </div>
+
+            <div class="about-credentials fade-in">
+                <div class="credential-item">
+                    <div class="credential-role">Head of Marketing, Converse Asia</div>
+                    <div class="credential-detail">Scaled regional business across Greater China, Korea, Southeast Asia</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-role">Brand Director, Nike Greater China</div>
+                    <div class="credential-detail">Brand marketing across sportswear, running, basketball</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-role">APAC Marketing, Nike &amp; Converse</div>
+                    <div class="credential-detail">15 years across Greater China, Southeast Asia, Korea, Japan</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-role">NYU Interactive Telecommunications Program</div>
+                    <div class="credential-detail">MPS, New York University</div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="service-block">
-            <div class="service-tag">Full engagement</div>
-            <h2>Market Entry &amp; Brand Internationalization</h2>
-            <p>
-                For international brands entering Asia and Asian brands going global. From diagnosis to go-to-market roadmap, including positioning, channel strategy, media and KOL coordination, and local activation. Strategic lead with execution support through our partner network of creative, manufacturing, and activation specialists.
-            </p>
+    <!-- Also Work With -->
+    <section class="also">
+        <div class="also-inner fade-in">
+            <div class="section-label">Also</div>
+            <p>Regularly consulted by international business media on Asia consumer and brand strategy. Serves as an industry source for <a href="https://www.investing.com/news/stock-market-news/nikes-china-stumble-exposes-execution-gaps-4586677" target="_blank" style="color: var(--text-dark); border-bottom: 1px solid var(--dusty-violet);">Reuters</a>, Het Financieele Dagblad, and other international outlets.</p>
         </div>
+    </section>
 
-        <div class="divider"></div>
-
-        <div class="service-block">
-            <p>
-                We also work with investment research firms, management consultancies, and creative agencies as a specialist resource on APAC consumer markets, brand dynamics, and cultural intelligence.
-            </p>
-        </div>
-
-        <div class="footer">
-            <div class="media-cite">Regularly consulted by international business media on Asia consumer and brand strategy. As cited by Het Financieele Dagblad.</div>
-
-            <div class="footer-contact">
-                For consulting, media, and research inquiries:
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="logo-mark">
+                    <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/>
+                        <line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                <span class="footer-brand-text">Conduit Asia</span>
             </div>
             <div class="footer-contact">
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
+                <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
+                <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
             </div>
-
-            <div class="footer-geo">Hong Kong · Shanghai</div>
         </div>
 
-    </div>
+        <div class="footer-bottom">
+            <div class="footer-locations">Hong Kong &middot; Shanghai</div>
+            <div class="footer-media">
+                <div class="footer-media-label">Media</div>
+                <div class="footer-media-list">
+                    <a href="https://www.investing.com/news/stock-market-news/nikes-china-stumble-exposes-execution-gaps-4586677" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Reuters</a> &middot; Het Financieele Dagblad
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            &copy; 2026 Conduit International Limited. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 </html>
