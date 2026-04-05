@@ -4,336 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights | Conduit Asia</title>
-    <meta name="description" content="Analysis and frameworks on China sportswear strategy, APAC brand positioning, and cross-cultural market dynamics. By Wei Kan, founder of Conduit Asia.">
+    <meta name="description" content="China market analysis and APAC brand strategy frameworks. Sportswear industry insights from Wei Kan, founder of Conduit Asia, former Nike and Converse APAC executive.">
     <meta name="author" content="Wei Kan">
     <meta property="og:title" content="Insights | Conduit Asia">
-    <meta property="og:description" content="China market analysis and APAC brand strategy insights from 20+ years of experience at Nike, Converse, and Conduit Asia.">
+    <meta property="og:description" content="China market analysis and APAC brand strategy insights from 20+ years at Nike, Converse, and Conduit Asia.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://conduitasia.com/insights">
-    <link rel="canonical" href="https://conduitasia.com/insights">
-
+    <meta property="og:url" content="https://conduitasia.com/insights.html">
+    <link rel="canonical" href="https://conduitasia.com/insights.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%230F0F0F'/%3E%3Cpath d='M18 4L4 30H32L18 4Z' stroke='%23F2F1EC' stroke-width='1.8' fill='none'/%3E%3Cline x1='2' y1='20' x2='34' y2='20' stroke='%23F2F1EC' stroke-width='1.8'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "Conduit Asia Insights",
-        "description": "Analysis and frameworks on China sportswear strategy, APAC brand positioning, and cross-cultural market dynamics.",
+        "description": "China market analysis and APAC brand strategy frameworks from Wei Kan.",
+        "url": "https://conduitasia.com/insights.html",
         "author": {
             "@type": "Person",
             "name": "Wei Kan",
-            "jobTitle": "Founder & Principal Consultant",
-            "worksFor": {
-                "@type": "Organization",
-                "name": "Conduit Asia"
-            },
-            "url": "https://conduitasia.com",
-            "sameAs": [
-                "https://www.linkedin.com/in/weikan/",
-                "https://medium.com/@wei.kan"
-            ]
+            "jobTitle": "Founder and Principal Consultant",
+            "worksFor": { "@type": "Organization", "name": "Conduit Asia", "url": "https://conduitasia.com" },
+            "sameAs": ["https://www.linkedin.com/in/weikan/", "https://medium.com/@wei.kan"]
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Conduit Asia",
-            "url": "https://conduitasia.com"
-        }
+        "publisher": { "@type": "Organization", "name": "Conduit Asia", "url": "https://conduitasia.com" }
     }
     </script>
-
     <style>
-        /* ── Reset ── */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        /* ── Base ── */
         :root {
-            --bg: #0a0a0a;
-            --bg-card: #111111;
-            --bg-card-hover: #181818;
-            --text: #e0e0e0;
-            --text-secondary: #888888;
-            --text-dim: #555555;
-            --accent: #c8c8c8;
-            --border: #222222;
-            --link: #b0b0b0;
-            --link-hover: #ffffff;
+            --primary-dark: #0F0F0F;
+            --card-dark: #1A1A1A;
+            --warm-white: #F2F1EC;
+            --mid-gray: #888880;
+            --dusty-violet: #7D6B8A;
+            --text-light: #F2F1EC;
+            --text-dark: #0F0F0F;
+            --text-muted: #888880;
         }
-
-        html {
-            font-size: 16px;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        .logo-mark { display: inline-block; }
+        .logo-mark svg { height: 32px; width: auto; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 24px 48px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(12px);
         }
+        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text-light); }
+        .nav-brand-text { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link, .nav-contact { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-contact:hover { color: var(--dusty-violet); }
+        .nav-link.active { color: var(--text-light); }
 
-        a {
-            color: var(--link);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        a:hover { color: var(--link-hover); }
+        .hero { padding: 160px 48px 80px; max-width: 1200px; margin: 0 auto; }
+        .hero-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 32px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.2; color: var(--text-light); margin-bottom: 24px; max-width: 700px; }
+        .hero-intro { max-width: 580px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
+        .hero-intro a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .hero-intro a:hover { color: var(--dusty-violet); }
 
-        /* ── Header ── */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 3rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .header-brand {
-            font-size: 0.95rem;
-            letter-spacing: 0.04em;
-            color: var(--accent);
-        }
-        .header-nav a {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-left: 2rem;
-            letter-spacing: 0.03em;
-        }
-        .header-nav a:hover { color: var(--link-hover); }
+        .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
+        .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+        .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
 
-        /* ── Hero ── */
-        .hero {
-            padding: 5rem 3rem 3rem;
-            max-width: 720px;
-        }
-        .hero-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-dim);
-            margin-bottom: 1.5rem;
-        }
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 400;
-            line-height: 1.25;
-            color: var(--accent);
-            margin-bottom: 1.2rem;
-        }
-        .hero p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            max-width: 600px;
-        }
+        .content-section { padding: 80px 48px 0; max-width: 1200px; margin: 0 auto; }
+        .content-section-header { margin-bottom: 40px; }
+        .content-section-header .divider { margin-bottom: 24px; }
+        .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
 
-        /* ── Section ── */
-        .section {
-            padding: 3rem 3rem 1rem;
-        }
-        .section-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* ── Article Cards ── */
-        .articles {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-            margin-bottom: 2rem;
-        }
+        .articles { display: flex; flex-direction: column; }
         .article-card {
-            display: block;
-            padding: 1.5rem 1.5rem;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.2s;
+            display: block; padding: 32px 0;
+            border-bottom: 1px solid rgba(136, 136, 128, 0.15);
+            text-decoration: none; transition: background 0.3s ease;
         }
-        .article-card:hover {
-            background: var(--bg-card-hover);
-        }
-        .article-card h3 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-            line-height: 1.35;
-        }
-        .article-card:hover h3 { color: var(--link-hover); }
-        .article-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-        .article-meta {
-            font-size: 0.78rem;
-            color: var(--text-dim);
-        }
+        .article-card:first-child { border-top: 1px solid rgba(136, 136, 128, 0.15); }
+        .article-card:hover { background: rgba(26, 26, 26, 0.5); padding-left: 24px; padding-right: 24px; margin-left: -24px; margin-right: -24px; }
+        .article-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 22px; line-height: 1.35; color: var(--text-light); margin-bottom: 10px; transition: color 0.3s ease; }
+        .article-card:hover h3 { color: var(--dusty-violet); }
+        .article-card p { font-size: 15px; line-height: 1.7; color: var(--mid-gray); max-width: 680px; }
+        .article-meta { margin-top: 10px; font-size: 12px; letter-spacing: 0.5px; color: rgba(136, 136, 128, 0.6); }
 
-        /* ── Also On ── */
-        .also-on {
-            padding: 3rem;
-            border-top: 1px solid var(--border);
-            margin-top: 2rem;
-        }
-        .also-on h2 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-dim);
-            margin-bottom: 1rem;
-        }
-        .also-on p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        .also-on a {
-            color: var(--text);
-            border-bottom: 1px solid var(--text-dim);
-        }
-        .also-on a:hover { color: var(--link-hover); border-color: var(--link-hover); }
+        .also-on { max-width: 1200px; margin: 0 auto; padding: 80px 48px; }
+        .also-on-inner { padding-top: 48px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
+        .also-on p { font-size: 15px; line-height: 1.8; color: var(--mid-gray); max-width: 680px; }
+        .also-on a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .also-on a:hover { color: var(--dusty-violet); }
 
-        /* ── Footer ── */
-        .footer {
-            padding: 2.5rem 3rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        .footer-left { }
-        .footer-brand {
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 0.4rem;
-        }
-        .footer-contact {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-        }
-        .footer-contact a { color: var(--text-secondary); }
-        .footer-contact a:hover { color: var(--link-hover); }
-        .footer-right {
-            font-size: 0.78rem;
-            color: var(--text-dim);
-            text-align: right;
-        }
+        footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
+        .footer-brand { display: flex; align-items: center; gap: 14px; }
+        .footer-brand-text { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); }
+        .footer-contact a { display: block; font-size: 15px; color: var(--text-light); text-decoration: none; margin-bottom: 8px; transition: color 0.3s ease; }
+        .footer-contact a:hover { color: var(--dusty-violet); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 32px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
+        .footer-locations { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
+        .footer-media { text-align: right; }
+        .footer-media-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 8px; }
+        .footer-media-list { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
+        .footer-legal { margin-top: 48px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
 
-        /* ── Responsive ── */
-        @media (max-width: 640px) {
-            .header { padding: 1.5rem; }
-            .hero { padding: 3rem 1.5rem 2rem; }
-            .hero h1 { font-size: 1.6rem; }
-            .section { padding: 2rem 1.5rem 1rem; }
-            .article-card { padding: 1.2rem 0.5rem; }
-            .also-on { padding: 2rem 1.5rem; }
-            .footer { padding: 2rem 1.5rem; flex-direction: column; }
-            .footer-right { text-align: left; }
-            .header-nav a { margin-left: 1rem; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .nav-links { gap: 20px; }
+            .hero { padding: 120px 24px 60px; }
+            .content-section { padding: 60px 24px 0; }
+            .article-card:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
+            .article-card h3 { font-size: 19px; }
+            .also-on { padding: 60px 24px; }
+            footer { padding: 60px 24px; }
+            .footer-top { flex-direction: column; gap: 32px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+            .footer-media { text-align: left; }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <a href="/" class="header-brand">Conduit Asia</a>
-        <nav class="header-nav">
-            <a href="/">Services</a>
-            <a href="mailto:wei.kan@conduitasia.com">Contact</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="/" class="nav-brand">
+            <span class="logo-mark"><svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/><line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/></svg></span>
+            <span class="nav-brand-text">Conduit Asia</span>
+        </a>
+        <div class="nav-links">
+            <a href="/insights.html" class="nav-link active">Insights</a>
+            <a href="mailto:wei.kan@conduitasia.com" class="nav-contact">wei.kan@conduitasia.com</a>
+        </div>
+    </nav>
 
-    <div class="hero">
+    <section class="hero">
         <div class="hero-label">Insights</div>
         <h1>China market analysis and APAC brand strategy.</h1>
-        <p>Observations and frameworks from 20+ years of brand marketing across Asia-Pacific. Published on <a href="https://medium.com/@wei.kan" target="_blank" rel="noopener">Medium</a> and <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>.</p>
-    </div>
+        <p class="hero-intro">Observations and frameworks from 20+ years of brand marketing across Asia-Pacific. Published on <a href="https://medium.com/@wei.kan" target="_blank" rel="noopener">Medium</a> and <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </section>
 
-    <div class="section">
-        <div class="section-title">Strategy &amp; Frameworks</div>
+    <div class="section-divider"><div class="line"></div></div>
+
+    <section class="content-section">
+        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Strategy &amp; Frameworks</div></div>
         <div class="articles">
-            <a class="article-card" href="https://medium.com/@wei.kan/the-behavior-badge-why-some-sportswear-brands-hold-pricing-power-and-others-dont-f1a2b3c4d5e6" target="_blank" rel="noopener">
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/the-behavior-badge-why-some-sportswear-brands-hold-pricing-power-and-others-dont-e4719eb7b08d" target="_blank" rel="noopener">
                 <h3>The Behavior Badge: Why Some Sportswear Brands Hold Pricing Power and Others Don't</h3>
                 <p>A framework for understanding why On, Arc'teryx, and Lululemon hold pricing power in China while heritage brands discount. The shift from knowledge badges to behavior badges.</p>
-                <div class="article-meta">February 2026 &middot; 7 min read</div>
+                <div class="article-meta">February 2026 &middot; 7 min read &middot; Medium</div>
             </a>
-            <a class="article-card" href="https://medium.com/@wei.kan/china-market-2025-when-the-playbook-stops-working-e14b90c11f91" target="_blank" rel="noopener">
-                <h3>China Market 2025: When the Playbook Stops Working</h3>
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/china-market-2025-when-the-playbook-stops-working-e14b90c11f91" target="_blank" rel="noopener">
+                <h3>China Market: When the Playbook Stops Working</h3>
                 <p>Why global brands keep making costly mistakes in China, and what the shift from expansion to consolidation means for APAC brand strategy.</p>
-                <div class="article-meta">October 2025 &middot; 7 min read</div>
+                <div class="article-meta">October 2025 &middot; 7 min read &middot; Medium</div>
             </a>
-            <a class="article-card" href="https://medium.com/@wei.kan/rethinking-accessibility-how-sportswear-brands-can-win-chinas-new-participation-economy" target="_blank" rel="noopener">
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/rethinking-accessibility-how-sportswear-brands-can-win-chinas-new-participation-economy-79117944e48e" target="_blank" rel="noopener">
                 <h3>Rethinking Accessibility: How Sportswear Brands Can Win China's New Participation Economy</h3>
                 <p>With 400 million active participants, China's sportswear market is shifting from aspiration to participation. How brands are winning the 300-800 RMB price zone.</p>
-                <div class="article-meta">October 2025 &middot; 8 min read</div>
+                <div class="article-meta">October 2025 &middot; 8 min read &middot; Medium</div>
             </a>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <div class="section-title">Consumer Trends</div>
+    <section class="content-section">
+        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Consumer Trends</div></div>
         <div class="articles">
-            <a class="article-card" href="https://medium.com/@wei.kan/running-in-china-is-now-a-lifestyle-economy" target="_blank" rel="noopener">
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/running-in-china-is-now-a-lifestyle-economy-706bd5ae030c" target="_blank" rel="noopener">
                 <h3>Running in China Is Now a Lifestyle Economy</h3>
                 <p>China's first running boom was brand-led. The second one is consumer-built. What that shift means for Nike, Anta, Li-Ning, and every brand competing for runners.</p>
-                <div class="article-meta">December 2025 &middot; 6 min read</div>
+                <div class="article-meta">December 2025 &middot; 6 min read &middot; Medium</div>
             </a>
-            <a class="article-card" href="https://medium.com/@wei.kan/chinas-tennis-boom-when-the-state-machine-meets-middle-class-dreams" target="_blank" rel="noopener">
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/chinas-tennis-boom-when-the-state-machine-meets-middle-class-dreams-71ca414eef02" target="_blank" rel="noopener">
                 <h3>China's Tennis Boom: When the State Machine Meets Middle-Class Dreams</h3>
                 <p>How government policy, middle-class aspiration, and brand strategy are converging in China's fastest-growing sport category.</p>
-                <div class="article-meta">October 2025 &middot; 7 min read</div>
+                <div class="article-meta">October 2025 &middot; 7 min read &middot; Medium</div>
             </a>
-            <a class="article-card" href="https://medium.com/@wei.kan/beyond-the-a4-waist-sports-brands-are-missing-the-biggest-opportunity-in-china" target="_blank" rel="noopener">
-                <h3>Beyond the A4 Waist: Sports Brands Are Missing the Biggest Opportunity in China</h3>
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/beyond-the-a4-waist-sports-brands-are-missing-the-biggest-opportunity-in-china-5d8c443e1fee" target="_blank" rel="noopener">
+                <h3>Sports Brands Are Missing the Biggest Opportunity in China</h3>
                 <p>Chinese women moved from aesthetic fitness to high-intensity training faster than any brand's product cycle. Who's catching up and who's falling behind.</p>
-                <div class="article-meta">November 2025 &middot; 4 min read</div>
+                <div class="article-meta">November 2025 &middot; 4 min read &middot; Medium</div>
             </a>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <div class="section-title">Market Analysis</div>
+    <section class="content-section">
+        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Market Analysis</div></div>
         <div class="articles">
-            <a class="article-card" href="https://medium.com/@wei.kan/china-sportswear-2026-everyone-is-trading-jerseys" target="_blank" rel="noopener">
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/china-sportswear-2026-everyone-is-trading-jerseys-1d85081a9da4" target="_blank" rel="noopener">
                 <h3>China Sportswear 2026: Everyone Is Trading Jerseys</h3>
                 <p>Adidas designs 70% of China apparel locally. Anta acquires Puma and opens in Beverly Hills. Global brands go local, Chinese brands go global. The competitive map redrawn.</p>
-                <div class="article-meta">January 2026 &middot; 7 min read</div>
+                <div class="article-meta">January 2026 &middot; 7 min read &middot; Medium</div>
             </a>
-            <a class="article-card" href="https://medium.com/@wei.kan/after-the-hype-whats-actually-driving-chinas-footwear-market" target="_blank" rel="noopener">
+            <a class="article-card fade-in" href="https://medium.com/@wei.kan/after-the-hype-whats-actually-driving-china-s-footwear-market-b4156aa83f7f" target="_blank" rel="noopener">
                 <h3>After the Hype: What's Actually Driving China's Footwear Market</h3>
                 <p>The sneaker boom is over in China. With 200 million gig workers and youth unemployment at 17%, comfort and function now drive footwear demand.</p>
-                <div class="article-meta">January 2026 &middot; 5 min read</div>
+                <div class="article-meta">January 2026 &middot; 5 min read &middot; Medium</div>
             </a>
         </div>
-    </div>
+    </section>
 
-    <div class="also-on">
-        <h2>Also Published On</h2>
-        <p>Shorter analysis and earnings season reactions are published on <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>, covering Nike, Adidas, Anta, On Holding, Lululemon, Puma, Under Armour, Amer Sports, and other brands competing in APAC markets.</p>
-    </div>
+    <section class="also-on">
+        <div class="also-on-inner fade-in">
+            <div class="section-label">Also Published On</div>
+            <p>Shorter analysis and earnings season reactions on <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>, covering Nike, Adidas, Anta, On Holding, Lululemon, Puma, Under Armour, Amer Sports, and other brands competing across APAC markets.</p>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <div class="footer-left">
-            <div class="footer-brand">Conduit Asia</div>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="logo-mark"><svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/><line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/></svg></span>
+                <span class="footer-brand-text">Conduit Asia</span>
+            </div>
             <div class="footer-contact">
-                <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a><br>
-                <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a> &middot;
-                <a href="https://medium.com/@wei.kan" target="_blank" rel="noopener">Medium</a>
+                <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
+                <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
+                <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
+                <a href="/insights.html">Insights</a>
             </div>
         </div>
-        <div class="footer-right">
-            Hong Kong &middot; Shanghai<br>
-            &copy; 2026 Conduit International Limited.
+        <div class="footer-bottom">
+            <div class="footer-locations">Hong Kong &middot; Shanghai</div>
+            <div class="footer-media">
+                <div class="footer-media-label">Media</div>
+                <div class="footer-media-list"><a href="https://www.investing.com/news/stock-market-news/nikes-china-stumble-exposes-execution-gaps-4586677" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Reuters</a> &middot; Het Financieele Dagblad</div>
+            </div>
         </div>
+        <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
