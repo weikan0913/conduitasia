@@ -80,6 +80,20 @@
         .service-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: var(--text-light); margin-bottom: 16px; }
         .service-card p { font-size: 15px; line-height: 1.75; color: var(--mid-gray); }
 
+        .insights-section { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
+        .insights-header { margin-bottom: 56px; }
+        .insights-header .divider { margin-bottom: 24px; }
+        .insights-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-bottom: 40px; }
+        .insight-card { background: var(--card-dark); padding: 36px 32px; display: flex; flex-direction: column; text-decoration: none; transition: background 0.4s ease; min-height: 240px; }
+        .insight-card:hover { background: #1f1f1f; }
+        .insight-tag { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
+        .insight-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: var(--text-light); margin-bottom: 14px; }
+        .insight-card p { font-size: 13px; line-height: 1.6; color: var(--mid-gray); flex: 1; margin-bottom: 20px; }
+        .insight-cta { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); padding-top: 14px; border-top: 1px solid rgba(136, 136, 128, 0.2); }
+        .insights-footer { text-align: left; }
+        .insights-all { display: inline-block; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .insights-all:hover { color: var(--dusty-violet); }
+
         .about { background: var(--warm-white); color: var(--text-dark); }
         .about-inner { max-width: 1200px; margin: 0 auto; padding: 100px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .about .divider { margin-bottom: 24px; }
@@ -122,6 +136,9 @@
             .services { padding: 60px 24px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { padding: 36px 24px; }
+            .insights-section { padding: 50px 24px; }
+            .insights-grid { grid-template-columns: 1fr; }
+            .insight-card { padding: 28px 24px; min-height: auto; }
             .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
             .also { padding: 0 24px 60px; }
             footer { padding: 60px 24px; }
@@ -140,7 +157,7 @@
             <span class="nav-brand-text">Conduit Asia</span>
         </a>
         <div class="nav-links">
-            <a href="/insights.html" class="nav-link">Insights</a>
+            <a href="/insights.html" class="nav-link">Case Archive</a>
             <a href="mailto:wei.kan@conduitasia.com" class="nav-contact">wei.kan@conduitasia.com</a>
         </div>
     </nav>
@@ -195,6 +212,39 @@
         </div>
     </section>
 
+    <div class="section-divider"><div class="line"></div></div>
+
+    <section class="insights-section">
+        <div class="insights-header fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Recent Analysis</div>
+            <h2 class="section-title">From the field.</h2>
+        </div>
+        <div class="insights-grid">
+            <a href="https://medium.com/@wei.kan/the-acquirer-the-purist-the-specialist-the-localizer-a-framework-for-china-sportswear-in-2026-2e879a5b3f85" target="_blank" class="insight-card fade-in">
+                <div class="insight-tag">April 2026 &middot; Framework</div>
+                <h3>The Acquirer, The Purist, The Specialist, The Localizer</h3>
+                <p>Four growth archetypes for China sportswear in 2026: Anta, Li-Ning, On, Adidas, and the question of where Nike fits.</p>
+                <div class="insight-cta">Read on Medium &rarr;</div>
+            </a>
+            <a href="https://medium.com/@wei.kan/the-behavior-badge-why-some-sportswear-brands-hold-pricing-power-and-others-dont-e4719eb7b08d" target="_blank" class="insight-card fade-in">
+                <div class="insight-tag">February 2026 &middot; Framework</div>
+                <h3>The Behavior Badge: Why Some Sportswear Brands Hold Pricing Power</h3>
+                <p>Why On, Arc'teryx, and Lululemon hold pricing power in China while heritage brands discount.</p>
+                <div class="insight-cta">Read on Medium &rarr;</div>
+            </a>
+            <a href="https://medium.com/@wei.kan/running-in-china-is-now-a-lifestyle-economy-706bd5ae030c" target="_blank" class="insight-card fade-in">
+                <div class="insight-tag">December 2025 &middot; Consumer</div>
+                <h3>Running in China Is Now a Lifestyle Economy</h3>
+                <p>China's first running boom was brand-led. The second one is consumer-built.</p>
+                <div class="insight-cta">Read on Medium &rarr;</div>
+            </a>
+        </div>
+        <div class="insights-footer">
+            <a href="/insights.html" class="insights-all">Case Archive &rarr;</a>
+        </div>
+    </section>
+
     <section class="about">
         <div class="about-inner">
             <div class="about-left fade-in">
@@ -243,7 +293,7 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
-                <a href="/insights.html">Insights</a>
+                <a href="/insights.html">Case Archive</a>
             </div>
         </div>
         <div class="footer-bottom">
