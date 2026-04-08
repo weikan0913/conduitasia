@@ -64,10 +64,14 @@
         .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
         .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
 
+        .clients { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
+        .clients-inner .divider { margin-bottom: 24px; }
+        .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
+        .clients-text { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.5; color: var(--text-light); max-width: 920px; margin-top: 24px; }
+
         .services { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
         .services-header { margin-bottom: 80px; }
         .services-header .divider { margin-bottom: 24px; }
-        .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
         .section-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-light); }
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
         .service-card { background: var(--card-dark); padding: 48px; transition: background 0.4s ease; }
@@ -114,6 +118,7 @@
             nav { padding: 20px 24px; }
             .nav-links { gap: 20px; }
             .hero { padding: 100px 24px 60px; }
+            .clients { padding: 60px 24px; }
             .services { padding: 60px 24px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { padding: 36px 24px; }
@@ -146,6 +151,16 @@
         <p class="hero-intro">A strategic advisory practice for international brands entering Asia, and Asian brands building outside it.</p>
         <p class="hero-intro" style="max-width: 520px;">Founded and led by Wei Kan. Twenty years inside Asia's brand business, fifteen of them at Nike and Converse.</p>
         <a href="mailto:wei.kan@conduitasia.com" class="hero-cta">Get in touch</a>
+    </section>
+
+    <div class="section-divider"><div class="line"></div></div>
+
+    <section class="clients">
+        <div class="clients-inner fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Clients</div>
+            <p class="clients-text">Conduit Asia works with global sportswear, premium accessories, and lifestyle brands navigating China and APAC, alongside designer-led Asian brands building presence internationally. The practice is also regularly consulted by investment research firms and expert networks on Asian consumer dynamics.</p>
+        </div>
     </section>
 
     <div class="section-divider"><div class="line"></div></div>
@@ -188,7 +203,6 @@
                 <h2>Wei Kan</h2>
                 <div class="about-text">
                     <p>Founder of Conduit Asia. Twenty years of brand marketing across Asia-Pacific, building businesses across Greater China, Southeast Asia, Korea, and Japan.</p>
-                    <p>Conduit Asia works with brands on cross-cultural strategy across APAC. The practice also serves as an industry source for investment research firms, management consultancies, and creative agencies covering Asian consumer markets.</p>
                 </div>
             </div>
             <div class="about-credentials fade-in">
