@@ -1,14 +1,712 @@
+
+Consulting 品牌顧問
+/
+Claude finished the response
+You said: 我的conduitasia.
+weikan0913/conduitasia
+main
+
+GITHUB
+
+我的conduitasia.com還有什麼優化的空間?
+
+7:24 AM
+Claude responded: 看完整站（index.
+
+審視網站結構、轉化路徑與品牌完整性的策略分析。
+審視網站結構、轉化路徑與品牌完整性的策略分析。
+看完整站（index.html 與 insights.html），視覺系統與 tier signaling 已經到位，這一層不用動。值得處理的是「網站該完成的商業任務」這層。現在網站完成了大概 60% 的任務：把你放在該在的位置，但「把讀者變成詢問者」的路徑不夠清楚。
+
+優先級 1：值得立刻處理的四件事
+一、Case Archive 的命名與內容不對稱
+
+現在 /insights.html 放的是公開 Medium 文章與框架，這些是 analyst-style 的 thought leadership，不是嚴格意義上的 case。一個點進來期待看到「哪個客戶、什麼問題、怎麼做、結果如何」的買方會產生微妙落差。
+
+三個處理方向，選一個：
+
+最輕：改名為「Writing」「Analysis」或「Perspectives」，誠實描述內容性質。不會降格，因為文章本身已經被 Reuters、BBC 引用。
+中等：維持 Case Archive 標題，在頁首「A note on these cases」加一句「以下為基於實戰經驗的公開分析。直接 client case 以匿名化短摘要方式列於本頁下半部」，然後真的加 3 到 5 則一段話的匿名 case，例如：「Global sportswear brand. Strategic Diagnostic on China Gen Z segment shift. April 2026.」
+最重：等 Yonex / FCW / Pandora 交付完成後，寫 1 到 2 個完整 case study 長文。這是 Q3 的事，現在不動。
+短期建議選中間那個。一句話的匿名 case 比什麼都沒有強很多，也符合保密條款下的業界標準做法。
+
+二、Services 頁面缺失，首頁的 Services section 做不到完整的引導工作
+
+這件事 memory 裡已經記錄為 LinkedIn Premium Custom Button 啟用的先決條件，但更核心的問題是：首頁 4 張 service card 寫得清楚，卻沒有任何「起價、交付物、時長」的 anchor。
+
+一個讀完 4 張卡的買方，能分辨類別，但不知道：
+
+Strategic Diagnostic 是一小時還是半天？
+價格級距落在哪？（不用寫死，但該有「starts at」之類的語言）
+交付物規格是什麼？（目前只有 Diagnostic 寫了 48 小時 brief）
+適合哪種規模、哪種問題的客戶？
+建議做法：獨立 /services.html，每個服務一個 section，至少包含：起始價格或級距、時長與投入、交付物規格、適合的客戶類型、一段 use case 描述。首頁的卡片當 teaser 連過去。
+
+這會讓 LinkedIn、Medium、媒體帶來的流量有一個具體的 conversion path，而不是只剩 mailto。
+
+三、About Wei 寫得過於節制
+
+這是我看下來最 counterintuitive 的觀察。Conduit Asia 是 hub-and-spoke，你就是產品本身。但 about section 現在只有兩句話加四條 credential。
+
+一個要決定付 USD 5K 起跳 retainer 的讀者，需要比這更多訊息：
+
+為什麼是你，而不是另一個 ex-Nike 高管？
+你的 point of view 是什麼？（看過 O.P.B. 文章的讀者已經知道，沒看過的不知道）
+有沒有一張照片？不一定要拍得設計感十足，但有 vs 沒有是 trust 的差異。
+低風險做法：在現有 about section 下方加一段 150 到 200 字的第一人稱 narrative，把你在 LinkedIn 上已經累積的 voice 帶一點進來。不要寫得像履歷，寫得像你坐在桌子對面跟客戶講話。
+
+四、首頁 Open Graph 缺失
+
+index.html 沒有 og:image、og:title、og:description。任何人把 conduitasia.com 貼到 LinkedIn、Slack、WeChat 上，展開的預覽會是殘缺的或生成不出來。insights.html 有 OG 標籤但也缺 og:image。
+
+對 LinkedIn 是主要入口的你來說，這是一個會直接壓低點擊率的 bug。補一張 1200×630 的封面圖（品牌色加上 "Asia. From the Inside." 標題與 A-mark），兩個 HTML 都補齊完整 OG 與 Twitter Card，應該是本週內就能完成的事。
+
+優先級 2：中期處理的三件事
+五、媒體證據位置偏後
+
+Reuters、BBC、WWD、Het Financieele Dagblad 現在出現在「Also」section 與 footer。對第一次進站的讀者，這些是最快建立 credibility 的元素。可以在 hero 下方加一條極簡的 "As quoted in" row（純文字、極小字、灰色），讓這些名字出現在首屏折疊線上方。不要做彩色 logo 牆，那會破壞現在的視覺節奏。
+
+六、首頁 Clients section 可以更具體
+
+現在那段用「global sportswear, premium accessories, and lifestyle brands」描述服務對象。準確，但也是所有 APAC consulting practice 都會寫的話。改成具體的 self-identify list 會更有用：
+
+Global sportswear brands entering or recalibrating China
+Asian designer brands expanding into US and Europe
+Investment research firms covering Asian consumer
+讀者會更快判斷「這是不是在講我」。
+
+七、Engagement ladder 視覺化
+
+四個服務現在是並列的，但實際上它們是有漸進關係的：Diagnostic → Intelligence Briefing → Retainer → Full Engagement。在 Services 頁可以用一條簡單的 ladder 視覺，明確告訴買方「該從哪裡開始」。Strategic Diagnostic 應該被更強地標示為 entry point，目前的 service-tag「Where every engagement starts」寫了，但視覺份量不夠。
+
+技術與細節
+字型載入：index.html 引入了 Libre Baskerville 但 CSS 裡沒用到。刪掉可減少約 90KB。
+insights.html 有 schema.org structured data，index.html 沒有。首頁應加上 Organization + Person schema，幫助 Google 建立 Conduit Asia 與 Wei Kan 的實體關係。
+Footer 與 Also section 的 media list 重複，保留一個即可，建議去掉 footer 那個。
+Case Archive 裡 April 2026 的 Acquirer/Purist/Specialist/Localizer 是目前最強的一篇。考慮在 Strategy & Frameworks 區塊最上方用較大的 featured card 單獨呈現，而不是與其他三篇並列。
+整體來說：你的網站現在做得最好的是「已經認識你的人來確認 tier」這件事。做得最弱的是「不認識你的人來評估是否該聯繫」這件事。
+
+June 2026 checkpoint 如果要靠 content-to-client 的 conversion 跑出結果，優先級 1 的四件事值得在這個月內處理完。其中 OG image 與 Services 頁是最直接影響 conversion 的兩個，Case Archive 命名與 About 擴充是信任層的修補。
+
+要不要我先針對其中一項展開？例如草擬 Services 頁面的完整 wireframe 與每個 section 的 copy 方向。
+
+You said: 有什麼我們馬上就可以完成的事情, 我想透過網站真正能drive inbound from international
+有什麼我們馬上就可以完成的事情, 我想透過網站真正能drive inbound from international
+
+7:28 AM
+Claude responded: 看了項目知識裡的 Operational Playbook、3月17日策略總結、內容策略 Brief 之後，這個問題可以用一句話框起來：
+
+識別國際引流瓶頸，優先推進服務頁面與預約機制。
+識別國際引流瓶頸，優先推進服務頁面與預約機制。
+看了項目知識裡的 Operational Playbook、3月17日策略總結、內容策略 Brief 之後，這個問題可以用一句話框起來：
+
+目前 conduitasia.com 最大的缺陷是「有可信度，但沒有可購買的入口」。
+
+國際 buyer（VP/Director level，在 LinkedIn 上看到你的文章或被 Reuters 引用後點進來）現在只有一個選擇：寫一封冷 email。這中間有跨時區、跨文化、跨信任層的摩擦。你需要讓他能在 5 分鐘內完成「看懂 → 決定買 → 付款啟動」的完整動作，而不需要任何一封來回 email。
+
+我們這個 session 內可以完成的三件事
+一、Services 頁面（最大槓桿）
+
+把 Strategic Diagnostic Session 從 Playbook 裡的 internal artifact 變成網站上最醒目、最可購買的產品。明確寫清楚：USD 500、90 分鐘、48 小時內交付 Strategic Assessment Brief、intake form 連結。另外三個服務（Intelligence Briefing / Retainer / Market Entry）作為 Diagnostic 之後的自然路徑排列。
+
+這個頁面一上線，你就有了第一次可以直接在 LinkedIn 文章 soft CTA 裡放的 link：「If your brand is navigating this, I offer a Strategic Diagnostic Session — details here.」這本身就是 inbound driver。
+
+二、首頁 CTA 改造 + Media Strip
+
+Hero 區的「Get in touch」改成兩層 CTA：主 CTA「Start with a Strategic Diagnostic」通向 /services.html#diagnostic，次 CTA「Read recent analysis」通向 Case Archive。Hero 下方加一條極簡的「As quoted in Reuters · BBC · WWD · Het Financieele Dagblad」文字帶，把證據上推到首屏折疊線上方。
+
+三、Open Graph meta tags
+
+現在 index.html 完全沒有 OG 標籤。你在 LinkedIn 發文貼 conduitasia.com link，預覽是空的或殘缺的，這直接壓低 click-through。我加上完整 OG + Twitter Card，你就能立刻看到 LinkedIn post 的點擊率改善。OG image 我可以用純 CSS/SVG 方式生成一張 1200×630 的品牌封面。
+
+Intake form 的處理
+Playbook 裡的 6 題 intake form，有兩種實作方式：
+
+MVP（今天可上線）： 把 6 題寫進 services.html 的 HTML form，submit 後透過 mailto: 帶 pre-filled subject 與 body 到你信箱。Zero infrastructure，但買家手機體驗會打開 email app。
+更好（今天也可以）： 用 Tally.so 或 Typeform 免費方案做一個 form，embed 或連結到 services.html。買家體驗順暢，你收 email 通知。
+我建議用 Tally（免費、無品牌水印、embed 乾淨）。如果你同意，我可以先把 services.html 跟首頁改好，form 的位置先放一個 placeholder link，你今晚去 Tally 註冊貼完問題後把 URL 換上即可，全部動作大概 15 分鐘。
+
+要不要我現在就開始動手？如果同意，我會按這個順序交付：
+
+services.html 完整頁面（含 Diagnostic pricing 明示、intake form placeholder）
+更新後的 index.html（新 CTA、media strip、OG tags）
+一張 1200×630 的 SVG OG image
+給你的 Tally form 設定指引（6 題照 Playbook 原文）
+還是你想先只做其中一件、看效果再推進？
+
+You said: 我不想要把價錢放在網站上.
+我不想要把價錢放在網站上. 內容可以更具體沒問題
+同意
+同意 Tally是什麼??
+7:31 AM
+Claude responded: 收到。
+
+認可定價策略，規劃具體內容呈現方式。
+認可定價策略，規劃具體內容呈現方式。
+收到。
+
+關於不放價錢
+實際上這跟你的 tier 定位更一致。McKinsey、Bain、BCG、Prophet 的網站都沒有價錢，boutique 顧問公司放價錢反而像 freelancer。你的 Reuters / BBC 級別身分，pricing by inquiry 才是對的。
+
+不放價錢但仍然具體的做法，我會在 Services 頁面處理這幾個 dimension：
+
+Format 具體： 「A focused 90-minute working session」
+Deliverable 具體： 「A written Strategic Assessment Brief delivered within 48 hours」
+Process 具體： 「Starts with a short intake form → preparation → session → written brief → optional follow-on engagement」
+Signal 具體： 開頭一句話點明「This is a paid engagement. Details on fee provided on inquiry.」— 不給數字但明確排除「免費聊聊」的預期
+這樣國際買家知道這是 real、有規格、要付費的東西，但實際數字留到他送出 intake form 之後由你在回覆中明示（照 Playbook 的 template，USD 500 在 email 裡直接講）。這也保留了你對不同客戶類型的定價彈性（國際客戶 USD 500、人民幣客戶 CNY 3,500，不用在網站上暴露兩個幣別）。
+
+Tally 是什麼
+Tally.so 是一個類似 Typeform 的免費表單工具。你在上面設計好 intake form 的 6 題，它給你一個 URL（像 tally.so/r/xxxxx），或一段 iframe embed code 讓你嵌進網站。
+
+關鍵優勢：
+
+免費方案無品牌水印（Typeform 免費版會掛「Built with Typeform」）
+買家填完你會收到 email 通知
+可以直接連接 Google Sheet / Notion / email 自動化
+介面設計乾淨，跟你的網站調性不衝突
+5 分鐘註冊設定，不需要寫任何 code
+對你來說的 workflow：買家在 Services 頁點「Request a Diagnostic Session」→ 跳到 Tally form → 填完 6 題 submit → 你收到 email notification → 你回覆 Playbook 裡的那封 template（含 USD 500 定價）→ 買家確認付款 → 排 session。
+
+我現在開始動手。順序是：
+
+先寫 services.html（含 Tally form 的 placeholder 連結，你之後把 URL 換上去就好）
+更新 index.html（新 CTA、media strip、OG tags）
+生成一張 SVG OG image
+給你一份 Tally 註冊 + 問題設定的 step-by-step 指引
+開始了。
+
+
+設計OG圖像，製作SVG轉換PNG格式。
+設計OG圖像，製作SVG轉換PNG格式。
+現在更新首頁：
+
+
+設計了視覺化品牌形象與排版配置。
+設計了視覺化品牌形象與排版配置。
+現在生成 OG image。我會做成 1200×630 的 PNG（LinkedIn、Twitter、Facebook 都需要 PNG/JPG 才能正常顯示預覽）：
+
+
+決定用 Pillow 直接建構圖像以獲得最大控制。
+決定用 Pillow 直接建構圖像以獲得最大控制。
+You said: Continue
+Continue
+
+7:38 AM
+Claude responded: OG image 出來了，Liberation Serif 作為 Playfair 的替代算是可以接受的近似（你實際 deploy 時可以用 Google Fonts 版的 Playfair Display 重新 render 一次會更精確，但這個已經可以直接用）。
+
+Orchestrated file organization and prepared deliverable packaging
+Orchestrated file organization and prepared deliverable packaging
+OG image 出來了，Liberation Serif 作為 Playfair 的替代算是可以接受的近似（你實際 deploy 時可以用 Google Fonts 版的 Playfair Display 重新 render 一次會更精確，但這個已經可以直接用）。
+
+現在最後兩步：準備 Tally 設定指引，然後把所有檔案 package 到 outputs。
+
+
+Created a file, ran a command, read a file
+Created a file, ran a command, read a file
+五份檔案都在 outputs 裡。
+
+Deploy 順序建議
+你 GitHub Pages 上線的順序，約 30 分鐘可以全部完成：
+
+第一步（5 分鐘）： 按 Tally_Setup_Guide.md 建好 form，拿到 URL（格式 tally.so/r/XXXXXXX）
+
+第二步（5 分鐘）： 在 services.html 和 index.html 裡 find-replace https://tally.so/r/YOUR_FORM_ID → 你的真實 URL。services.html 有 1 處，index.html 有 1 處。
+
+第三步（5 分鐘）： 把 4 個檔案 push 到 GitHub Pages repo 的 root：
+
+index.html（取代現有的）
+services.html（新增）
+og-image.png（新增，放 root 即可，路徑已寫死 /og-image.png）
+og-image.svg（可選，作為 source 備份）
+第四步（10 分鐘）： Deploy 後立刻做三個驗證：
+
+conduitasia.com/services.html 能打開、Tally 連結 work
+用 LinkedIn Post Inspector 貼 conduitasia.com → 確認 OG 預覽卡出現
+用手機從 LinkedIn 點 conduitasia.com → Start with a Diagnostic → 填 form → 確認信箱收到 notification
+關於 OG image 的小提醒
+目前這張是用 Liberation Serif 當 Playfair 的替代字體產出的。視覺 80% 相近，但 Playfair 的襯線收分更纖細、字重分布更優雅。如果你想要 100% 精確版本，兩個做法：
+
+快： 丟給 Figma/Canva，用 Google Fonts 的 Playfair Display 重新排版一次，export 1200×630 PNG。
+程式化： 把 Playfair-Regular.ttf 跟 Playfair-Italic.ttf 從 fonts.google.com 下載存到 repo，我把 Python 腳本給你之後可以本地 re-run。
+我建議：先用這張 deploy 上線，LinkedIn 的 OG image 從有到無的差距遠大於從近似到完美的差距。等你有時間再升級。
+
+下一件事
+這次 session 解決了「international buyer 從看到你 → 發 inbound」這條 funnel 的三個主要摩擦點：
+
+✅ 有了可以指向的具體服務頁
+✅ 有了一個結構化的、不需要冷 email 的 intake 路徑
+✅ LinkedIn 分享會有完整的 OG 預覽卡
+還沒做但遲早要做的三件事，排在 Q2 的後半：
+
+Wei Kan 肖像照 — 放 About section 跟 services.html。信任層的最後一塊拼圖。
+1 到 2 個匿名化 case 短摘要 — 放 Case Archive，給 buyer「他真的做過類似的事」的證據。
+LinkedIn Company Page Custom Button — 等 Premium 升級 + 網站 live 之後啟用，button 直接指向 services.html#start。
+這次先不做，焦點保持在讓 inbound 真的發生。
+
+有任何 deploy 時遇到的問題，或是 Tally form 設定想要微調的地方，告訴我。
+
+
+Services
+Code · HTML 
+
+Index
+Code · HTML 
+
+Og image
+Image · PNG 
+
+Og image
+Image · SVG 
+
+Tally setup guide
+Document · MD 
+You said: 先帶我一步一步註冊Tally.
+先帶我一步一步註冊Tally.so
+
+7:45 AM
+Claude responded: 好，一步一步來。整個過程約 5 到 8 分鐘。
+好，一步一步來。整個過程約 5 到 8 分鐘。
+
+第一步：打開 Tally
+瀏覽器輸入：tally.so
+
+進到首頁後，右上角會有 "Sign up" 或 "Get started free" 按鈕，點進去。
+
+（如果你看到的是 "Log in" 的畫面，那是因為之前可能曾經誤入過 — 找 "Create an account" 或 "Sign up" 的連結切過去。）
+
+第二步：選註冊方式
+會出現三個選項：
+
+Continue with Google ← 建議選這個
+Continue with Apple
+Continue with email
+選 Google，然後用 wei.kan@conduitasia.com 登入。
+
+這裡確認一下：你的 wei.kan@conduitasia.com 信箱是架在 Google Workspace 嗎？還是別的 mail provider？如果是 Google Workspace，Google sign-in 直接通。如果不是，選 "Continue with email" 用這個地址註冊就好。
+
+第三步：完成 onboarding 問題
+Tally 會問你幾個問題來客製化體驗。建議這樣回答：
+
+What's your role? → "Founder" 或 "Consultant"
+What do you want to use Tally for? → "Lead generation" 或 "Contact form"（如果有這兩個選項）
+Team size? → "Just me"
+How did you hear about us? → 隨意，不影響功能
+如果出現 "Invite team members" 的畫面，點 "Skip" 跳過。
+
+第四步：確認你進到 workspace
+成功後你會看到 Tally 的 dashboard，左上角顯示你的 workspace 名稱（預設是 "Wei's workspace" 或類似）。主畫面中央會有一個大大的 "+ Create form" 按鈕。
+
+到這裡先停下來，回報我一下：
+
+你有順利登入嗎？用 Google sign-in 還是 email？
+Dashboard 上有沒有看到 "+ Create form"？
+左上角 workspace 名稱是什麼（這決定要不要改）？
+確認這三點之後，我帶你建 form。中間如果任何一步卡住、畫面不一樣、或訊息看不懂，直接截圖或描述給我，我陪你走完。
+
+You said: 進去了, 來建form
+進去了, 來建form
+
+7:45 AM
+Claude responded: 好，分兩個階段走。這個訊息先建好 form 的骨架（標題 + 描述），下一個訊息加 7 道題。
+
+規劃分階段引導建立表單結構。
+規劃分階段引導建立表單結構。
+好，分兩個階段走。這個訊息先建好 form 的骨架（標題 + 描述），下一個訊息加 7 道題。
+
+階段 A：建立 form 並設好標題與描述
+1. 從 dashboard 點 "+ Create form"
+Tally 會問你想從哪開始，選 "Start from scratch"（不要選 template，那些 template 都是消費級的跟我們的調性不合）。
+
+2. 你會進到編輯器
+左邊是 canvas（預覽），中間是 form 本身，上方工具列有 "Design"、"Settings"、"Share" 等 tab。
+
+最上方會有一行淡灰色的預設標題，通常是 "Untitled form" 或 "Form title"。
+
+3. 設定標題
+點一下那行預設標題，清空後輸入：
+
+Request a Diagnostic Session
+4. 加描述
+標題下方應該有一行小字預設是 "Form description" 或空白。點進去後輸入這段：
+
+This short intake takes about three minutes. Wei Kan reads every inquiry personally and responds within two business days with next steps, a proposed session time, and the fee. All conversations are confidential.
+如果 Tally 沒有預設的 description 區塊：
+
+按 Enter 換行
+輸入 / 會跳出 block 選單
+選 "Text" 或 "Paragraph"
+把上面那段文字貼進去
+5. 給 form 起一個內部名稱
+編輯器左上角會有一個檔案名稱欄位（跟 form 的顯示標題不同，這是你後台看的名字）。點開改成：
+
+Conduit Asia — Diagnostic Intake
+到這裡先暫停，確認三件事：
+
+Form 最上方大字顯示的是 "Request a Diagnostic Session"？
+標題下方的描述文字有正確顯示你剛才貼的那段？
+左上角內部檔案名稱改好了？
+如果全部 ✅，回我 "好了"，我給你 7 道題的完整設定，一次做完。
+
+如果任何一步 UI 看到的跟我描述的不一樣，截圖或描述給我，我調整給你。
+
+1776815285726_image.png
+7:48 AM
+Claude responded: 看到了。兩個小地方先修，然後加題目。
+
+Analyzed form structure and identified necessary title corrections
+Analyzed form structure and identified necessary title corrections
+看到了。兩個小地方先修，然後加題目。
+
+先修兩件事
+一、主標題太長
+
+目前 canvas 上最大字是「Conduit Asia — Diagnostic Intake」— 這是內部名稱被當成了 public 標題。國際買家打開會覺得像行政表格。
+
+點一下那個大標題，全選刪除，改成：
+
+Request a Diagnostic Session
+二、刪掉重複的小標題
+
+現在描述段落上方還有一行粗體「Request a Diagnostic Session」— 這跟你剛改的大標題重複了。
+
+把滑鼠 hover 到那行粗體文字上，左邊會出現垃圾桶 🗑️ 圖示，點下去刪掉。
+
+改完後 canvas 上應該長這樣：
+
+Request a Diagnostic Session     ← 大標題
+This short intake takes about... ← 描述段落
+[Submit →]                       ← 按鈕
+加題目：先學 Tally 的基本操作
+在描述段落下方、Submit 按鈕上方的空白處點一下，游標會停在那裡。
+
+然後打一個 /（斜線）。
+
+會跳出一個 block 選單，裡面有 Text、Input fields、Multiple choice、Multi-select 等分類。每次要加一題就是：游標放到想加的位置 → 打 / → 選對應的 block type。
+
+7 道題，照順序加
+題目之間不需要分隔，Tally 會自動排版。Submit 按鈕永遠會自動停在最下面。
+
+Q1 — Short answer
+打 /，選 "Short answer"（或 "Input field"）
+Question title: Your name and role
+Placeholder: e.g. Jane Chen, VP International
+Required: 開啟
+Q2 — Short answer
+打 /，選 "Short answer"
+Question title: Your brand or company
+Placeholder: Brand name, website if helpful
+Required: 開啟
+Q3 — Multiple choice (single select)
+打 /，選 "Multiple choice"
+Question title: Which market are you focused on?
+Options（按 Enter 加下一個選項）:
+  China (Mainland)
+  Greater China (incl. HK, Taiwan)
+  Japan
+  Korea
+  Southeast Asia
+  Broader APAC
+  Asian brand going into US / Europe
+  Other
+Required: 開啟
+Q4 — Multiple choice (single select)
+打 /，選 "Multiple choice"
+Question title: What stage are you at?
+Options:
+  Exploring — still deciding whether and how
+  Planning — direction set, working out strategy
+  Already in market but struggling
+  Internal disagreement needing outside view
+Required: 開啟
+Q5 — Long answer
+打 /，選 "Long answer"（或 "Paragraph"）
+Question title: What's the specific challenge or question you're trying to answer?
+Description/helper: A paragraph is plenty. The more specific, the more useful the session.
+Required: 開啟
+Q6 — Long answer
+打 /，選 "Long answer"
+Question title: What have you already tried or considered? Is there a deadline driving this?
+Description: Optional but helps us prepare properly.
+Required: 關閉
+Q7 — Email
+打 /，選 "Email"（Tally 有專門的 email field，會自動驗證格式）
+Question title: Best email to reach you
+Required: 開啟
+先停在這裡
+全部加完後，畫面應該有 7 題加上原本的標題、描述、Submit 按鈕。
+
+先不用管 notifications 和 publish — 加完題目後跟我說一聲，我帶你做最後兩步（email 通知設定 + publish 取得 URL）。
+
+過程中任何一題的 UI 長得跟我描述不一樣，或找不到某個 block type，截圖或描述給我。
+
+You said: Button label?
+Button label??
+
+7:57 AM
+Claude responded: 啊，你遇到 Tally 的一個 UI 細節 — Multiple choice 問題會多出一個 "Button label" 欄位。
+啊，你遇到 Tally 的一個 UI 細節 — Multiple choice 問題會多出一個 "Button label" 欄位。
+
+Button label 填：
+
+Continue
+簡單說明：Tally 的 Multiple choice 預設會要求買家選完選項後再按一個按鈕才跳到下一題。這個「Button label」就是那顆按鈕上顯示的字。
+
+三個選擇，由簡到繁：
+
+Continue ← 最通用、最乾淨，建議用這個
+Next
+留空 → Tally 會用預設值（通常也是 "OK" 之類的）
+Q3 跟 Q4 兩題 Multiple choice 都填 "Continue" 保持一致。
+
+繼續加題目，有任何欄位不確定直接問。
+
+You said: 都填完了
+都填完了
+
+7:57 AM
+Claude responded: 好，剩下最後三步：預覽 → 通知 → 發布。
+好，剩下最後三步：預覽 → 通知 → 發布。
+
+第一步：預覽檢查（2 分鐘）
+右上角有 "Preview" 按鈕，點下去看買家實際會看到什麼樣子。
+
+從頭到尾走一遍，確認：
+
+標題 "Request a Diagnostic Session" 顯示正確
+描述段落沒有截斷或格式錯誤
+7 題順序對、Required 星號有出現在該有的地方
+Q3 跟 Q4 的選項沒拼錯
+Submit 按鈕在最後
+不要真的填完送出 — 因為你還沒設 email 通知，測試 submission 也不會通知到你。預覽完點右上角 X 關掉。
+
+如果哪題發現打錯字或要調整，回到編輯器改完再下一步。
+
+第二步：Email 通知設定
+最上方工具列有一個 ⚙️ 齒輪 icon（在 "Customize" 跟 Preview 左邊），點下去。
+
+會跳出 Settings 面板，左側欄會有：
+
+General
+Access & security
+Notifications & email
+Redirect on completion
+Integrations
+...
+點 "Notifications & email" 或 "Email notifications"。
+
+你會看到一個「Self email notifications」或類似名稱的開關。把它打開，然後：
+
+Send to: wei.kan@conduitasia.com
+Subject: New Diagnostic inquiry from [Your name and role]
+如果 Tally 支援 variable，可以用 {name} 或點 @ 插入 Q1 的答案
+不確定就先填 New Diagnostic inquiry via conduitasia.com，之後再優化
+Include submission data in email: 開啟（這樣你在信裡直接看到答案，不用點連結）
+儲存。
+
+同一個 Settings 面板裡，順便檢查一下 "Respondent email"（給填 form 的人的確認信）。建議先關閉，因為免費版的確認信會有 Tally logo。等之後有需要再處理。
+
+關閉 Settings 面板。
+
+第三步：Publish 取得 URL
+畫面右上角應該有 "Publish" 按鈕（或 "Finish update"，因為你的 form 是 draft 狀態）。點下去。
+
+Tally 會跳出 "Your form is published 🎉" 之類的視窗，裡面有：
+
+Form URL — 長這樣：https://tally.so/r/XXXXXXX
+Embed code — 我們暫時不用
+Share — 也不用
+複製那個 Form URL，貼給我看一下（URL 本身沒有敏感資訊，就是買家會看到的公開連結）。
+
+驗證（發布後立刻做）
+在無痕視窗打開那個 URL（無痕視窗模擬買家第一次看到的狀態）：
+
+Form 正常開啟、沒有 Tally logo 水印（免費版下方可能有一個 "Made with Tally" 文字，可以接受）
+隨便填一次送出
+3 分鐘內檢查 wei.kan@conduitasia.com — 應該收到通知信
+回 Tally dashboard 的 "Submissions" tab 確認看得到那筆測試資料
+通知信有收到、dashboard 有紀錄 → Form 正式 work。
+
+沒收到 → 回來告訴我，我們 debug。
+
+把 URL 給我之後，我給你改好的 services.html 和 index.html 片段，你貼進 GitHub repo 就完成全部。
+
+1776815995184_image.png
+8:00 AM
+Claude responded: 完全沒問題，這就是對的狀態。
+完全沒問題，這就是對的狀態。
+
+幾個觀察：
+
+看起來一切正常：
+
+✅ 開關是藍色的（啟用中）
+✅ To: wei.kan@conduitasia.com 正確
+✅ Subject 用了 Tally 預設的變數 @Form name，會自動帶入「Conduit Asia — Diagnostic Intake」
+✅ Body 用 @All answers 變數，所有 7 題答案會直接顯示在信件內容裡，你不用點任何連結就看得到
+關於 "To customize ... upgrade to Tally Pro"： 免費版不給自訂 From name、Subject 文字、Reply-to。現在這樣完全夠用，信會進你的 inbox，內容完整。等你有 30+ inbound 的時候再考慮升級 Pro，不急。
+
+一個建議（可選）： 可以在「Reply to:」欄位填 wei.kan@conduitasia.com。這樣你在信箱按 "Reply" 會直接回到你自己 — 正常狀況你不會 reply 給 Tally，所以影響不大。不填也 OK。
+
+直接往下走：Publish
+關閉這個 Settings 面板（右上角 X 或點面板外區域）。
+
+回到編輯器主畫面，右上角看你現在顯示的是 "Finish update" 還是 "Publish"。
+
+如果是 "Finish update" → 直接點，form 會 publish / 更新
+如果是 "Publish" → 點下去
+發布後會跳出一個分享畫面，顯示類似：
+
+🎉 Your form is live
+https://tally.so/r/XXXXXXX
+[Copy link]
+點 Copy link，然後把那個 URL 貼到對話裡給我。
+
+拿到 URL 之後，我做兩件事：
+
+把 URL 填進你的 services.html 和 index.html（準確位置我會標出來）
+給你一個 deploy checklist
+You said: https://tally.
+https://tally.so/r/VL1ekE
+
+8:01 AM
+Claude responded: 完美。讓我把 URL 填進兩個 HTML 檔案，然後給你 deploy checklist。 index.
+
+Thought for 1s
+Thought for 1s
+完美。讓我把 URL 填進兩個 HTML 檔案，然後給你 deploy checklist。
+
+
+Validated architecture and prepared deployment checklist
+Validated architecture and prepared deployment checklist
+index.html 的 CTA 架構是對的 — 所有「Start with a Diagnostic」按鈕指向 /services.html#start，這個 anchor 會滑到 services.html 底部的 CTA section，那裡才有 Tally 連結。單一來源，以後要改連結只需改一處。
+
+
+Ran a command, read a file
+Ran a command, read a file
+三個檔案都 ready。Tally URL VL1ekE 已經嵌入 services.html。
+
+Deploy 到 GitHub Pages 的步驟
+假設你的 repo 是標準 GitHub Pages 設置（你目前的 conduitasia.com 就是這樣）：
+
+一、在本地或 GitHub 網頁 UI 把檔案放到 repo root
+三個檔案都放 repo 最頂層（跟現有的 index.html 跟 insights.html 同一層）：
+
+conduitasia-repo/
+├── index.html          ← 取代原本的
+├── insights.html       ← 不動
+├── services.html       ← 新增
+├── og-image.png        ← 新增
+└── ...
+最快的做法： 直接在 github.com 網頁開 repo，點 Add file → Upload files，把這三個拖進去，commit 訊息寫 Add services page, Tally intake, OG image，直接 commit to main。
+
+二、等 1 到 3 分鐘讓 GitHub Pages 重新 build
+GitHub Pages 會自動偵測 commit、重新發布。可以到 repo 的 Actions tab 或 Settings → Pages 看 build 狀態。
+
+三、立刻驗證（在手機或無痕視窗做）
+三個測試，一個都不能省：
+
+測試 1：Services 頁面 + Tally
+
+打開 conduitasia.com/services.html
+滑到底 → 點 "Send an inquiry →"
+應該跳到 tally.so/r/VL1ekE
+隨便填一次送出
+3 分鐘內檢查 wei.kan@conduitasia.com inbox — 應該收到 Tally 通知信，內容包含你剛剛填的所有答案
+測試 2：首頁 CTA 流暢度
+
+打開 conduitasia.com
+Hero 區的「Start with a Diagnostic →」按鈕
+點下去應該跳到 services.html 並自動滾到最下方的 CTA 區（因為 #start anchor）
+測試 3：LinkedIn OG 預覽
+
+打開 linkedin.com/post-inspector
+貼 https://conduitasia.com 進去 → 點 Inspect
+應該看到完整預覽卡：標題「Conduit Asia | Asia. From the Inside.」、描述段落、1200×630 OG image
+如果 LinkedIn Post Inspector 顯示的是舊版沒有 image 的預覽，點一下 "Refresh" 按鈕強制 re-crawl。
+
+如果發現問題
+Tally 連結 404： 你的 VL1ekE URL 可能還沒真正 publish。回 Tally 點右上 "Finish update" 或 "Publish" 再確認一次。
+
+OG image 不出現： 檢查 og-image.png 是不是真的放在 repo root。也可能是 Twitter/LinkedIn 還沒 re-crawl — 用 Post Inspector 強制刷新通常就好。
+
+Email 通知沒收到： 去 Tally 的 Submissions tab 看有沒有那筆資料。有 → email 設定問題，檢查 spam 或 Settings 裡的 To 欄位。沒有 → form 根本沒在接 submission，回來告訴我。
+
+Deploy 完回來報個結果。順利的話你現在就有了第一條可以 public share 的 link：下一篇 LinkedIn 文章底部可以放 soft CTA「If your brand is navigating this, you can request a Diagnostic Session at conduitasia.com/services」。
+
+這就是你一直想要的 content-to-client 真正 closed-loop 的起點。
+
+
+Services
+Code · HTML 
+
+Index
+Code · HTML 
+
+Og image
+Image · PNG 
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conduit Asia | Asia. From the Inside.</title>
-    <meta name="description" content="Strategic advisory for international brands entering Asia and Asian brands building outside it. Founded by Wei Kan, former Nike and Converse APAC executive.">
+    <meta name="description" content="Strategic advisory for international brands entering Asia and Asian brands building outside it. Founded by Wei Kan, former Nike and Converse APAC executive. Quoted in Reuters, BBC, WWD.">
+    <meta name="author" content="Wei Kan">
+ 
+    <meta property="og:title" content="Conduit Asia | Asia. From the Inside.">
+    <meta property="og:description" content="Strategic advisory for international brands entering Asia and Asian brands building outside it. Founded by Wei Kan, former Nike and Converse APAC executive.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://conduitasia.com/">
+    <meta property="og:image" content="https://conduitasia.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Conduit Asia">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conduit Asia | Asia. From the Inside.">
+    <meta name="twitter:description" content="Strategic advisory for international brands entering Asia, and Asian brands building outside it. By Wei Kan, former Nike and Converse APAC.">
+    <meta name="twitter:image" content="https://conduitasia.com/og-image.png">
+    <link rel="canonical" href="https://conduitasia.com/">
+ 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Conduit Asia",
+        "legalName": "Conduit International Limited",
+        "url": "https://conduitasia.com",
+        "logo": "https://conduitasia.com/og-image.png",
+        "description": "Strategic advisory for international brands entering Asia and Asian brands building outside it.",
+        "founder": {
+            "@type": "Person",
+            "name": "Wei Kan",
+            "jobTitle": "Founder and Principal",
+            "sameAs": [
+                "https://www.linkedin.com/in/weikan/",
+                "https://medium.com/@wei.kan"
+            ]
+        },
+        "email": "wei.kan@conduitasia.com",
+        "areaServed": ["CN", "HK", "TW", "JP", "KR", "SG", "TH", "VN", "MY", "ID", "PH", "US", "GB"],
+        "address": [
+            {"@type": "PostalAddress", "addressLocality": "Hong Kong"},
+            {"@type": "PostalAddress", "addressLocality": "Shanghai"}
+        ]
+    }
+    </script>
+ 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%230F0F0F'/%3E%3Cpath d='M18 4L4 30H32L18 4Z' stroke='%23F2F1EC' stroke-width='1.8' fill='none'/%3E%3Cline x1='2' y1='20' x2='34' y2='20' stroke='%23F2F1EC' stroke-width='1.8'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-dark: #0F0F0F;
@@ -20,10 +718,10 @@
             --text-dark: #0F0F0F;
             --text-muted: #888880;
         }
-
+ 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
-
+ 
         body {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
@@ -33,10 +731,10 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
+ 
         .logo-mark { display: inline-block; }
         .logo-mark svg { height: 32px; width: auto; }
-
+ 
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             padding: 24px 48px;
@@ -49,37 +747,63 @@
         .nav-links { display: flex; align-items: center; gap: 32px; }
         .nav-link, .nav-contact { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
         .nav-link:hover, .nav-contact:hover { color: var(--dusty-violet); }
-
+ 
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto;
+            padding: 120px 48px 60px; max-width: 1200px; margin: 0 auto;
         }
         .hero-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 32px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(42px, 6vw, 72px); line-height: 1.15; color: var(--text-light); margin-bottom: 40px; max-width: 800px; }
         .hero-intro { max-width: 580px; font-size: 17px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 20px; }
-        .hero-cta { display: inline-block; margin-top: 32px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease, border-color 0.3s ease; }
-        .hero-cta:hover { color: var(--dusty-violet); }
-
+ 
+        .hero-cta-group { display: flex; gap: 36px; align-items: center; margin-top: 40px; flex-wrap: wrap; }
+        .hero-cta-primary { display: inline-block; background: var(--warm-white); color: var(--text-dark); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
+        .hero-cta-primary:hover { background: var(--dusty-violet); color: var(--warm-white); }
+        .hero-cta-secondary { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .hero-cta-secondary:hover { color: var(--dusty-violet); }
+ 
+        .media-strip { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+        .media-strip-inner {
+            padding: 24px 0;
+            border-top: 1px solid rgba(136, 136, 128, 0.15);
+            border-bottom: 1px solid rgba(136, 136, 128, 0.15);
+            display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+        }
+        .media-strip-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); white-space: nowrap; }
+        .media-strip-list { font-size: 13px; color: var(--mid-gray); letter-spacing: 1px; line-height: 1.6; }
+        .media-strip-list a { color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
+        .media-strip-list a:hover { color: var(--text-light); }
+ 
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
         .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
         .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
-
+ 
         .clients { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
         .clients-inner .divider { margin-bottom: 24px; }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
-        .clients-text { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.5; color: var(--text-light); max-width: 920px; margin-top: 24px; }
-
+        .clients-intro { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.5; color: var(--text-light); max-width: 920px; margin-top: 24px; margin-bottom: 40px; }
+        .clients-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
+        .client-type { background: var(--card-dark); padding: 36px 32px; }
+        .client-type-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
+        .client-type h4 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 19px; line-height: 1.35; color: var(--text-light); margin-bottom: 12px; }
+        .client-type p { font-size: 14px; line-height: 1.7; color: var(--mid-gray); }
+ 
         .services { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
-        .services-header { margin-bottom: 80px; }
+        .services-header { margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
+        .services-header-left { max-width: 720px; }
         .services-header .divider { margin-bottom: 24px; }
         .section-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-light); }
+        .services-header-cta { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; white-space: nowrap; }
+        .services-header-cta:hover { color: var(--dusty-violet); }
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-        .service-card { background: var(--card-dark); padding: 48px; transition: background 0.4s ease; }
+        .service-card { background: var(--card-dark); padding: 48px; transition: background 0.4s ease; text-decoration: none; display: block; }
         .service-card:hover { background: #1f1f1f; }
         .service-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 20px; }
         .service-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: var(--text-light); margin-bottom: 16px; }
-        .service-card p { font-size: 15px; line-height: 1.75; color: var(--mid-gray); }
-
+        .service-card p { font-size: 15px; line-height: 1.75; color: var(--mid-gray); margin-bottom: 24px; }
+        .service-card-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); transition: color 0.3s ease; }
+        .service-card:hover .service-card-link { color: var(--dusty-violet); }
+ 
         .insights-section { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .insights-header { margin-bottom: 56px; }
         .insights-header .divider { margin-bottom: 24px; }
@@ -93,7 +817,7 @@
         .insights-footer { text-align: left; }
         .insights-all { display: inline-block; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
         .insights-all:hover { color: var(--dusty-violet); }
-
+ 
         .about { background: var(--warm-white); color: var(--text-dark); }
         .about-inner { max-width: 1200px; margin: 0 auto; padding: 100px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .about .divider { margin-bottom: 24px; }
@@ -106,12 +830,19 @@
         .credential-item:first-child { border-top: 1px solid rgba(15, 15, 15, 0.08); }
         .credential-role { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text-dark); margin-bottom: 4px; }
         .credential-detail { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
-
+ 
         .also { background: var(--warm-white); color: var(--text-dark); padding: 0 48px 100px; }
         .also-inner { max-width: 1200px; margin: 0 auto; padding-top: 60px; border-top: 1px solid rgba(15, 15, 15, 0.08); }
         .also p { font-size: 16px; line-height: 1.85; color: #444; max-width: 680px; }
         .also .section-label { margin-bottom: 20px; }
-
+ 
+        .closing-cta { padding: 120px 48px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .closing-cta .divider { margin: 0 auto 24px; }
+        .closing-cta .section-label { text-align: center; }
+        .closing-cta h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(30px, 4vw, 48px); line-height: 1.25; color: var(--text-light); margin-bottom: 24px; max-width: 720px; margin-left: auto; margin-right: auto; }
+        .closing-cta p { font-size: 16px; line-height: 1.85; color: var(--mid-gray); max-width: 580px; margin: 0 auto 40px; }
+        .closing-cta-buttons { display: flex; gap: 32px; justify-content: center; align-items: center; flex-wrap: wrap; }
+ 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
         .footer-brand { display: flex; align-items: center; gap: 14px; }
@@ -120,19 +851,20 @@
         .footer-contact a:hover { color: var(--dusty-violet); }
         .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 32px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
         .footer-locations { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
-        .footer-media { text-align: right; }
-        .footer-media-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 8px; }
-        .footer-media-list { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
         .footer-legal { margin-top: 48px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
-
+ 
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-
+ 
         @media (max-width: 768px) {
             nav { padding: 20px 24px; }
-            .nav-links { gap: 20px; }
-            .hero { padding: 100px 24px 60px; }
+            .nav-links { gap: 18px; }
+            .hero { padding: 100px 24px 50px; }
+            .hero-cta-group { gap: 24px; }
+            .media-strip { padding: 0 24px; }
+            .media-strip-inner { gap: 14px; }
             .clients { padding: 60px 24px; }
+            .clients-list { grid-template-columns: 1fr; }
             .services { padding: 60px 24px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { padding: 36px 24px; }
@@ -141,79 +873,117 @@
             .insight-card { padding: 28px 24px; min-height: auto; }
             .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
             .also { padding: 0 24px 60px; }
+            .closing-cta { padding: 80px 24px; }
             footer { padding: 60px 24px; }
             .footer-top { flex-direction: column; gap: 32px; }
             .footer-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-            .footer-media { text-align: left; }
             .section-divider { padding: 0 24px; }
         }
     </style>
 </head>
 <body>
-
+ 
     <nav id="nav">
-        <a href="#" class="nav-brand">
+        <a href="/" class="nav-brand">
             <span class="logo-mark"><svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/><line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/></svg></span>
             <span class="nav-brand-text">Conduit Asia</span>
         </a>
         <div class="nav-links">
+            <a href="/services.html" class="nav-link">Services</a>
             <a href="/insights.html" class="nav-link">Case Archive</a>
             <a href="mailto:wei.kan@conduitasia.com" class="nav-contact">wei.kan@conduitasia.com</a>
         </div>
     </nav>
-
+ 
     <section class="hero">
-        <div class="hero-label">Strategic Advisory</div>
+        <div class="hero-label">Strategic Advisory &middot; Hong Kong &middot; Shanghai</div>
         <h1>Asia. From the Inside.</h1>
         <p class="hero-intro">A strategic advisory practice for international brands entering Asia, and Asian brands building outside it.</p>
         <p class="hero-intro" style="max-width: 520px;">Founded and led by Wei Kan. Twenty years inside Asia's brand business, fifteen of them at Nike and Converse.</p>
-        <a href="mailto:wei.kan@conduitasia.com" class="hero-cta">Get in touch</a>
+        <div class="hero-cta-group">
+            <a href="/services.html#start" class="hero-cta-primary">Start with a Diagnostic &rarr;</a>
+            <a href="/services.html" class="hero-cta-secondary">How we work</a>
+        </div>
     </section>
-
-    <div class="section-divider"><div class="line"></div></div>
-
+ 
+    <div class="media-strip">
+        <div class="media-strip-inner">
+            <span class="media-strip-label">As quoted in</span>
+            <span class="media-strip-list">
+                <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" rel="noopener">Reuters</a> &middot;
+                <a href="https://www.bbc.com/news/articles/c98mrepzgj7o" target="_blank" rel="noopener">BBC</a> &middot;
+                <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Footwear News</a> &middot;
+                <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" rel="noopener">Het Financieele Dagblad</a>
+            </span>
+        </div>
+    </div>
+ 
     <section class="clients">
         <div class="clients-inner fade-in">
             <div class="divider"></div>
-            <div class="section-label">Clients</div>
-            <p class="clients-text">Conduit Asia works with global sportswear, premium accessories, and lifestyle brands navigating China and APAC, alongside designer-led Asian brands building presence internationally. The practice is also regularly consulted by investment research firms and expert networks on Asian consumer dynamics.</p>
+            <div class="section-label">Who We Work With</div>
+            <p class="clients-intro">Conduit Asia is built for leaders making consequential moves in and out of Asia. Three client types, one common thread: an unsolved strategic question that needs a grounded read from inside the region.</p>
+            <div class="clients-list">
+                <div class="client-type">
+                    <div class="client-type-label">Type 01</div>
+                    <h4>International brands entering or recalibrating in Asia</h4>
+                    <p>Global sportswear, premium accessories, and lifestyle brands working on China, APAC, and cross-regional strategy.</p>
+                </div>
+                <div class="client-type">
+                    <div class="client-type-label">Type 02</div>
+                    <h4>Asian designer-led brands building outside the region</h4>
+                    <p>Founder-led brands making their first coordinated move into North America and Europe, needing senior strategic judgment before scaling spend.</p>
+                </div>
+                <div class="client-type">
+                    <div class="client-type-label">Type 03</div>
+                    <h4>Investment research firms and expert networks</h4>
+                    <p>Regular consultations on Asian consumer dynamics, brand performance, and category trajectories, drawn from inside-the-market perspective.</p>
+                </div>
+            </div>
         </div>
     </section>
-
+ 
     <div class="section-divider"><div class="line"></div></div>
-
+ 
     <section class="services">
         <div class="services-header fade-in">
-            <div class="divider"></div>
-            <div class="section-label">How We Work</div>
-            <h2 class="section-title">From diagnosis to market.</h2>
+            <div class="services-header-left">
+                <div class="divider"></div>
+                <div class="section-label">How We Work</div>
+                <h2 class="section-title">From diagnosis to market.</h2>
+            </div>
+            <a href="/services.html" class="services-header-cta">See all services &rarr;</a>
         </div>
         <div class="services-grid">
-            <div class="service-card fade-in">
+            <a href="/services.html#start" class="service-card fade-in">
                 <div class="service-tag">Where every engagement starts</div>
-                <h3>Strategic Diagnostic</h3>
-                <p>A paid working session on a defined question. You send context in advance, we work through it together, and a written Strategic Assessment Brief follows within 48 hours.</p>
-            </div>
-            <div class="service-card fade-in">
+                <h3>Strategic Diagnostic Session</h3>
+                <p>A focused paid working session on a defined question. You send context in advance, we work through it together, and a written Strategic Assessment Brief follows within 48 hours.</p>
+                <div class="service-card-link">Request a session &rarr;</div>
+            </a>
+            <a href="/services.html" class="service-card fade-in">
                 <div class="service-tag">One-time deep dive</div>
                 <h3>Market Intelligence Briefing</h3>
-                <p>A standalone research engagement for a strategic question that needs an answer before budget or direction is committed. Competitive landscape, consumer insight, channel assessment. Delivered as a written briefing and presentation.</p>
-            </div>
-            <div class="service-card fade-in">
+                <p>A standalone research engagement for a strategic question that needs a real answer before budget or direction is committed. Competitive landscape, consumer insight, channel assessment. Delivered as a written briefing and presentation.</p>
+                <div class="service-card-link">Learn more &rarr;</div>
+            </a>
+            <a href="/services.html" class="service-card fade-in">
                 <div class="service-tag">Ongoing partnership</div>
                 <h3>Strategic Advisory Retainer</h3>
                 <p>A standing advisory relationship for brands that want a strategic partner inside the region. Monthly working sessions, on-the-ground market reads, and judgment built from twenty years across APAC.</p>
-            </div>
-            <div class="service-card fade-in">
+                <div class="service-card-link">Learn more &rarr;</div>
+            </a>
+            <a href="/services.html" class="service-card fade-in">
                 <div class="service-tag">Full engagement</div>
                 <h3>Market Entry &amp; Brand Internationalization</h3>
                 <p>An end-to-end engagement, from diagnosis to go-to-market. Positioning, channel strategy, media and KOL coordination, local activation. Conduit Asia leads strategy; execution runs through a network of regional partners.</p>
-            </div>
+                <div class="service-card-link">Learn more &rarr;</div>
+            </a>
         </div>
     </section>
-
+ 
     <div class="section-divider"><div class="line"></div></div>
-
+ 
     <section class="insights-section">
         <div class="insights-header fade-in">
             <div class="divider"></div>
@@ -244,7 +1014,7 @@
             <a href="/insights.html" class="insights-all">Case Archive &rarr;</a>
         </div>
     </section>
-
+ 
     <section class="about">
         <div class="about-inner">
             <div class="about-left fade-in">
@@ -252,7 +1022,8 @@
                 <div class="section-label">About</div>
                 <h2>Wei Kan</h2>
                 <div class="about-text">
-                    <p>Founder of Conduit Asia. Twenty years of brand marketing across Asia-Pacific, building businesses across Greater China, Southeast Asia, Korea, and Japan.</p>
+                    <p>Founder and principal of Conduit Asia. Twenty years of brand marketing across Asia-Pacific, building businesses across Greater China, Southeast Asia, Korea, and Japan.</p>
+                    <p>Regularly quoted by Reuters, BBC, Footwear News, and Het Financieele Dagblad on China consumer dynamics and global sportswear brand strategy. Work with clients is held in confidence; public commentary draws on frameworks refined inside those engagements.</p>
                 </div>
             </div>
             <div class="about-credentials fade-in">
@@ -275,14 +1046,27 @@
             </div>
         </div>
     </section>
-
+ 
     <section class="also">
         <div class="also-inner fade-in">
             <div class="section-label">Also</div>
             <p>Regularly consulted by international business media on Asia consumer and brand strategy. Serves as an industry source for <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" style="color: var(--text-dark); border-bottom: 1px solid var(--dusty-violet);">Reuters</a>, <a href="https://www.bbc.com/news/articles/c98mrepzgj7o" target="_blank" style="color: var(--text-dark); border-bottom: 1px solid var(--dusty-violet);">BBC</a>, <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" style="color: var(--text-dark); border-bottom: 1px solid var(--dusty-violet);">Footwear News</a>, and <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" style="color: var(--text-dark); border-bottom: 1px solid var(--dusty-violet);">Het Financieele Dagblad</a>.</p>
         </div>
     </section>
-
+ 
+    <section class="closing-cta">
+        <div class="fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Get in touch</div>
+            <h2>If your brand has an unsolved question in Asia, start with a Diagnostic.</h2>
+            <p>A short intake form takes about three minutes. We respond within two business days with next steps and confirm the fee. If a different engagement is a better fit, we'll suggest that instead.</p>
+            <div class="closing-cta-buttons">
+                <a href="/services.html#start" class="hero-cta-primary">Start with a Diagnostic &rarr;</a>
+                <a href="mailto:wei.kan@conduitasia.com?subject=Inquiry%20via%20conduitasia.com" class="hero-cta-secondary">Or email directly</a>
+            </div>
+        </div>
+    </section>
+ 
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
@@ -293,19 +1077,16 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
+                <a href="/services.html">Services</a>
                 <a href="/insights.html">Case Archive</a>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-locations">Hong Kong &middot; Shanghai</div>
-            <div class="footer-media">
-                <div class="footer-media-label">Media</div>
-                <div class="footer-media-list"><a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Reuters</a> &middot; <a href="https://www.bbc.com/news/articles/c98mrepzgj7o" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">BBC</a> &middot; <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Footwear News</a> &middot; <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Het Financieele Dagblad</a></div>
-            </div>
         </div>
         <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
     </footer>
-
+ 
     <script>
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
@@ -314,6 +1095,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-
+ 
 </body>
 </html>
+ 
