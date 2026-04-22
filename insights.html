@@ -6,11 +6,21 @@
     <title>Case Archive | Conduit Asia</title>
     <meta name="description" content="Brand and market cases from China and APAC. Worked-through analysis on sportswear, lifestyle, and premium consumer brands by Wei Kan, founder of Conduit Asia.">
     <meta name="author" content="Wei Kan">
+
     <meta property="og:title" content="Case Archive | Conduit Asia">
     <meta property="og:description" content="Brand and market cases from 20+ years across Asia-Pacific. Sportswear, lifestyle, and premium consumer brand analysis by Wei Kan.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://conduitasia.com/insights.html">
+    <meta property="og:image" content="https://conduitasia.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Conduit Asia">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Archive | Conduit Asia">
+    <meta name="twitter:description" content="Brand and market cases from 20+ years across Asia-Pacific. Sportswear, lifestyle, and premium consumer brand analysis by Wei Kan.">
+    <meta name="twitter:image" content="https://conduitasia.com/og-image.png">
     <link rel="canonical" href="https://conduitasia.com/insights.html">
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%230F0F0F'/%3E%3Cpath d='M18 4L4 30H32L18 4Z' stroke='%23F2F1EC' stroke-width='1.8' fill='none'/%3E%3Cline x1='2' y1='20' x2='34' y2='20' stroke='%23F2F1EC' stroke-width='1.8'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,11 +115,22 @@
         .article-card p { font-size: 15px; line-height: 1.7; color: var(--mid-gray); max-width: 680px; }
         .article-meta { margin-top: 10px; font-size: 12px; letter-spacing: 0.5px; color: rgba(136, 136, 128, 0.6); }
 
-        .also-on { max-width: 1200px; margin: 0 auto; padding: 80px 48px; }
+        .also-on { max-width: 1200px; margin: 0 auto; padding: 80px 48px 0; }
         .also-on-inner { padding-top: 48px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
         .also-on p { font-size: 15px; line-height: 1.8; color: var(--mid-gray); max-width: 680px; }
         .also-on a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
         .also-on a:hover { color: var(--dusty-violet); }
+
+        .engage-cta { max-width: 1200px; margin: 0 auto; padding: 100px 48px 80px; }
+        .engage-cta-inner { max-width: 720px; }
+        .engage-cta .divider { margin-bottom: 24px; }
+        .engage-cta h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.3; color: var(--text-light); margin-bottom: 20px; }
+        .engage-cta p { font-size: 16px; line-height: 1.85; color: var(--mid-gray); margin-bottom: 32px; max-width: 620px; }
+        .engage-cta-buttons { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+        .engage-cta-primary { display: inline-block; background: var(--warm-white); color: var(--text-dark); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
+        .engage-cta-primary:hover { background: var(--dusty-violet); color: var(--warm-white); }
+        .engage-cta-secondary { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .engage-cta-secondary:hover { color: var(--dusty-violet); }
 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
@@ -129,13 +150,14 @@
 
         @media (max-width: 768px) {
             nav { padding: 20px 24px; }
-            .nav-links { gap: 20px; }
+            .nav-links { gap: 18px; }
             .hero { padding: 120px 24px 60px; }
             .archive-note { padding: 50px 24px 0; }
             .content-section { padding: 60px 24px 0; }
             .article-card:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
             .article-card h3 { font-size: 19px; }
-            .also-on { padding: 60px 24px; }
+            .also-on { padding: 60px 24px 0; }
+            .engage-cta { padding: 70px 24px 50px; }
             footer { padding: 60px 24px; }
             .footer-top { flex-direction: column; gap: 32px; }
             .footer-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
@@ -151,6 +173,7 @@
             <span class="nav-brand-text">Conduit Asia</span>
         </a>
         <div class="nav-links">
+            <a href="/services.html" class="nav-link">Services</a>
             <a href="/insights.html" class="nav-link active">Case Archive</a>
             <a href="mailto:wei.kan@conduitasia.com" class="nav-contact">wei.kan@conduitasia.com</a>
         </div>
@@ -241,6 +264,19 @@
         </div>
     </section>
 
+    <section class="engage-cta">
+        <div class="engage-cta-inner fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Engage Directly</div>
+            <h2>If one of these cases mirrors a question your brand is facing.</h2>
+            <p>The frameworks above are drawn from the same thinking applied inside paid client engagements. When a public piece lands close to a specific situation you're navigating, a Strategic Diagnostic Session is the most direct way to work through it together.</p>
+            <div class="engage-cta-buttons">
+                <a href="/services.html#start" class="engage-cta-primary">Request a Diagnostic &rarr;</a>
+                <a href="/services.html" class="engage-cta-secondary">How we work</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
@@ -251,6 +287,7 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
+                <a href="/services.html">Services</a>
                 <a href="/insights.html">Case Archive</a>
             </div>
         </div>
