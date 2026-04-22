@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Conduit Asia</title>
+    <meta name="description" content="Strategic advisory services for international brands in Asia and Asian brands building outside it. Diagnostic sessions, market intelligence, advisory retainers, and full market entry engagements.">
+    <meta name="author" content="Wei Kan">
+
+    <meta property="og:title" content="Services | Conduit Asia">
+    <meta property="og:description" content="From a focused Strategic Diagnostic to full market entry. How Conduit Asia works with international brands on Asia, and with Asian brands going global.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://conduitasia.com/services.html">
+    <meta property="og:image" content="https://conduitasia.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Services | Conduit Asia">
+    <meta name="twitter:description" content="From a focused Strategic Diagnostic to full market entry. How Conduit Asia works with brands across APAC.">
+    <meta name="twitter:image" content="https://conduitasia.com/og-image.png">
+    <link rel="canonical" href="https://conduitasia.com/services.html">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%230F0F0F'/%3E%3Cpath d='M18 4L4 30H32L18 4Z' stroke='%23F2F1EC' stroke-width='1.8' fill='none'/%3E%3Cline x1='2' y1='20' x2='34' y2='20' stroke='%23F2F1EC' stroke-width='1.8'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0F0F0F;
+            --card-dark: #1A1A1A;
+            --warm-white: #F2F1EC;
+            --mid-gray: #888880;
+            --dusty-violet: #7D6B8A;
+            --text-light: #F2F1EC;
+            --text-dark: #0F0F0F;
+            --text-muted: #888880;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .logo-mark { display: inline-block; }
+        .logo-mark svg { height: 32px; width: auto; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 24px 48px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text-light); }
+        .nav-brand-text { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link, .nav-contact { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-contact:hover { color: var(--dusty-violet); }
+        .nav-link.active { color: var(--text-light); }
+
+        .hero { padding: 160px 48px 80px; max-width: 1200px; margin: 0 auto; }
+        .hero-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 32px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(36px, 5vw, 56px); line-height: 1.15; color: var(--text-light); margin-bottom: 32px; max-width: 780px; }
+        .hero-intro { max-width: 640px; font-size: 17px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 16px; }
+
+        .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
+        .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+        .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
+        .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
+
+        .ladder-section { padding: 80px 48px 40px; max-width: 1200px; margin: 0 auto; }
+        .ladder-header { margin-bottom: 56px; max-width: 760px; }
+        .ladder-header .divider { margin-bottom: 24px; }
+        .section-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.3; color: var(--text-light); margin-bottom: 20px; }
+        .ladder-intro { font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
+
+        .ladder { display: flex; flex-direction: column; gap: 2px; }
+        .rung { background: var(--card-dark); padding: 56px 56px; display: grid; grid-template-columns: 160px 1fr; gap: 48px; transition: background 0.4s ease; }
+        .rung:hover { background: #1f1f1f; }
+        .rung.featured { border-left: 3px solid var(--dusty-violet); padding-left: 53px; }
+        .rung-index { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--dusty-violet); padding-top: 4px; }
+        .rung-index-label { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--mid-gray); margin-top: 8px; }
+
+        .rung-body h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 30px; line-height: 1.25; color: var(--text-light); margin-bottom: 16px; }
+        .rung-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
+        .rung-lead { font-size: 16px; line-height: 1.8; color: var(--text-light); margin-bottom: 28px; max-width: 640px; }
+
+        .spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 48px; margin-bottom: 28px; max-width: 640px; }
+        .spec-item { border-top: 1px solid rgba(136, 136, 128, 0.2); padding-top: 14px; }
+        .spec-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 6px; }
+        .spec-value { font-size: 14px; line-height: 1.55; color: var(--text-light); }
+
+        .suited-for { font-size: 14px; line-height: 1.7; color: var(--mid-gray); max-width: 640px; margin-bottom: 28px; }
+        .suited-for strong { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--text-light); }
+
+        .rung-cta { display: inline-block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .rung-cta:hover { color: var(--dusty-violet); }
+
+        .engagement-note { max-width: 1200px; margin: 40px auto 0; padding: 0 48px; }
+        .engagement-note-inner { background: rgba(125, 107, 138, 0.06); border-left: 2px solid var(--dusty-violet); padding: 28px 32px; max-width: 760px; }
+        .engagement-note p { font-size: 14px; line-height: 1.75; color: var(--mid-gray); }
+        .engagement-note p strong { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--text-light); }
+
+        .cta-section { padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto; }
+        .cta-inner { max-width: 720px; }
+        .cta-inner .divider { margin-bottom: 24px; }
+        .cta-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.8vw, 44px); line-height: 1.25; color: var(--text-light); margin-bottom: 28px; }
+        .cta-lead { font-size: 16px; line-height: 1.85; color: var(--mid-gray); margin-bottom: 36px; max-width: 620px; }
+        .cta-buttons { display: flex; gap: 32px; flex-wrap: wrap; align-items: center; margin-bottom: 40px; }
+        .cta-primary { display: inline-block; background: var(--warm-white); color: var(--text-dark); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
+        .cta-primary:hover { background: var(--dusty-violet); color: var(--warm-white); }
+        .cta-secondary { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .cta-secondary:hover { color: var(--dusty-violet); }
+        .cta-fineprint { font-size: 13px; line-height: 1.7; color: var(--mid-gray); max-width: 620px; }
+
+        footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
+        .footer-brand { display: flex; align-items: center; gap: 14px; }
+        .footer-brand-text { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); }
+        .footer-contact a { display: block; font-size: 15px; color: var(--text-light); text-decoration: none; margin-bottom: 8px; transition: color 0.3s ease; }
+        .footer-contact a:hover { color: var(--dusty-violet); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 32px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
+        .footer-locations { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
+        .footer-media { text-align: right; }
+        .footer-media-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 8px; }
+        .footer-media-list { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
+        .footer-legal { margin-top: 48px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .nav-links { gap: 20px; }
+            .hero { padding: 120px 24px 50px; }
+            .ladder-section { padding: 50px 24px 30px; }
+            .rung { grid-template-columns: 1fr; gap: 20px; padding: 40px 28px; }
+            .rung.featured { padding-left: 25px; }
+            .rung-index { padding-top: 0; font-size: 14px; }
+            .rung-body h3 { font-size: 24px; }
+            .spec-grid { grid-template-columns: 1fr; gap: 20px; }
+            .engagement-note { padding: 0 24px; }
+            .engagement-note-inner { padding: 24px 24px; }
+            .cta-section { padding: 80px 24px 50px; }
+            footer { padding: 60px 24px; }
+            .footer-top { flex-direction: column; gap: 32px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+            .footer-media { text-align: left; }
+            .section-divider { padding: 0 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">
+            <span class="logo-mark"><svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/><line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/></svg></span>
+            <span class="nav-brand-text">Conduit Asia</span>
+        </a>
+        <div class="nav-links">
+            <a href="/services.html" class="nav-link active">Services</a>
+            <a href="/insights.html" class="nav-link">Case Archive</a>
+            <a href="mailto:wei.kan@conduitasia.com" class="nav-contact">wei.kan@conduitasia.com</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-label">Services</div>
+        <h1>A ladder, not a menu.</h1>
+        <p class="hero-intro">Most engagements start small. A focused diagnostic session to understand the situation, then a decision on where to go from there. Clients return for deeper work when the direction becomes clear, not before.</p>
+        <p class="hero-intro">All engagements are led by Wei Kan. Execution runs through a vetted regional partner network for clients who need both strategy and delivery.</p>
+    </section>
+
+    <div class="section-divider"><div class="line"></div></div>
+
+    <section class="ladder-section">
+        <div class="ladder-header fade-in">
+            <div class="divider"></div>
+            <div class="section-label">How We Work</div>
+            <h2 class="section-title">Four ways in.</h2>
+            <p class="ladder-intro">Most new relationships begin with the first rung. Clients with a clearly defined question and internal budget approval sometimes start directly at the second or third.</p>
+        </div>
+
+        <div class="ladder">
+
+            <div class="rung featured fade-in">
+                <div class="rung-index">01<span class="rung-index-label">Start Here</span></div>
+                <div class="rung-body">
+                    <div class="rung-tag">Where most engagements begin</div>
+                    <h3>Strategic Diagnostic Session</h3>
+                    <p class="rung-lead">A focused paid working session on a single strategic question your brand is facing in China or APAC. You send context in advance through a short intake form. We work through the question together, and a written Strategic Assessment Brief follows.</p>
+
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Format</div>
+                            <div class="spec-value">90-minute video session</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Deliverable</div>
+                            <div class="spec-value">Written Strategic Assessment Brief within 48 hours</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Preparation</div>
+                            <div class="spec-value">Intake form, reviewed in advance</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fee</div>
+                            <div class="spec-value">Flat rate, confirmed on inquiry</div>
+                        </div>
+                    </div>
+
+                    <p class="suited-for"><strong>Best suited for</strong> VP, Director, or founder-level decision makers who want an informed second read on a specific question, before committing to a larger project or internal direction.</p>
+
+                    <a href="#start" class="rung-cta">Request a Diagnostic Session &rarr;</a>
+                </div>
+            </div>
+
+            <div class="rung fade-in">
+                <div class="rung-index">02</div>
+                <div class="rung-body">
+                    <div class="rung-tag">One-time deep dive</div>
+                    <h3>Market Intelligence Briefing</h3>
+                    <p class="rung-lead">A standalone research engagement for a strategic question that needs a real answer before budget or direction is committed. Competitive landscape, consumer dynamics, channel assessment, or category outlook, worked through from the inside of the market rather than from report aggregators.</p>
+
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Format</div>
+                            <div class="spec-value">3 to 6 week engagement</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Deliverable</div>
+                            <div class="spec-value">Written briefing plus live presentation</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Scope</div>
+                            <div class="spec-value">One market, one category, one question</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fee</div>
+                            <div class="spec-value">Fixed project fee, scoped on inquiry</div>
+                        </div>
+                    </div>
+
+                    <p class="suited-for"><strong>Best suited for</strong> brands evaluating whether to enter a market, reposition inside one, or rethink a category investment, and need a grounded read rather than a syndicated report.</p>
+
+                    <a href="#start" class="rung-cta">Request a scope conversation &rarr;</a>
+                </div>
+            </div>
+
+            <div class="rung fade-in">
+                <div class="rung-index">03</div>
+                <div class="rung-body">
+                    <div class="rung-tag">Ongoing partnership</div>
+                    <h3>Strategic Advisory Retainer</h3>
+                    <p class="rung-lead">A standing advisory relationship for brands that want a strategic partner inside the region on continuous access. Monthly working sessions, on-the-ground market reads, competitive intelligence, and judgment formed from twenty years across APAC. A complement to your internal team, not a replacement.</p>
+
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Format</div>
+                            <div class="spec-value">Monthly working sessions plus ongoing access</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Commitment</div>
+                            <div class="spec-value">6-month minimum, monthly retainer</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Includes</div>
+                            <div class="spec-value">Market reads, review sessions, written memos</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fee</div>
+                            <div class="spec-value">Monthly retainer, scoped on inquiry</div>
+                        </div>
+                    </div>
+
+                    <p class="suited-for"><strong>Best suited for</strong> brand and commercial leaders at international brands building their Asia business, or at Asian brands scaling internationally, who need senior judgment on call without adding senior headcount.</p>
+
+                    <a href="#start" class="rung-cta">Discuss a retainer &rarr;</a>
+                </div>
+            </div>
+
+            <div class="rung fade-in">
+                <div class="rung-index">04</div>
+                <div class="rung-body">
+                    <div class="rung-tag">Full engagement</div>
+                    <h3>Market Entry &amp; Brand Internationalization</h3>
+                    <p class="rung-lead">An end-to-end engagement, from diagnosis through go-to-market. Brand positioning, channel strategy, media and KOL coordination, local activation. Conduit Asia leads strategy and holds the client relationship. Execution runs through a coordinated network of regional production, digital, PR, and retail partners.</p>
+
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Format</div>
+                            <div class="spec-value">Multi-phase engagement across 6 to 18 months</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Deliverable</div>
+                            <div class="spec-value">Positioning, GTM plan, activation, partner coordination</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Starts with</div>
+                            <div class="spec-value">Diagnostic or Intelligence Briefing</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Fee</div>
+                            <div class="spec-value">Retainer plus scoped project fees</div>
+                        </div>
+                    </div>
+
+                    <p class="suited-for"><strong>Best suited for</strong> international brands making a serious China or APAC entry, and Asian designer-led brands making their first coordinated move into North America or Europe.</p>
+
+                    <a href="#start" class="rung-cta">Discuss a full engagement &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="engagement-note fade-in">
+        <div class="engagement-note-inner">
+            <p><strong>A note on fees.</strong> All engagements are paid. Fees are confirmed on inquiry, after a short conversation about the scope and situation, to avoid the misfit that comes from quoting before context. Diagnostic Sessions are flat-rate. Retainers and project work are scoped and contracted in writing before any work begins.</p>
+        </div>
+    </div>
+
+    <section class="cta-section" id="start">
+        <div class="cta-inner fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Start Here</div>
+            <h2 class="cta-title">Tell us where you're stuck.</h2>
+            <p class="cta-lead">The fastest way in is a short intake form. It takes about three minutes. We'll respond within two business days with next steps, a proposed time for a Diagnostic Session, and the fee. If a different rung on the ladder is a better fit, we'll suggest that instead.</p>
+            <div class="cta-buttons">
+                <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="cta-primary">Send an inquiry &rarr;</a>
+                <a href="mailto:wei.kan@conduitasia.com?subject=Inquiry%20via%20conduitasia.com" class="cta-secondary">Or email directly</a>
+            </div>
+            <p class="cta-fineprint">All inquiries read personally by Wei Kan. Responses within two business days. Conversations are confidential, with or without an engagement.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="logo-mark"><svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2L4 28H32L18 2Z" stroke="#F2F1EC" stroke-width="1.5" fill="none"/><line x1="0" y1="18" x2="36" y2="18" stroke="#F2F1EC" stroke-width="1.5"/></svg></span>
+                <span class="footer-brand-text">Conduit Asia</span>
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
+                <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
+                <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
+                <a href="/insights.html">Case Archive</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-locations">Hong Kong &middot; Shanghai</div>
+            <div class="footer-media">
+                <div class="footer-media-label">Media</div>
+                <div class="footer-media-list"><a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Reuters</a> &middot; <a href="https://www.bbc.com/news/articles/c98mrepzgj7o" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">BBC</a> &middot; <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Footwear News</a> &middot; <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Het Financieele Dagblad</a></div>
+            </div>
+        </div>
+        <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
