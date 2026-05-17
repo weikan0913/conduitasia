@@ -79,6 +79,34 @@
         .section-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.3; color: var(--text-light); margin-bottom: 20px; }
         .ladder-intro { font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
 
+        /* Category separators */
+        .category-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 28px 0 20px;
+        }
+        .category-row:first-child { padding-top: 0; }
+        .category-row + .rung { margin-top: 0; }
+        .category-name {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        .category-rule {
+            flex: 1;
+            height: 1px;
+            background: rgba(136, 136, 128, 0.15);
+        }
+        .category-note {
+            font-size: 12px;
+            color: rgba(136, 136, 128, 0.4);
+            letter-spacing: 0.3px;
+        }
+
         .ladder { display: flex; flex-direction: column; gap: 2px; }
         .rung { background: var(--card-dark); padding: 56px 56px; display: grid; grid-template-columns: 160px 1fr; gap: 48px; transition: background 0.4s ease; }
         .rung:hover { background: #1f1f1f; }
@@ -106,6 +134,38 @@
         .engagement-note p { font-size: 14px; line-height: 1.75; color: var(--mid-gray); }
         .engagement-note p strong { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--text-light); }
 
+        /* How engagements start */
+        .process-section { padding: 100px 48px 0; max-width: 1200px; margin: 0 auto; }
+        .process-header { margin-bottom: 48px; max-width: 760px; }
+        .process-header .divider { margin-bottom: 24px; }
+        .process-intro { font-size: 16px; line-height: 1.8; color: var(--mid-gray); margin-top: 20px; max-width: 600px; }
+
+        .process-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
+        .process-path { background: var(--card-dark); padding: 44px 48px; }
+        .process-path-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
+        .process-path h4 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 22px; color: var(--text-light); margin-bottom: 28px; line-height: 1.3; }
+        .process-steps { list-style: none; }
+        .process-steps li {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--mid-gray);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(136, 136, 128, 0.12);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .process-steps li:first-child { padding-top: 0; }
+        .process-steps li:last-child { border-bottom: none; padding-bottom: 0; }
+        .step-num {
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: var(--dusty-violet);
+            padding-top: 3px;
+            flex-shrink: 0;
+            min-width: 16px;
+        }
+
         .cta-section { padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto; }
         .cta-inner { max-width: 720px; }
         .cta-inner .divider { margin-bottom: 24px; }
@@ -114,8 +174,6 @@
         .cta-buttons { display: flex; gap: 32px; flex-wrap: wrap; align-items: center; margin-bottom: 40px; }
         .cta-primary { display: inline-block; background: var(--warm-white); color: var(--text-dark); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
         .cta-primary:hover { background: var(--dusty-violet); color: var(--warm-white); }
-        .cta-secondary { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
-        .cta-secondary:hover { color: var(--dusty-violet); }
         .cta-fineprint { font-size: 13px; line-height: 1.7; color: var(--mid-gray); max-width: 620px; }
 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
@@ -149,6 +207,10 @@
             .spec-grid { grid-template-columns: 1fr; gap: 20px; }
             .engagement-note { padding: 0 24px; }
             .engagement-note-inner { padding: 24px 24px; }
+            .process-section { padding: 70px 24px 0; }
+            .process-paths { grid-template-columns: 1fr; }
+            .process-path { padding: 36px 28px; }
+            .category-note { display: none; }
             .cta-section { padding: 80px 24px 50px; }
             footer { padding: 60px 24px; }
             .footer-top { flex-direction: column; gap: 32px; }
@@ -190,6 +252,12 @@
         </div>
 
         <div class="ladder">
+
+            <div class="category-row fade-in">
+                <span class="category-name">Advisory</span>
+                <div class="category-rule"></div>
+                <span class="category-note">Rungs 01 – 03</span>
+            </div>
 
             <div class="rung featured fade-in">
                 <div class="rung-index">01<span class="rung-index-label">Start Here</span></div>
@@ -233,7 +301,7 @@
                     <div class="spec-grid">
                         <div class="spec-item">
                             <div class="spec-label">Format</div>
-                            <div class="spec-value">3 to 6 week engagement</div>
+                            <div class="spec-value">3 to 4 week engagement</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Deliverable</div>
@@ -287,6 +355,12 @@
                 </div>
             </div>
 
+            <div class="category-row fade-in" style="padding-top: 40px;">
+                <span class="category-name">Program</span>
+                <div class="category-rule"></div>
+                <span class="category-note">Rung 04</span>
+            </div>
+
             <div class="rung fade-in">
                 <div class="rung-index">04</div>
                 <div class="rung-body">
@@ -328,15 +402,49 @@
         </div>
     </div>
 
+    <section class="process-section fade-in">
+        <div class="process-header">
+            <div class="divider"></div>
+            <div class="section-label">Process</div>
+            <h2 class="section-title">How engagements start.</h2>
+            <p class="process-intro">Every engagement starts with the intake form. No preliminary calls before it — the form is what makes the first conversation worth having.</p>
+        </div>
+
+        <div class="process-paths">
+
+            <div class="process-path">
+                <div class="process-path-label">Rung 01</div>
+                <h4>Strategic Read</h4>
+                <ul class="process-steps">
+                    <li><span class="step-num">1</span> Fill in the intake form</li>
+                    <li><span class="step-num">2</span> Wei reviews the question and context</li>
+                    <li><span class="step-num">3</span> Fee confirmed within 48 hours</li>
+                    <li><span class="step-num">4</span> A short call is available to verify fit before booking, but not required</li>
+                </ul>
+            </div>
+
+            <div class="process-path">
+                <div class="process-path-label">Rungs 02, 03, 04</div>
+                <h4>Market Briefing and above</h4>
+                <ul class="process-steps">
+                    <li><span class="step-num">1</span> Fill in the intake form</li>
+                    <li><span class="step-num">2</span> 30-minute call to confirm fit — required before any scope or fee discussion</li>
+                    <li><span class="step-num">3</span> Scope and fee confirmed if fit holds</li>
+                    <li><span class="step-num">4</span> Written agreement before work begins</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
     <section class="cta-section" id="start">
         <div class="cta-inner fade-in">
             <div class="divider"></div>
             <div class="section-label">Start Here</div>
             <h2 class="cta-title">Tell us where you're stuck.</h2>
-            <p class="cta-lead">The fastest way in is a short intake form. It takes about three minutes. We'll respond within two business days with next steps, a proposed time for a Strategic Read, and the fee. If a different rung on the ladder is a better fit, we'll suggest that instead.</p>
+            <p class="cta-lead">The intake form takes about three minutes. We'll respond within two business days with next steps and confirm the fee where it applies. If a different rung is a better fit, we'll say so.</p>
             <div class="cta-buttons">
                 <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="cta-primary">Send an inquiry &rarr;</a>
-                <a href="mailto:wei.kan@conduitasia.com?subject=Inquiry%20via%20conduitasia.com" class="cta-secondary">Or email directly</a>
             </div>
             <p class="cta-fineprint">All inquiries read personally by Wei Kan. Responses within two business days. Conversations are confidential, with or without an engagement.</p>
         </div>
