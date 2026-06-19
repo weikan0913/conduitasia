@@ -480,5 +480,25 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 
+    <!-- GoatCounter analytics -->
+    <script data-goatcounter="https://conduitasia.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script>
+        // Track inquiry-intent clicks as GoatCounter events
+        window.addEventListener('load', function () {
+            function gcEvent(name) {
+                if (window.goatcounter && window.goatcounter.count) {
+                    window.goatcounter.count({ path: name, title: 'event: ' + name, event: true });
+                }
+            }
+            document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+                a.addEventListener('click', function () { gcEvent('inquiry-email'); });
+            });
+            document.querySelectorAll('a[href*="tally.so"]').forEach(function (a) {
+                a.addEventListener('click', function () { gcEvent('inquiry-tally'); });
+            });
+        });
+    </script>
+
 </body>
 </html>
