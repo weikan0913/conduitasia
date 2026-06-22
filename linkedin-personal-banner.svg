@@ -2,12 +2,12 @@
   <title>Wei Kan LinkedIn personal banner</title>
   <rect width="1584" height="396" fill="#0F0F0F"/>
 
-  <rect x="210" y="92" width="40" height="3" fill="#7D6B8A"/>
-  <text x="210" y="138" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3" fill="#888880">SPORTS AND LIFESTYLE BRAND STRATEGY</text>
-  <text x="208" y="206" font-family="Didot, 'Playfair Display', Georgia, serif" font-size="54" fill="#F2F1EC">Asia. From the Inside.</text>
-  <text x="210" y="248" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#888880">International brands on Asia &#160;&#183;&#160; Asian brands going global</text>
+  <rect x="788" y="100" width="44" height="3" fill="#7D6B8A"/>
+  <text x="810" y="146" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3" fill="#888880">SPORTS AND LIFESTYLE BRAND STRATEGY</text>
+  <text x="810" y="214" text-anchor="middle" font-family="Didot, 'Playfair Display', Georgia, serif" font-size="54" fill="#F2F1EC">Asia. From the Inside.</text>
+  <text x="810" y="256" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#888880">International brands on Asia &#160;&#183;&#160; Asian brands going global</text>
 
-  <path d="M1374 226 L1400 150 L1426 226 Z" fill="none" stroke="#F2F1EC" stroke-width="3" stroke-linejoin="round"/>
-  <line x1="1366" y1="198" x2="1434" y2="198" stroke="#F2F1EC" stroke-width="3" stroke-linecap="round"/>
-  <text x="1400" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="4" fill="#C9C9C2">CONDUIT ASIA</text>
+  <path d="M1410 226 L1436 150 L1462 226 Z" fill="none" stroke="#F2F1EC" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="1402" y1="198" x2="1470" y2="198" stroke="#F2F1EC" stroke-width="3" stroke-linecap="round"/>
+  <text x="1436" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="4" fill="#C9C9C2">CONDUIT ASIA</text>
 </svg>
