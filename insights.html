@@ -86,8 +86,6 @@
         .hero-intro { max-width: 580px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
 
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
-        .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
-        .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
 
         .content-section { padding: 80px 48px 0; max-width: 1200px; margin: 0 auto; }
         .content-section-header { margin-bottom: 40px; }
@@ -107,11 +105,26 @@
         .article-card p { font-size: 15px; line-height: 1.7; color: var(--mid-gray); max-width: 680px; }
         .article-meta { margin-top: 10px; font-size: 12px; letter-spacing: 0.5px; color: rgba(136, 136, 128, 0.6); }
 
-        .also-on { max-width: 1200px; margin: 0 auto; padding: 80px 48px 0; }
+        .also-on { max-width: 1200px; margin: 0 auto; padding: 56px 48px 0; }
         .also-on-inner { padding-top: 48px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
         .also-on p { font-size: 15px; line-height: 1.8; color: var(--mid-gray); max-width: 680px; }
         .also-on a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
         .also-on a:hover { color: var(--dusty-violet); }
+
+
+        .subscribe-line { max-width: 1200px; margin: 0 auto; padding: 28px 48px 0; }
+        .subscribe-line p { font-size: 15px; line-height: 1.7; color: var(--mid-gray); }
+        .subscribe-line a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .subscribe-line a:hover { color: var(--dusty-violet); }
+
+        .compact-list { display: flex; flex-direction: column; gap: 40px; }
+        .compact-group { display: flex; flex-direction: column; }
+        .compact-group-label { font-size: 12px; letter-spacing: 1.5px; color: rgba(136, 136, 128, 0.7); margin-bottom: 4px; }
+        .compact-item { display: block; padding: 16px 0; border-bottom: 1px solid rgba(136, 136, 128, 0.15); text-decoration: none; transition: color 0.3s ease; }
+        .compact-item:first-of-type { border-top: 1px solid rgba(136, 136, 128, 0.15); }
+        .compact-title { display: block; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 17px; line-height: 1.4; color: var(--text-light); transition: color 0.3s ease; }
+        .compact-item:hover .compact-title { color: var(--dusty-violet); }
+        .compact-item .article-meta { margin-top: 4px; }
 
         .newsletter { max-width: 1200px; margin: 0 auto; padding: 80px 48px 0; }
         .newsletter-inner { padding: 40px 40px 44px; border: 1px solid rgba(136, 136, 128, 0.2); max-width: 760px; }
@@ -124,7 +137,7 @@
         .enquiries { max-width: 1200px; margin: 0 auto; padding: 90px 48px 80px; }
         .enquiries-inner { padding-top: 48px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
         .enquiries .divider { margin-bottom: 24px; }
-        .enquiries-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 900px; margin-top: 32px; }
+        .enquiries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 32px; }
         .enquiry-block h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 22px; line-height: 1.3; color: var(--text-light); margin-bottom: 14px; }
         .enquiry-block p { font-size: 15px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 18px; }
         .enquiry-link { display: inline-block; font-size: 15px; color: var(--text-light); text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
@@ -156,7 +169,9 @@
             .content-section { padding: 60px 24px 0; }
             .article-card:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
             .article-card h3 { font-size: 19px; }
-            .also-on { padding: 60px 24px 0; }
+            .also-on { padding: 40px 24px 0; }
+            .subscribe-line { padding: 24px 24px 0; }
+            .compact-list { gap: 32px; }
             .newsletter { padding: 60px 24px 0; }
             .newsletter-inner { padding: 28px 24px 32px; }
             .enquiries { padding: 70px 24px 50px; }
@@ -193,10 +208,19 @@
         <p class="hero-intro">Published work on how sport and lifestyle brands actually operate in Asia, built on public information and established analytical frameworks.</p>
     </section>
 
-    <div class="section-divider"><div class="line"></div></div>
+    <section class="also-on">
+        <div class="also-on-inner fade-in">
+            <div class="section-label">Media</div>
+            <p>Quoted on China consumer and sport markets by <a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">Bloomberg</a>, <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">The Wall Street Journal</a>, <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" rel="noopener">Reuters</a>, <a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">Nikkei Asia</a>, <a href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" rel="noopener">the BBC</a>, <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Footwear News</a>, and <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" rel="noopener">Het Financieele Dagblad</a>. Shorter analysis and earnings reactions run on <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+        </div>
+    </section>
+
+    <div class="subscribe-line fade-in">
+        <p>New work goes out by email before it appears here. <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="newsletter-subscribe">Subscribe &rarr;</a></p>
+    </div>
 
     <section class="content-section">
-        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Strategy &amp; Frameworks</div></div>
+        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Selected</div></div>
         <div class="articles">
             <a class="article-card fade-in" href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener">
                 <h3>The Curry Shoe Was Never the Point: What Li-Ning Is Actually Buying with Stephen Curry</h3>
@@ -223,69 +247,6 @@
                 <p>A framework for understanding why On, Arc'teryx, and Lululemon hold pricing power in China while heritage brands discount. Why knowledge badges stopped commanding a premium and behavior badges took over.</p>
                 <div class="article-meta">February 2026 &middot; 7 min read &middot; Medium</div>
             </a>
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/china-market-2025-when-the-playbook-stops-working-e14b90c11f91" target="_blank" rel="noopener">
-                <h3>China Market: When the Playbook Stops Working</h3>
-                <p>Why global brands keep making costly mistakes in China, and what consolidation replacing expansion means for APAC brand strategy.</p>
-                <div class="article-meta">October 2025 &middot; 7 min read &middot; Medium</div>
-            </a>
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/rethinking-accessibility-how-sportswear-brands-can-win-chinas-new-participation-economy-79117944e48e" target="_blank" rel="noopener">
-                <h3>Rethinking Accessibility: How Sportswear Brands Can Win China's New Participation Economy</h3>
-                <p>With 400 million active participants, China's sportswear market now runs on participation, and aspiration no longer carries it. How brands are winning the 300-800 RMB price zone.</p>
-                <div class="article-meta">October 2025 &middot; 8 min read &middot; Medium</div>
-            </a>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Consumer Trends</div></div>
-        <div class="articles">
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/running-in-china-is-now-a-lifestyle-economy-706bd5ae030c" target="_blank" rel="noopener">
-                <h3>Running in China Is Now a Lifestyle Economy</h3>
-                <p>China's first running boom was brand-led. The second one is consumer-built. What that means for Nike, Anta, Li-Ning, and every brand competing for runners.</p>
-                <div class="article-meta">December 2025 &middot; 6 min read &middot; Medium</div>
-            </a>
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/chinas-tennis-boom-when-the-state-machine-meets-middle-class-dreams-71ca414eef02" target="_blank" rel="noopener">
-                <h3>China's Tennis Boom: When the State Machine Meets Middle-Class Dreams</h3>
-                <p>How government policy, middle-class aspiration, and brand strategy are converging in China's fastest-growing sport category.</p>
-                <div class="article-meta">October 2025 &middot; 7 min read &middot; Medium</div>
-            </a>
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/beyond-the-a4-waist-sports-brands-are-missing-the-biggest-opportunity-in-china-5d8c443e1fee" target="_blank" rel="noopener">
-                <h3>Sports Brands Are Missing the Biggest Opportunity in China</h3>
-                <p>Chinese women moved from aesthetic fitness to high-intensity training faster than any brand's product cycle. Who's catching up and who's falling behind.</p>
-                <div class="article-meta">November 2025 &middot; 4 min read &middot; Medium</div>
-            </a>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">Market Analysis</div></div>
-        <div class="articles">
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/china-sportswear-2026-everyone-is-trading-jerseys-1d85081a9da4" target="_blank" rel="noopener">
-                <h3>China Sportswear 2026: Everyone Is Trading Jerseys</h3>
-                <p>Adidas designs 70% of China apparel locally. Anta acquires Puma and opens in Beverly Hills. Global brands go local, Chinese brands go global. The competitive map redrawn.</p>
-                <div class="article-meta">January 2026 &middot; 7 min read &middot; Medium</div>
-            </a>
-            <a class="article-card fade-in" href="https://medium.com/@wei.kan/after-the-hype-whats-actually-driving-china-s-footwear-market-b4156aa83f7f" target="_blank" rel="noopener">
-                <h3>After the Hype: What's Actually Driving China's Footwear Market</h3>
-                <p>The sneaker boom is over in China. With 200 million gig workers and youth unemployment at 17%, comfort and function now drive footwear demand.</p>
-                <div class="article-meta">January 2026 &middot; 5 min read &middot; Medium</div>
-            </a>
-        </div>
-    </section>
-
-    <section class="newsletter" id="newsletter">
-        <div class="newsletter-inner fade-in">
-            <div class="section-label">Newsletter</div>
-            <h2>From the Inside</h2>
-            <p>What we are reading and watching across sport and lifestyle brands in the region, including the Chinese-language sources behind the analysis published here.</p>
-            <a href="https://weikan.substack.com" class="newsletter-cta" target="_blank" rel="noopener" data-track="newsletter-subscribe">Subscribe &rarr;</a>
-        </div>
-    </section>
-
-    <section class="also-on">
-        <div class="also-on-inner fade-in">
-            <div class="section-label">Media</div>
-            <p>Quoted on China consumer and sport markets by <a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">Bloomberg</a>, <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">The Wall Street Journal</a>, <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" rel="noopener">Reuters</a>, <a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">Nikkei Asia</a>, <a href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" rel="noopener">the BBC</a>, <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Footwear News</a>, and <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" rel="noopener">Het Financieele Dagblad</a>. Shorter analysis and earnings reactions run on <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>.</p>
         </div>
     </section>
 
@@ -294,6 +255,11 @@
             <div class="divider"></div>
             <div class="section-label">Enquiries</div>
             <div class="enquiries-grid">
+                <div class="enquiry-block">
+                    <h3>Brands</h3>
+                    <p>Work here begins with a decision that is already pending.</p>
+                    <a href="/services.html" class="enquiry-link" data-track="route-services">See how engagements work &rarr;</a>
+                </div>
                 <div class="enquiry-block">
                     <h3>Research</h3>
                     <p>Analysts covering the category ask about the operating reality behind the reported numbers. Consultations and commissioned work are scoped on enquiry.</p>
@@ -305,6 +271,58 @@
                     <a href="mailto:wei.kan@conduitasia.com?subject=Press%20enquiry%20via%20conduitasia.com" class="enquiry-link" data-track="press-enquiry">wei.kan@conduitasia.com</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="content-section-header fade-in"><div class="divider"></div><div class="section-label">All Published Work</div></div>
+        <div class="compact-list">
+            <div class="compact-group">
+                <div class="compact-group-label">Strategy &amp; Frameworks</div>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/china-market-2025-when-the-playbook-stops-working-e14b90c11f91" target="_blank" rel="noopener">
+                    <span class="compact-title">China Market: When the Playbook Stops Working</span>
+                    <span class="article-meta">October 2025 &middot; 7 min read &middot; Medium</span>
+                </a>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/rethinking-accessibility-how-sportswear-brands-can-win-chinas-new-participation-economy-79117944e48e" target="_blank" rel="noopener">
+                    <span class="compact-title">Rethinking Accessibility: How Sportswear Brands Can Win China's New Participation Economy</span>
+                    <span class="article-meta">October 2025 &middot; 8 min read &middot; Medium</span>
+                </a>
+            </div>
+            <div class="compact-group">
+                <div class="compact-group-label">Consumer Trends</div>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/running-in-china-is-now-a-lifestyle-economy-706bd5ae030c" target="_blank" rel="noopener">
+                    <span class="compact-title">Running in China Is Now a Lifestyle Economy</span>
+                    <span class="article-meta">December 2025 &middot; 6 min read &middot; Medium</span>
+                </a>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/chinas-tennis-boom-when-the-state-machine-meets-middle-class-dreams-71ca414eef02" target="_blank" rel="noopener">
+                    <span class="compact-title">China's Tennis Boom: When the State Machine Meets Middle-Class Dreams</span>
+                    <span class="article-meta">October 2025 &middot; 7 min read &middot; Medium</span>
+                </a>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/beyond-the-a4-waist-sports-brands-are-missing-the-biggest-opportunity-in-china-5d8c443e1fee" target="_blank" rel="noopener">
+                    <span class="compact-title">Sports Brands Are Missing the Biggest Opportunity in China</span>
+                    <span class="article-meta">November 2025 &middot; 4 min read &middot; Medium</span>
+                </a>
+            </div>
+            <div class="compact-group">
+                <div class="compact-group-label">Market Analysis</div>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/china-sportswear-2026-everyone-is-trading-jerseys-1d85081a9da4" target="_blank" rel="noopener">
+                    <span class="compact-title">China Sportswear 2026: Everyone Is Trading Jerseys</span>
+                    <span class="article-meta">January 2026 &middot; 7 min read &middot; Medium</span>
+                </a>
+                <a class="compact-item fade-in" href="https://medium.com/@wei.kan/after-the-hype-whats-actually-driving-china-s-footwear-market-b4156aa83f7f" target="_blank" rel="noopener">
+                    <span class="compact-title">After the Hype: What's Actually Driving China's Footwear Market</span>
+                    <span class="article-meta">January 2026 &middot; 5 min read &middot; Medium</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-inner fade-in">
+            <div class="section-label">Newsletter</div>
+            <h2>From the Inside</h2>
+            <p>What we are reading and watching across sport and lifestyle brands in the region, including the Chinese-language sources behind the analysis published here.</p>
+            <a href="https://weikan.substack.com" class="newsletter-cta" target="_blank" rel="noopener" data-track="newsletter-subscribe">Subscribe &rarr;</a>
         </div>
     </section>
 
@@ -365,6 +383,7 @@
             track('a[href*="bloomberg.com"], a[href*="wsj.com"], a[href*="reuters.com"], a[href*="bbc.com"], a[href*="nikkei.com"], a[href*="wwd.com"], a[href*="fd.nl"]', 'out-media');
             track('a[data-track="research-enquiry"]', 'research-enquiry');
             track('a[data-track="press-enquiry"]', 'press-enquiry');
+            track('a[data-track="route-services"]', 'route-services');
         });
     </script>
 
