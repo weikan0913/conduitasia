@@ -187,7 +187,6 @@
         .cta-buttons { display: flex; gap: 32px; flex-wrap: wrap; align-items: center; margin-bottom: 40px; }
         .cta-primary { display: inline-block; background: var(--warm-white); color: var(--text-dark); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
         .cta-primary:hover { background: var(--dusty-violet); color: var(--warm-white); }
-        .cta-fineprint { font-size: 13px; line-height: 1.7; color: var(--mid-gray); max-width: 620px; }
 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
@@ -200,7 +199,7 @@
         .footer-media { text-align: right; }
         .footer-media-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 8px; }
         .footer-media-list { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
-        .footer-compliance { margin-top: 32px; font-size: 11px; line-height: 1.7; color: rgba(136, 136, 128, 0.7); max-width: 720px; }
+        .footer-compliance { margin-top: 32px; font-size: 11px; line-height: 1.7; color: rgba(136, 136, 128, 0.9); max-width: 720px; }
         .footer-legal { margin-top: 20px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
 
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -235,7 +234,7 @@
         }
 
         @media (max-width: 480px) {
-            .nav-brand-text { display: none; }
+            .nav-links a[href*="#newsletter"] { display: none; }
             .nav-links { gap: 14px; }
         }
     </style>
@@ -257,8 +256,8 @@
 
     <section class="hero">
         <h1>Services</h1>
-        <p class="hero-intro">Most engagements start small. A focused Strategic Read to understand the situation, then a decision on where to go from there. Clients return for deeper work when the direction becomes clear, not before.</p>
-        <p class="hero-intro">Every engagement is principal-led, with execution through a vetted regional partner network for clients who need both strategy and delivery.</p>
+        <p class="hero-intro">Work here begins with a decision the brand is already committed to making. The first engagement is usually one session. What follows depends on what that session finds.</p>
+        <p class="hero-intro">Where the work runs through to execution, delivery is handled by regional partners working from the same brief.</p>
     </section>
 
     <div class="section-divider"><div class="line"></div></div>
@@ -267,10 +266,10 @@
         <div class="scope-inner fade-in">
             <div class="divider"></div>
             <div class="section-label">Practice Scope</div>
-            <h2 class="section-title">The practice covers sport and lifestyle brands in China, Korea, and Japan.</h2>
-            <p>Conduit Asia advises international brands building a position in Asia, and Asian brands taking an established home business outside the region. The category is sport and lifestyle, and most of the work sits in China, Korea, and Japan.</p>
-            <p>Engagements are organised around a decision that is already pending. That decision is usually a market entry, a repositioning for a consumer segment the brand has not held before, a category investment, or an acquisition. Capital allocation across markets already in the portfolio comes up as often.</p>
-            <p>We say no to work outside the category and the markets we actually know. Where an engagement runs through to execution, the strategy is settled first and partner introductions follow from it.</p>
+            <h2 class="section-title">The practice runs in two directions.</h2>
+            <p>One is international brands building a position in Asia. The other is Asian brands taking an established home business outside the region. The category is sport and lifestyle, and most of the work sits in China, Korea, and Japan.</p>
+            <p>The pending decision is usually a market entry or a repositioning for a segment the brand has not held before. Category investment, acquisition, and capital allocation across markets already in the portfolio come up as often.</p>
+            <p>Work outside this category and these markets is declined.</p>
         </div>
     </section>
 
@@ -279,9 +278,9 @@
     <section class="ladder-section">
         <div class="ladder-header fade-in">
             <div class="divider"></div>
-            <div class="section-label">How We Work</div>
+            <div class="section-label">Engagements</div>
             <h2 class="section-title">There are four ways to engage.</h2>
-            <p class="ladder-intro">Most clients begin with a Strategic Read and go deeper as the direction becomes clear. Those who arrive with a well-defined question and the mandate to act sometimes start with a Market Briefing.</p>
+            <p class="ladder-intro">Those arriving with a defined question and the mandate to act sometimes start at Market Briefing.</p>
         </div>
 
         <div class="ladder">
@@ -296,7 +295,8 @@
                 <div class="rung-index">01<span class="rung-index-label">Start Here</span></div>
                 <div class="rung-body">
                     <h3>Strategic Read</h3>
-                    <p class="rung-lead">A focused paid working session on a single strategic question your brand is facing in China or APAC. You send context in advance through a short intake form. We work through the question together, and a written Strategic Read follows.</p>
+                    <p class="rung-lead">Not every decision needs a project. Some need one question looked at properly, once, by someone outside the room.</p>
+                    <p class="rung-lead">A paid working session on a single question facing the brand in China or APAC. Context arrives in advance through the intake form. The written Strategic Read follows within 48 hours.</p>
 
                     <div class="spec-grid">
                         <div class="spec-item">
@@ -317,7 +317,7 @@
                         </div>
                     </div>
 
-                    <p class="suited-for"><strong>Best suited for</strong> VP, Director, or founder-level decision makers who want an informed second read on a specific question, before committing to a larger project or internal direction.</p>
+                    <p class="suited-for"><strong>Suited to</strong> decision makers who want a second read on a specific question before committing to a larger project or an internal direction.</p>
 
                     <a href="#start" class="rung-cta">Request a Strategic Read &rarr;</a>
                 </div>
@@ -328,7 +328,8 @@
                 <div class="rung-body">
                     <div class="rung-tag">One-time deep dive</div>
                     <h3>Market Briefing</h3>
-                    <p class="rung-lead">A standalone engagement for a strategic question that needs a real answer before budget or direction is committed. The work covers competitive landscape and consumer dynamics from inside the market. Channel assessment and category outlook come in where the decision turns on them. Every judgment here is built on operator experience.</p>
+                    <p class="rung-lead">Three to four weeks on one market, one category, one question. The answer arrives written and is presented live, because the objections matter more than the document.</p>
+                    <p class="rung-lead">The work covers competitive landscape and consumer dynamics from inside the market. Channel assessment and category outlook come in where the decision turns on them.</p>
 
                     <div class="spec-grid">
                         <div class="spec-item">
@@ -349,7 +350,7 @@
                         </div>
                     </div>
 
-                    <p class="suited-for"><strong>Best suited for</strong> brands evaluating whether to enter a market, reposition inside one, or rethink a category investment, and need a grounded read rather than a syndicated report.</p>
+                    <p class="suited-for"><strong>Suited to</strong> brands weighing a market entry or a repositioning inside one they already hold.</p>
 
                     <a href="#start" class="rung-cta">Request a scope conversation &rarr;</a>
                 </div>
@@ -358,9 +359,10 @@
             <div class="rung fade-in">
                 <div class="rung-index">03</div>
                 <div class="rung-body">
-                    <div class="rung-tag">Ongoing partnership</div>
+                    <div class="rung-tag">Ongoing</div>
                     <h3>Advisory Retainer</h3>
-                    <p class="rung-lead">A standing advisory relationship for brands that want a strategic partner inside the region on continuous access. The retainer runs on monthly working sessions and on-the-ground market reads. Competitive intelligence comes with them, along with judgment formed over years of operating inside the region. It strengthens your internal team rather than replacing it.</p>
+                    <p class="rung-lead">The questions that matter rarely arrive on the day of the monthly session.</p>
+                    <p class="rung-lead">A standing relationship for brands with continuous need. Monthly working sessions and market reads from the ground, with access in between.</p>
 
                     <div class="spec-grid">
                         <div class="spec-item">
@@ -381,7 +383,7 @@
                         </div>
                     </div>
 
-                    <p class="suited-for"><strong>Best suited for</strong> brand and commercial leaders at international brands building their Asia business, or at Asian brands scaling internationally, who need senior judgment on call without adding senior headcount.</p>
+                    <p class="suited-for"><strong>Suited to</strong> brand and commercial leaders who need judgment available on call without adding headcount.</p>
 
                     <a href="#start" class="rung-cta">Discuss a retainer &rarr;</a>
                 </div>
@@ -398,7 +400,8 @@
                 <div class="rung-body">
                     <div class="rung-tag">Full engagement</div>
                     <h3>Market Activation Program</h3>
-                    <p class="rung-lead">An end-to-end engagement that carries a decided strategy through to go-to-market. It covers brand positioning and channel strategy. Media and KOL coordination runs through the partner network, as does local activation. Conduit Asia leads strategy and holds the client relationship. Execution runs through a coordinated network of regional production, digital, PR, and retail partners.</p>
+                    <p class="rung-lead">Most strategy is lost in the handover. This engagement holds the same brief from positioning through to the market.</p>
+                    <p class="rung-lead">It covers brand positioning and channel strategy, and continues into media, KOL, and local activation. Conduit Asia leads the strategy and holds the client relationship. Execution runs through regional production, digital, and retail partners.</p>
 
                     <div class="spec-grid">
                         <div class="spec-item">
@@ -419,7 +422,7 @@
                         </div>
                     </div>
 
-                    <p class="suited-for"><strong>Best suited for</strong> international brands making a serious China or APAC entry, and Asian designer-led brands making their first coordinated move into North America or Europe.</p>
+                    <p class="suited-for"><strong>Suited to</strong> international brands making a full China or APAC entry, and to Asian designer-led brands making a first coordinated move into North America or Europe.</p>
 
                     <a href="#start" class="rung-cta">Discuss a full engagement &rarr;</a>
                 </div>
@@ -430,7 +433,7 @@
 
     <div class="engagement-note fade-in">
         <div class="engagement-note-inner">
-            <p><strong>A note on fees.</strong> All engagements are paid. Fees are confirmed on inquiry, after a short conversation about the scope and situation, to avoid the misfit that comes from quoting before context. Strategic Reads are flat-rate. Retainers and project work are scoped and contracted in writing before any work begins.</p>
+            <p><strong>A note on fees.</strong> Every engagement is paid, scoped in writing, and contracted before work begins. Fees are confirmed on inquiry, after a short conversation about scope and situation. Strategic Reads are flat-rate.</p>
         </div>
     </div>
 
@@ -456,7 +459,7 @@
             <div class="divider"></div>
             <div class="section-label">Process</div>
             <h2 class="section-title">Every engagement begins with the intake form.</h2>
-            <p class="process-intro">Every engagement begins with the intake form. We hold the first conversation until the form is in, so it opens on the substance of your question rather than on introductions.</p>
+            <p class="process-intro">The first conversation waits until the form is in, so it opens on the substance of the question.</p>
         </div>
 
         <div class="process-paths">
@@ -466,9 +469,9 @@
                 <h4>Strategic Read</h4>
                 <ul class="process-steps">
                     <li><span class="step-num">1</span> You complete the intake form.</li>
-                    <li><span class="step-num">2</span> We review your question and context before any fee is set.</li>
+                    <li><span class="step-num">2</span> We review the question and context before any fee is set.</li>
                     <li><span class="step-num">3</span> The fee is confirmed within 48 hours.</li>
-                    <li><span class="step-num">4</span> A short fit call is available on request, though rarely needed at this level.</li>
+                    <li><span class="step-num">4</span> A short fit call is available on request.</li>
                 </ul>
             </div>
 
@@ -490,12 +493,11 @@
         <div class="cta-inner fade-in">
             <div class="divider"></div>
             <div class="section-label">Start Here</div>
-            <h2 class="cta-title">Bring the decision you can't afford to get wrong.</h2>
-            <p class="cta-lead">The intake form is brief. We respond with next steps and confirm the fee where it applies. If a different engagement is the better fit, we'll say so.</p>
+            <h2 class="cta-title">The intake form is short.</h2>
+            <p class="cta-lead">A response follows with next steps and the fee where it applies. Every inquiry is read and answered within two business days. Conversations are confidential, with or without an engagement.</p>
             <div class="cta-buttons">
                 <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="cta-primary">Send an inquiry &rarr;</a>
             </div>
-            <p class="cta-fineprint">Every inquiry is read and answered within two business days. Conversations are confidential, with or without an engagement.</p>
         </div>
     </section>
 
