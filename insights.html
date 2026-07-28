@@ -126,6 +126,14 @@
         .also-on a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
         .also-on a:hover { color: var(--dusty-violet); }
 
+        .newsletter { max-width: 1200px; margin: 0 auto; padding: 80px 48px 0; }
+        .newsletter-inner { padding: 40px 40px 44px; border: 1px solid rgba(136, 136, 128, 0.2); max-width: 760px; }
+        .newsletter .section-label { margin-bottom: 14px; }
+        .newsletter h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.3; color: var(--text-light); margin-bottom: 16px; }
+        .newsletter p { font-size: 15px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 28px; }
+        .newsletter-cta { display: inline-block; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .newsletter-cta:hover { color: var(--dusty-violet); }
+
         .engage-cta { max-width: 1200px; margin: 0 auto; padding: 100px 48px 80px; }
         .engage-cta-inner { max-width: 720px; }
         .engage-cta .divider { margin-bottom: 24px; }
@@ -165,6 +173,8 @@
             .article-card:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
             .article-card h3 { font-size: 19px; }
             .also-on { padding: 60px 24px 0; }
+            .newsletter { padding: 60px 24px 0; }
+            .newsletter-inner { padding: 28px 24px 32px; }
             .engage-cta { padding: 70px 24px 50px; }
             footer { padding: 60px 24px; }
             .footer-top { flex-direction: column; gap: 32px; }
@@ -294,6 +304,15 @@
         </div>
     </section>
 
+    <section class="newsletter">
+        <div class="newsletter-inner fade-in">
+            <div class="section-label">Newsletter</div>
+            <h2>From the Inside</h2>
+            <p>Wei Kan writes a regular note on what he watches across sports and lifestyle brands in the region. It covers the reading behind the analysis published here, including signals from Chinese-language sources that English coverage has not reached.</p>
+            <a href="https://weikan.substack.com" class="newsletter-cta" target="_blank" rel="noopener" data-track="newsletter-subscribe">Subscribe &rarr;</a>
+        </div>
+    </section>
+
     <section class="engage-cta">
         <div class="engage-cta-inner fade-in">
             <div class="divider"></div>
@@ -317,6 +336,7 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
+                <a href="https://weikan.substack.com" target="_blank" data-track="newsletter-subscribe">Newsletter</a>
                 <a href="/services.html">Services</a>
                 <a href="/insights.html">Casework</a>
             </div>
@@ -354,6 +374,9 @@
             });
             document.querySelectorAll('a[href*="tally.so"]').forEach(function (a) {
                 a.addEventListener('click', function () { gcEvent('inquiry-tally'); });
+            });
+            document.querySelectorAll('a[data-track="newsletter-subscribe"]').forEach(function (a) {
+                a.addEventListener('click', function () { gcEvent('newsletter-subscribe'); });
             });
         });
     </script>

@@ -461,6 +461,7 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
+                <a href="https://weikan.substack.com" target="_blank" data-track="newsletter-subscribe">Newsletter</a>
                 <a href="/insights.html">Casework</a>
             </div>
         </div>
@@ -497,6 +498,9 @@
             });
             document.querySelectorAll('a[href*="tally.so"]').forEach(function (a) {
                 a.addEventListener('click', function () { gcEvent('inquiry-tally'); });
+            });
+            document.querySelectorAll('a[data-track="newsletter-subscribe"]').forEach(function (a) {
+                a.addEventListener('click', function () { gcEvent('newsletter-subscribe'); });
             });
         });
     </script>
