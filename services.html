@@ -73,6 +73,20 @@
         .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
 
+        .scope-section { padding: 80px 48px 0; max-width: 1200px; margin: 0 auto; }
+        .scope-inner { max-width: 760px; }
+        .scope-inner .divider { margin-bottom: 24px; }
+        .scope-inner p { font-size: 16px; line-height: 1.85; color: var(--mid-gray); margin-bottom: 20px; }
+        .scope-inner p:last-child { margin-bottom: 0; }
+
+        .engagements-section { padding: 100px 48px 0; max-width: 1200px; margin: 0 auto; }
+        .engagements-header { margin-bottom: 40px; max-width: 760px; }
+        .engagements-header .divider { margin-bottom: 24px; }
+        .work-list { display: flex; flex-direction: column; }
+        .work-item { padding: 24px 0; border-bottom: 1px solid rgba(136, 136, 128, 0.15); font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(18px, 2.2vw, 23px); line-height: 1.4; color: var(--text-light); }
+        .work-item:first-child { border-top: 1px solid rgba(136, 136, 128, 0.15); }
+        .work-note { margin-top: 24px; font-size: 13px; color: var(--mid-gray); letter-spacing: 0.3px; }
+
         .ladder-section { padding: 80px 48px 40px; max-width: 1200px; margin: 0 auto; }
         .ladder-header { margin-bottom: 56px; max-width: 760px; }
         .ladder-header .divider { margin-bottom: 24px; }
@@ -187,7 +201,8 @@
         .footer-media { text-align: right; }
         .footer-media-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 8px; }
         .footer-media-list { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
-        .footer-legal { margin-top: 48px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
+        .footer-compliance { margin-top: 32px; font-size: 11px; line-height: 1.7; color: rgba(136, 136, 128, 0.7); max-width: 720px; }
+        .footer-legal { margin-top: 20px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
 
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -197,8 +212,9 @@
             .nav-brand-text { font-size: 11px; letter-spacing: 2px; }
             .nav-links { gap: 18px; }
             .nav-link { font-size: 12px; }
-            .nav-contact { display: none; }
             .hero { padding: 120px 24px 50px; }
+            .scope-section { padding: 50px 24px 0; }
+            .engagements-section { padding: 70px 24px 0; }
             .ladder-section { padding: 50px 24px 30px; }
             .rung { grid-template-columns: 1fr; gap: 20px; padding: 40px 28px; }
             .rung.featured { padding-left: 25px; }
@@ -228,10 +244,10 @@
             <span class="nav-brand-text">Conduit Asia</span>
         </a>
         <div class="nav-links">
-            <a href="/#solve" class="nav-link">How we help</a>
-            <a href="/services.html" class="nav-link active">How we work</a>
-            <a href="/insights.html" class="nav-link">Casework</a>
-            <a href="/services.html#start" class="nav-contact">Get in touch</a>
+            <a href="/insights.html" class="nav-link">Insights</a>
+            <a href="/services.html" class="nav-link active">Services</a>
+            <a href="/insights.html#newsletter" class="nav-link">Newsletter</a>
+            <a href="/services.html#start" class="nav-contact">Contact</a>
         </div>
     </nav>
 
@@ -240,6 +256,19 @@
         <h1>We start where the question is.</h1>
         <p class="hero-intro">Most engagements start small. A focused Strategic Read to understand the situation, then a decision on where to go from there. Clients return for deeper work when the direction becomes clear, not before.</p>
         <p class="hero-intro">Every engagement is principal-led, with execution through a vetted regional partner network for clients who need both strategy and delivery.</p>
+    </section>
+
+    <div class="section-divider"><div class="line"></div></div>
+
+    <section class="scope-section">
+        <div class="scope-inner fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Practice Scope</div>
+            <h2 class="section-title">Where we work.</h2>
+            <p>Conduit Asia advises international brands building a position in Asia, and Asian brands taking an established home business outside the region. The category is sport and lifestyle, and most of the work sits in China, Korea, and Japan.</p>
+            <p>Engagements are organised around a decision that is already pending. That decision is usually a market entry, a repositioning for a consumer segment the brand has not held before, a category investment, or an acquisition. Capital allocation across markets already in the portfolio comes up as often.</p>
+            <p>We say no to work outside the category and the markets we actually know. Where an engagement runs through to execution, the strategy is settled first and partner introductions follow from it.</p>
+        </div>
     </section>
 
     <div class="section-divider"><div class="line"></div></div>
@@ -403,6 +432,23 @@
         </div>
     </div>
 
+    <section class="engagements-section">
+        <div class="engagements-header fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Recent Engagements</div>
+            <h2 class="section-title">What the work has looked like.</h2>
+        </div>
+        <div class="work-list fade-in">
+            <div class="work-item">Market entry strategy for international brands expanding into Northeast Asia</div>
+            <div class="work-item">Brand and growth strategy for consumer brands operating in China</div>
+            <div class="work-item">Partnership and go-to-market strategy for an Asian brand expanding outside the region</div>
+            <div class="work-item">Competitive and consumer intelligence on China's sports and consumer markets for global brands</div>
+            <div class="work-item">Ongoing advisory and consultations for institutional investors on China's sports and consumer markets</div>
+            <div class="work-item">Brand strategy and campaign production for a global brand's product launch in China</div>
+        </div>
+        <p class="work-note fade-in">Engagements are shown in anonymized form. Client work is held in confidence.</p>
+    </section>
+
     <section class="process-section fade-in">
         <div class="process-header">
             <div class="divider"></div>
@@ -461,8 +507,8 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
-                <a href="https://weikan.substack.com" target="_blank" data-track="newsletter-subscribe">Newsletter</a>
-                <a href="/insights.html">Casework</a>
+                <a href="https://weikan.substack.com" target="_blank" data-track="out-substack">Newsletter</a>
+                <a href="/insights.html">Insights</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -472,6 +518,7 @@
                 <div class="footer-media-list"><a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Bloomberg</a> &middot; <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">The Wall Street Journal</a> &middot; <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Reuters</a> &middot; <a href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">BBC</a> &middot; <a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Nikkei Asia</a> &middot; <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Footwear News</a> &middot; <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" style="color: var(--mid-gray); text-decoration: none; border-bottom: 1px solid rgba(136,136,128,0.3);">Het Financieele Dagblad</a></div>
             </div>
         </div>
+        <div class="footer-compliance">Published work draws only on public information and established analytical frameworks. It contains no confidential client information and no non-public information from former employers. Conduit Asia does not provide investment advice and does not issue ratings on securities.</div>
         <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
     </footer>
 
@@ -486,22 +533,26 @@
     <script data-goatcounter="https://conduitasia.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     <script>
-        // Track inquiry-intent clicks as GoatCounter events
+        // Track inquiry-intent and outbound clicks as GoatCounter events
         window.addEventListener('load', function () {
             function gcEvent(name) {
                 if (window.goatcounter && window.goatcounter.count) {
                     window.goatcounter.count({ path: name, title: 'event: ' + name, event: true });
                 }
             }
-            document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
-                a.addEventListener('click', function () { gcEvent('inquiry-email'); });
-            });
-            document.querySelectorAll('a[href*="tally.so"]').forEach(function (a) {
-                a.addEventListener('click', function () { gcEvent('inquiry-tally'); });
-            });
-            document.querySelectorAll('a[data-track="newsletter-subscribe"]').forEach(function (a) {
-                a.addEventListener('click', function () { gcEvent('newsletter-subscribe'); });
-            });
+            function track(selector, name) {
+                document.querySelectorAll(selector).forEach(function (a) {
+                    a.addEventListener('click', function () { gcEvent(name); });
+                });
+            }
+            track('a[href^="mailto:"]:not([data-track])', 'inquiry-email');
+            track('a[href*="tally.so"]', 'inquiry-tally');
+            track('a[data-track="newsletter-subscribe"]', 'newsletter-subscribe');
+            track('a[href*="substack.com"]', 'out-substack');
+            track('a[href*="medium.com"]', 'out-medium');
+            track('a[href*="bloomberg.com"], a[href*="wsj.com"], a[href*="reuters.com"], a[href*="bbc.com"], a[href*="nikkei.com"], a[href*="wwd.com"], a[href*="fd.nl"]', 'out-media');
+            track('a[data-track="research-enquiry"]', 'research-enquiry');
+            track('a[data-track="press-enquiry"]', 'press-enquiry');
         });
     </script>
 

@@ -93,21 +93,12 @@
         .nav-link, .nav-contact { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
         .nav-link:hover, .nav-contact:hover { color: var(--dusty-violet); }
 
-        .hero {
-            display: flex; flex-direction: column; justify-content: center;
-            padding: 200px 48px 72px; max-width: 1200px; margin: 0 auto;
-        }
-        .hero-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 32px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(42px, 6vw, 72px); line-height: 1.15; color: var(--text-light); margin-bottom: 40px; max-width: 800px; }
-        .hero-intro { max-width: 580px; font-size: 17px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 20px; }
+        .masthead { max-width: 1200px; margin: 0 auto; padding: 140px 48px 56px; }
+        .masthead-tagline { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 28px; }
+        .masthead h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.25; color: var(--text-light); margin-bottom: 20px; max-width: 760px; }
+        .masthead p { max-width: 620px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
 
-        .hero-cta-group { display: flex; gap: 36px; align-items: center; margin-top: 40px; flex-wrap: wrap; }
-        .hero-cta-primary { display: inline-block; background: var(--warm-white); color: var(--text-dark); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
-        .hero-cta-primary:hover { background: var(--dusty-violet); color: var(--warm-white); }
-        .hero-cta-secondary { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
-        .hero-cta-secondary:hover { color: var(--dusty-violet); }
-
-        .media-strip { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+        .media-strip { max-width: 1200px; margin: 0 auto; padding: 90px 48px 0; }
         .media-strip-inner {
             padding: 24px 0;
             border-top: 1px solid rgba(136, 136, 128, 0.15);
@@ -120,48 +111,29 @@
         .media-strip-list a:hover { color: var(--text-light); }
 
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
-        .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
-        .section-divider .line { width: 100%; height: 1px; background: rgba(136, 136, 128, 0.15); }
-
-        .clients { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
-        .clients-inner .divider { margin-bottom: 24px; }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
-        .clients-intro { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.5; color: var(--text-light); max-width: 920px; margin-top: 24px; margin-bottom: 40px; }
-        .clients-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
-        .client-type { background: var(--card-dark); padding: 36px 32px; }
-        .client-type-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
-        .client-type h4 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 19px; line-height: 1.35; color: var(--text-light); margin-bottom: 12px; }
-        .client-type p { font-size: 14px; line-height: 1.7; color: var(--mid-gray); }
 
-        .services { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
-        .services-header { margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
-        .services-header-left { max-width: 720px; }
-        .services-header .divider { margin-bottom: 24px; }
-        .section-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-light); }
-        .services-header-cta { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; white-space: nowrap; }
-        .services-header-cta:hover { color: var(--dusty-violet); }
-        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-        .service-card { background: var(--card-dark); padding: 48px; transition: background 0.4s ease; text-decoration: none; display: block; }
-        .service-card:hover { background: #1f1f1f; }
-        .service-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 20px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: var(--text-light); margin-bottom: 16px; }
-        .service-card p { font-size: 15px; line-height: 1.75; color: var(--mid-gray); margin-bottom: 24px; }
-        .service-card-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); transition: color 0.3s ease; }
-        .service-card:hover .service-card-link { color: var(--dusty-violet); }
+        .judgment { max-width: 1200px; margin: 0 auto; padding: 90px 48px 0; }
+        .judgment-header { margin-bottom: 44px; max-width: 720px; }
+        .judgment-header .divider { margin-bottom: 24px; }
+        .judgment-header .section-label { margin-bottom: 0; }
+        .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+        .judgment-card { background: var(--card-dark); padding: 36px 32px; display: flex; flex-direction: column; }
+        .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 18px; }
+        .judgment-card p { font-size: 15px; line-height: 1.75; color: var(--text-light); flex: 1; margin-bottom: 24px; }
+        .judgment-source { font-size: 12px; line-height: 1.6; letter-spacing: 0.5px; color: var(--mid-gray); text-decoration: none; padding-top: 16px; border-top: 1px solid rgba(136, 136, 128, 0.2); transition: color 0.3s ease; }
+        .judgment-source:hover { color: var(--dusty-violet); }
 
-        .insights-section { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
-        .insights-header { margin-bottom: 56px; }
-        .insights-header .divider { margin-bottom: 24px; }
-        .insights-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-bottom: 40px; }
-        .insight-card { background: var(--card-dark); padding: 36px 32px; display: flex; flex-direction: column; text-decoration: none; transition: background 0.4s ease; min-height: 240px; }
-        .insight-card:hover { background: #1f1f1f; }
-        .insight-tag { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
-        .insight-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: var(--text-light); margin-bottom: 14px; }
-        .insight-card p { font-size: 13px; line-height: 1.6; color: var(--mid-gray); flex: 1; margin-bottom: 20px; }
-        .insight-cta { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); padding-top: 14px; border-top: 1px solid rgba(136, 136, 128, 0.2); }
-        .insights-footer { text-align: left; }
-        .insights-all { display: inline-block; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
-        .insights-all:hover { color: var(--dusty-violet); }
+        .uses { max-width: 1200px; margin: 0 auto; padding: 90px 48px; }
+        .uses-header { margin-bottom: 44px; }
+        .uses-header .divider { margin-bottom: 24px; }
+        .uses-header .section-label { margin-bottom: 0; }
+        .uses-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .use-card { background: var(--card-dark); padding: 44px 40px; display: flex; flex-direction: column; }
+        .use-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: var(--text-light); margin-bottom: 16px; }
+        .use-card p { font-size: 15px; line-height: 1.8; color: var(--mid-gray); flex: 1; margin-bottom: 28px; }
+        .use-link { display: inline-block; align-self: flex-start; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .use-link:hover { color: var(--dusty-violet); }
 
         .about { background: var(--warm-white); color: var(--text-dark); }
         .about-inner { max-width: 1200px; margin: 0 auto; padding: 100px 48px; }
@@ -170,23 +142,7 @@
         .about h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-dark); margin-bottom: 32px; }
         .about-text { font-size: 16px; line-height: 1.85; color: #444; max-width: 680px; }
         .about-text p { margin-bottom: 20px; }
-        .about-credentials { padding-top: 12px; }
-        .credential-item { padding: 20px 0; border-bottom: 1px solid rgba(15, 15, 15, 0.08); }
-        .credential-item:first-child { border-top: 1px solid rgba(15, 15, 15, 0.08); }
-        .credential-role { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text-dark); margin-bottom: 4px; }
-        .credential-detail { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
-
-        .also { background: var(--warm-white); color: var(--text-dark); padding: 0 48px 100px; }
-        .also-inner { max-width: 1200px; margin: 0 auto; padding-top: 60px; border-top: 1px solid rgba(15, 15, 15, 0.08); }
-        .also p { font-size: 16px; line-height: 1.85; color: #444; max-width: 680px; }
-        .also .section-label { margin-bottom: 20px; }
-
-        .closing-cta { padding: 120px 48px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .closing-cta .divider { margin: 0 auto 24px; }
-        .closing-cta .section-label { text-align: center; }
-        .closing-cta h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(30px, 4vw, 48px); line-height: 1.25; color: var(--text-light); margin-bottom: 24px; max-width: 720px; margin-left: auto; margin-right: auto; }
-        .closing-cta p { font-size: 16px; line-height: 1.85; color: var(--mid-gray); max-width: 580px; margin: 0 auto 40px; }
-        .closing-cta-buttons { display: flex; gap: 32px; justify-content: center; align-items: center; flex-wrap: wrap; }
+        .about-compliance { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(15, 15, 15, 0.12); font-size: 13px; line-height: 1.75; color: #6a6a64; max-width: 680px; }
 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
@@ -196,7 +152,8 @@
         .footer-contact a:hover { color: var(--dusty-violet); }
         .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 32px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
         .footer-locations { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
-        .footer-legal { margin-top: 48px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
+        .footer-compliance { margin-top: 32px; font-size: 11px; line-height: 1.7; color: rgba(136, 136, 128, 0.7); max-width: 720px; }
+        .footer-legal { margin-top: 20px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
 
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -206,26 +163,19 @@
             .nav-brand-text { font-size: 11px; letter-spacing: 2px; }
             .nav-links { gap: 18px; }
             .nav-link { font-size: 12px; }
-            .nav-contact { display: none; }
-            .hero { padding: 100px 24px 50px; }
-            .hero-cta-group { gap: 24px; }
-            .media-strip { padding: 0 24px; }
+            .masthead { padding: 100px 24px 40px; }
+            .media-strip { padding: 60px 24px 0; }
             .media-strip-inner { gap: 14px; }
-            .clients { padding: 60px 24px; }
-            .clients-list { grid-template-columns: 1fr; }
-            .services { padding: 60px 24px; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 36px 24px; }
-            .insights-section { padding: 50px 24px; }
-            .insights-grid { grid-template-columns: 1fr; }
-            .insight-card { padding: 28px 24px; min-height: auto; }
-            .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
-            .also { padding: 0 24px 60px; }
-            .closing-cta { padding: 80px 24px; }
+            .judgment { padding: 60px 24px 0; }
+            .judgment-grid { grid-template-columns: 1fr; }
+            .judgment-card { padding: 28px 24px; }
+            .uses { padding: 60px 24px; }
+            .uses-grid { grid-template-columns: 1fr; }
+            .use-card { padding: 32px 24px; }
+            .about-inner { padding: 60px 24px; }
             footer { padding: 60px 24px; }
             .footer-top { flex-direction: column; gap: 32px; }
             .footer-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-            .section-divider { padding: 0 24px; }
         }
     </style>
 </head>
@@ -237,21 +187,40 @@
             <span class="nav-brand-text">Conduit Asia</span>
         </a>
         <div class="nav-links">
-            <a href="/#solve" class="nav-link">How we help</a>
-            <a href="/services.html" class="nav-link">How we work</a>
-            <a href="/insights.html" class="nav-link">Casework</a>
-            <a href="/services.html#start" class="nav-contact">Get in touch</a>
+            <a href="/insights.html" class="nav-link">Insights</a>
+            <a href="/services.html" class="nav-link">Services</a>
+            <a href="/insights.html#newsletter" class="nav-link">Newsletter</a>
+            <a href="/services.html#start" class="nav-contact">Contact</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-label">Strategic Advisory &middot; Hong Kong &middot; Shanghai</div>
-        <h1>Asia. From the Inside.</h1>
-        <p class="hero-intro">Conduit Asia is a sports and lifestyle brand strategy practice.</p>
-        <p class="hero-intro" style="max-width: 560px;">We advise international brands on Asia and Asian brands on going global, and take the work to market through a regional partner network.</p>
-        <div class="hero-cta-group">
-            <a href="/services.html" class="hero-cta-primary">How we work &rarr;</a>
-            <a href="/services.html#start" class="hero-cta-secondary">Get in touch</a>
+    <header class="masthead">
+        <div class="masthead-tagline">Asia. From the Inside.</div>
+        <h1>Conduit Asia is a sports and lifestyle brand strategy practice.</h1>
+        <p>We advise international brands on Asia and Asian brands on going global, and take the work to market through a regional partner network.</p>
+    </header>
+
+    <section class="judgment">
+        <div class="judgment-header fade-in">
+            <div class="divider"></div>
+            <div class="section-label">Current Judgment</div>
+        </div>
+        <div class="judgment-grid">
+            <article class="judgment-card fade-in">
+                <div class="judgment-meta">May 2026 &middot; Nike</div>
+                <p>The print is harder to read than the headlines. Seven consecutive quarters of decline sit alongside rising profitability in the same segment, with management guiding the next quarter materially worse while framing the worsening as deliberate cleanup.</p>
+                <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-source">Why Nike's China Comeback Is a Configuration Question &rarr;</a>
+            </article>
+            <article class="judgment-card fade-in">
+                <div class="judgment-meta">April 2026 &middot; The OEM-ODM-Brand Pathway</div>
+                <p>The framework is called the OEM-ODM-Brand Pathway. It identifies three layers of capability accumulation, two structural jumps that most companies fail to complete, and one acquisition gate that explains why Anta succeeded with FILA and Amer Sports while BenQ-Siemens collapsed within eighteen months of the same kind of move.</p>
+                <a href="https://medium.com/@wei.kan/the-oem-odm-brand-pathway-what-antas-rise-reveals-about-chinese-manufacturing-s-three-layer-480421c5404c" target="_blank" rel="noopener" class="judgment-source">The OEM-ODM-Brand Pathway: What Anta's Rise Reveals &rarr;</a>
+            </article>
+            <article class="judgment-card fade-in">
+                <div class="judgment-meta">June 2026 &middot; Li-Ning</div>
+                <p>The money is one tier down. Volume and margin sit in the durable team and lifestyle models around 700 to 999 CNY.</p>
+                <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-source">The Curry Shoe Was Never the Point &rarr;</a>
+            </article>
         </div>
     </section>
 
@@ -270,106 +239,28 @@
         </div>
     </div>
 
-    <section class="clients" id="solve">
-        <div class="clients-inner fade-in">
+    <section class="uses">
+        <div class="uses-header fade-in">
             <div class="divider"></div>
-            <div class="section-label">How We Help</div>
-            <p class="clients-intro">The costly mistakes in a market like China are usually the ones a brand never saw coming. Catching them before the budget is committed is most of the value, and it takes someone who has sat inside the same decisions. That shifts the odds. No one is right every time, and we won't pretend otherwise.</p>
-            <div class="clients-list">
-                <div class="client-type">
-                    <div class="client-type-label">01</div>
-                    <h4>Growing or defending a brand in China and APAC</h4>
-                    <p>The kind of sportswear, premium accessories, and lifestyle brands you'd know by name, working on a China or APAC question headquarters has been circling for a while. Usually it's specific and bounded: whether a rising local player is a real threat in premium athleisure, or why the brand's pricing power is slipping while a couple of competitors hold full price. We work questions like that through as counsel, drawing on having actually run brands in the market.</p>
-                </div>
-                <div class="client-type">
-                    <div class="client-type-label">02</div>
-                    <h4>Taking an Asian brand global</h4>
-                    <p>Asian brands with real scale at home, now building outside the region. The sportswear groups and designer names you've seen making global headlines, not only founder-led labels making a first move. The recurring problem is that brand equity built in Asia doesn't always survive the move intact, and the receiving market reads it differently than the home market does. One question that surfaces here: whether a marquee athlete or celebrity signing actually builds the brand abroad, or just rents attention for a season and leaves it where it started.</p>
-                </div>
-                <div class="client-type">
-                    <div class="client-type-label">03</div>
-                    <h4>Seeing Asia clearly from the outside</h4>
-                    <p>The research firms and expert networks that cover these names, needing a regular read on Asian consumer behavior, brand performance, and how categories are moving. The gap between what analyst numbers say and what's actually happening at brand and retail level tends to be where these conversations start. Reading a quarter's distributor inventory or discount depth as either an early warning or just noise is the kind of judgment that comes from having operated in the category rather than observed it.</p>
-                </div>
+            <div class="section-label">How the Work Is Used</div>
+        </div>
+        <div class="uses-grid">
+            <div class="use-card fade-in">
+                <h3>Brands</h3>
+                <p>Conduit Asia advises brand and commercial leaders making decisions about Asia. Work is scoped to the decision. Most engagements begin with a single bounded question.</p>
+                <a href="/services.html" class="use-link">See how we work &rarr;</a>
             </div>
-        </div>
-    </section>
-
-    <div class="section-divider"><div class="line"></div></div>
-
-    <section class="services">
-        <div class="services-header fade-in">
-            <div class="services-header-left">
-                <div class="divider"></div>
-                <div class="section-label">How We Work</div>
-                <h2 class="section-title">Counsel, and the execution to back it.</h2>
+            <div class="use-card fade-in">
+                <h3>Research</h3>
+                <p>Institutional investors and research firms consult Wei Kan on category structure and on the operating reality behind reported numbers.</p>
+                <a href="/insights.html" class="use-link">Read published work &rarr;</a>
             </div>
-            <a href="/services.html" class="services-header-cta">See all services &rarr;</a>
-        </div>
-        <div class="services-grid">
-            <a href="/services.html#start" class="service-card fade-in">
-                <div class="service-tag">Where every engagement starts</div>
-                <h3>Strategic Read</h3>
-                <p>A focused engagement on a single, well-defined question, for the point before a decision is made. A 90-minute working session, followed by a written Strategic Read of one to two pages within 48 hours. Typical questions: how much room a category leader has left in China, whether a rising local player is a real threat in premium athleisure, what a competitor's move into luxury means for your own positioning.</p>
-                <div class="service-card-link">Request a session &rarr;</div>
-            </a>
-            <a href="/services.html" class="service-card fade-in">
-                <div class="service-tag">One-time deep dive</div>
-                <h3>Market Briefing</h3>
-                <p>A structured engagement for a decision with too many moving parts to resolve in a single session: a market entry, a repositioning, a category investment, an acquisition or partnership. The work spans market structure, price architecture, channel and competitive dynamics, the partner landscape, a decision tree, and a financial model, resolving into a clear recommendation. Delivered as a 30-40 page brief and a two-hour readout over three to four weeks.</p>
-                <div class="service-card-link">Learn more &rarr;</div>
-            </a>
-            <a href="/services.html" class="service-card fade-in">
-                <div class="service-tag">Ongoing partnership</div>
-                <h3>Advisory Retainer</h3>
-                <p>A standing advisory relationship for brands that want senior judgment on call inside the region. It runs on monthly working sessions, access between them, and a read on what's moving when it affects your position. The value is continuity: counsel that already holds the context when a decision arrives, rather than briefing a new advisor each time. Six-month minimum.</p>
-                <div class="service-card-link">Learn more &rarr;</div>
-            </a>
-            <a href="/services.html" class="service-card fade-in">
-                <div class="service-tag">Full engagement</div>
-                <h3>Market Activation Program</h3>
-                <p>A multi-phase engagement for brands ready to act on a decided direction. Conduit Asia leads strategy and holds the client relationship throughout; execution runs through a coordinated network of vetted regional partners, spanning positioning, channel and partner identification, negotiation support, media and KOL coordination, and local activation. The strategy is carried through to market rather than handed off. It begins from a Briefing or Strategic Read. Retainer plus scoped project fees, six to eighteen months.</p>
-                <div class="service-card-link">Learn more &rarr;</div>
-            </a>
-        </div>
-    </section>
-
-    <div class="section-divider"><div class="line"></div></div>
-
-    <section class="insights-section">
-        <div class="insights-header fade-in">
-            <div class="divider"></div>
-            <div class="section-label">Recent Analysis</div>
-            <h2 class="section-title">From the field.</h2>
-        </div>
-        <div class="insights-grid">
-            <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" class="insight-card fade-in">
-                <div class="insight-tag">June 2026 &middot; Analysis</div>
-                <h3>The Curry Shoe Was Never the Point</h3>
-                <p>The sell-side says Li-Ning needs three million Curry pairs a year to break even. That number measures the wrong thing. Why the signature shoe was never built to pay, and where the value in a deal like this actually sits.</p>
-                <div class="insight-cta">Read on Medium &rarr;</div>
-            </a>
-            <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" class="insight-card fade-in">
-                <div class="insight-tag">May 2026 &middot; Framework</div>
-                <h3>Why Nike's China Comeback Is a Configuration Question</h3>
-                <p>A structural read on Nike China 2026 from inside the category. The cleanup is real, the assets are intact. The dividing line is whether product configuration starts from the global platform or from the local consumer.</p>
-                <div class="insight-cta">Read on Medium &rarr;</div>
-            </a>
-            <a href="https://medium.com/@wei.kan/the-acquirer-the-purist-the-specialist-the-localizer-a-framework-for-china-sportswear-in-2026-2e879a5b3f85" target="_blank" class="insight-card fade-in">
-                <div class="insight-tag">April 2026 &middot; Framework</div>
-                <h3>The Acquirer, The Purist, The Specialist, The Localizer</h3>
-                <p>Four growth archetypes for China sportswear in 2026: Anta, Li-Ning, On, Adidas, and the question of where Nike fits.</p>
-                <div class="insight-cta">Read on Medium &rarr;</div>
-            </a>
-        </div>
-        <div class="insights-footer">
-            <a href="/insights.html" class="insights-all">Casework &rarr;</a>
         </div>
     </section>
 
     <section class="about">
         <div class="about-inner">
-            <div class="about-left fade-in">
+            <div class="fade-in">
                 <div class="divider"></div>
                 <div class="section-label">About</div>
                 <h2>Wei Kan</h2>
@@ -378,19 +269,7 @@
                     <p>Client work is confidential by design. The perspective Wei brings to public commentary draws on frameworks built and tested inside those engagements rather than assembled afterward.</p>
                     <p>Bloomberg, The Wall Street Journal, Reuters, Nikkei Asia, the BBC, Footwear News, and Het Financieele Dagblad have quoted him on China consumer dynamics and global sportswear brand strategy. That commentary represents a fraction of what the advisory work covers.</p>
                 </div>
-            </div>        </div>
-    </section>
-
-
-    <section class="closing-cta">
-        <div class="fade-in">
-            <div class="divider"></div>
-            <div class="section-label">Get in touch</div>
-            <h2>If your brand is facing a decision in Asia it can't afford to get wrong.</h2>
-            <p>A short intake form takes about three minutes. We respond within two business days with next steps and confirm the fee. If a different engagement is a better fit, we'll suggest that instead.</p>
-            <div class="closing-cta-buttons">
-                <a href="/services.html#start" class="hero-cta-primary">Get in touch &rarr;</a>
-                <a href="mailto:wei.kan@conduitasia.com?subject=Inquiry%20via%20conduitasia.com" class="hero-cta-secondary">Or email directly</a>
+                <p class="about-compliance">Published work draws only on public information and established analytical frameworks. It contains no confidential client information and no non-public information from former employers. Conduit Asia does not provide investment advice and does not issue ratings on securities.</p>
             </div>
         </div>
     </section>
@@ -405,14 +284,15 @@
                 <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
-                <a href="https://weikan.substack.com" target="_blank" data-track="newsletter-subscribe">Newsletter</a>
+                <a href="https://weikan.substack.com" target="_blank" data-track="out-substack">Newsletter</a>
                 <a href="/services.html">Services</a>
-                <a href="/insights.html">Casework</a>
+                <a href="/insights.html">Insights</a>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-locations">Hong Kong &middot; Shanghai</div>
         </div>
+        <div class="footer-compliance">Published work draws only on public information and established analytical frameworks. It contains no confidential client information and no non-public information from former employers. Conduit Asia does not provide investment advice and does not issue ratings on securities.</div>
         <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
     </footer>
 
@@ -429,22 +309,26 @@
     <script data-goatcounter="https://conduitasia.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     <script>
-        // Track inquiry-intent clicks as GoatCounter events
+        // Track inquiry-intent and outbound clicks as GoatCounter events
         window.addEventListener('load', function () {
             function gcEvent(name) {
                 if (window.goatcounter && window.goatcounter.count) {
                     window.goatcounter.count({ path: name, title: 'event: ' + name, event: true });
                 }
             }
-            document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
-                a.addEventListener('click', function () { gcEvent('inquiry-email'); });
-            });
-            document.querySelectorAll('a[href*="tally.so"]').forEach(function (a) {
-                a.addEventListener('click', function () { gcEvent('inquiry-tally'); });
-            });
-            document.querySelectorAll('a[data-track="newsletter-subscribe"]').forEach(function (a) {
-                a.addEventListener('click', function () { gcEvent('newsletter-subscribe'); });
-            });
+            function track(selector, name) {
+                document.querySelectorAll(selector).forEach(function (a) {
+                    a.addEventListener('click', function () { gcEvent(name); });
+                });
+            }
+            track('a[href^="mailto:"]:not([data-track])', 'inquiry-email');
+            track('a[href*="tally.so"]', 'inquiry-tally');
+            track('a[data-track="newsletter-subscribe"]', 'newsletter-subscribe');
+            track('a[href*="substack.com"]', 'out-substack');
+            track('a[href*="medium.com"]', 'out-medium');
+            track('a[href*="bloomberg.com"], a[href*="wsj.com"], a[href*="reuters.com"], a[href*="bbc.com"], a[href*="nikkei.com"], a[href*="wwd.com"], a[href*="fd.nl"]', 'out-media');
+            track('a[data-track="research-enquiry"]', 'research-enquiry');
+            track('a[data-track="press-enquiry"]', 'press-enquiry');
         });
     </script>
 
