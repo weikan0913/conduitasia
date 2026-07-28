@@ -98,17 +98,16 @@
         .masthead h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.25; color: var(--text-light); margin-bottom: 20px; max-width: 760px; }
         .masthead p { max-width: 620px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
 
-        .media-strip { max-width: 1200px; margin: 0 auto; padding: 90px 48px 0; }
+        .media-strip { background: var(--warm-white); max-width: none; margin: 90px 0 0; padding: 0; }
         .media-strip-inner {
-            padding: 24px 0;
-            border-top: 1px solid rgba(136, 136, 128, 0.15);
-            border-bottom: 1px solid rgba(136, 136, 128, 0.15);
-            display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+            max-width: 1200px; margin: 0 auto;
+            padding: 64px 48px;
+            display: flex; align-items: baseline; gap: 32px; flex-wrap: wrap;
         }
-        .media-strip-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); white-space: nowrap; }
-        .media-strip-list { font-size: 13px; color: var(--mid-gray); letter-spacing: 1px; line-height: 1.6; }
-        .media-strip-list a { color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
-        .media-strip-list a:hover { color: var(--text-light); }
+        .media-strip-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--dusty-violet); white-space: nowrap; }
+        .media-strip-list { font-size: 16px; color: var(--text-dark); letter-spacing: 0.5px; line-height: 1.7; }
+        .media-strip-list a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(15,15,15,0.2); transition: color 0.3s ease, border-color 0.3s ease; }
+        .media-strip-list a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
 
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
@@ -117,8 +116,8 @@
         .judgment-header { margin-bottom: 44px; max-width: 720px; }
         .judgment-header .divider { margin-bottom: 24px; }
         .judgment-header .section-label { margin-bottom: 0; }
-        .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-        .judgment-card { background: var(--card-dark); padding: 36px 32px; display: flex; flex-direction: column; }
+        .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+        .judgment-card { background: transparent; padding: 28px 0 0; border-top: 1px solid rgba(136, 136, 128, 0.25); display: flex; flex-direction: column; }
         .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 18px; }
         .judgment-card p { font-size: 15px; line-height: 1.75; color: var(--text-light); flex: 1; margin-bottom: 24px; }
         .judgment-source { font-size: 12px; line-height: 1.6; letter-spacing: 0.5px; color: var(--mid-gray); text-decoration: none; padding-top: 16px; border-top: 1px solid rgba(136, 136, 128, 0.2); transition: color 0.3s ease; }
@@ -135,14 +134,12 @@
         .use-link { display: inline-block; align-self: flex-start; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
         .use-link:hover { color: var(--dusty-violet); }
 
-        .about { background: var(--warm-white); color: var(--text-dark); }
         .about-inner { max-width: 1200px; margin: 0 auto; padding: 100px 48px; }
-        .about .divider { margin-bottom: 24px; }
         .about .section-label { color: var(--dusty-violet); }
-        .about h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-dark); margin-bottom: 32px; }
-        .about-text { font-size: 16px; line-height: 1.85; color: #444; max-width: 680px; }
+        .about h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-light); margin-bottom: 32px; }
+        .about-text { font-size: 16px; line-height: 1.85; color: var(--mid-gray); max-width: 680px; }
         .about-text p { margin-bottom: 20px; }
-        .about-compliance { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(15, 15, 15, 0.12); font-size: 13px; line-height: 1.75; color: #6a6a64; max-width: 680px; }
+        .about-compliance { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(136, 136, 128, 0.2); font-size: 13px; line-height: 1.75; color: rgba(136, 136, 128, 0.75); max-width: 680px; }
 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
@@ -164,11 +161,12 @@
             .nav-links { gap: 18px; }
             .nav-link { font-size: 12px; }
             .masthead { padding: 100px 24px 40px; }
-            .media-strip { padding: 60px 24px 0; }
-            .media-strip-inner { gap: 14px; }
+            .media-strip { margin-top: 60px; }
+            .media-strip-inner { padding: 48px 24px; gap: 14px; }
+            .media-strip-list { font-size: 15px; }
             .judgment { padding: 60px 24px 0; }
-            .judgment-grid { grid-template-columns: 1fr; }
-            .judgment-card { padding: 28px 24px; }
+            .judgment-grid { grid-template-columns: 1fr; gap: 36px; }
+            .judgment-card:nth-child(3) { display: none; }
             .uses { padding: 60px 24px; }
             .uses-grid { grid-template-columns: 1fr; }
             .use-card { padding: 32px 24px; }
@@ -224,7 +222,7 @@
         </div>
     </section>
 
-    <div class="media-strip">
+    <div class="media-strip fade-in">
         <div class="media-strip-inner">
             <span class="media-strip-label">Founder Wei Kan, quoted in</span>
             <span class="media-strip-list">
@@ -261,7 +259,6 @@
     <section class="about">
         <div class="about-inner">
             <div class="fade-in">
-                <div class="divider"></div>
                 <div class="section-label">About</div>
                 <h2>Wei Kan</h2>
                 <div class="about-text">
