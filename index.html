@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conduit Asia | Asia. From the Inside.</title>
-    <meta name="description" content="Strategic advisory for international brands entering Asia and Asian brands building outside it. Founded by Wei Kan, former Nike and Converse APAC executive. Quoted in Bloomberg, The Wall Street Journal, Reuters, Nikkei Asia, BBC, and Footwear News.">
+    <meta name="description" content="Conduit Asia is a sport and lifestyle brand strategy consultancy. We advise brands on Asia and publish analysis on the category.">
     <meta name="author" content="Wei Kan">
 
     <meta property="og:title" content="Conduit Asia | Asia. From the Inside.">
-    <meta property="og:description" content="Strategic advisory for international brands entering Asia and Asian brands building outside it. Founded by Wei Kan, former Nike and Converse APAC executive.">
+    <meta property="og:description" content="Conduit Asia is a sport and lifestyle brand strategy consultancy. We advise brands on Asia and publish analysis on the category.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://conduitasia.com/">
     <meta property="og:image" content="https://conduitasia.com/og-image.png">
@@ -17,7 +17,7 @@
     <meta property="og:site_name" content="Conduit Asia">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Conduit Asia | Asia. From the Inside.">
-    <meta name="twitter:description" content="Strategic advisory for international brands entering Asia, and Asian brands building outside it. By Wei Kan, former Nike and Converse APAC.">
+    <meta name="twitter:description" content="Conduit Asia is a sport and lifestyle brand strategy consultancy. We advise brands on Asia and publish analysis on the category.">
     <meta name="twitter:image" content="https://conduitasia.com/og-image.png">
     <link rel="canonical" href="https://conduitasia.com/">
 
@@ -139,7 +139,9 @@
         .about h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.3; color: var(--text-light); margin-bottom: 32px; }
         .about-text { font-size: 16px; line-height: 1.85; color: var(--mid-gray); max-width: 680px; }
         .about-text p { margin-bottom: 20px; }
-        .about-compliance { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(136, 136, 128, 0.2); font-size: 13px; line-height: 1.75; color: rgba(136, 136, 128, 0.75); max-width: 680px; }
+        .about-email a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); transition: color 0.3s ease; }
+        .about-email a:hover { color: var(--dusty-violet); }
+        .about-compliance { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(136, 136, 128, 0.2); font-size: 13px; line-height: 1.75; color: rgba(136, 136, 128, 0.9); max-width: 680px; }
 
         footer { padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
@@ -149,7 +151,7 @@
         .footer-contact a:hover { color: var(--dusty-violet); }
         .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 32px; border-top: 1px solid rgba(136, 136, 128, 0.15); }
         .footer-locations { font-size: 13px; color: var(--mid-gray); letter-spacing: 0.5px; }
-        .footer-compliance { margin-top: 32px; font-size: 11px; line-height: 1.7; color: rgba(136, 136, 128, 0.7); max-width: 720px; }
+        .footer-compliance { margin-top: 32px; font-size: 11px; line-height: 1.7; color: rgba(136, 136, 128, 0.9); max-width: 720px; }
         .footer-legal { margin-top: 20px; font-size: 11px; color: rgba(136, 136, 128, 0.5); }
 
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -160,13 +162,13 @@
             .nav-brand-text { font-size: 11px; letter-spacing: 2px; }
             .nav-links { gap: 18px; }
             .nav-link { font-size: 12px; }
-            .masthead { padding: 100px 24px 40px; }
-            .media-strip { margin-top: 60px; }
+            body { display: flex; flex-direction: column; }
+            .masthead { padding: 100px 24px 40px; order: -2; }
+            .media-strip { margin-top: 60px; order: -1; }
             .media-strip-inner { padding: 48px 24px; gap: 14px; }
             .media-strip-list { font-size: 15px; }
             .judgment { padding: 60px 24px 0; }
             .judgment-grid { grid-template-columns: 1fr; gap: 36px; }
-            .judgment-card:nth-child(3) { display: none; }
             .uses { padding: 60px 24px; }
             .uses-grid { grid-template-columns: 1fr; }
             .use-card { padding: 32px 24px; }
@@ -177,7 +179,7 @@
         }
 
         @media (max-width: 480px) {
-            .nav-brand-text { display: none; }
+            .nav-links a[href*="#newsletter"] { display: none; }
             .nav-links { gap: 14px; }
         }
     </style>
@@ -199,24 +201,24 @@
 
     <header class="masthead">
         <div class="masthead-tagline">Asia. From the Inside.</div>
-        <h1>Conduit Asia is a sport and lifestyle brand strategy consultancy.</h1>
-        <p>Wei Kan founded the practice in 2024, after fourteen years at Nike and Converse.</p>
+        <h1>How a brand is configured in Asia decides more than what it owns.</h1>
+        <p>We work on sport and lifestyle brands in China, Korea, and Japan.</p>
     </header>
 
     <section class="judgment">
         <div class="judgment-header fade-in">
             <div class="divider"></div>
-            <div class="section-label">Current Judgment</div>
+            <div class="section-label">Published Judgment</div>
         </div>
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
                 <div class="judgment-meta">June 2026 &middot; Li-Ning</div>
-                <p>The money is one tier down. Volume and margin sit in the durable team and lifestyle models around 700 to 999 CNY.</p>
+                <p>Li-Ning paid for Stephen Curry, and the signature shoe was never going to return it. The volume and the margin sit a tier below, in the team and lifestyle models around 700 to 999 CNY.</p>
                 <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-source">The Curry Shoe Was Never the Point &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
                 <div class="judgment-meta">May 2026 &middot; Nike</div>
-                <p>The print is harder to read than the headlines. Seven consecutive quarters of decline sit alongside rising profitability in the same segment, with management guiding the next quarter materially worse while framing the worsening as deliberate cleanup.</p>
+                <p>Nike China's numbers do not read the way the headlines do. Seven straight quarters of decline sit next to rising profitability in the same segment, and management is guiding the next quarter worse on purpose.</p>
                 <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-source">Why Nike's China Comeback Is a Configuration Question &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
@@ -229,7 +231,7 @@
 
     <div class="media-strip fade-in">
         <div class="media-strip-inner">
-            <span class="media-strip-label">Founder Wei Kan, quoted in</span>
+            <span class="media-strip-label">Wei Kan, quoted in</span>
             <span class="media-strip-list">
                 <a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">Bloomberg</a> &middot;
                 <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">The Wall Street Journal</a> &middot;
@@ -245,17 +247,17 @@
     <section class="uses">
         <div class="uses-header fade-in">
             <div class="divider"></div>
-            <div class="section-label">Two Ways In</div>
+            <div class="section-label">The Work</div>
         </div>
         <div class="uses-grid">
             <div class="use-card fade-in">
                 <h3>Brands</h3>
-                <p>Conduit Asia advises brand and commercial leaders making decisions about Asia. Work is scoped to the decision. Most engagements begin with a single bounded question.</p>
-                <a href="/services.html" class="use-link">See how we work &rarr;</a>
+                <p>A decision is on the table and needs a read before it is committed. The first engagement is usually one question, answered in writing.</p>
+                <a href="/services.html" class="use-link">See how engagements work &rarr;</a>
             </div>
             <div class="use-card fade-in">
                 <h3>Research</h3>
-                <p>Institutional investors and research firms consult Wei Kan on category structure and on the operating reality behind reported numbers.</p>
+                <p>Analysts covering the category ask about the operating reality behind the reported numbers. Consultations and commissioned work are scoped on enquiry.</p>
                 <a href="/insights.html" class="use-link">Read published work &rarr;</a>
             </div>
         </div>
@@ -265,11 +267,12 @@
         <div class="about-inner">
             <div class="fade-in">
                 <div class="section-label">About</div>
-                <h2>Wei Kan</h2>
+                <h2>The practice</h2>
                 <div class="about-text">
-                    <p>Wei Kan spent twenty-five years operating at the center of Asia-Pacific brand marketing, fourteen of them at Nike and Converse. At Converse, he led marketing across Asia and scaled the regional business. At Nike Greater China, he drove growth in Running and Women's before taking on Nike Sportswear, its largest revenue driver. He founded Conduit Asia in 2024 to advise brands on the region from that same operating base.</p>
-                    <p>Client work is confidential and is not discussed publicly. What appears here rests on frameworks Wei developed as an operator, applied to information that is publicly available.</p>
-                    <p>Bloomberg, The Wall Street Journal, Reuters, Nikkei Asia, the BBC, Footwear News, and Het Financieele Dagblad have quoted him on China consumer dynamics and global sportswear brand strategy. That commentary represents a fraction of what the advisory work covers.</p>
+                    <p>Work comes to us as a decision that is already pending, usually with a date attached.</p>
+                    <p>Every engagement is scoped and priced in writing before it starts. Client work is confidential and is not discussed publicly. What appears here rests on established analytical frameworks applied to information that is publicly available.</p>
+                    <p>Conduit Asia is the trading name of Conduit International Limited, registered in Hong Kong. We work from Shanghai.</p>
+                    <p class="about-email"><a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a></p>
                 </div>
                 <p class="about-compliance">Published work draws only on public information and established analytical frameworks. It contains no confidential client information and no non-public information from former employers. Conduit Asia does not provide investment advice and does not issue ratings on securities.</p>
             </div>
