@@ -214,16 +214,16 @@
         </div>
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
+                <div class="judgment-meta">July 2026 &middot; Nike</div>
+                <a href="https://weikan.substack.com/p/nike-china-online-distribution-reset" target="_blank" rel="noopener" data-track="out-substack-post" class="judgment-title">What Nike's China Reset Does Not Fix</a>
+                <p>Nike is about to remove thousands of online stores that sell its products in the China market. In terms of pricing strategy this is a completely correct decision. What it does not solve is the structural problem.</p>
+                <a href="https://weikan.substack.com/p/nike-china-online-distribution-reset" target="_blank" rel="noopener" data-track="out-substack-post" class="judgment-source">Read on Substack &rarr;</a>
+            </article>
+            <article class="judgment-card fade-in">
                 <div class="judgment-meta">June 2026 &middot; Li-Ning</div>
                 <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-title">The Curry Shoe Was Never the Point</a>
                 <p>Li-Ning paid for Stephen Curry, and the signature shoe was never going to return it. The volume and the margin sit a tier below, in the team and lifestyle models around 700 to 999 CNY.</p>
                 <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-source">Read on Medium &rarr;</a>
-            </article>
-            <article class="judgment-card fade-in">
-                <div class="judgment-meta">May 2026 &middot; Nike</div>
-                <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-title">Why Nike's China Comeback Is a Configuration Question</a>
-                <p>Nike China's numbers do not read the way the headlines do. Seven straight quarters of decline sit next to rising profitability in the same segment, and management is guiding the next quarter worse on purpose.</p>
-                <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-source">Read on Medium &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
                 <div class="judgment-meta">April 2026 &middot; Anta</div>
@@ -334,7 +334,8 @@
             track('a[href^="mailto:"]:not([data-track])', 'inquiry-email');
             track('a[href*="tally.so"]', 'inquiry-tally');
             track('a[data-track="newsletter-subscribe"]', 'newsletter-subscribe');
-            track('a[href*="substack.com"]', 'out-substack');
+            track('a[href*="substack.com"]:not([data-track="out-substack-post"])', 'out-substack');
+            track('a[data-track="out-substack-post"]', 'out-substack-post');
             track('a[href*="medium.com"]', 'out-medium');
             track('a[href*="bloomberg.com"], a[href*="wsj.com"], a[href*="reuters.com"], a[href*="bbc.com"], a[href*="nikkei.com"], a[href*="wwd.com"], a[href*="fd.nl"]', 'out-media');
             track('a[data-track="research-enquiry"]', 'research-enquiry');

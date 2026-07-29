@@ -552,7 +552,8 @@
             track('a[href^="mailto:"]:not([data-track])', 'inquiry-email');
             track('a[href*="tally.so"]', 'inquiry-tally');
             track('a[data-track="newsletter-subscribe"]', 'newsletter-subscribe');
-            track('a[href*="substack.com"]', 'out-substack');
+            track('a[href*="substack.com"]:not([data-track="out-substack-post"])', 'out-substack');
+            track('a[data-track="out-substack-post"]', 'out-substack-post');
             track('a[href*="medium.com"]', 'out-medium');
             track('a[href*="bloomberg.com"], a[href*="wsj.com"], a[href*="reuters.com"], a[href*="bbc.com"], a[href*="nikkei.com"], a[href*="wwd.com"], a[href*="fd.nl"]', 'out-media');
             track('a[data-track="research-enquiry"]', 'research-enquiry');
