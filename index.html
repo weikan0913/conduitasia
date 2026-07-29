@@ -93,7 +93,7 @@
         .nav-link, .nav-contact { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
         .nav-link:hover, .nav-contact:hover { color: var(--dusty-violet); }
 
-        .masthead { max-width: 1200px; margin: 0 auto; padding: 140px 48px 40px; }
+        .masthead { max-width: 1200px; margin: 0 auto; padding: 140px 48px 32px; }
         .masthead-tagline { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 28px; }
         .masthead h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.25; color: var(--text-light); margin-bottom: 20px; max-width: 760px; }
         .masthead p { max-width: 620px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
@@ -112,15 +112,17 @@
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
 
-        .judgment { max-width: 1200px; margin: 0 auto; padding: 90px 48px 0; }
+        .judgment { max-width: 1200px; margin: 0 auto; padding: 64px 48px 0; }
         .judgment-header { margin-bottom: 44px; max-width: 720px; }
         .judgment-header .divider { margin-bottom: 24px; }
         .judgment-header .section-label { margin-bottom: 0; }
         .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
         .judgment-card { background: transparent; padding: 28px 0 0; border-top: 1px solid rgba(136, 136, 128, 0.25); display: flex; flex-direction: column; }
-        .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 18px; }
-        .judgment-card p { font-size: 15px; line-height: 1.75; color: var(--text-light); flex: 1; margin-bottom: 24px; }
-        .judgment-source { font-size: 12px; line-height: 1.6; letter-spacing: 0.5px; color: var(--mid-gray); text-decoration: none; padding-top: 16px; border-top: 1px solid rgba(136, 136, 128, 0.2); transition: color 0.3s ease; }
+        .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
+        .judgment-title { display: block; font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 26px); line-height: 1.25; color: var(--text-light); text-decoration: none; margin-bottom: 14px; transition: color 0.3s ease; }
+        .judgment-title:hover { color: var(--dusty-violet); }
+        .judgment-card p { font-size: 15px; line-height: 1.75; color: var(--mid-gray); flex: 1; margin-bottom: 24px; }
+        .judgment-source { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(136, 136, 128, 0.8); text-decoration: none; padding-top: 16px; border-top: 1px solid rgba(136, 136, 128, 0.2); transition: color 0.3s ease; }
         .judgment-source:hover { color: var(--dusty-violet); }
 
         .uses { max-width: 1200px; margin: 0 auto; padding: 90px 48px; }
@@ -213,18 +215,21 @@
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
                 <div class="judgment-meta">June 2026 &middot; Li-Ning</div>
+                <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-title">The Curry Shoe Was Never the Point</a>
                 <p>Li-Ning paid for Stephen Curry, and the signature shoe was never going to return it. The volume and the margin sit a tier below, in the team and lifestyle models around 700 to 999 CNY.</p>
-                <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-source">The Curry Shoe Was Never the Point &rarr;</a>
+                <a href="https://medium.com/@wei.kan/the-curry-shoe-was-never-the-point-305f7f24233f" target="_blank" rel="noopener" class="judgment-source">Read on Medium &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
                 <div class="judgment-meta">May 2026 &middot; Nike</div>
+                <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-title">Why Nike's China Comeback Is a Configuration Question</a>
                 <p>Nike China's numbers do not read the way the headlines do. Seven straight quarters of decline sit next to rising profitability in the same segment, and management is guiding the next quarter worse on purpose.</p>
-                <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-source">Why Nike's China Comeback Is a Configuration Question &rarr;</a>
+                <a href="https://medium.com/@wei.kan/why-nikes-china-comeback-is-a-configuration-question-4f3ae12c6eda" target="_blank" rel="noopener" class="judgment-source">Read on Medium &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
-                <div class="judgment-meta">April 2026 &middot; The OEM-ODM-Brand Pathway</div>
+                <div class="judgment-meta">April 2026 &middot; Anta</div>
+                <a href="https://medium.com/@wei.kan/the-oem-odm-brand-pathway-what-antas-rise-reveals-about-chinese-manufacturing-s-three-layer-480421c5404c" target="_blank" rel="noopener" class="judgment-title">The OEM-ODM-Brand Pathway: What Anta's Rise Reveals</a>
                 <p>Acquiring a foreign brand only works when the buyer has already built the capability to run it. Anta had. BenQ had not, and Siemens Mobile was gone inside eighteen months.</p>
-                <a href="https://medium.com/@wei.kan/the-oem-odm-brand-pathway-what-antas-rise-reveals-about-chinese-manufacturing-s-three-layer-480421c5404c" target="_blank" rel="noopener" class="judgment-source">The OEM-ODM-Brand Pathway: What Anta's Rise Reveals &rarr;</a>
+                <a href="https://medium.com/@wei.kan/the-oem-odm-brand-pathway-what-antas-rise-reveals-about-chinese-manufacturing-s-three-layer-480421c5404c" target="_blank" rel="noopener" class="judgment-source">Read on Medium &rarr;</a>
             </article>
         </div>
     </section>
