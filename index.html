@@ -107,6 +107,17 @@
         .media-strip-text { font-size: 16px; line-height: 1.75; color: var(--text-dark); max-width: 920px; }
         .media-strip-text a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(15,15,15,0.25); transition: color 0.3s ease, border-color 0.3s ease; }
         .media-strip-text a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
+        .media-strip-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
+        .media-strip-intro { font-size: 16px; line-height: 1.75; color: var(--text-dark); max-width: 920px; margin-bottom: 40px; }
+        .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 44px; }
+        .media-card { border-top: 1px solid rgba(15, 15, 15, 0.15); padding-top: 22px; display: flex; flex-direction: column; }
+        .media-card-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 12px; }
+        .media-card-title { display: block; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 19px; line-height: 1.35; color: var(--text-dark); text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
+        .media-card-title:hover { color: var(--dusty-violet); }
+        .media-card-quote { font-size: 15px; line-height: 1.7; color: rgba(15, 15, 15, 0.72); }
+        .media-strip-cta { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(15, 15, 15, 0.15); font-size: 14px; line-height: 1.7; color: rgba(15, 15, 15, 0.72); max-width: 920px; }
+        .media-strip-cta a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(15, 15, 15, 0.25); transition: color 0.3s ease, border-color 0.3s ease; }
+        .media-strip-cta a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
 
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
@@ -170,6 +181,7 @@
             .media-strip { margin-top: 60px; order: -1; }
             .media-strip-inner { padding: 36px 24px; }
             .media-strip-text { font-size: 15px; }
+            .media-grid { grid-template-columns: 1fr; gap: 28px; }
             .judgment { padding: 60px 24px 0; }
             .judgment-grid { grid-template-columns: 1fr; gap: 36px; }
             .uses { padding: 60px 24px; }
@@ -212,7 +224,7 @@
         <div class="judgment-header fade-in">
             <div class="divider"></div>
             <div class="section-label">Latest</div>
-            <p class="judgment-intro">The category is working through these questions right now. They come up in almost every conversation.</p>
+            <p class="judgment-intro">These are the questions the category is working through right now. They come up in almost every client conversation.</p>
         </div>
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
@@ -236,9 +248,44 @@
         </div>
     </section>
 
-    <div class="media-strip fade-in">
+    <div class="media-strip fade-in" id="media">
         <div class="media-strip-inner">
-            <p class="media-strip-text">Founder Wei Kan is quoted on China consumer and sport markets by <a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">Bloomberg</a>, <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">The Wall Street Journal</a>, <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" rel="noopener">Reuters</a>, <a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">Nikkei Asia</a>, the <a href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" rel="noopener">BBC</a>, <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Footwear News</a>, and <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" rel="noopener">Het Financieele Dagblad</a>.</p>
+            <div class="media-strip-label">In the Media</div>
+            <p class="media-strip-intro">Wei Kan, founder of Conduit Asia, a sports and lifestyle brand strategy consultancy, is a regular named source on China consumer and sport markets.</p>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-card-meta">CNBC &middot; July 2026</div>
+                    <a class="media-card-title" href="https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html" target="_blank" rel="noopener">Nike was once China&rsquo;s sneaker king. Here&rsquo;s why its sales have fallen 30%</a>
+                    <p class="media-card-quote">&ldquo;It all goes back to how the consumer perceives what kind of value they want to get from a shoe.&rdquo;</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">Reuters &middot; July 2026</div>
+                    <a class="media-card-title" href="https://www.reuters.com/business/retail-consumer/after-tackling-discounts-china-nike-still-needs-win-back-shoppers-2026-07-22/" target="_blank" rel="noopener">After tackling discounts in China, Nike still needs to win back shoppers</a>
+                    <p class="media-card-quote">&ldquo;This is the right thing to do, especially at this moment. Otherwise, the consumer will always expect the discounted Nike product.&rdquo;</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">Bloomberg Opinion &middot; July 2026</div>
+                    <a class="media-card-title" href="https://www.bloomberg.com/opinion/articles/2026-07-01/nike-needs-more-than-discounts-to-win-back-china" target="_blank" rel="noopener">Nike Needs More Than Discounts to Win Back China</a>
+                    <p class="media-card-quote">Cited on how local brands build their campaigns around China&rsquo;s domestic running calendar and win local racers on price.</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">Nikkei Asia &middot; June 2026</div>
+                    <a class="media-card-title" href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">Lululemon issues China apology after Great Wall yoga event draws criticism</a>
+                    <p class="media-card-quote">&ldquo;Calls to switch to domestic brands tend to be loud and short. The cost that matters is the slower one, a loss of the brand affection Lululemon has been building.&rdquo;</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">BBC &middot; June 2026</div>
+                    <a class="media-card-title" href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" rel="noopener">Steph Curry: NBA star signs shoe deal with Chinese brand Li-Ning</a>
+                    <p class="media-card-quote">&ldquo;A real marker for the industry.&rdquo;</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">WWD / Footwear News &middot; April 2026</div>
+                    <a class="media-card-title" href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Inside Nike&rsquo;s China Problem: The Local View</a>
+                    <p class="media-card-quote">&ldquo;That gap between adapting what you have and building from what the consumer needs is where many international brands are losing.&rdquo;</p>
+                </article>
+            </div>
+            <p class="media-strip-text">Founder Wei Kan is quoted on China consumer and sport markets by <a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">Bloomberg</a>, <a href="https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html" target="_blank" rel="noopener">CNBC</a>, <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">The Wall Street Journal</a>, <a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" rel="noopener">Reuters</a>, <a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">Nikkei Asia</a>, the <a href="https://www.bbc.com/news/articles/c87r2d850q4o" target="_blank" rel="noopener">BBC</a>, <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Footwear News</a>, and <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" rel="noopener">Het Financieele Dagblad</a>.</p>
+            <p class="media-strip-cta">Journalists and producers: for comment or background on China consumer and sport markets, write to <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>.</p>
         </div>
     </div>
 
