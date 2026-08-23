@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduit Asia | 运动与生活方式品牌策略咨询</title>
+    <meta name="description" content="Conduit Asia 是一家专注于运动与生活方式领域的品牌策略咨询公司，由 Wei Kan 创立，服务国际品牌的中国市场业务与中国品牌的出海业务。">
+    <meta name="author" content="Wei Kan">
+    <meta property="og:title" content="Conduit Asia | 运动与生活方式品牌策略咨询">
+    <meta property="og:description" content="从操盘者的视角，洞悉亚洲市场。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://conduitasia.com/cn.html">
+    <meta property="og:image" content="https://conduitasia.com/og-image.png">
+    <link rel="canonical" href="https://conduitasia.com/cn.html">
+    <link rel="alternate" hreflang="en" href="https://conduitasia.com/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://conduitasia.com/cn.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%230F0F0F'/%3E%3Cpath d='M9 30L18 6L27 30Z' stroke='%23F2F1EC' stroke-width='1.6' fill='none' stroke-linejoin='round'/%3E%3Cline x1='4' y1='20' x2='32' y2='20' stroke='%23F2F1EC' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0F0F0F;
+            --card-dark: #1A1A1A;
+            --warm-white: #F2F1EC;
+            --mid-gray: #888880;
+            --dusty-violet: #7D6B8A;
+            --text-light: #F2F1EC;
+            --text-dark: #0F0F0F;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        [id] { scroll-margin-top: 96px; }
+        body {
+            font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            font-weight: 300;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.9;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif { font-family: 'Noto Serif SC', 'Songti SC', serif; font-weight: 400; }
+        .logo-mark svg { height: 32px; width: auto; }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 24px 48px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(12px);
+        }
+        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text-light); }
+        .nav-brand-text { font-weight: 400; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--dusty-violet); }
+        .masthead { max-width: 860px; margin: 0 auto; padding: 150px 48px 24px; }
+        .masthead-tagline { font-size: 13px; letter-spacing: 4px; color: var(--dusty-violet); margin-bottom: 28px; }
+        .masthead h1 { font-family: 'Noto Serif SC', serif; font-weight: 400; font-size: clamp(26px, 3.4vw, 38px); line-height: 1.5; margin-bottom: 24px; }
+        .masthead p { font-size: 16px; color: var(--mid-gray); max-width: 640px; }
+        section { max-width: 860px; margin: 0 auto; padding: 56px 48px 0; }
+        .divider { width: 24px; height: 3px; background: var(--dusty-violet); margin-bottom: 22px; }
+        .section-label { font-size: 12px; letter-spacing: 4px; color: var(--dusty-violet); margin-bottom: 22px; }
+        .section-body p { font-size: 16px; line-height: 2; color: rgba(242, 241, 236, 0.85); margin-bottom: 18px; max-width: 700px; }
+        .svc-block { margin-bottom: 34px; max-width: 700px; }
+        .svc-block h3 { font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 20px; margin-bottom: 10px; }
+        .svc-block p { font-size: 16px; line-height: 2; color: rgba(242, 241, 236, 0.85); }
+        .pull-quote {
+            font-family: 'Noto Serif SC', serif; font-size: 21px; line-height: 1.9;
+            color: var(--text-light); border-left: 3px solid var(--dusty-violet);
+            padding-left: 24px; margin: 44px 0 8px; max-width: 620px;
+        }
+        .media-band { background: var(--warm-white); margin-top: 72px; }
+        .media-band-inner { max-width: 860px; margin: 0 auto; padding: 52px 48px; }
+        .media-band .section-label { margin-bottom: 18px; }
+        .media-band p { font-size: 16px; line-height: 2; color: var(--text-dark); max-width: 700px; }
+        .media-band a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(15,15,15,0.3); transition: color 0.3s ease, border-color 0.3s ease; }
+        .media-band a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
+        .cn-content p { font-size: 16px; line-height: 2; color: rgba(242, 241, 236, 0.85); max-width: 700px; }
+        .cn-content a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid rgba(242,241,236,0.35); transition: color 0.3s ease, border-color 0.3s ease; }
+        .cn-content a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
+        footer { max-width: 860px; margin: 72px auto 0; padding: 40px 48px 56px; border-top: 1px solid rgba(242, 241, 236, 0.12); }
+        .footer-contact { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 20px; }
+        .footer-contact a { font-size: 14px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
+        .footer-contact a:hover { color: var(--dusty-violet); }
+        .footer-locations { font-size: 13px; color: var(--mid-gray); margin-bottom: 16px; }
+        .footer-legal { font-size: 12px; color: rgba(136, 136, 128, 0.7); }
+        @media (max-width: 640px) {
+            nav { padding: 18px 24px; }
+            .nav-links { gap: 18px; }
+            .masthead, section, .media-band-inner, footer { padding-left: 24px; padding-right: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/cn.html" class="nav-brand">
+            <span class="logo-mark"><svg viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 170 L80 10 L138 170 Z" stroke="#F2F1EC" stroke-width="5" fill="none" stroke-linejoin="round"/><line x1="10" y1="112" x2="150" y2="112" stroke="#F2F1EC" stroke-width="5" stroke-linecap="round"/></svg></span>
+            <span class="nav-brand-text">Conduit Asia</span>
+        </a>
+        <div class="nav-links">
+            <a href="#services" class="nav-link">服务</a>
+            <a href="#media" class="nav-link">媒体</a>
+            <a href="#contact" class="nav-link">联系</a>
+            <a href="/" class="nav-link">English</a>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="masthead-tagline">ASIA. FROM THE INSIDE.</div>
+        <h1>从操盘者的视角，洞悉亚洲市场。</h1>
+        <p>Conduit Asia 是一家专注于运动与生活方式领域的品牌策略咨询公司。由 Wei Kan 于 2024 年底创立，注册于香港，在香港与上海两地开展业务。</p>
+    </header>
+
+    <section id="founder">
+        <div class="divider"></div>
+        <div class="section-label">关于创始人</div>
+        <div class="section-body">
+            <p>Wei Kan 在亚洲品牌行业拥有 25 年的实战经验，其中 14 年效力于 Nike 与 Converse。他曾负责 Nike 大中华区的品类品牌管理，随后出任 Converse 亚洲区营销负责人，统揽大中华区、东南亚及韩国市场的品牌业务。</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="divider"></div>
+        <div class="section-label">我们的服务</div>
+        <div class="svc-block">
+            <h3>品牌策略与定位</h3>
+            <p>国际品牌在中国遇到的多半是同一个困局：在别的市场行得通的打法，在这里却失灵了，而财务报表又往往解释不了真正的原因。中国品牌出海则面临另一种挑战：一旦离开了本土市场，消费者没有理由天然认识你，品牌必须重新回答&ldquo;我是谁&rdquo;。</p>
+        </div>
+        <div class="svc-block">
+            <h3>市场研究与判断</h3>
+            <p>为投资机构与研究机构提供针对中国市场的品牌与品类趋势判断，通常配合财报发布窗口提供深度解读。</p>
+        </div>
+        <div class="svc-block">
+            <h3>品牌合作</h3>
+            <p>促成国际品牌与亚洲品牌之间的联名与 IP 合作，并全程追踪其在中国市场落地后的实际商业效果。</p>
+        </div>
+        <div class="pull-quote serif">多数合作，从一次小范围的品牌诊断开始。</div>
+    </section>
+
+    <div class="media-band" id="media">
+        <div class="media-band-inner">
+            <div class="section-label">媒体视点</div>
+            <p>在报道中国消费趋势与运动市场时，Wei Kan 的专业观点曾多次被<a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">彭博社</a>、<a href="https://www.reuters.com/business/retail-consumer/after-tackling-discounts-china-nike-still-needs-win-back-shoppers-2026-07-22/" target="_blank" rel="noopener">路透社</a>、<a href="https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html" target="_blank" rel="noopener">CNBC</a>、<a href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" rel="noopener">BBC</a>、<a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">《华尔街日报》</a>、<a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">《日经亚洲》</a>等国际媒体引用。</p>
+        </div>
+    </div>
+
+    <section id="cn-content" class="cn-content">
+        <div class="divider"></div>
+        <div class="section-label">中文内容</div>
+        <p>中文分析发布在<a href="https://www.xiaohongshu.com/user/profile/65307214000000002a01a2e1" target="_blank" rel="noopener" data-track="out-xhs">小红书</a>，账号持续更新。从现在开始，近期的小红书内容会固定同步到这一页。</p>
+        <p>英文长文与通讯请见 <a href="/insights.html">Insights</a> 与 <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Substack</a>。</p>
+    </section>
+
+    <footer id="contact">
+        <div class="section-label">联系我们</div>
+        <div class="footer-contact">
+            <a href="mailto:wei.kan@conduitasia.com" data-track="inquiry-email">wei.kan@conduitasia.com</a>
+            <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/">English &rarr; conduitasia.com</a>
+        </div>
+        <div class="footer-locations">香港 &middot; 上海</div>
+        <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
+    </footer>
+
+    <script data-goatcounter="https://conduitasia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+        document.addEventListener('click', function (e) {
+            var el = e.target.closest('[data-track]');
+            if (el && window.goatcounter && window.goatcounter.count) {
+                window.goatcounter.count({ path: el.getAttribute('data-track'), title: 'event: ' + el.getAttribute('data-track'), event: true });
+            }
+        });
+    </script>
+</body>
+</html>
