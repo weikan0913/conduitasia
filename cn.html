@@ -66,6 +66,8 @@
         .svc-list { list-style: none; max-width: 700px; }
         .svc-list li { font-size: 15.5px; line-height: 1.9; color: rgba(242, 241, 236, 0.85); padding-left: 20px; position: relative; margin-bottom: 8px; }
         .svc-list li::before { content: '·'; position: absolute; left: 4px; color: var(--dusty-violet); }
+        .svc-list a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid rgba(242, 241, 236, 0.35); transition: color 0.3s ease, border-color 0.3s ease; }
+        .svc-list a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
         .cta-section { max-width: 860px; margin: 0 auto; padding: 64px 48px 0; }
         .cta-section h2 { font-family: 'Noto Serif SC', serif; font-weight: 400; font-size: clamp(24px, 3vw, 32px); margin-bottom: 14px; }
         .cta-intro { font-size: 16px; line-height: 2; color: var(--mid-gray); max-width: 640px; margin-bottom: 40px; }
@@ -75,6 +77,7 @@
         .cta-card p { font-size: 15px; line-height: 1.9; color: rgba(242, 241, 236, 0.75); margin-bottom: 20px; flex: 1; }
         .cta-card a { font-size: 15px; color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); align-self: flex-start; padding-bottom: 2px; transition: color 0.3s ease; }
         .cta-card a:hover { color: var(--dusty-violet); }
+        .cta-card p a { font-size: inherit; color: rgba(242, 241, 236, 0.9); border-bottom: 1px solid rgba(242, 241, 236, 0.35); align-self: auto; padding-bottom: 0; }
         @media (max-width: 720px) { .cta-grid { grid-template-columns: 1fr; } }
         .pull-quote {
             font-family: 'Noto Serif SC', serif; font-size: 21px; line-height: 1.9;
@@ -133,7 +136,7 @@
 
     <section id="services">
         <div class="divider"></div>
-        <div class="section-label">我们的服务</div>
+        <div class="section-label">核心服务</div>
         <div class="svc-block">
             <h3>品牌策略与定位</h3>
             <p>国际品牌在中国遇到的多半是同一个困局：在别的市场行得通的打法，在这里却失灵了，而财务报表又往往解释不了真正的原因。中国品牌出海则面临另一种挑战：一旦离开了本土市场，消费者没有理由天然认识你，品牌必须重新回答&ldquo;我是谁&rdquo;。</p>
@@ -157,7 +160,25 @@
                 <li>国际品牌在中国产品发布的品牌策略与传播制作</li>
             </ul>
         </div>
-        <div class="pull-quote serif">多数合作，从一次小范围的品牌诊断开始。</div>
+    </section>
+
+    <section id="know-us">
+        <div class="divider"></div>
+        <div class="section-label">了解我们与公开洞察</div>
+        <div class="svc-block">
+            <h3>关于策略案例保密</h3>
+            <p>鉴于品牌核心策略的高度机密性，我们无法在公开网站上展示过往的策略文件或详细案例。对于有明确咨询需求的品牌与投资机构，我们会在保密前提下，通过闭门沟通与您分享我们的操盘思路与实战方法。</p>
+        </div>
+        <div class="svc-block">
+            <h3>评估我们的判断力</h3>
+            <p>多数客户在建立正式联系前，习惯先通过我们的公开输出评估我们的商业嗅觉与判断力：</p>
+            <ul class="svc-list">
+                <li><a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>&ensp;完整专业履历、媒体报道与短篇分析</li>
+                <li><a href="https://medium.com/@wei.kan" target="_blank" rel="noopener">Medium</a>&ensp;亚洲品牌与商业的深度长文</li>
+                <li><a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Substack</a>&ensp;英文专栏 From the Inside，配合行业动态更新</li>
+                <li><a href="https://www.xiaohongshu.com/user/profile/65307214000000002a01a2e1" target="_blank" rel="noopener" data-track="out-xhs">小红书</a>&ensp;中文市场观察，近期内容会陆续同步到本页</li>
+            </ul>
+        </div>
     </section>
 
     <div class="media-band" id="media">
@@ -169,15 +190,9 @@
 
     <section id="contact" class="cta-section">
         <div class="divider"></div>
-        <div class="section-label">联系我们</div>
-        <h2>三条路径，直接找到我们。</h2>
-        <p class="cta-intro">来信请直接说明来意与时间要求，通常在一个工作日内回复。</p>
+        <div class="section-label">探讨合作</div>
+        <p class="cta-intro">有研究、合作或采访需求，可以直接来信，通常在一个工作日内回复。</p>
         <div class="cta-grid">
-            <div class="cta-card">
-                <h3>媒体采访</h3>
-                <p>就中国消费趋势与运动行业的报道，提供具名评论、访谈与背景信息。彭博、路透、CNBC、BBC 等媒体的引用记录见上方。</p>
-                <a href="mailto:wei.kan@conduitasia.com?subject=%E5%AA%92%E4%BD%93%E9%87%87%E8%AE%BF%20via%20conduitasia.com" data-track="press-enquiry">发送采访邀请 &rarr;</a>
-            </div>
             <div class="cta-card">
                 <h3>投资与研究机构</h3>
                 <p>覆盖运动与消费品类的分析师，可就财报表现与行业实际运作情况预约咨询，或委托专项研究，通常配合财报窗口安排。</p>
@@ -185,17 +200,15 @@
             </div>
             <div class="cta-card">
                 <h3>品牌咨询</h3>
-                <p>品牌方的策略咨询与合作方式，详见英文服务页。也欢迎直接来信说明业务背景与要解决的问题。</p>
-                <a href="/services.html" data-track="route-services">了解合作方式 &rarr;</a>
+                <p>国际品牌的中国市场业务，与中国品牌的出海定位，均可直接来信说明业务背景与要解决的问题。详细服务范畴与合作流程见<a href="/services.html" data-track="route-services">英文服务页</a>。</p>
+                <a href="mailto:wei.kan@conduitasia.com?subject=%E5%93%81%E7%89%8C%E5%92%A8%E8%AF%A2%20via%20conduitasia.com" data-track="inquiry-email">发送合作咨询 &rarr;</a>
+            </div>
+            <div class="cta-card">
+                <h3>媒体采访</h3>
+                <p>就中国消费趋势与运动行业的报道，提供具名评论、访谈与背景信息。彭博、路透、CNBC、BBC 等媒体的引用记录见上方。</p>
+                <a href="mailto:wei.kan@conduitasia.com?subject=%E5%AA%92%E4%BD%93%E9%87%87%E8%AE%BF%20via%20conduitasia.com" data-track="press-enquiry">发送采访邀请 &rarr;</a>
             </div>
         </div>
-    </section>
-
-    <section id="cn-content" class="cn-content">
-        <div class="divider"></div>
-        <div class="section-label">中文内容</div>
-        <p>中文分析发布在<a href="https://www.xiaohongshu.com/user/profile/65307214000000002a01a2e1" target="_blank" rel="noopener" data-track="out-xhs">小红书</a>，账号持续更新。从现在开始，近期的小红书内容会固定同步到这一页。</p>
-        <p>英文长文与通讯请见 <a href="/insights.html">Insights</a> 与 <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Substack</a>。</p>
     </section>
 
     <footer>
@@ -205,7 +218,7 @@
             <a href="/">English &rarr; conduitasia.com</a>
         </div>
         <div class="footer-locations">香港 &middot; 上海</div>
-        <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
+        <div class="footer-legal">&copy; 2026 创道全球有限公司 Conduit International Limited. All rights reserved.</div>
     </footer>
 
     <script data-goatcounter="https://conduitasia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
