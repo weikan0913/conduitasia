@@ -63,6 +63,19 @@
         .svc-block { margin-bottom: 34px; max-width: 700px; }
         .svc-block h3 { font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 20px; margin-bottom: 10px; }
         .svc-block p { font-size: 16px; line-height: 2; color: rgba(242, 241, 236, 0.85); }
+        .svc-list { list-style: none; max-width: 700px; }
+        .svc-list li { font-size: 15.5px; line-height: 1.9; color: rgba(242, 241, 236, 0.85); padding-left: 20px; position: relative; margin-bottom: 8px; }
+        .svc-list li::before { content: '·'; position: absolute; left: 4px; color: var(--dusty-violet); }
+        .cta-section { max-width: 860px; margin: 0 auto; padding: 64px 48px 0; }
+        .cta-section h2 { font-family: 'Noto Serif SC', serif; font-weight: 400; font-size: clamp(24px, 3vw, 32px); margin-bottom: 14px; }
+        .cta-intro { font-size: 16px; line-height: 2; color: var(--mid-gray); max-width: 640px; margin-bottom: 40px; }
+        .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+        .cta-card { background: var(--card-dark); border-top: 3px solid var(--dusty-violet); padding: 28px 24px 26px; display: flex; flex-direction: column; }
+        .cta-card h3 { font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 20px; margin-bottom: 12px; }
+        .cta-card p { font-size: 15px; line-height: 1.9; color: rgba(242, 241, 236, 0.75); margin-bottom: 20px; flex: 1; }
+        .cta-card a { font-size: 15px; color: var(--text-light); text-decoration: none; border-bottom: 1px solid var(--dusty-violet); align-self: flex-start; padding-bottom: 2px; transition: color 0.3s ease; }
+        .cta-card a:hover { color: var(--dusty-violet); }
+        @media (max-width: 720px) { .cta-grid { grid-template-columns: 1fr; } }
         .pull-quote {
             font-family: 'Noto Serif SC', serif; font-size: 21px; line-height: 1.9;
             color: var(--text-light); border-left: 3px solid var(--dusty-violet);
@@ -114,7 +127,7 @@
         <div class="divider"></div>
         <div class="section-label">关于创始人</div>
         <div class="section-body">
-            <p>Wei Kan 在亚洲品牌行业拥有 25 年的实战经验，其中 14 年效力于 Nike 与 Converse。他曾负责 Nike 大中华区的品类品牌管理，随后出任 Converse 亚洲区营销负责人，统揽大中华区、东南亚及韩国市场的品牌业务。</p>
+            <p>Wei Kan 在亚洲品牌行业拥有 25 年的实战经验，其中 14 年效力于耐克与匡威。他曾负责耐克大中华区的品类品牌管理，随后出任匡威亚洲区营销负责人，统揽大中华区与韩国市场的品牌业务。</p>
         </div>
     </section>
 
@@ -131,7 +144,18 @@
         </div>
         <div class="svc-block">
             <h3>品牌合作</h3>
-            <p>促成国际品牌与亚洲品牌之间的联名与 IP 合作，并全程追踪其在中国市场落地后的实际商业效果。</p>
+            <p>促成国际品牌与亚洲品牌之间的联名与 IP 合作，从伙伴筛选、合作结构，到落地之后在中国市场的实际商业效果。创始人在匡威期间长期负责亚洲区的设计师联名与合作系列业务，对这类项目在中国市场怎么做成、在哪里做砸，有第一手的操盘经验。</p>
+        </div>
+        <div class="svc-block">
+            <h3>近期项目（已脱敏）</h3>
+            <ul class="svc-list">
+                <li>国际品牌与中国品牌进入东北亚市场的市场进入策略</li>
+                <li>在华运营消费品牌的品牌与增长策略</li>
+                <li>亚洲品牌向海外扩张的合作与上市策略</li>
+                <li>中国运动与消费市场的竞争情报与消费者洞察</li>
+                <li>为机构投资者提供中国运动与消费市场的长期咨询</li>
+                <li>国际品牌在中国产品发布的品牌策略与传播制作</li>
+            </ul>
         </div>
         <div class="pull-quote serif">多数合作，从一次小范围的品牌诊断开始。</div>
     </section>
@@ -143,6 +167,30 @@
         </div>
     </div>
 
+    <section id="contact" class="cta-section">
+        <div class="divider"></div>
+        <div class="section-label">联系我们</div>
+        <h2>三条路径，直接找到我们。</h2>
+        <p class="cta-intro">来信请直接说明来意与时间要求，通常在一个工作日内回复。</p>
+        <div class="cta-grid">
+            <div class="cta-card">
+                <h3>媒体采访</h3>
+                <p>就中国消费趋势与运动行业的报道，提供具名评论、访谈与背景信息。彭博、路透、CNBC、BBC 等媒体的引用记录见上方。</p>
+                <a href="mailto:wei.kan@conduitasia.com?subject=%E5%AA%92%E4%BD%93%E9%87%87%E8%AE%BF%20via%20conduitasia.com" data-track="press-enquiry">发送采访邀请 &rarr;</a>
+            </div>
+            <div class="cta-card">
+                <h3>投资与研究机构</h3>
+                <p>覆盖运动与消费品类的分析师，可就财报表现与行业实际运作情况预约咨询，或委托专项研究，通常配合财报窗口安排。</p>
+                <a href="mailto:wei.kan@conduitasia.com?subject=%E7%A0%94%E7%A9%B6%E5%92%A8%E8%AF%A2%20via%20conduitasia.com" data-track="research-enquiry">发起研究咨询 &rarr;</a>
+            </div>
+            <div class="cta-card">
+                <h3>品牌咨询</h3>
+                <p>品牌方的策略咨询与合作方式，详见英文服务页。也欢迎直接来信说明业务背景与要解决的问题。</p>
+                <a href="/services.html" data-track="route-services">了解合作方式 &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <section id="cn-content" class="cn-content">
         <div class="divider"></div>
         <div class="section-label">中文内容</div>
@@ -150,8 +198,7 @@
         <p>英文长文与通讯请见 <a href="/insights.html">Insights</a> 与 <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Substack</a>。</p>
     </section>
 
-    <footer id="contact">
-        <div class="section-label">联系我们</div>
+    <footer>
         <div class="footer-contact">
             <a href="mailto:wei.kan@conduitasia.com" data-track="inquiry-email">wei.kan@conduitasia.com</a>
             <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>
