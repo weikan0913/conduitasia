@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIK 房租試算器</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #EFF1EA;
+    --surface: #FFFFFF;
+    --surface-inset: #E3E7DA;
+    --border: #CBD2BE;
+    --border-soft: #DBE0D2;
+    --ink: #14180F;
+    --ink-soft: #57604C;
+    --ink-faint: #848C77;
+    --accent: #2F6B4F;
+    --accent-ink: #1E4635;
+    --accent-soft: #DCEAE1;
+    --warn: #B5541F;
+    --warn-soft: #F5E1D2;
+    --shadow: 0 1px 2px rgba(20,24,15,0.06), 0 8px 24px -12px rgba(20,24,15,0.18);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12150F;
+      --surface: #191D15;
+      --surface-inset: #20251A;
+      --border: #333B29;
+      --border-soft: #2A311F;
+      --ink: #ECEFE4;
+      --ink-soft: #ABB49B;
+      --ink-faint: #737C64;
+      --accent: #74C398;
+      --accent-ink: #9BDBB8;
+      --accent-soft: rgba(116,195,152,0.14);
+      --warn: #E2925C;
+      --warn-soft: rgba(226,146,92,0.14);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12150F;
+    --surface: #191D15;
+    --surface-inset: #20251A;
+    --border: #333B29;
+    --border-soft: #2A311F;
+    --ink: #ECEFE4;
+    --ink-soft: #ABB49B;
+    --ink-faint: #737C64;
+    --accent: #74C398;
+    --accent-ink: #9BDBB8;
+    --accent-soft: rgba(116,195,152,0.14);
+    --warn: #E2925C;
+    --warn-soft: rgba(226,146,92,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+    padding-inline: 20px;
+    padding-block: 28px 48px;
+    max-width: 1160px;
+    margin-inline: auto;
+    line-height: 1.5;
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, "SF Mono", monospace; font-variant-numeric: tabular-nums; }
+
+  header.page { margin-bottom: 22px; }
+  header.page h1 {
+    font-family: "Noto Serif TC", "Songti TC", serif;
+    font-weight: 700;
+    font-size: clamp(22px, 3.2vw, 30px);
+    text-wrap: balance;
+    margin: 0 0 6px;
+    letter-spacing: 0.01em;
+  }
+  header.page p {
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 62ch;
+    font-size: 14.5px;
+  }
+
+  main.layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 320px) 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    main.layout { grid-template-columns: 1fr; }
+    .inputs { position: static; }
+  }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ---------- Inputs panel ---------- */
+  .inputs { padding: 20px 20px 16px; position: sticky; top: 20px; }
+  .inputs h2, .results h2 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  .field .num-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-inset);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 8px 10px;
+  }
+  .field .num-row span.prefix { color: var(--ink-faint); font-size: 13px; }
+  .field input[type="number"] {
+    border: none;
+    background: transparent;
+    font-family: "JetBrains Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    color: var(--ink);
+    width: 100%;
+    outline: none;
+    min-width: 0;
+  }
+  .field input[type="range"] {
+    width: 100%;
+    margin-top: 8px;
+    accent-color: var(--accent);
+  }
+  .segmented {
+    display: flex;
+    background: var(--surface-inset);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 3px;
+    gap: 3px;
+  }
+  .segmented button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 13px;
+    padding: 7px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .segmented button.active {
+    background: var(--surface);
+    color: var(--accent-ink);
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(20,24,15,0.12);
+  }
+  details.advanced { margin-top: 4px; }
+  details.advanced summary {
+    cursor: pointer;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    padding: 6px 0;
+    list-style: none;
+  }
+  details.advanced summary::-webkit-details-marker { display: none; }
+  details.advanced summary::before { content: "▸ "; }
+  details.advanced[open] summary::before { content: "▾ "; }
+  details.advanced .field:first-of-type { margin-top: 10px; }
+
+  /* ---------- Results ---------- */
+  .results { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 18px; }
+
+  .headline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 16px;
+  }
+  .headline .figure-label { font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+  .headline .figure {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px);
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .headline .figure small { font-size: 15px; color: var(--ink-faint); font-weight: 400; margin-left: 6px; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .pill.good { background: var(--accent-soft); color: var(--accent-ink); }
+  .pill.warn { background: var(--warn-soft); color: var(--warn); }
+  .pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .tile {
+    background: var(--surface-inset);
+    border: 1px solid var(--border-soft);
+    border-radius: 11px;
+    padding: 13px 14px;
+  }
+  .tile .t-label { font-size: 12px; color: var(--ink-soft); margin-bottom: 6px; }
+  .tile .t-value {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 19px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .tile.accent .t-value { color: var(--accent-ink); }
+
+  /* ---------- Chart ---------- */
+  .chart-wrap { position: relative; }
+  .chart-legend {
+    display: flex;
+    gap: 18px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .chart-legend .item { display: flex; align-items: center; gap: 6px; }
+  .chart-legend .swatch { width: 16px; height: 2px; background: var(--accent); border-radius: 2px; }
+  .chart-legend .swatch.dashed {
+    background: repeating-linear-gradient(90deg, var(--ink-faint) 0 5px, transparent 5px 9px);
+  }
+  svg#chart { width: 100%; height: auto; display: block; overflow: visible; }
+  .axis-label { fill: var(--ink-faint); font-size: 10.5px; font-family: "JetBrains Mono", monospace; }
+  .grid-line { stroke: var(--border-soft); stroke-width: 1; }
+  .zero-line { stroke: var(--ink-faint); stroke-width: 1; }
+  .cap-line { stroke: var(--ink-faint); stroke-width: 1; stroke-dasharray: 3 3; }
+  .cap-tag { fill: var(--ink-soft); font-size: 10.5px; font-family: "Noto Sans TC", sans-serif; }
+  .line-actual { stroke: var(--accent); stroke-width: 2.25; fill: none; }
+  .line-counter { stroke: var(--ink-faint); stroke-width: 1.75; fill: none; stroke-dasharray: 5 4; }
+  .region-over { fill: var(--warn); opacity: 0.05; }
+  .dot-actual { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+  .dot-counter { fill: var(--ink-faint); stroke: var(--surface); stroke-width: 2; }
+  .hover-line { stroke: var(--ink-faint); stroke-width: 1; opacity: 0; }
+  .hit-rect { fill: transparent; cursor: crosshair; }
+
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    line-height: 1.45;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    white-space: nowrap;
+    z-index: 5;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .tooltip .tt-row { display: flex; gap: 10px; justify-content: space-between; }
+  .tooltip .tt-num { font-family: "JetBrains Mono", monospace; font-variant-numeric: tabular-nums; }
+
+  .note {
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.65;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 14px;
+  }
+  .note strong { color: var(--ink-soft); }
+
+  .compare-block { border-top: 1px solid var(--border-soft); padding-top: 16px; }
+  .block-title {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .scenario-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .scenario { background: var(--surface-inset); border: 1px solid var(--border-soft); border-radius: 10px; padding: 12px 13px; }
+  .scenario.current { border-color: var(--accent); background: var(--accent-soft); }
+  .scenario .s-label { font-size: 11.5px; color: var(--ink-soft); margin-bottom: 6px; }
+  .scenario .s-value { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .scenario.current .s-value { color: var(--accent-ink); }
+  .mini-note { font-size: 11.5px; color: var(--ink-faint); margin: 10px 0 0; line-height: 1.5; }
+
+  .cap-table { display: flex; flex-direction: column; border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden; }
+  .cap-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; }
+  .cap-row > div { padding: 10px 12px; font-size: 12.5px; border-bottom: 1px solid var(--border-soft); }
+  .cap-row:last-child > div { border-bottom: none; }
+  .cap-row > div:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+  .cap-row.cap-head { background: var(--surface-inset); }
+  .cap-row.cap-head > div { font-weight: 700; color: var(--ink-soft); font-size: 12px; }
+  .cap-row.cap-head > div:first-child { visibility: hidden; }
+  @media (max-width: 480px) {
+    .cap-row { grid-template-columns: 1.3fr 1fr 1fr; }
+    .cap-row > div { padding: 8px 8px; font-size: 11.5px; }
+  }
+
+  footer.page {
+    margin-top: 22px;
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .headline { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+<header class="page">
+  <h1>BIK 房租試算器</h1>
+  <p>外籍員工住房補貼免稅額試算。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。</p>
+</header>
+
+<main class="layout">
+  <aside class="panel inputs">
+    <h2>輸入 Inputs</h2>
+
+    <div class="field">
+      <label for="base">每月稅前基本工資</label>
+      <div class="num-row">
+        <span class="prefix">¥</span>
+        <input type="number" id="base" value="100000" step="1000" min="0">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>免稅上限比例（BIK Cap）</label>
+      <div class="segmented" id="capSeg">
+        <button type="button" data-cap="0.3" class="active">30%</button>
+        <button type="button" data-cap="0.333333">1/3</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="rent">每月房租（拖動或直接輸入）</label>
+      <div class="num-row">
+        <span class="prefix">¥</span>
+        <input type="number" id="rent" value="30000" step="500" min="0">
+      </div>
+      <input type="range" id="rentSlider" value="30000" step="500" min="0" max="90000">
+    </div>
+
+    <details class="advanced">
+      <summary>進階設定</summary>
+      <div class="field">
+        <label for="otherExempt">其他可比照BIK免稅項目（伙食/洗衣等，與房租共用同一上限）</label>
+        <div class="num-row">
+          <span class="prefix">¥</span>
+          <input type="number" id="otherExempt" value="0" step="500" min="0">
+        </div>
+      </div>
+      <div class="field">
+        <label for="otherTaxable">其他應稅津貼（車貼/獎金等，不屬BIK，全額課稅）</label>
+        <div class="num-row">
+          <span class="prefix">¥</span>
+          <input type="number" id="otherTaxable" value="0" step="500" min="0">
+        </div>
+      </div>
+      <div class="field" style="margin-bottom:4px;">
+        <label for="deduction">每月基本減除費用（法定 5,000）</label>
+        <div class="num-row">
+          <span class="prefix">¥</span>
+          <input type="number" id="deduction" value="5000" step="500" min="0">
+        </div>
+      </div>
+    </details>
+  </aside>
+
+  <section class="panel results">
+    <div class="headline">
+      <div>
+        <div class="figure-label">全年稅後淨現金收入（薪水－稅－房租，實際）</div>
+        <div class="figure mono" id="figNet">¥0<small>/年</small></div>
+      </div>
+      <span class="pill good" id="capPill">在免稅上限內</span>
+    </div>
+
+    <div class="tiles">
+      <div class="tile accent">
+        <div class="t-label">免稅上限金額</div>
+        <div class="t-value mono" id="tileCap">¥0</div>
+      </div>
+      <div class="tile accent">
+        <div class="t-label">這筆房租的 BIK 效益（比沒有這政策少繳的稅）</div>
+        <div class="t-value mono" id="tileBenefit">¥0</div>
+      </div>
+      <div class="tile">
+        <div class="t-label">每月稅後淨現金收入</div>
+        <div class="t-value mono" id="tileMonthly">¥0</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-legend">
+        <span class="item"><span class="swatch"></span>全年淨現金收入（實際，有 BIK）</span>
+        <span class="item"><span class="swatch dashed"></span>假設沒有 BIK，同一筆房租全額課稅</span>
+      </div>
+      <svg id="chart" viewBox="0 0 640 320" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <p class="note">
+      <strong>怎麼看：</strong>免稅上限以內，兩條線的差距就是 BIK 政策幫你省下的稅；房租本身照樣 1 元換 1 元減少淨收入，不是打折。
+      過了上限（灰色虛線），淨收入掉得更快，因為超額部分連稅都要多繳。
+      <strong>假設：</strong>稅務居民身份、累計預扣年度累進稅率（2019 年沿用至今的稅率表，基本減除費用 5,000/月）；
+      全年薪資與房租不變。非稅務居民（每年在中國境內＜183 天）適用另一套按月稅率表，本表不適用。僅供概念試算，非正式稅務意見。
+    </p>
+
+    <div class="compare-block">
+      <h3 class="block-title">快照：三個租金情境</h3>
+      <div class="scenario-strip">
+        <div class="scenario">
+          <div class="s-label">房租 = 0（完全不租）</div>
+          <div class="s-value mono" id="scen0">¥0</div>
+        </div>
+        <div class="scenario">
+          <div class="s-label">房租 = 上限一半</div>
+          <div class="s-value mono" id="scenHalf">¥0</div>
+        </div>
+        <div class="scenario current">
+          <div class="s-label">房租 = 上限（用滿）</div>
+          <div class="s-value mono" id="scenCap">¥0</div>
+        </div>
+      </div>
+      <p class="mini-note">全年稅後淨現金收入。在免稅上限以內，房租每多花 1 元，這裡就少 1 元——沒有稅務折扣，純粹是現金支出的選擇。</p>
+    </div>
+
+    <div class="compare-block">
+      <h3 class="block-title">不確定公司用 30% 還是 1/3？兩種都列給你比</h3>
+      <div class="cap-table">
+        <div class="cap-row cap-head">
+          <div>—</div><div>上限 = 30%</div><div>上限 = 1/3（33.33%）</div>
+        </div>
+        <div class="cap-row">
+          <div>免稅上限對應房租</div><div class="mono" id="cmpRent30">¥0</div><div class="mono" id="cmpRent33">¥0</div>
+        </div>
+        <div class="cap-row">
+          <div>全年 BIK 效益（比沒有政策省的稅）</div><div class="mono" id="cmpSaved30">¥0</div><div class="mono" id="cmpSaved33">¥0</div>
+        </div>
+        <div class="cap-row">
+          <div>相當於每月</div><div class="mono" id="cmpMonthly30">¥0</div><div class="mono" id="cmpMonthly33">¥0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="page">房租 BIK 試算器 · 概念試算工具，實際規則以公司政策與當地稅局為準</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var BRACKETS = [
+    [0, 0.03, 0],
+    [36000, 0.10, 2520],
+    [144000, 0.20, 16920],
+    [300000, 0.25, 31920],
+    [420000, 0.30, 52920],
+    [660000, 0.35, 85920],
+    [960000, 0.45, 181920]
+  ];
+
+  function annualTax(taxable) {
+    if (taxable <= 0) return 0;
+    var rate = BRACKETS[0][1], qd = BRACKETS[0][2];
+    for (var i = 0; i < BRACKETS.length; i++) {
+      if (taxable >= BRACKETS[i][0]) { rate = BRACKETS[i][1]; qd = BRACKETS[i][2]; }
+    }
+    return Math.max(0, taxable * rate - qd);
+  }
+
+  function computeAt(rent, p) {
+    var combined = rent + p.otherExempt;
+    var exempt = Math.min(combined, p.capAmt);
+    var excess = Math.max(0, combined - p.capAmt);
+    var taxableWith = Math.max(0, 12 * (p.base + excess + p.otherTaxable - p.deduction));
+    var taxWith = annualTax(taxableWith);
+    var taxableNo = Math.max(0, 12 * (p.base + combined + p.otherTaxable - p.deduction));
+    var taxNo = annualTax(taxableNo);
+    var grossCash = 12 * (p.base + p.otherTaxable);
+    var netActual = grossCash - taxWith - 12 * combined;
+    var netCounter = grossCash - taxNo - 12 * combined;
+    return {
+      exempt: exempt, excess: excess,
+      taxWith: taxWith, taxNo: taxNo,
+      benefit: taxNo - taxWith,
+      netActual: netActual, netCounter: netCounter
+    };
+  }
+
+  function fmt(n) {
+    var neg = n < 0;
+    n = Math.round(Math.abs(n));
+    var s = n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return (neg ? "-¥" : "¥") + s;
+  }
+  function fmtWan(n) {
+    var v = n / 10000;
+    return (v < 0 ? "" : "") + v.toFixed(1) + " 萬";
+  }
+
+  var els = {
+    base: document.getElementById("base"),
+    rent: document.getElementById("rent"),
+    rentSlider: document.getElementById("rentSlider"),
+    otherExempt: document.getElementById("otherExempt"),
+    otherTaxable: document.getElementById("otherTaxable"),
+    deduction: document.getElementById("deduction"),
+    capSeg: document.getElementById("capSeg"),
+    figNet: document.getElementById("figNet"),
+    capPill: document.getElementById("capPill"),
+    tileCap: document.getElementById("tileCap"),
+    tileBenefit: document.getElementById("tileBenefit"),
+    tileMonthly: document.getElementById("tileMonthly"),
+    chart: document.getElementById("chart"),
+    tooltip: document.getElementById("tooltip"),
+    scen0: document.getElementById("scen0"),
+    scenHalf: document.getElementById("scenHalf"),
+    scenCap: document.getElementById("scenCap"),
+    cmpRent30: document.getElementById("cmpRent30"),
+    cmpRent33: document.getElementById("cmpRent33"),
+    cmpSaved30: document.getElementById("cmpSaved30"),
+    cmpSaved33: document.getElementById("cmpSaved33"),
+    cmpMonthly30: document.getElementById("cmpMonthly30"),
+    cmpMonthly33: document.getElementById("cmpMonthly33")
+  };
+
+  var capPct = 0.3;
+
+  function currentParams() {
+    var base = parseFloat(els.base.value) || 0;
+    return {
+      base: base,
+      capAmt: base * capPct,
+      otherExempt: parseFloat(els.otherExempt.value) || 0,
+      otherTaxable: parseFloat(els.otherTaxable.value) || 0,
+      deduction: parseFloat(els.deduction.value) || 0
+    };
+  }
+
+  function svgEl(name, attrs) {
+    var e = document.createElementNS("http://www.w3.org/2000/svg", name);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  var chartGeo = null; // cached for hover math
+
+  function renderChart(p, currentRent) {
+    var svg = els.chart;
+    svg.innerHTML = "";
+    var W = 640, H = 320;
+    var padL = 56, padR = 16, padT = 14, padB = 32;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+
+    var capRentEquiv = Math.max(0, p.capAmt - p.otherExempt);
+    var maxRent = Math.max(capRentEquiv * 2.2, currentRent * 1.3, 20000);
+
+    var N = 48;
+    var pts = [];
+    for (var i = 0; i <= N; i++) {
+      var r = (maxRent * i) / N;
+      var res = computeAt(r, p);
+      pts.push({ rent: r, actual: res.netActual, counter: res.netCounter });
+    }
+
+    var yMin = Infinity, yMax = -Infinity;
+    pts.forEach(function (pt) {
+      yMin = Math.min(yMin, pt.actual, pt.counter);
+      yMax = Math.max(yMax, pt.actual, pt.counter);
+    });
+    var yPad = (yMax - yMin) * 0.08 || 1000;
+    yMin -= yPad; yMax += yPad;
+
+    function X(r) { return padL + (r / maxRent) * plotW; }
+    function Y(v) { return padT + plotH - ((v - yMin) / (yMax - yMin)) * plotH; }
+
+    chartGeo = { p: p, maxRent: maxRent, X: X, Y: Y, padL: padL, padT: padT, plotW: plotW, plotH: plotH, yMin: yMin, yMax: yMax };
+
+    // shaded region beyond cap
+    if (capRentEquiv < maxRent) {
+      svg.appendChild(svgEl("rect", {
+        x: X(capRentEquiv), y: padT, width: X(maxRent) - X(capRentEquiv), height: plotH,
+        class: "region-over"
+      }));
+    }
+
+    // gridlines (y)
+    var GY = 4;
+    for (var g = 0; g <= GY; g++) {
+      var v = yMin + ((yMax - yMin) * g) / GY;
+      var y = Y(v);
+      svg.appendChild(svgEl("line", { x1: padL, x2: W - padR, y1: y, y2: y, class: "grid-line" }));
+      var lbl = svgEl("text", { x: padL - 8, y: y + 3, class: "axis-label", "text-anchor": "end" });
+      lbl.textContent = fmtWan(v);
+      svg.appendChild(lbl);
+    }
+
+    // zero line if in range
+    if (yMin < 0 && yMax > 0) {
+      svg.appendChild(svgEl("line", { x1: padL, x2: W - padR, y1: Y(0), y2: Y(0), class: "zero-line" }));
+    }
+
+    // x axis ticks
+    var GX = 4;
+    for (var gx = 0; gx <= GX; gx++) {
+      var rv = (maxRent * gx) / GX;
+      var x = X(rv);
+      var lblx = svgEl("text", { x: x, y: H - padB + 16, class: "axis-label", "text-anchor": "middle" });
+      lblx.textContent = Math.round(rv / 1000) + "k";
+      svg.appendChild(lblx);
+    }
+
+    // cap marker
+    if (capRentEquiv <= maxRent) {
+      var cx = X(capRentEquiv);
+      svg.appendChild(svgEl("line", { x1: cx, x2: cx, y1: padT, y2: padT + plotH, class: "cap-line" }));
+      var capTag = svgEl("text", { x: cx + 5, y: padT + 12, class: "cap-tag" });
+      capTag.textContent = "免稅上限";
+      svg.appendChild(capTag);
+    }
+
+    // lines
+    function pathFor(key) {
+      return pts.map(function (pt, i) {
+        return (i === 0 ? "M" : "L") + X(pt.rent).toFixed(1) + "," + Y(pt[key]).toFixed(1);
+      }).join(" ");
+    }
+    svg.appendChild(svgEl("path", { d: pathFor("counter"), class: "line-counter" }));
+    svg.appendChild(svgEl("path", { d: pathFor("actual"), class: "line-actual" }));
+
+    // current point markers
+    var curRes = computeAt(currentRent, p);
+    svg.appendChild(svgEl("circle", { cx: X(currentRent), cy: Y(curRes.netCounter), r: 4, class: "dot-counter" }));
+    svg.appendChild(svgEl("circle", { cx: X(currentRent), cy: Y(curRes.netActual), r: 5, class: "dot-actual" }));
+
+    // hover elements
+    var hoverLine = svgEl("line", { x1: 0, x2: 0, y1: padT, y2: padT + plotH, class: "hover-line" });
+    svg.appendChild(hoverLine);
+    var hoverDotA = svgEl("circle", { r: 4.5, class: "dot-actual", style: "opacity:0" });
+    var hoverDotC = svgEl("circle", { r: 4, class: "dot-counter", style: "opacity:0" });
+    svg.appendChild(hoverDotC);
+    svg.appendChild(hoverDotA);
+
+    var hit = svgEl("rect", { x: padL, y: padT, width: plotW, height: plotH, class: "hit-rect" });
+    svg.appendChild(hit);
+
+    hit.addEventListener("mousemove", function (evt) {
+      var rect = svg.getBoundingClientRect();
+      var scale = W / rect.width;
+      var mx = (evt.clientX - rect.left) * scale;
+      var rentAtX = Math.max(0, Math.min(maxRent, ((mx - padL) / plotW) * maxRent));
+      var res = computeAt(rentAtX, p);
+      hoverLine.setAttribute("x1", X(rentAtX)); hoverLine.setAttribute("x2", X(rentAtX));
+      hoverLine.style.opacity = 1;
+      hoverDotA.setAttribute("cx", X(rentAtX)); hoverDotA.setAttribute("cy", Y(res.netActual)); hoverDotA.style.opacity = 1;
+      hoverDotC.setAttribute("cx", X(rentAtX)); hoverDotC.setAttribute("cy", Y(res.netCounter)); hoverDotC.style.opacity = 1;
+
+      var tt = els.tooltip;
+      tt.innerHTML =
+        '<div class="tt-row"><span>月租</span><span class="tt-num">' + fmt(rentAtX) + '</span></div>' +
+        '<div class="tt-row"><span>淨現金(實際)</span><span class="tt-num">' + fmt(res.netActual) + '</span></div>' +
+        '<div class="tt-row"><span>淨現金(無BIK)</span><span class="tt-num">' + fmt(res.netCounter) + '</span></div>';
+      var wrapRect = svg.parentElement.getBoundingClientRect();
+      var px = ((X(rentAtX)) / W) * rect.width;
+      var py = ((Y(res.netActual)) / H) * rect.height;
+      tt.style.left = px + "px";
+      tt.style.top = (py - 10) + "px";
+      tt.style.opacity = 1;
+    });
+    hit.addEventListener("mouseleave", function () {
+      hoverLine.style.opacity = 0;
+      hoverDotA.style.opacity = 0;
+      hoverDotC.style.opacity = 0;
+      els.tooltip.style.opacity = 0;
+    });
+  }
+
+  function computeForCap(capPctValue, p) {
+    var capAmt = p.base * capPctValue;
+    var rentAtCap = Math.max(0, capAmt - p.otherExempt);
+    var pp = { base: p.base, capAmt: capAmt, otherExempt: p.otherExempt, otherTaxable: p.otherTaxable, deduction: p.deduction };
+    var res = computeAt(rentAtCap, pp);
+    return { rent: rentAtCap, benefit: res.benefit };
+  }
+
+  function update() {
+    var p = currentParams();
+    var rent = parseFloat(els.rent.value) || 0;
+
+    var slMax = Math.max(90000, Math.ceil((p.capAmt * 2.2) / 500) * 500);
+    els.rentSlider.max = slMax;
+    if (parseFloat(els.rentSlider.max) !== slMax) els.rentSlider.max = slMax;
+    els.rentSlider.value = rent;
+
+    var res = computeAt(rent, p);
+
+    els.figNet.innerHTML = fmt(res.netActual) + "<small>/年</small>";
+    els.tileCap.textContent = fmt(p.capAmt);
+    els.tileBenefit.textContent = fmt(res.benefit);
+    els.tileMonthly.textContent = fmt(res.netActual / 12);
+
+    var capRentEquiv = Math.max(0, p.capAmt - p.otherExempt);
+    if (rent <= capRentEquiv + 0.01) {
+      els.capPill.textContent = "在免稅上限內";
+      els.capPill.className = "pill good";
+    } else {
+      els.capPill.textContent = "超過免稅上限 " + fmt(rent - capRentEquiv);
+      els.capPill.className = "pill warn";
+    }
+
+    renderChart(p, rent);
+
+    var capRentEquiv2 = Math.max(0, p.capAmt - p.otherExempt);
+    els.scen0.textContent = fmt(computeAt(0, p).netActual);
+    els.scenHalf.textContent = fmt(computeAt(capRentEquiv2 / 2, p).netActual);
+    els.scenCap.textContent = fmt(computeAt(capRentEquiv2, p).netActual);
+
+    var c30 = computeForCap(0.3, p);
+    var c33 = computeForCap(1 / 3, p);
+    els.cmpRent30.textContent = fmt(c30.rent);
+    els.cmpRent33.textContent = fmt(c33.rent);
+    els.cmpSaved30.textContent = fmt(c30.benefit);
+    els.cmpSaved33.textContent = fmt(c33.benefit);
+    els.cmpMonthly30.textContent = fmt(c30.benefit / 12);
+    els.cmpMonthly33.textContent = fmt(c33.benefit / 12);
+  }
+
+  els.capSeg.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-cap]");
+    if (!btn) return;
+    capPct = parseFloat(btn.getAttribute("data-cap"));
+    Array.prototype.forEach.call(els.capSeg.querySelectorAll("button"), function (b) {
+      b.classList.toggle("active", b === btn);
+    });
+    update();
+  });
+
+  els.rent.addEventListener("input", function () { els.rentSlider.value = els.rent.value; update(); });
+  els.rentSlider.addEventListener("input", function () { els.rent.value = els.rentSlider.value; update(); });
+  [els.base, els.otherExempt, els.otherTaxable, els.deduction].forEach(function (el) {
+    el.addEventListener("input", update);
+  });
+
+  window.addEventListener("resize", function () {
+    var p = currentParams();
+    renderChart(p, parseFloat(els.rent.value) || 0);
+  });
+
+  update();
+})();
+</script>
+
+</html>
