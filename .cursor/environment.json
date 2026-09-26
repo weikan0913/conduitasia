@@ -1,0 +1,11 @@
+{
+  "name": "Conduit Asia static site",
+  "user": "ubuntu",
+  "ports": [8000],
+  "terminals": [
+    {
+      "name": "static-server",
+      "command": "python3 -m http.server 8000 --bind 0.0.0.0 --directory \"$PWD\""
+    }
+  ]
+}
