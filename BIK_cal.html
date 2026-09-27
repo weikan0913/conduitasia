@@ -477,7 +477,107 @@
   @media (max-width: 480px) {
     .headline { flex-direction: column; align-items: flex-start; }
   }
+
+  body.disclaimer-locked { overflow: hidden; }
+  .disclaimer-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .disclaimer-modal[hidden] { display: none !important; }
+  .disclaimer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 24, 15, 0.58);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  .disclaimer-card {
+    position: relative;
+    z-index: 1;
+    width: min(440px, 90vw);
+    max-height: min(90vh, 640px);
+    overflow-y: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 22px 22px 20px;
+  }
+  .disclaimer-card h2 {
+    font-family: "Noto Serif TC", "Songti TC", serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .disclaimer-en {
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.62;
+    margin: 0 0 12px;
+  }
+  .disclaimer-zh {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0 0 20px;
+  }
+  .disclaimer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .disclaimer-btn {
+    font: inherit;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 13.5px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    text-align: center;
+    line-height: 1.35;
+  }
+  .disclaimer-btn.primary {
+    background: var(--accent);
+    color: #f7fbf8;
+    border-color: var(--accent);
+    font-weight: 700;
+  }
+  :root[data-theme="dark"] .disclaimer-btn.primary {
+    color: #0f1410;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .disclaimer-btn.primary {
+      color: #0f1410;
+    }
+  }
+  .disclaimer-btn.secondary {
+    background: var(--surface-inset);
+    color: var(--ink-soft);
+    border-color: var(--border-soft);
+  }
+  .disclaimer-btn.secondary:hover { color: var(--ink); }
 </style>
+
+<div id="disclaimerModal" class="disclaimer-modal" role="dialog" aria-modal="true" aria-labelledby="disclaimerTitle" hidden>
+  <div class="disclaimer-backdrop" aria-hidden="true"></div>
+  <div class="disclaimer-card">
+    <h2 id="disclaimerTitle">Before you use this ／ 使用前请阅读</h2>
+    <p class="disclaimer-en">This is a free, informational tool. It gives rough estimates based on general, publicly available China tax rules — not tax, legal, or financial advice. Actual results depend on your company’s policy, local tax authorities, and current regulations, and may differ. By continuing you agree to use it for reference only, and accept that Conduit Asia and the author are not responsible for any decisions made based on it. If you don’t agree, please don’t use it.</p>
+    <p class="disclaimer-zh">这是一个免费的参考工具，基于中国公开的一般税务规则做粗略估算，不构成税务、法律或财务建议。实际结果取决于你所在公司的政策、当地税务机关口径和现行法规，可能有所不同。继续使用即表示你同意仅将其作为参考，并接受 Conduit Asia 及作者不对据此做出的任何决定负责。如不同意，请勿使用。</p>
+    <div class="disclaimer-actions">
+      <button type="button" class="disclaimer-btn primary" id="disclaimerAgree">I understand and agree ／ 我明白并同意</button>
+      <button type="button" class="disclaimer-btn secondary" id="disclaimerDecline">I don’t agree ／ 我不同意</button>
+    </div>
+  </div>
+</div>
 
 <header class="page">
   <div class="header-top">
@@ -1024,6 +1124,45 @@
     if (stored === "en" || stored === "hans" || stored === "hant") savedLang = stored;
   } catch (e) { /* ignore */ }
   applyLang(savedLang);
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var STORAGE_KEY = "bikDisclaimerAgreed";
+  var modal = document.getElementById("disclaimerModal");
+  var agreeBtn = document.getElementById("disclaimerAgree");
+  var declineBtn = document.getElementById("disclaimerDecline");
+  if (!modal || !agreeBtn || !declineBtn) return;
+
+  function dismissModal() {
+    modal.hidden = true;
+    document.body.classList.remove("disclaimer-locked");
+  }
+
+  function lockAndShow() {
+    modal.hidden = false;
+    document.body.classList.add("disclaimer-locked");
+  }
+
+  try {
+    if (localStorage.getItem(STORAGE_KEY) === "1") {
+      modal.hidden = true;
+      return;
+    }
+  } catch (err) { /* ignore */ }
+
+  lockAndShow();
+
+  agreeBtn.addEventListener("click", function () {
+    try { localStorage.setItem(STORAGE_KEY, "1"); } catch (err) { /* ignore */ }
+    dismissModal();
+  });
+
+  declineBtn.addEventListener("click", function () {
+    window.location.href = "https://conduitasia.com/";
+  });
 })();
 </script>
 
