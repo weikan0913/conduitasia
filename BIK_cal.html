@@ -3,8 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BIK 房租試算器</title>
+<title>外籍員工中國 BIK 房租免稅試算器｜Conduit Asia</title>
+<meta name="description" content="免費線上工具：估算在中國工作的外籍員工，住房補貼（BIK）在個人所得稅下的免稅上限，以及稅後全年淨現金收入。支援 30% 與 1/3 兩種常見免稅上限，僅供概念試算。">
+<meta name="keywords" content="外籍員工, 外派, 中國, 個人所得稅, IIT, 住房補貼, BIK, benefit in kind, 免稅, 試算器, 稅後收入">
+<meta name="author" content="Wei Kan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://conduitasia.com/BIK_cal.html">
+<meta property="og:title" content="外籍員工中國 BIK 房租免稅試算器">
+<meta property="og:description" content="免費工具：估算在中國工作的外籍員工，住房補貼（BIK）在個人所得稅下的免稅上限與稅後全年淨現金收入。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://conduitasia.com/BIK_cal.html">
+<meta property="og:image" content="https://conduitasia.com/og-image.png">
+<meta property="og:site_name" content="Conduit Asia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="外籍員工中國 BIK 房租免稅試算器">
+<meta name="twitter:description" content="免費工具：估算在中國工作的外籍員工，住房補貼（BIK）在個人所得稅下的免稅上限與稅後全年淨現金收入。">
+<meta name="twitter:image" content="https://conduitasia.com/og-image.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "外籍員工中國 BIK 房租免稅試算器",
+  "url": "https://conduitasia.com/BIK_cal.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "zh-Hant",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "description": "免費線上工具，估算在中國工作的外籍員工住房補貼（BIK）在個人所得稅下的免稅上限與稅後全年淨現金收入。",
+  "author": { "@type": "Organization", "name": "Conduit Asia", "url": "https://conduitasia.com" },
+  "areaServed": { "@type": "Country", "name": "China" }
+}
+</script>
 <style>
   :root {
     --bg: #EFF1EA;
@@ -88,6 +119,27 @@
     max-width: 62ch;
     font-size: 14.5px;
   }
+  header.page .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+  }
+
+  .applies { padding: 18px 20px; margin-bottom: 20px; }
+  .applies h2 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 12px;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .applies ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+  .applies li { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .applies li strong { color: var(--ink); font-weight: 700; }
 
   main.layout {
     display: grid;
@@ -343,9 +395,21 @@
 </style>
 
 <header class="page">
-  <h1>BIK 房租試算器</h1>
-  <p>外籍員工住房補貼免稅額試算。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。</p>
+  <div class="eyebrow">免費公開工具 · Conduit Asia</div>
+  <h1>外籍員工中國 BIK 房租免稅試算器</h1>
+  <p>在中國工作的外籍員工，住房補貼（BIK）可在一定額度內免個人所得稅。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。</p>
 </header>
+
+<section class="panel applies">
+  <h2>適用範圍（先確認你屬於這個情況）</h2>
+  <ul>
+    <li><strong>地區：中國大陸。</strong>這是中國個人所得稅（IIT）下的規則。其他國家／地區的 BIK 制度完全不同，本工具不適用。</li>
+    <li><strong>對象：在中國工作、無住所的外籍（含港澳台）員工，且為稅務居民</strong>（一個納稅年度在中國境內住滿 183 天）。非稅務居民適用另一套按月稅率，本表不適用。</li>
+    <li><strong>免稅怎麼算：</strong>住房租金等以實報實銷／非現金形式取得的津貼，可在「合理」金額內免稅（需發票或付款憑證）。實務上中國稅局多把「不超過月工資 30%～35%」視為合理，因此本工具提供 30% 與 1/3 兩種常見上限。此優惠政策目前延續至 2027 年底。稅務居民須在「BIK 免稅」與「專項附加扣除」之間二擇一。</li>
+    <li><strong>不只適用某一家公司：</strong>這套標準最初是照一家大型外企的 BIK 做法建立的，但邏輯同樣適用於其他提供 BIK 住房福利的外企。</li>
+    <li><strong>這是一個免費、公開的概念試算小工具，</strong>不是正式稅務或法律意見。最終數字請以公司政策、當地稅局口徑與專業顧問為準。</li>
+  </ul>
+</section>
 
 <main class="layout">
   <aside class="panel inputs">
@@ -481,7 +545,7 @@
   </section>
 </main>
 
-<footer class="page">房租 BIK 試算器 · 概念試算工具，實際規則以公司政策與當地稅局為準</footer>
+<footer class="page">Conduit Asia 提供的免費社區小工具 · 概念試算，非正式稅務意見 · 實際規則以公司政策與當地稅局為準</footer>
 
 <script>
 (function () {
