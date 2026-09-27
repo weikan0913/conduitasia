@@ -1171,4 +1171,48 @@
 <script data-goatcounter="https://conduitasia.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
+<script>
+(function () {
+  "use strict";
+
+  function gcEvent(name) {
+    try {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: name, title: "event: " + name, event: true });
+      }
+    } catch (err) { /* ignore */ }
+  }
+
+  window.addEventListener("load", function () {
+    var langToggle = document.getElementById("langToggle");
+    if (langToggle) {
+      langToggle.addEventListener("click", function (e) {
+        var btn = e.target.closest("button[data-lang]");
+        if (!btn) return;
+        gcEvent("lang-" + btn.getAttribute("data-lang"));
+      });
+    }
+
+    var agreeBtn = document.getElementById("disclaimerAgree");
+    if (agreeBtn) {
+      agreeBtn.addEventListener("click", function () {
+        gcEvent("disclaimer-agree");
+      });
+    }
+
+    var declineBtn = document.getElementById("disclaimerDecline");
+    if (declineBtn) {
+      declineBtn.addEventListener("click", function () {
+        gcEvent("disclaimer-decline");
+      });
+    }
+
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('footer.page a[href="https://conduitasia.com/"]') : null;
+      if (a) gcEvent("out-home");
+    });
+  });
+})();
+</script>
+
 </html>
