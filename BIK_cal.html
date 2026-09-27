@@ -119,6 +119,20 @@
     max-width: 62ch;
     font-size: 14.5px;
   }
+  header.page .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  header.page .header-top .eyebrow { margin-bottom: 0; }
+  header.page .lang-toggle.segmented {
+    flex: 0 0 auto;
+    min-width: 118px;
+  }
+  header.page .lang-toggle button { padding: 6px 10px; font-size: 12.5px; }
   header.page .eyebrow {
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: 11px;
@@ -401,28 +415,34 @@
 </style>
 
 <header class="page">
-  <div class="eyebrow">免費公開工具 · Conduit Asia</div>
-  <h1>外籍員工中國 BIK 房租免稅試算器</h1>
-  <p>在中國工作的外籍員工，住房補貼（BIK）可在一定額度內免個人所得稅。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。</p>
+  <div class="header-top">
+    <div class="eyebrow" data-hant="免費公開工具 · Conduit Asia" data-hans="免费公开工具 · Conduit Asia">免費公開工具 · Conduit Asia</div>
+    <div class="segmented lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="hant" class="active">繁體</button>
+      <button type="button" data-lang="hans">简体</button>
+    </div>
+  </div>
+  <h1 data-hant="外籍員工中國 BIK 房租免稅試算器" data-hans="外籍员工中国 BIK 房租免税试算器">外籍員工中國 BIK 房租免稅試算器</h1>
+  <p data-hant="在中國工作的外籍員工，住房補貼（BIK）可在一定額度內免個人所得稅。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。" data-hans="在中国工作的外籍员工，住房补贴（BIK）可在一定额度内免个人所得税。输入薪资跟房租，直接看全年税后净现金收入怎么随房租变化——抓出免税上限在哪里，剩下的租多少，是你自己的生活选择。">在中國工作的外籍員工，住房補貼（BIK）可在一定額度內免個人所得稅。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。</p>
 </header>
 
 <section class="panel applies">
-  <h2>適用範圍（先確認你屬於這個情況）</h2>
+  <h2 data-hant="適用範圍（先確認你屬於這個情況）" data-hans="适用范围（先确认你属于这个情况）">適用範圍（先確認你屬於這個情況）</h2>
   <ul>
-    <li><strong>地區：中國大陸。</strong>這是中國個人所得稅（IIT）下的規則。其他國家／地區的 BIK 制度完全不同，本工具不適用。</li>
-    <li><strong>對象：在中國工作、無住所的外籍（含港澳台）員工，且為稅務居民</strong>（一個納稅年度在中國境內住滿 183 天）。非稅務居民適用另一套按月稅率，本表不適用。</li>
-    <li><strong>免稅怎麼算：</strong>住房租金等以實報實銷／非現金形式取得的津貼，可在「合理」金額內免稅（需發票或付款憑證）。實務上中國稅局多把「不超過月工資 30%～35%」視為合理，因此本工具提供 30% 與 1/3 兩種常見上限。此優惠政策目前延續至 2027 年底。稅務居民須在「BIK 免稅」與「專項附加扣除」之間二擇一。</li>
-    <li><strong>不只適用某一家公司：</strong>這套標準最初是照一家大型外企的 BIK 做法建立的，但邏輯同樣適用於其他提供 BIK 住房福利的外企。</li>
-    <li><strong>這是一個免費、公開的概念試算小工具，</strong>不是正式稅務或法律意見。最終數字請以公司政策、當地稅局口徑與專業顧問為準。</li>
+    <li data-i18n-html="1" data-hant="&lt;strong&gt;地區：中國大陸。&lt;/strong&gt;這是中國個人所得稅（IIT）下的規則。其他國家／地區的 BIK 制度完全不同，本工具不適用。" data-hans="&lt;strong&gt;地区：中国大陆。&lt;/strong&gt;这是中国个人所得税（IIT）下的规则。其他国家/地区的 BIK 制度完全不同，本工具不适用。"><strong>地區：中國大陸。</strong>這是中國個人所得稅（IIT）下的規則。其他國家／地區的 BIK 制度完全不同，本工具不適用。</li>
+    <li data-i18n-html="1" data-hant="&lt;strong&gt;對象：在中國工作、無住所的外籍（含港澳台）員工，且為稅務居民&lt;/strong&gt;（一個納稅年度在中國境內住滿 183 天）。非稅務居民適用另一套按月稅率，本表不適用。" data-hans="&lt;strong&gt;对象：在中国工作、无住所的外籍（含港澳台）员工，且为税务居民&lt;/strong&gt;（一个纳税年度在中国境内住满 183 天）。非税务居民适用另一套按月税率，本表不适用。"><strong>對象：在中國工作、無住所的外籍（含港澳台）員工，且為稅務居民</strong>（一個納稅年度在中國境內住滿 183 天）。非稅務居民適用另一套按月稅率，本表不適用。</li>
+    <li data-i18n-html="1" data-hant="&lt;strong&gt;免稅怎麼算：&lt;/strong&gt;住房租金等以實報實銷／非現金形式取得的津貼，可在「合理」金額內免稅（需發票或付款憑證）。實務上中國稅局多把「不超過月工資 30%～35%」視為合理，因此本工具提供 30% 與 1/3 兩種常見上限。此優惠政策目前延續至 2027 年底。稅務居民須在「BIK 免稅」與「專項附加扣除」之間二擇一。" data-hans="&lt;strong&gt;免税怎么算：&lt;/strong&gt;住房租金等以实报实销/非现金形式取得的津贴，可在「合理」金额内免税（需发票或付款凭证）。实务上中国税局多把「不超过月工资 30%～35%」视为合理，因此本工具提供 30% 与 1/3 两种常见上限。此优惠政策目前延续至 2027 年底。税务居民须在「BIK 免税」与「专项附加扣除」之间二择一。"><strong>免稅怎麼算：</strong>住房租金等以實報實銷／非現金形式取得的津貼，可在「合理」金額內免稅（需發票或付款憑證）。實務上中國稅局多把「不超過月工資 30%～35%」視為合理，因此本工具提供 30% 與 1/3 兩種常見上限。此優惠政策目前延續至 2027 年底。稅務居民須在「BIK 免稅」與「專項附加扣除」之間二擇一。</li>
+    <li data-i18n-html="1" data-hant="&lt;strong&gt;不只適用某一家公司：&lt;/strong&gt;這套標準最初是照一家大型外企的 BIK 做法建立的，但邏輯同樣適用於其他提供 BIK 住房福利的外企。" data-hans="&lt;strong&gt;不只适用某一家公司：&lt;/strong&gt;这套标准最初是照一家大型外企的 BIK 做法建立的，但逻辑同样适用于其他提供 BIK 住房福利的外企。"><strong>不只適用某一家公司：</strong>這套標準最初是照一家大型外企的 BIK 做法建立的，但邏輯同樣適用於其他提供 BIK 住房福利的外企。</li>
+    <li data-i18n-html="1" data-hant="&lt;strong&gt;這是一個免費、公開的概念試算小工具，&lt;/strong&gt;不是正式稅務或法律意見。最終數字請以公司政策、當地稅局口徑與專業顧問為準。" data-hans="&lt;strong&gt;这是一个免费、公开的概念试算小工具，&lt;/strong&gt;不是正式税务或法律意见。最终数字请以公司政策、当地税局口径与专业顾问为准。"><strong>這是一個免費、公開的概念試算小工具，</strong>不是正式稅務或法律意見。最終數字請以公司政策、當地稅局口徑與專業顧問為準。</li>
   </ul>
 </section>
 
 <main class="layout">
   <aside class="panel inputs">
-    <h2>輸入 Inputs</h2>
+    <h2 data-hant="輸入 Inputs" data-hans="输入 Inputs">輸入 Inputs</h2>
 
     <div class="field">
-      <label for="base">每月稅前基本工資</label>
+      <label for="base" data-hant="每月稅前基本工資" data-hans="每月税前基本工资">每月稅前基本工資</label>
       <div class="num-row">
         <span class="prefix">¥</span>
         <input type="number" id="base" value="100000" step="1000" min="0">
@@ -430,7 +450,7 @@
     </div>
 
     <div class="field">
-      <label>免稅上限比例（BIK Cap）</label>
+      <label data-hant="免稅上限比例（BIK Cap）" data-hans="免税上限比例（BIK Cap）">免稅上限比例（BIK Cap）</label>
       <div class="segmented" id="capSeg">
         <button type="button" data-cap="0.3" class="active">30%</button>
         <button type="button" data-cap="0.333333">1/3</button>
@@ -438,7 +458,7 @@
     </div>
 
     <div class="field">
-      <label for="rent">每月房租（拖動或直接輸入）</label>
+      <label for="rent" data-hant="每月房租（拖動或直接輸入）" data-hans="每月房租（拖动或直接输入）">每月房租（拖動或直接輸入）</label>
       <div class="num-row">
         <span class="prefix">¥</span>
         <input type="number" id="rent" value="30000" step="500" min="0">
@@ -447,23 +467,23 @@
     </div>
 
     <details class="advanced">
-      <summary>進階設定</summary>
+      <summary data-hant="進階設定" data-hans="高级设定">進階設定</summary>
       <div class="field">
-        <label for="otherExempt">其他可比照BIK免稅項目（伙食/洗衣等，與房租共用同一上限）</label>
+        <label for="otherExempt" data-hant="其他可比照BIK免稅項目（伙食/洗衣等，與房租共用同一上限）" data-hans="其他可比照BIK免税项目（伙食/洗衣等，与房租共用同一上限）">其他可比照BIK免稅項目（伙食/洗衣等，與房租共用同一上限）</label>
         <div class="num-row">
           <span class="prefix">¥</span>
           <input type="number" id="otherExempt" value="0" step="500" min="0">
         </div>
       </div>
       <div class="field">
-        <label for="otherTaxable">其他應稅津貼（車貼/獎金等，不屬BIK，全額課稅）</label>
+        <label for="otherTaxable" data-hant="其他應稅津貼（車貼/獎金等，不屬BIK，全額課稅）" data-hans="其他应税津贴（车贴/奖金等，不属BIK，全额课税）">其他應稅津貼（車貼/獎金等，不屬BIK，全額課稅）</label>
         <div class="num-row">
           <span class="prefix">¥</span>
           <input type="number" id="otherTaxable" value="0" step="500" min="0">
         </div>
       </div>
       <div class="field" style="margin-bottom:4px;">
-        <label for="deduction">每月基本減除費用（法定 5,000）</label>
+        <label for="deduction" data-hant="每月基本減除費用（法定 5,000）" data-hans="每月基本减除费用（法定 5,000）">每月基本減除費用（法定 5,000）</label>
         <div class="num-row">
           <span class="prefix">¥</span>
           <input type="number" id="deduction" value="5000" step="500" min="0">
@@ -475,7 +495,7 @@
   <section class="panel results">
     <div class="headline">
       <div>
-        <div class="figure-label">全年稅後淨現金收入（薪水－稅－房租，實際）</div>
+        <div class="figure-label" data-hant="全年稅後淨現金收入（薪水－稅－房租，實際）" data-hans="全年税后净现金收入（薪水－税－房租，实际）">全年稅後淨現金收入（薪水－稅－房租，實際）</div>
         <div class="figure mono" id="figNet">¥0<small>/年</small></div>
       </div>
       <span class="pill good" id="capPill">在免稅上限內</span>
@@ -483,29 +503,29 @@
 
     <div class="tiles">
       <div class="tile accent">
-        <div class="t-label">免稅上限金額</div>
+        <div class="t-label" data-hant="免稅上限金額" data-hans="免税上限金额">免稅上限金額</div>
         <div class="t-value mono" id="tileCap">¥0</div>
       </div>
       <div class="tile accent">
-        <div class="t-label">這筆房租的 BIK 效益（比沒有這政策少繳的稅）</div>
+        <div class="t-label" data-hant="這筆房租的 BIK 效益（比沒有這政策少繳的稅）" data-hans="这笔房租的 BIK 效益（比没有这政策少缴的税）">這筆房租的 BIK 效益（比沒有這政策少繳的稅）</div>
         <div class="t-value mono" id="tileBenefit">¥0</div>
       </div>
       <div class="tile">
-        <div class="t-label">每月稅後淨現金收入</div>
+        <div class="t-label" data-hant="每月稅後淨現金收入" data-hans="每月税后净现金收入">每月稅後淨現金收入</div>
         <div class="t-value mono" id="tileMonthly">¥0</div>
       </div>
     </div>
 
     <div class="chart-wrap">
       <div class="chart-legend">
-        <span class="item"><span class="swatch"></span>全年淨現金收入（實際，有 BIK）</span>
-        <span class="item"><span class="swatch dashed"></span>假設沒有 BIK，同一筆房租全額課稅</span>
+        <span class="item"><span class="swatch"></span><span data-hant="全年淨現金收入（實際，有 BIK）" data-hans="全年净现金收入（实际，有 BIK）">全年淨現金收入（實際，有 BIK）</span></span>
+        <span class="item"><span class="swatch dashed"></span><span data-hant="假設沒有 BIK，同一筆房租全額課稅" data-hans="假设没有 BIK，同一笔房租全额课税">假設沒有 BIK，同一筆房租全額課稅</span></span>
       </div>
       <svg id="chart" viewBox="0 0 640 320" preserveAspectRatio="xMidYMid meet"></svg>
       <div class="tooltip" id="tooltip"></div>
     </div>
 
-    <p class="note">
+    <p class="note" data-i18n-html="1" data-hant="&lt;strong&gt;怎麼看：&lt;/strong&gt;免稅上限以內，兩條線的差距就是 BIK 政策幫你省下的稅；房租本身照樣 1 元換 1 元減少淨收入，不是打折。 過了上限（灰色虛線），淨收入掉得更快，因為超額部分連稅都要多繳。 &lt;strong&gt;假設：&lt;/strong&gt;稅務居民身份、累計預扣年度累進稅率（2019 年沿用至今的稅率表，基本減除費用 5,000/月）； 全年薪資與房租不變。非稅務居民（每年在中國境內＜183 天）適用另一套按月稅率表，本表不適用。僅供概念試算，非正式稅務意見。" data-hans="&lt;strong&gt;怎么看：&lt;/strong&gt;免税上限以内，两条线的差距就是 BIK 政策帮你省下的税；房租本身照样 1 元换 1 元减少净收入，不是打折。 过了上限（灰色虚线），净收入掉得更快，因为超额部分连税都要多缴。 &lt;strong&gt;假设：&lt;/strong&gt;税务居民身份、累计预扣年度累进税率（2019 年沿用至今的税率表，基本减除费用 5,000/月）； 全年薪资与房租不变。非税务居民（每年在中国境内＜183 天）适用另一套按月税率表，本表不适用。仅供概念试算，非正式税务意见。">
       <strong>怎麼看：</strong>免稅上限以內，兩條線的差距就是 BIK 政策幫你省下的稅；房租本身照樣 1 元換 1 元減少淨收入，不是打折。
       過了上限（灰色虛線），淨收入掉得更快，因為超額部分連稅都要多繳。
       <strong>假設：</strong>稅務居民身份、累計預扣年度累進稅率（2019 年沿用至今的稅率表，基本減除費用 5,000/月）；
@@ -513,49 +533,73 @@
     </p>
 
     <div class="compare-block">
-      <h3 class="block-title">快照：三個租金情境</h3>
+      <h3 class="block-title" data-hant="快照：三個租金情境" data-hans="快照：三个租金情境">快照：三個租金情境</h3>
       <div class="scenario-strip">
         <div class="scenario">
-          <div class="s-label">房租 = 0（完全不租）</div>
+          <div class="s-label" data-hant="房租 = 0（完全不租）" data-hans="房租 = 0（完全不租）">房租 = 0（完全不租）</div>
           <div class="s-value mono" id="scen0">¥0</div>
         </div>
         <div class="scenario">
-          <div class="s-label">房租 = 上限一半</div>
+          <div class="s-label" data-hant="房租 = 上限一半" data-hans="房租 = 上限一半">房租 = 上限一半</div>
           <div class="s-value mono" id="scenHalf">¥0</div>
         </div>
         <div class="scenario current">
-          <div class="s-label">房租 = 上限（用滿）</div>
+          <div class="s-label" data-hant="房租 = 上限（用滿）" data-hans="房租 = 上限（用满）">房租 = 上限（用滿）</div>
           <div class="s-value mono" id="scenCap">¥0</div>
         </div>
       </div>
-      <p class="mini-note">全年稅後淨現金收入。在免稅上限以內，房租每多花 1 元，這裡就少 1 元——沒有稅務折扣，純粹是現金支出的選擇。</p>
+      <p class="mini-note" data-hant="全年稅後淨現金收入。在免稅上限以內，房租每多花 1 元，這裡就少 1 元——沒有稅務折扣，純粹是現金支出的選擇。" data-hans="全年税后净现金收入。在免税上限以内，房租每多花 1 元，这里就少 1 元——没有税务折扣，纯粹是现金支出的选择。">全年稅後淨現金收入。在免稅上限以內，房租每多花 1 元，這裡就少 1 元——沒有稅務折扣，純粹是現金支出的選擇。</p>
     </div>
 
     <div class="compare-block">
-      <h3 class="block-title">不確定公司用 30% 還是 1/3？兩種都列給你比</h3>
+      <h3 class="block-title" data-hant="不確定公司用 30% 還是 1/3？兩種都列給你比" data-hans="不确定公司用 30% 还是 1/3？两种都列给你比">不確定公司用 30% 還是 1/3？兩種都列給你比</h3>
       <div class="cap-table">
         <div class="cap-row cap-head">
-          <div>—</div><div>上限 = 30%</div><div>上限 = 1/3（33.33%）</div>
+          <div>—</div><div data-hant="上限 = 30%" data-hans="上限 = 30%">上限 = 30%</div><div data-hant="上限 = 1/3（33.33%）" data-hans="上限 = 1/3（33.33%）">上限 = 1/3（33.33%）</div>
         </div>
         <div class="cap-row">
-          <div>免稅上限對應房租</div><div class="mono" id="cmpRent30">¥0</div><div class="mono" id="cmpRent33">¥0</div>
+          <div data-hant="免稅上限對應房租" data-hans="免税上限对应房租">免稅上限對應房租</div><div class="mono" id="cmpRent30">¥0</div><div class="mono" id="cmpRent33">¥0</div>
         </div>
         <div class="cap-row">
-          <div>全年 BIK 效益（比沒有政策省的稅）</div><div class="mono" id="cmpSaved30">¥0</div><div class="mono" id="cmpSaved33">¥0</div>
+          <div data-hant="全年 BIK 效益（比沒有政策省的稅）" data-hans="全年 BIK 效益（比没有政策省的税）">全年 BIK 效益（比沒有政策省的稅）</div><div class="mono" id="cmpSaved30">¥0</div><div class="mono" id="cmpSaved33">¥0</div>
         </div>
         <div class="cap-row">
-          <div>相當於每月</div><div class="mono" id="cmpMonthly30">¥0</div><div class="mono" id="cmpMonthly33">¥0</div>
+          <div data-hant="相當於每月" data-hans="相当于每月">相當於每月</div><div class="mono" id="cmpMonthly30">¥0</div><div class="mono" id="cmpMonthly33">¥0</div>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="page"><a href="https://conduitasia.com/">Conduit Asia</a> 提供的免費社區小工具 · 概念試算，非正式稅務意見 · 實際規則以公司政策與當地稅局為準</footer>
+<footer class="page" data-i18n-html="1" data-hant="&lt;a href=&quot;https://conduitasia.com/&quot;&gt;Conduit Asia&lt;/a&gt; 提供的免費社區小工具 · 概念試算，非正式稅務意見 · 實際規則以公司政策與當地稅局為準" data-hans="&lt;a href=&quot;https://conduitasia.com/&quot;&gt;Conduit Asia&lt;/a&gt; 提供的免费社区小工具 · 概念试算，非正式税务意见 · 实际规则以公司政策与当地税局为准"><a href="https://conduitasia.com/">Conduit Asia</a> 提供的免費社區小工具 · 概念試算，非正式稅務意見 · 實際規則以公司政策與當地稅局為準</footer>
 
 <script>
 (function () {
   "use strict";
+
+  var I18N = {
+    hant: {
+      pillWithin: "在免稅上限內",
+      pillOverPrefix: "超過免稅上限 ",
+      ttRent: "月租",
+      ttActual: "淨現金(實際)",
+      ttNoBik: "淨現金(無BIK)",
+      capTag: "免稅上限",
+      wan: "萬",
+      perYear: "/年"
+    },
+    hans: {
+      pillWithin: "在免税上限内",
+      pillOverPrefix: "超过免税上限 ",
+      ttRent: "月租",
+      ttActual: "净现金(实际)",
+      ttNoBik: "净现金(无BIK)",
+      capTag: "免税上限",
+      wan: "万",
+      perYear: "/年"
+    }
+  };
+  var LANG = "hant";
 
   var BRACKETS = [
     [0, 0.03, 0],
@@ -603,7 +647,29 @@
   }
   function fmtWan(n) {
     var v = n / 10000;
-    return (v < 0 ? "" : "") + v.toFixed(1) + " 萬";
+    return (v < 0 ? "" : "") + v.toFixed(1) + " " + I18N[LANG].wan;
+  }
+
+  function applyLang(lang) {
+    if (lang !== "hant" && lang !== "hans") lang = "hant";
+    LANG = lang;
+    document.documentElement.lang = lang === "hans" ? "zh-Hans" : "zh-Hant";
+    document.querySelectorAll("[data-hant][data-hans]").forEach(function (el) {
+      var val = el.getAttribute(lang === "hans" ? "data-hans" : "data-hant");
+      if (el.getAttribute("data-i18n-html") === "1") {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    });
+    var toggle = document.getElementById("langToggle");
+    if (toggle) {
+      Array.prototype.forEach.call(toggle.querySelectorAll("button[data-lang]"), function (btn) {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+    }
+    try { localStorage.setItem("bikLang", lang); } catch (e) { /* ignore */ }
+    update();
   }
 
   var els = {
@@ -723,7 +789,7 @@
       var cx = X(capRentEquiv);
       svg.appendChild(svgEl("line", { x1: cx, x2: cx, y1: padT, y2: padT + plotH, class: "cap-line" }));
       var capTag = svgEl("text", { x: cx + 5, y: padT + 12, class: "cap-tag" });
-      capTag.textContent = "免稅上限";
+      capTag.textContent = I18N[LANG].capTag;
       svg.appendChild(capTag);
     }
 
@@ -765,9 +831,9 @@
 
       var tt = els.tooltip;
       tt.innerHTML =
-        '<div class="tt-row"><span>月租</span><span class="tt-num">' + fmt(rentAtX) + '</span></div>' +
-        '<div class="tt-row"><span>淨現金(實際)</span><span class="tt-num">' + fmt(res.netActual) + '</span></div>' +
-        '<div class="tt-row"><span>淨現金(無BIK)</span><span class="tt-num">' + fmt(res.netCounter) + '</span></div>';
+        '<div class="tt-row"><span>' + I18N[LANG].ttRent + '</span><span class="tt-num">' + fmt(rentAtX) + '</span></div>' +
+        '<div class="tt-row"><span>' + I18N[LANG].ttActual + '</span><span class="tt-num">' + fmt(res.netActual) + '</span></div>' +
+        '<div class="tt-row"><span>' + I18N[LANG].ttNoBik + '</span><span class="tt-num">' + fmt(res.netCounter) + '</span></div>';
       var wrapRect = svg.parentElement.getBoundingClientRect();
       var px = ((X(rentAtX)) / W) * rect.width;
       var py = ((Y(res.netActual)) / H) * rect.height;
@@ -802,17 +868,17 @@
 
     var res = computeAt(rent, p);
 
-    els.figNet.innerHTML = fmt(res.netActual) + "<small>/年</small>";
+    els.figNet.innerHTML = fmt(res.netActual) + "<small>" + I18N[LANG].perYear + "</small>";
     els.tileCap.textContent = fmt(p.capAmt);
     els.tileBenefit.textContent = fmt(res.benefit);
     els.tileMonthly.textContent = fmt(res.netActual / 12);
 
     var capRentEquiv = Math.max(0, p.capAmt - p.otherExempt);
     if (rent <= capRentEquiv + 0.01) {
-      els.capPill.textContent = "在免稅上限內";
+      els.capPill.textContent = I18N[LANG].pillWithin;
       els.capPill.className = "pill good";
     } else {
-      els.capPill.textContent = "超過免稅上限 " + fmt(rent - capRentEquiv);
+      els.capPill.textContent = I18N[LANG].pillOverPrefix + fmt(rent - capRentEquiv);
       els.capPill.className = "pill warn";
     }
 
@@ -854,7 +920,21 @@
     renderChart(p, parseFloat(els.rent.value) || 0);
   });
 
-  update();
+  var langToggle = document.getElementById("langToggle");
+  if (langToggle) {
+    langToggle.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-lang]");
+      if (!btn) return;
+      applyLang(btn.getAttribute("data-lang"));
+    });
+  }
+
+  var savedLang = "hant";
+  try {
+    var stored = localStorage.getItem("bikLang");
+    if (stored === "hans" || stored === "hant") savedLang = stored;
+  } catch (e) { /* ignore */ }
+  applyLang(savedLang);
 })();
 </script>
 
