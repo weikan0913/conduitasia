@@ -388,6 +388,12 @@
     color: var(--ink-faint);
     text-align: center;
   }
+  footer.page a {
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  footer.page a:hover { border-bottom-color: var(--accent-ink); }
 
   @media (max-width: 480px) {
     .headline { flex-direction: column; align-items: flex-start; }
@@ -545,7 +551,7 @@
   </section>
 </main>
 
-<footer class="page">Conduit Asia 提供的免費社區小工具 · 概念試算，非正式稅務意見 · 實際規則以公司政策與當地稅局為準</footer>
+<footer class="page"><a href="https://conduitasia.com/">Conduit Asia</a> 提供的免費社區小工具 · 概念試算，非正式稅務意見 · 實際規則以公司政策與當地稅局為準</footer>
 
 <script>
 (function () {
