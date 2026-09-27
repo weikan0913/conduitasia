@@ -113,6 +113,16 @@
     margin: 0 0 6px;
     letter-spacing: 0.01em;
   }
+  header.page h1.bilingual .title-en { display: block; }
+  header.page h1.bilingual .title-zh {
+    display: block;
+    font-size: 0.66em;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-top: 7px;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
   header.page p {
     color: var(--ink-soft);
     margin: 0;
@@ -127,20 +137,66 @@
     flex-wrap: wrap;
     margin-bottom: 8px;
   }
-  header.page .header-top .eyebrow { margin-bottom: 0; }
+  header.page .header-top .eyebrow { margin-bottom: 0; flex: 1 1 auto; min-width: 0; }
+  .lang-switch {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    flex: 0 1 auto;
+    max-width: min(100%, 300px);
+  }
+  .lang-switch-hint {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 2px;
+  }
+  .lang-switch-hint .lang-icon {
+    font-size: 13px;
+    line-height: 1;
+    opacity: 0.85;
+  }
   header.page .lang-toggle.segmented {
     flex: 0 0 auto;
     min-width: 0;
-    max-width: min(100%, 220px);
+    max-width: 100%;
+    padding: 4px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    box-shadow: 0 2px 10px rgba(20, 24, 15, 0.1);
+    background: var(--surface);
   }
   header.page .lang-toggle button {
-    padding: 6px 6px;
-    font-size: 11.5px;
+    padding: 10px 8px;
+    font-size: 13px;
+    font-weight: 500;
     min-width: 0;
     flex: 1 1 0;
   }
+  header.page .lang-toggle button.active {
+    background: var(--accent);
+    color: #f7fbf8;
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(20, 24, 15, 0.22);
+  }
+  :root[data-theme="dark"] header.page .lang-toggle button.active {
+    color: #0f1410;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) header.page .lang-toggle button.active {
+      color: #0f1410;
+    }
+  }
   @media (max-width: 480px) {
-    header.page .lang-toggle button { font-size: 10px; padding: 5px 3px; }
+    header.page .lang-toggle button { font-size: 11.5px; padding: 9px 5px; }
+    .lang-switch { max-width: 100%; width: 100%; }
   }
   header.page .eyebrow {
     font-family: "JetBrains Mono", ui-monospace, monospace;
@@ -426,13 +482,19 @@
 <header class="page">
   <div class="header-top">
     <div class="eyebrow" data-en="FREE PUBLIC TOOL · CONDUIT ASIA" data-hant="免費公開工具 · Conduit Asia" data-hans="免费公开工具 · Conduit Asia">FREE PUBLIC TOOL · CONDUIT ASIA</div>
-    <div class="segmented lang-toggle" id="langToggle" role="group" aria-label="Language">
-      <button type="button" data-lang="en" class="active">English</button>
-      <button type="button" data-lang="hant">繁體</button>
-      <button type="button" data-lang="hans">简体</button>
+    <div class="lang-switch">
+      <span class="lang-switch-hint"><span class="lang-icon" aria-hidden="true">🌐</span> Language</span>
+      <div class="segmented lang-toggle" id="langToggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active">English</button>
+        <button type="button" data-lang="hant">繁體</button>
+        <button type="button" data-lang="hans">简体</button>
+      </div>
     </div>
   </div>
-  <h1 data-en="China BIK Housing Allowance Tax Calculator for Expats" data-hant="外籍員工中國 BIK 房租免稅試算器" data-hans="外籍员工中国 BIK 房租免税试算器">China BIK Housing Allowance Tax Calculator for Expats</h1>
+  <h1 class="bilingual">
+    <span class="title-en">China BIK Housing Allowance Tax Calculator for Expats</span>
+    <span class="title-zh">外籍员工中国 BIK 房租免税试算器</span>
+  </h1>
   <p data-en="For expats working in China, housing benefits (BIK) can be exempt from individual income tax up to a limit. Enter salary and rent to see how annual after-tax net cash changes with rent—find the tax-free cap, then choose how much rent suits your lifestyle." data-hant="在中國工作的外籍員工，住房補貼（BIK）可在一定額度內免個人所得稅。輸入薪資跟房租，直接看全年稅後淨現金收入怎麼隨房租變化——抓出免稅上限在哪裡，剩下的租多少，是你自己的生活選擇。" data-hans="在中国工作的外籍员工，住房补贴（BIK）可在一定额度内免个人所得税。输入薪资跟房租，直接看全年税后净现金收入怎么随房租变化——抓出免税上限在哪里，剩下的租多少，是你自己的生活选择。">For expats working in China, housing benefits (BIK) can be exempt from individual income tax up to a limit. Enter salary and rent to see how annual after-tax net cash changes with rent—find the tax-free cap, then choose how much rent suits your lifestyle.</p>
 </header>
 
