@@ -106,8 +106,15 @@
         .media-archive li { font-size: 15px; line-height: 1.85; color: var(--text-dark); margin-bottom: 12px; padding-left: 0; }
         .media-archive .media-date { color: rgba(15,15,15,0.55); font-size: 14px; white-space: nowrap; margin-right: 6px; }
         .media-archive .media-topic { color: rgba(15,15,15,0.72); }
+        .media-archive-compact li { margin-bottom: 8px; font-size: 15px; }
+        .media-intl-note { font-size: 15px; line-height: 1.9; color: rgba(15,15,15,0.78); max-width: 700px; margin-bottom: 16px; }
         .media-more { font-size: 15px; line-height: 1.9; color: rgba(15,15,15,0.75); max-width: 700px; margin-top: 24px; }
         .media-more a { color: var(--text-dark); }
+        .contact-channels { font-size: 15px; line-height: 1.85; color: rgba(242, 241, 236, 0.8); margin: 0 0 28px; max-width: 640px; }
+        .contact-channels strong { font-weight: 500; color: var(--text-light); }
+        .contact-channels .wechat-id { font-family: ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.02em; }
+        .cta-card .cta-alt { font-size: 14px; line-height: 1.75; color: rgba(242, 241, 236, 0.65); margin-top: 4px; }
+        .cta-card .cta-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
         .cn-content p { font-size: 16px; line-height: 2; color: rgba(242, 241, 236, 0.85); max-width: 700px; }
         .cn-content a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid rgba(242,241,236,0.35); transition: color 0.3s ease, border-color 0.3s ease; }
         .cn-content a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
@@ -215,15 +222,17 @@
             <div class="section-label">媒体视点</div>
             <p class="media-intro">在报道中国消费趋势与运动市场时，Wei Kan 曾多次被国际与中文财经媒体具名引用。下列为可公开核验的近期条目（按时间大致倒序）；完整英文档案见本站<a href="/#media">英文首页 In the Media</a>。</p>
             <h3 class="media-subhead">国际媒体</h3>
-            <ul class="media-archive">
-                <li><span class="media-date">2026-09</span><a href="https://www.ft.com/content/873ed533-d6b0-4276-94c2-624eb69d306b" target="_blank" rel="noopener">《金融时报》</a>：How Nike fell off the pace in China<span class="media-topic"> — 耐克在中国失速；线上收紧分销与定价权</span></li>
-                <li><span class="media-date">2026-09</span><a href="https://jingdaily.com/posts/hyrox-changes-hands-as-rivals-circle" target="_blank" rel="noopener">Jing Daily</a>：Hyrox 股权变动与中国同类赛事竞争</li>
-                <li><span class="media-date">2026-08</span><a href="https://www.ft.com/content/9eae7b4f-23fe-47f4-9a95-51f6b401c9e6" target="_blank" rel="noopener">《金融时报》</a>：中喬（Qiaodan）与耐克在中国市场的长期博弈</li>
-                <li><span class="media-date">2026-07</span><a href="https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html" target="_blank" rel="noopener">CNBC</a>：耐克中国销售下滑与本土竞争</li>
-                <li><span class="media-date">2026-07</span><a href="https://www.reuters.com/business/retail-consumer/after-tackling-discounts-china-nike-still-needs-win-back-shoppers-2026-07-22/" target="_blank" rel="noopener">路透社</a>：折扣之后，耐克仍需赢回中国消费者</li>
-                <li><span class="media-date">2026-07</span><a href="https://www.bloomberg.com/opinion/articles/2026-07-01/nike-needs-more-than-discounts-to-win-back-china" target="_blank" rel="noopener">彭博社 Opinion</a>：耐克赢回中国不能只靠打折</li>
-                <li><span class="media-date">2026-05</span><a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">《华尔街日报》</a>：中国跑鞋市场与耐克竞争</li>
-                <li><span class="media-date">2026-06</span><a href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">《日经亚洲》</a>：lululemon 长城活动与品牌声誉</li>
+            <p class="media-intl-note">具名引用节选（10 家媒体、14 篇级别）。境外官网在境内常无法打开，此处只列出处与主题；需要原文档与完整引语请见<a href="/#media">英文首页 In the Media</a>，或来信／微信索取。</p>
+            <ul class="media-archive media-archive-compact">
+                <li><span class="media-date">2026-09</span>《金融时报》· 耐克在中国失速；线上分销与定价权</li>
+                <li><span class="media-date">2026-09</span><a href="https://jingdaily.com/posts/hyrox-changes-hands-as-rivals-circle" target="_blank" rel="noopener">Jing Daily</a> · Hyrox 股权变动与中国赛事竞争</li>
+                <li><span class="media-date">2026-08</span>《金融时报》· 中喬（Qiaodan）与中国运动市场</li>
+                <li><span class="media-date">2026-07</span>CNBC · 耐克中国销售与本土竞争</li>
+                <li><span class="media-date">2026-07</span>路透社 · 折扣之后如何赢回中国消费者</li>
+                <li><span class="media-date">2026-07</span>彭博 Opinion · 耐克与中国本土品牌</li>
+                <li><span class="media-date">2026-05</span>《华尔街日报》· 中国跑鞋市场</li>
+                <li><span class="media-date">2026-06</span>《日经亚洲》· lululemon 与品牌声誉</li>
+                <li><span class="media-date">—</span>BBC、WWD 等 · 安踏出海、Curry&times;李宁等（见英文档案）</li>
             </ul>
             <h3 class="media-subhead">中文财经媒体</h3>
             <ul class="media-archive">
@@ -231,29 +240,41 @@
                 <li><span class="media-date">2026-07</span><a href="https://finance.sina.cn/cj/2026-07-29/detail-inikmqcr1600533.d.html" target="_blank" rel="noopener">《中国企业家》</a>：抢折扣鞋的跑友，逼耐克开枪了<span class="media-topic"> — 线上经销权与定价权</span></li>
                 <li><span class="media-date">2026-07</span><a href="https://mp.weixin.qq.com/s/-u0DNUl_q6ZxsIoWHSPwfQ" target="_blank" rel="noopener">剁椒Spicy</a>：耐克收回中国线上分销<span class="media-topic"> — 滔搏与渠道结构</span></li>
             </ul>
-            <p class="media-more">另见于 <a href="https://www.bbc.com/news/articles/cj9pky3ldddo" target="_blank" rel="noopener">BBC</a>、<a href="https://www.reuters.com/world/china/nikes-china-stumble-exposes-execution-gaps-2026-03-30/" target="_blank" rel="noopener">路透社</a>（2026-03）、<a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">彭博社</a>（Curry&times;李宁）等。更多英文引用见<a href="/#media">英文首页 In the Media</a>。</p>
+            <p class="media-more">中文侧更多解读见上方「公开观点」与<a href="https://www.zhihu.com/people/wei-98-49" target="_blank" rel="noopener">知乎</a>；英文侧完整档案见<a href="/#media">英文首页 In the Media</a>。</p>
         </div>
     </div>
 
     <section id="contact" class="cta-section">
         <div class="divider"></div>
         <div class="section-label">探讨合作</div>
-        <p class="cta-intro">有研究、合作或采访需求，可以直接来信，通常在一个工作日内回复。</p>
+        <h2>联系与咨询</h2>
+        <p class="cta-intro">投资机构、品牌方或媒体如有具体议题，欢迎主动联络。邮件与微信均可，请注明机构与来意，通常在一个工作日内回复。</p>
+        <p class="contact-channels">统一联络：<strong><a href="mailto:wei.kan@conduitasia.com" data-track="inquiry-email">wei.kan@conduitasia.com</a></strong><br>
+        微信：<strong class="wechat-id">wei_kan</strong>（搜索微信号添加；备注机构／媒体／品牌与议题）</p>
         <div class="cta-grid">
             <div class="cta-card">
                 <h3>投资与研究机构</h3>
                 <p>覆盖运动与消费品类的分析师，可就财报表现与行业实际运作情况预约咨询，或委托专项研究，通常配合财报窗口安排。</p>
-                <a href="mailto:wei.kan@conduitasia.com?subject=%E7%A0%94%E7%A9%B6%E5%92%A8%E8%AF%A2%20via%20conduitasia.com" data-track="research-enquiry">发起研究咨询 &rarr;</a>
+                <div class="cta-actions">
+                    <a href="mailto:wei.kan@conduitasia.com?subject=%E7%A0%94%E7%A9%B6%E5%92%A8%E8%AF%A2%20via%20conduitasia.com" data-track="research-enquiry">邮件：研究咨询 &rarr;</a>
+                    <span class="cta-alt">或微信 <span class="wechat-id">wei_kan</span>（备注机构与议题）</span>
+                </div>
             </div>
             <div class="cta-card">
                 <h3>品牌咨询</h3>
-                <p>国际品牌的中国市场业务，与中国品牌的出海定位，均可直接来信说明业务背景与要解决的问题。详细服务范畴与合作流程见<a href="/services.html" data-track="route-services">英文服务页</a>。</p>
-                <a href="mailto:wei.kan@conduitasia.com?subject=%E5%93%81%E7%89%8C%E5%92%A8%E8%AF%A2%20via%20conduitasia.com" data-track="inquiry-email">发送合作咨询 &rarr;</a>
+                <p>国际品牌的中国市场业务，与中国品牌的出海定位，均可说明业务背景与要解决的问题。详细服务范畴与合作流程见<a href="/services.html" data-track="route-services">英文服务页</a>。</p>
+                <div class="cta-actions">
+                    <a href="mailto:wei.kan@conduitasia.com?subject=%E5%93%81%E7%89%8C%E5%92%A8%E8%AF%A2%20via%20conduitasia.com" data-track="inquiry-email">邮件：品牌咨询 &rarr;</a>
+                    <span class="cta-alt">或微信 <span class="wechat-id">wei_kan</span>（备注公司与议题）</span>
+                </div>
             </div>
             <div class="cta-card">
                 <h3>媒体采访</h3>
-                <p>就中国消费趋势与运动行业的报道，提供具名评论、访谈与背景信息。国际媒体与《经济观察报》等中文财经媒体的引用记录见上方「媒体视点」。</p>
-                <a href="mailto:wei.kan@conduitasia.com?subject=%E5%AA%92%E4%BD%93%E9%87%87%E8%AE%BF%20via%20conduitasia.com" data-track="press-enquiry">发送采访邀请 &rarr;</a>
+                <p>就中国消费趋势与运动行业的报道，提供具名评论、访谈与背景信息。引用记录见上方「媒体视点」。</p>
+                <div class="cta-actions">
+                    <a href="mailto:wei.kan@conduitasia.com?subject=%E5%AA%92%E4%BD%93%E9%87%87%E8%AE%BF%20via%20conduitasia.com" data-track="press-enquiry">邮件：采访邀请 &rarr;</a>
+                    <span class="cta-alt">或微信 <span class="wechat-id">wei_kan</span>（备注媒体与选题）</span>
+                </div>
             </div>
         </div>
     </section>
@@ -261,7 +282,9 @@
     <footer>
         <div class="footer-contact">
             <a href="mailto:wei.kan@conduitasia.com" data-track="inquiry-email">wei.kan@conduitasia.com</a>
-            <a href="https://www.linkedin.com/in/weikan/" target="_blank" rel="noopener">LinkedIn</a>
+            <span>微信 wei_kan</span>
+            <a href="https://www.zhihu.com/people/wei-98-49" target="_blank" rel="noopener">知乎</a>
+            <a href="https://www.xiaohongshu.com/user/profile/65307214000000002a01a2e1" target="_blank" rel="noopener" data-track="out-xhs">小红书</a>
             <a href="/">English &rarr; conduitasia.com</a>
         </div>
         <div class="footer-locations">香港 &middot; 上海</div>
