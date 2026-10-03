@@ -3,15 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGWB67T5QD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PGWB67T5QD');
-</script>
+<script src="/ca-staff-analytics.js"></script>
+<script>caLoadGa4('G-PGWB67T5QD');</script>
 <title>China BIK Housing Allowance Tax Calculator for Expats | Conduit Asia</title>
 <meta name="description" content="Free online tool: estimate the tax-free cap on housing benefits (BIK) for expats working in China under individual income tax, and annual after-tax net cash income. Supports common 30% and 1/3 caps—for illustration only.">
 <meta name="keywords" content="expat, China, individual income tax, IIT, housing allowance, BIK, benefit in kind, tax-free cap, calculator, after-tax income, 外籍員工, 外派, 中國, 個人所得稅, 住房補貼, 免稅, 試算器">
@@ -1176,21 +1169,13 @@
 })();
 </script>
 
-<!-- GoatCounter analytics -->
-<script data-goatcounter="https://conduitasia.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script>caLoadGoatCounter('https://conduitasia.goatcounter.com/count');</script>
 
 <script>
 (function () {
   "use strict";
 
-  function gcEvent(name) {
-    try {
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({ path: name, title: "event: " + name, event: true });
-      }
-    } catch (err) { /* ignore */ }
-  }
+  function gcEvent(name) { caGcEvent(name); }
 
   window.addEventListener("load", function () {
     var langToggle = document.getElementById("langToggle");

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Staff analytics mode | Conduit Asia</title>
+  <script src="/ca-staff-analytics.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 32rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; color: #0f0f0f; }
+    a { color: #7d6b8a; }
+    code { font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <p id="msg">Loading…</p>
+  <p><a href="/">Back to home</a></p>
+  <script>
+    (function () {
+      var mode = new URLSearchParams(location.search).get('mode');
+      var msg = document.getElementById('msg');
+      try {
+        if (mode === 'on') {
+          localStorage.setItem('ca_staff', '1');
+          window.__caSkipAnalytics = true;
+          msg.textContent = 'Staff mode is ON. Your visits to conduitasia.com will not be sent to GA4 or GoatCounter (this browser only).';
+        } else if (mode === 'off') {
+          localStorage.removeItem('ca_staff');
+          window.__caSkipAnalytics = false;
+          msg.textContent = 'Staff mode is OFF. Visits are counted again.';
+        } else {
+          var on = localStorage.getItem('ca_staff') === '1';
+          msg.innerHTML = on
+            ? 'Staff mode is currently <strong>ON</strong>. <a href="?mode=off">Turn off</a>'
+            : 'Staff mode is currently <strong>off</strong>. <a href="?mode=on">Turn on</a> (use before editing the site).';
+        }
+      } catch (e) {
+        msg.textContent = 'Could not access localStorage in this browser.';
+      }
+    })();
+  </script>
+</body>
+</html>
