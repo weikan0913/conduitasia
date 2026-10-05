@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGWB67T5QD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-PGWB67T5QD');
-    </script>
+    <script src="/ca-staff-analytics.js"></script>
+    <script>caLoadGa4('G-PGWB67T5QD');</script>
     <title>Services | Conduit Asia</title>
     <meta name="description" content="Strategic advisory services for international brands in Asia and Asian brands building outside it. Strategic Reads, market briefings, advisory retainers, and market activation programs.">
     <meta name="author" content="Wei Kan">
@@ -500,17 +493,11 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 
-    <!-- GoatCounter analytics -->
-    <script data-goatcounter="https://conduitasia.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
+    <script>caLoadGoatCounter('https://conduitasia.goatcounter.com/count');</script>
     <script>
         // Track inquiry-intent and outbound clicks as GoatCounter events
         window.addEventListener('load', function () {
-            function gcEvent(name) {
-                if (window.goatcounter && window.goatcounter.count) {
-                    window.goatcounter.count({ path: name, title: 'event: ' + name, event: true });
-                }
-            }
+            function gcEvent(name) { caGcEvent(name); }
             function track(selector, name) {
                 document.querySelectorAll(selector).forEach(function (a) {
                     a.addEventListener('click', function () { gcEvent(name); });
