@@ -57,6 +57,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/conduit-visual.css">
     <style>
         :root {
             --primary-dark: #0F0F0F;
@@ -99,7 +100,7 @@
         .nav-link, .nav-contact { font-size: 13px; letter-spacing: 1px; color: var(--mid-gray); text-decoration: none; transition: color 0.3s ease; }
         .nav-link:hover, .nav-contact:hover { color: var(--dusty-violet); }
 
-        .masthead { max-width: 1200px; margin: 0 auto; padding: 140px 48px 32px; }
+        .masthead:not(.masthead--split) { max-width: 1200px; margin: 0 auto; padding: 140px 48px 32px; }
         .masthead-tagline { font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 28px; }
         .masthead h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.25; color: var(--text-light); margin-bottom: 20px; max-width: 760px; }
         .masthead p { max-width: 620px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
@@ -182,7 +183,8 @@
             .nav-links { gap: 18px; }
             .nav-link { font-size: 12px; }
             body { display: flex; flex-direction: column; }
-            .masthead { padding: 100px 24px 40px; order: -2; }
+            .hero-shell { order: -2; }
+            .masthead--split { padding: 100px 24px 40px; }
             .media-strip { margin-top: 60px; order: -1; }
             .media-strip-inner { padding: 36px 24px; }
             .media-strip-text { font-size: 15px; }
@@ -220,11 +222,23 @@
         </div>
     </nav>
 
-    <header class="masthead">
-        <div class="masthead-tagline">Asia. From the Inside.</div>
-        <h1>Conduit Asia advises sport and lifestyle brands on Asia, from the operating side.</h1>
-        <p>We advise international brands on Asia, and Asian brands going abroad. Most of it sits in China, Korea, and Japan. The judgment comes from having run brands in this category.</p>
-    </header>
+    <div class="hero-shell">
+        <div class="hero-atmosphere" aria-hidden="true">
+            <svg class="hero-watermark" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 170 L80 10 L138 170 Z" stroke="#F2F1EC" stroke-width="5" stroke-linejoin="round"/><line x1="10" y1="112" x2="150" y2="112" stroke="#F2F1EC" stroke-width="5" stroke-linecap="round"/></svg>
+            <div class="conduit-line-wrap"><svg class="conduit-line-anim" viewBox="0 0 1200 2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="2"><line x1="0" y1="1" x2="1200" y2="1" stroke="#7D6B8A" stroke-width="2" stroke-linecap="round"/></svg></div>
+        </div>
+        <header class="masthead masthead--split">
+            <div class="masthead-copy">
+                <div class="masthead-tagline">Asia. From the Inside.</div>
+                <h1>Conduit Asia advises sport and lifestyle brands on Asia, from the operating side.</h1>
+                <p>We advise international brands on Asia, and Asian brands going abroad. Most of it sits in China, Korea, and Japan. The judgment comes from having run brands in this category.</p>
+            </div>
+            <figure class="masthead-portrait fade-in">
+                <img src="/wei-kan-photo.jpg" width="560" height="700" alt="Wei Kan, founder of Conduit Asia">
+                <figcaption>Wei Kan · Founder</figcaption>
+            </figure>
+        </header>
+    </div>
 
     <section class="judgment">
         <div class="judgment-header fade-in">
@@ -234,18 +248,21 @@
         </div>
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7503080645649391616/" target="_blank" rel="noopener" class="card-thumb card-thumb--nike" aria-hidden="true"><span class="card-thumb-label">Nike China</span></a>
                 <div class="judgment-meta">September 2026 &middot; Nike China</div>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7503080645649391616/" target="_blank" rel="noopener" class="judgment-title">How I Read Nike's China Business From Here</a>
                 <p>Almost everything written about Nike that week looked backward. The reset has the right pieces, centralizing the marketplace and localizing product, but perception lags the fix and the margin for error has vanished.</p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7503080645649391616/" target="_blank" rel="noopener" class="judgment-source">Read on LinkedIn &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7504871823201841152/" target="_blank" rel="noopener" class="card-thumb card-thumb--hyrox" aria-hidden="true"><span class="card-thumb-label">HYROX</span></a>
                 <div class="judgment-meta">September 2026 &middot; HYROX</div>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7504871823201841152/" target="_blank" rel="noopener" class="judgment-title">HYROX Beijing and the Fairness Question</a>
                 <p>Athletes were penalized for pouring water on their heads to cool down. After what happened on the floor, the thread asked whether those penalties still stand. Same rules for everyone.</p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7504871823201841152/" target="_blank" rel="noopener" class="judgment-source">Read on LinkedIn &rarr;</a>
             </article>
             <article class="judgment-card fade-in">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7510629108448428034/" target="_blank" rel="noopener" class="card-thumb card-thumb--athleisure" aria-hidden="true"><span class="card-thumb-label">Shanghai</span></a>
                 <div class="judgment-meta">September 2026 &middot; NikeSkims &amp; Alo</div>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7510629108448428034/" target="_blank" rel="noopener" class="judgment-title">Can Kris Jenner Bring Nike China Luck?</a>
                 <p>Shanghai staged NikeSkims and Alo openings within 48 hours, half a kilometer apart in Jing'an. Once the red carpet lights go off, the two strategies diverge.</p>
@@ -258,6 +275,19 @@
         <div class="media-strip-inner">
             <div class="media-strip-label">In the Media</div>
             <p class="media-strip-intro">Wei Kan, founder of Conduit Asia, a sports and lifestyle brand strategy consultancy, is a regular named source on China consumer and sport markets. The placements below are only the most recent. The full record runs longer, across the outlets listed underneath.</p>
+            <div class="outlet-row" aria-label="Outlets that have quoted Conduit Asia">
+                <span class="outlet-row-label">Quoted in</span>
+                <span class="outlet-word">Financial Times</span>
+                <span class="outlet-word">Bloomberg</span>
+                <span class="outlet-word">Reuters</span>
+                <span class="outlet-word">CNBC</span>
+                <span class="outlet-word">Wall Street Journal</span>
+                <span class="outlet-word">BBC</span>
+                <span class="outlet-word">Nikkei Asia</span>
+                <span class="outlet-word">Jing Daily</span>
+                <span class="outlet-word">Footwear News</span>
+                <span class="outlet-word">Het Financieele Dagblad</span>
+            </div>
             <div class="media-grid">
                 <article class="media-card">
                     <div class="media-card-meta">Jing Daily &middot; September 2026</div>
