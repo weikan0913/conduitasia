@@ -1,224 +1,56 @@
-/* Conduit Asia — shared visual layer (hero atmosphere, cards, media row) */
+/* Conduit Asia — shared visual layer (palette-only accents) */
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-atmosphere .conduit-line-anim,
     .cn-masthead-accent .conduit-line-anim {
         animation: none !important;
     }
 }
 
-/* —— A: Hero atmosphere —— */
-.hero-shell {
-    position: relative;
-    isolation: isolate;
-}
-
-.hero-atmosphere {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.hero-atmosphere::before {
-    content: "";
-    position: absolute;
-    inset: -20% -10% auto -10%;
-    height: 85%;
-    background: radial-gradient(ellipse 70% 55% at 72% 28%, rgba(125, 107, 138, 0.14) 0%, transparent 68%);
-}
-
-.hero-atmosphere::after {
-    content: "";
-    position: absolute;
-    left: -15%;
-    bottom: 5%;
-    width: 55%;
-    height: 40%;
-    background: radial-gradient(circle at 30% 50%, rgba(242, 241, 236, 0.04) 0%, transparent 70%);
-}
-
-.hero-watermark {
-    position: absolute;
-    right: 2%;
-    top: 8%;
-    width: min(380px, 42vw);
-    height: auto;
-    opacity: 0.045;
-}
-
-.conduit-line-wrap {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 42%;
-    height: 2px;
-    overflow: hidden;
-    opacity: 0.35;
-}
-
-.conduit-line-anim {
-    width: 140%;
-    margin-left: -20%;
-    animation: conduit-drift 32s ease-in-out infinite alternate;
-}
-
-@keyframes conduit-drift {
-    from { transform: translateX(-3%); }
-    to { transform: translateX(3%); }
-}
-
-.hero-shell .masthead {
-    position: relative;
-    z-index: 1;
-}
-
-.masthead--split {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
-    gap: 48px;
+/* Substack-style founder mark (below the fold) */
+.founder-byline {
+    display: flex;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 140px 48px 48px;
+    gap: 16px;
+    margin-bottom: 28px;
+    max-width: 680px;
 }
 
-.masthead--split .masthead-copy {
-    min-width: 0;
-}
-
-.masthead--split .masthead-tagline,
-.masthead--split h1,
-.masthead--split p {
-    max-width: none;
-}
-
-.masthead--split h1 {
-    max-width: 760px;
-}
-
-.masthead--split p {
-    max-width: 620px;
-}
-
-/* —— B: Portrait —— */
-.masthead-portrait {
-    justify-self: end;
-    width: 100%;
-    max-width: 280px;
-}
-
-.masthead-portrait img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 5;
+.founder-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: center 18%;
-    border: 1px solid rgba(125, 107, 138, 0.35);
-    box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.65);
+    object-position: center 20%;
+    border: 1px solid rgba(136, 136, 128, 0.35);
+    flex-shrink: 0;
 }
 
-.masthead-portrait figcaption {
-    margin-top: 12px;
-    font-size: 11px;
+.founder-byline-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.founder-name {
+    font-family: "Playfair Display", "Noto Serif SC", Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #f2f1ec;
+    letter-spacing: 0.02em;
+}
+
+.founder-role {
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888880;
-    text-align: right;
 }
 
-/* —— C: Card thumbnails —— */
-.card-thumb {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 18px;
-    border: 1px solid rgba(136, 136, 128, 0.2);
+.cn-page .founder-name {
+    font-family: "Noto Serif SC", "Songti SC", serif;
 }
 
-.card-thumb-label {
-    position: absolute;
-    left: 12px;
-    bottom: 10px;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(242, 241, 236, 0.85);
-    z-index: 1;
-}
-
-.card-thumb::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg, rgba(15, 15, 15, 0.15) 0%, rgba(15, 15, 15, 0.55) 100%);
-    z-index: 0;
-}
-
-.card-thumb--nike {
-    background: linear-gradient(135deg, #1a1a1a 0%, #3d3544 45%, #7d6b8a 100%);
-}
-
-.card-thumb--hyrox {
-    background: linear-gradient(135deg, #141820 0%, #2a3340 50%, #5c6b7a 100%);
-}
-
-.card-thumb--athleisure {
-    background: linear-gradient(135deg, #1c1816 0%, #4a3f38 40%, #8a7a6e 100%);
-}
-
-.card-thumb--substack {
-    background: linear-gradient(135deg, #121212 0%, #2a2430 55%, #6b5c78 100%);
-}
-
-.card-thumb--medium {
-    background: linear-gradient(135deg, #0f0f0f 0%, #252520 50%, #888880 100%);
-}
-
-.card-thumb--mark {
-    background: #0f0f0f;
-}
-
-.card-thumb--mark svg {
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 42%;
-    height: auto;
-    opacity: 0.35;
-}
-
-.judgment-card .card-thumb {
-    margin-bottom: 16px;
-}
-
-.article-card-with-thumb {
-    display: grid;
-    grid-template-columns: 140px minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
-}
-
-.article-card-with-thumb .card-thumb {
-    margin-bottom: 0;
-    aspect-ratio: 1 / 1;
-}
-
-.article-card-with-thumb:hover {
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-.article-card-with-thumb .article-card-body {
-    display: block;
-    min-width: 0;
-}
-
-/* —— D: Media outlet wordmarks —— */
+/* Media outlet wordmarks */
 .outlet-row {
     display: flex;
     flex-wrap: wrap;
@@ -227,12 +59,6 @@
     margin-bottom: 36px;
     padding-bottom: 28px;
     border-bottom: 1px solid rgba(15, 15, 15, 0.12);
-}
-
-.outlet-row--dark {
-    border-bottom-color: rgba(242, 241, 236, 0.12);
-    margin-bottom: 28px;
-    padding-bottom: 24px;
 }
 
 .outlet-word {
@@ -249,11 +75,6 @@
     color: rgba(15, 15, 15, 0.45);
 }
 
-.outlet-row--dark .outlet-word {
-    color: rgba(242, 241, 236, 0.38);
-    font-family: "Noto Serif SC", "Noto Sans SC", serif;
-}
-
 .outlet-row-label {
     width: 100%;
     font-size: 10px;
@@ -263,10 +84,9 @@
     margin-bottom: 4px;
 }
 
-/* —— F: Chinese page accents —— */
+/* Chinese page: light structure only */
 .cn-page .cn-masthead-wrap {
     position: relative;
-    overflow: hidden;
 }
 
 .cn-masthead-accent {
@@ -274,16 +94,20 @@
     inset: 0;
     pointer-events: none;
     z-index: 0;
+    overflow: hidden;
 }
 
-.cn-masthead-accent::before {
-    content: "";
+.cn-masthead-accent .conduit-line-wrap {
     position: absolute;
-    right: -20%;
-    top: -30%;
-    width: 65%;
-    height: 90%;
-    background: radial-gradient(ellipse at center, rgba(125, 107, 138, 0.1) 0%, transparent 70%);
+    left: 0;
+    right: 0;
+    top: 55%;
+    height: 2px;
+    opacity: 0.2;
+}
+
+.conduit-line-anim {
+    width: 100%;
 }
 
 .cn-page .masthead {
@@ -298,52 +122,19 @@
 
 .cn-page section#firm {
     border-top: none;
-    padding-top: 56px;
 }
 
 .cn-page .media-band {
     border-top: 1px solid rgba(15, 15, 15, 0.08);
 }
 
-@media (max-width: 900px) {
-    .masthead--split {
-        grid-template-columns: 1fr;
-        gap: 36px;
-        padding-top: 110px;
-    }
-
-    .masthead-portrait {
-        max-width: 220px;
-        justify-self: start;
-    }
-
-    .hero-watermark {
-        opacity: 0.03;
-        right: -8%;
-    }
-
-    .article-card-with-thumb {
-        grid-template-columns: 100px minmax(0, 1fr);
-        gap: 18px;
-    }
-}
-
 @media (max-width: 768px) {
-    .masthead--split {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
     .outlet-row {
         gap: 8px 16px;
     }
 
-    .article-card-with-thumb {
-        grid-template-columns: 1fr;
-    }
-
-    .article-card-with-thumb .card-thumb {
-        aspect-ratio: 16 / 9;
-        max-width: 280px;
+    .founder-avatar {
+        width: 64px;
+        height: 64px;
     }
 }
