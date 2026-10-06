@@ -32,6 +32,9 @@
 
   global.__caSkipAnalytics = isStaffMode();
 
+  /** GA4 web stream for Conduit Asia website (must match Admin → Data streams). */
+  var CA_GA4_MEASUREMENT_ID = 'G-R2EPSB6JE9';
+
   global.caLoadGa4 = function (measurementId) {
     if (global.__caSkipAnalytics || !measurementId) return;
     var s = global.document.createElement('script');
@@ -47,6 +50,10 @@
     global.gtag = gtag;
     gtag('js', new Date());
     gtag('config', measurementId);
+  };
+
+  global.caLoadConduitGa4 = function () {
+    global.caLoadGa4(CA_GA4_MEASUREMENT_ID);
   };
 
   global.caLoadGoatCounter = function (endpoint) {
