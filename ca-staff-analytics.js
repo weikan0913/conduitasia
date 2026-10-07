@@ -33,7 +33,7 @@
   global.__caSkipAnalytics = isStaffMode();
 
   /** GA4 web stream for Conduit Asia website (must match Admin → Data streams). */
-  var CA_GA4_MEASUREMENT_ID = 'G-R2EPSB6JE9';
+  var CA_GA4_MEASUREMENT_ID = 'G-PGWB67T5QD';
 
   global.caLoadGa4 = function (measurementId) {
     if (global.__caSkipAnalytics || !measurementId) return;

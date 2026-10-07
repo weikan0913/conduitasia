@@ -28,6 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/conduit-visual.css">
     <style>
         :root {
             --primary-dark: #0F0F0F;
@@ -257,6 +258,10 @@
         <h1>Services</h1>
         <p class="hero-intro">We advise sport and lifestyle brands on decisions they have already committed to making. The engagement is sized to the question.</p>
         <p class="hero-intro">When the work reaches execution, regional partners deliver it against the same brief.</p>
+        <div class="hero-inquiry">
+            <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="cta-primary">Send an inquiry &rarr;</a>
+            <a href="mailto:wei.kan@conduitasia.com?subject=Engagement%20enquiry%20via%20conduitasia.com" class="hero-inquiry-email">wei.kan@conduitasia.com</a>
+        </div>
     </section>
 
     <div class="section-divider"><div class="line"></div></div>
@@ -459,7 +464,7 @@
             <h2 class="cta-title">The intake form is short.</h2>
             <p class="cta-lead">A response follows with next steps and the fee where it applies. Every inquiry is read and answered within two business days. Conversations are confidential, with or without an engagement.</p>
             <div class="cta-buttons">
-                <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="cta-primary">Send an inquiry &rarr;</a>
+                <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="cta-primary" data-track="inquiry-tally">Send an inquiry &rarr;</a>
             </div>
         </div>
     </section>
@@ -491,11 +496,35 @@
         <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
     </footer>
 
+    <div class="inquiry-dock" id="inquiry-dock" aria-hidden="true">
+        <div class="inquiry-dock-inner">
+            <span class="inquiry-dock-label">Engagements</span>
+            <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="inquiry-dock-primary" data-track="inquiry-tally">Send inquiry</a>
+            <a href="mailto:wei.kan@conduitasia.com?subject=Engagement%20enquiry%20via%20conduitasia.com">Email</a>
+            <a href="/services.html#start">Form on page</a>
+        </div>
+    </div>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        (function () {
+            var dock = document.getElementById('inquiry-dock');
+            var start = document.getElementById('start');
+            if (!dock || !start) return;
+            var showDock = function () {
+                var rect = start.getBoundingClientRect();
+                var pastHero = window.scrollY > 420;
+                var startVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                dock.classList.toggle('is-visible', pastHero && !startVisible);
+                dock.setAttribute('aria-hidden', pastHero && !startVisible ? 'false' : 'true');
+            };
+            window.addEventListener('scroll', showDock, { passive: true });
+            showDock();
+        })();
     </script>
 
     <script>caLoadGoatCounter('https://conduitasia.goatcounter.com/count');</script>

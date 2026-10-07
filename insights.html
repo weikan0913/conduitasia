@@ -218,6 +218,17 @@
         <p class="hero-intro">Longer pieces run on Medium, and the newsletter on Substack carries shorter notes as they happen.</p>
     </section>
 
+    <div class="inquiry-strip fade-in">
+        <div class="inquiry-strip-inner">
+            <p class="inquiry-strip-text">For brand engagements, research consultations, or press background, start on the services page or send a short note.</p>
+            <div class="inquiry-strip-actions">
+                <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="inquiry-strip-primary" data-track="inquiry-tally">Send inquiry</a>
+                <a href="/services.html#start" class="inquiry-strip-link" data-track="route-services">Services &amp; scope &rarr;</a>
+                <a href="/insights.html#enquiries" class="inquiry-strip-link">Research &amp; press &rarr;</a>
+            </div>
+        </div>
+    </div>
+
     <div class="subscribe-line fade-in">
         <p>New work goes out by email before it appears here. <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="newsletter-subscribe">Subscribe &rarr;</a></p>
     </div>
@@ -317,7 +328,8 @@
                 <div class="enquiry-block">
                     <h3>Brands</h3>
                     <p>We advise brands on decisions they have already committed to making.</p>
-                    <a href="/services.html" class="enquiry-link" data-track="route-services">See how engagements work &rarr;</a>
+                    <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="enquiry-link" data-track="inquiry-tally">Send an inquiry &rarr;</a>
+                    <a href="/services.html#start" class="enquiry-link" data-track="route-services" style="margin-top: 12px;">See scope and process &rarr;</a>
                 </div>
                 <div class="enquiry-block">
                     <h3>Research</h3>
@@ -447,11 +459,35 @@
         <div class="footer-legal">&copy; 2026 Conduit International Limited. All rights reserved.</div>
     </footer>
 
+    <div class="inquiry-dock" id="inquiry-dock" aria-hidden="true">
+        <div class="inquiry-dock-inner">
+            <span class="inquiry-dock-label">Enquiries</span>
+            <a href="https://tally.so/r/VL1ekE" target="_blank" rel="noopener" class="inquiry-dock-primary" data-track="inquiry-tally">Send inquiry</a>
+            <a href="mailto:wei.kan@conduitasia.com?subject=Engagement%20enquiry%20via%20conduitasia.com">Email</a>
+            <a href="/services.html#start">Services</a>
+        </div>
+    </div>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        (function () {
+            var dock = document.getElementById('inquiry-dock');
+            var anchor = document.getElementById('enquiries');
+            if (!dock || !anchor) return;
+            var showDock = function () {
+                var rect = anchor.getBoundingClientRect();
+                var pastHero = window.scrollY > 360;
+                var anchorVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                dock.classList.toggle('is-visible', pastHero && !anchorVisible);
+                dock.setAttribute('aria-hidden', pastHero && !anchorVisible ? 'false' : 'true');
+            };
+            window.addEventListener('scroll', showDock, { passive: true });
+            showDock();
+        })();
     </script>
 
     <script>caLoadGoatCounter('https://conduitasia.goatcounter.com/count');</script>
