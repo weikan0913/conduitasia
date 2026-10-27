@@ -133,9 +133,17 @@
         .judgment-header .divider { margin-bottom: 24px; }
         .judgment-header .section-label { margin-bottom: 14px; }
         .judgment-intro { font-size: 15px; line-height: 1.8; color: var(--mid-gray); max-width: 640px; }
-        .judgment-intro a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid rgba(136, 136, 128, 0.45); transition: color 0.3s ease, border-color 0.3s ease; }
-        .judgment-intro a:visited { color: var(--text-light); }
-        .judgment-intro a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
+        .judgment-intro a,
+        .judgment-intro a:link,
+        .judgment-intro a:visited,
+        .judgment-intro a:active,
+        .judgment-intro a:any-link {
+            color: var(--mid-gray);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(136, 136, 128, 0.35);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .judgment-intro a:hover { color: var(--text-light); border-bottom-color: var(--dusty-violet); }
         .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
         .judgment-card { background: transparent; padding: 28px 0 0; border-top: 1px solid rgba(136, 136, 128, 0.25); display: flex; flex-direction: column; }
         .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
@@ -234,7 +242,7 @@
         <div class="judgment-header fade-in">
             <div class="divider"></div>
             <div class="section-label">Latest</div>
-            <p class="judgment-intro">From the Inside runs a weekday digest on Substack (Mondays and Fridays) and the visual cut on Instagram @fromtheinside.asia. LinkedIn still carries event-led takes. These three are from October 2026. More on the insights page.</p>
+            <p class="judgment-intro">From the Inside runs a weekday digest on Substack (Mondays and Fridays) and the visual cut on Instagram (fromtheinside.asia). LinkedIn still carries event-led takes. These three are from October 2026. More on the <a href="/insights.html">insights page</a>.</p>
         </div>
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
