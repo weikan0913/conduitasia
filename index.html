@@ -133,6 +133,9 @@
         .judgment-header .divider { margin-bottom: 24px; }
         .judgment-header .section-label { margin-bottom: 14px; }
         .judgment-intro { font-size: 15px; line-height: 1.8; color: var(--mid-gray); max-width: 640px; }
+        .judgment-intro a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid rgba(136, 136, 128, 0.45); transition: color 0.3s ease, border-color 0.3s ease; }
+        .judgment-intro a:visited { color: var(--text-light); }
+        .judgment-intro a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
         .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
         .judgment-card { background: transparent; padding: 28px 0 0; border-top: 1px solid rgba(136, 136, 128, 0.25); display: flex; flex-direction: column; }
         .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
@@ -231,7 +234,7 @@
         <div class="judgment-header fade-in">
             <div class="divider"></div>
             <div class="section-label">Latest</div>
-            <p class="judgment-intro"><a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">From the Inside</a> on Substack now runs a weekday digest (Mondays and Fridays) alongside longer reads. LinkedIn still carries event-led takes. These three are from October 2026. More on the insights page.</p>
+            <p class="judgment-intro">From the Inside runs a weekday digest on Substack (Mondays and Fridays) and the visual cut on Instagram @fromtheinside.asia. LinkedIn still carries event-led takes. These three are from October 2026. More on the insights page.</p>
         </div>
         <div class="judgment-grid">
             <article class="judgment-card fade-in">
@@ -384,6 +387,7 @@
                 <a href="https://www.linkedin.com/in/weikan/" target="_blank">LinkedIn</a>
                 <a href="https://medium.com/@wei.kan" target="_blank">Medium</a>
                 <a href="https://weikan.substack.com" target="_blank" data-track="out-substack">Newsletter</a>
+                <a href="https://www.instagram.com/fromtheinside.asia/" target="_blank" rel="noopener" data-track="out-instagram">From the Inside · Instagram</a>
                 <a href="/services.html">Services</a>
                 <a href="/insights.html">Insights</a>
                 <a href="/cn.html">中文</a>
@@ -420,6 +424,7 @@
             track('a[data-track="newsletter-subscribe"]', 'newsletter-subscribe');
             track('a[href*="substack.com"]:not([data-track="out-substack-post"])', 'out-substack');
             track('a[data-track="out-substack-post"]', 'out-substack-post');
+            track('a[data-track="out-instagram"]', 'out-instagram');
             track('a[href*="medium.com"]', 'out-medium');
             track('a[href*="bloomberg.com"], a[href*="wsj.com"], a[href*="reuters.com"], a[href*="bbc.com"], a[href*="nikkei.com"], a[href*="wwd.com"], a[href*="fd.nl"], a[href*="ft.com"], a[href*="jingdaily.com"]', 'out-media');
             track('a[data-track="research-enquiry"]', 'research-enquiry');
