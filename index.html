@@ -144,6 +144,43 @@
             transition: color 0.3s ease, border-color 0.3s ease;
         }
         .judgment-intro a:hover { color: var(--text-light); border-bottom-color: var(--dusty-violet); }
+
+        .fti-feature { margin-bottom: 52px; }
+        .fti-feature-main {
+            display: grid;
+            grid-template-columns: minmax(200px, 42%) 1fr;
+            gap: 0;
+            text-decoration: none;
+            color: inherit;
+            background: var(--card-dark);
+            border: 1px solid rgba(136, 136, 128, 0.22);
+            transition: border-color 0.3s ease;
+        }
+        .fti-feature-main:hover { border-color: rgba(125, 107, 138, 0.55); }
+        .fti-feature-main:hover .fti-feature-cta { color: var(--dusty-violet); }
+        .fti-feature-main:hover .fti-feature-title { color: var(--dusty-violet); }
+        .fti-feature-media { position: relative; overflow: hidden; min-height: 220px; background: #1A1A1A; }
+        .fti-feature-media img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px; }
+        .fti-feature-body { padding: 32px 36px 28px; display: flex; flex-direction: column; justify-content: center; }
+        .fti-feature-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+        .fti-feature-brand img { width: 44px; height: 44px; border-radius: 6px; flex-shrink: 0; }
+        .fti-feature-brand-text { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--text-light); line-height: 1.2; }
+        .fti-feature-kicker { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 12px; }
+        .fti-feature-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(20px, 2vw, 26px); line-height: 1.3; color: var(--text-light); margin-bottom: 12px; transition: color 0.3s ease; }
+        .fti-feature-dek { font-size: 15px; line-height: 1.75; color: var(--mid-gray); margin-bottom: 20px; max-width: 520px; }
+        .fti-feature-cta { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(136, 136, 128, 0.9); transition: color 0.3s ease; }
+        .fti-feature-more { margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--mid-gray); }
+        .fti-feature-more a,
+        .fti-feature-more a:link,
+        .fti-feature-more a:visited,
+        .fti-feature-more a:any-link {
+            color: var(--mid-gray);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(136, 136, 128, 0.35);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .fti-feature-more a:hover { color: var(--text-light); border-bottom-color: var(--dusty-violet); }
+
         .judgment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
         .judgment-card { background: transparent; padding: 28px 0 0; border-top: 1px solid rgba(136, 136, 128, 0.25); display: flex; flex-direction: column; }
         .judgment-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 14px; }
@@ -200,6 +237,10 @@
             .media-strip-text { font-size: 15px; }
             .media-grid { grid-template-columns: 1fr; gap: 28px; }
             .judgment { padding: 60px 24px 0; }
+            .fti-feature-main { grid-template-columns: 1fr; }
+            .fti-feature-body { padding: 28px 24px 24px; }
+            .fti-feature-media { min-height: 200px; }
+            .fti-feature-media img { min-height: 200px; max-height: 280px; }
             .judgment-grid { grid-template-columns: 1fr; gap: 36px; }
             .uses { padding: 60px 24px; }
             .uses-grid { grid-template-columns: 1fr; }
@@ -242,15 +283,27 @@
         <div class="judgment-header fade-in">
             <div class="divider"></div>
             <div class="section-label">Latest</div>
-            <p class="judgment-intro">From the Inside runs a weekday digest on Substack (Mondays and Fridays) and the visual cut on Instagram (fromtheinside.asia). LinkedIn still carries event-led takes. These three are from October 2026. More on the <a href="/insights.html">insights page</a>.</p>
+            <p class="judgment-intro">LinkedIn carries event-led takes. The publication card below is the weekday digest; three more reads follow. Archive on the <a href="/insights.html">insights page</a>.</p>
+        </div>
+        <div class="fti-feature fade-in">
+            <a class="fti-feature-main" href="https://weikan.substack.com/p/china-sponsors-cut-mbappe-anta-li" target="_blank" rel="noopener" data-track="out-substack-post">
+                <div class="fti-feature-media">
+                    <img src="/assets/from-the-inside-digest-feature-2026-10-27.png" width="640" height="640" alt="From the Inside digest: Mbappé sponsor cuts in China" loading="lazy">
+                </div>
+                <div class="fti-feature-body">
+                    <div class="fti-feature-brand">
+                        <img src="/assets/from-the-inside-logo-512.png" width="44" height="44" alt="">
+                        <span class="fti-feature-brand-text">From the Inside</span>
+                    </div>
+                    <div class="fti-feature-kicker">Weekday digest &middot; October 2026</div>
+                    <h3 class="fti-feature-title">China Sponsors Cut Mbapp&eacute;; Anta, Li-Ning, and Yue Yuen Mark the Same Slow Week</h3>
+                    <p class="fti-feature-dek">Mondays and Fridays on Substack. Mbapp&eacute; exits, HKEX Q3 reads, Yue Yuen, and early Double 11 shelf signals for Greater China sportswear.</p>
+                    <span class="fti-feature-cta">Read the digest &rarr;</span>
+                </div>
+            </a>
+            <p class="fti-feature-more">Also: <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Subscribe on Substack</a> &middot; <a href="https://www.instagram.com/fromtheinside.asia/" target="_blank" rel="noopener" data-track="out-instagram">Instagram fromtheinside.asia</a> (visual cut)</p>
         </div>
         <div class="judgment-grid">
-            <article class="judgment-card fade-in">
-                <div class="judgment-meta">October 2026 &middot; Weekday digest</div>
-                <a href="https://weikan.substack.com/p/china-sponsors-cut-mbappe-anta-li" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">China Sponsors Cut Mbapp&eacute;; Anta, Li-Ning, and Yue Yuen Mark the Same Slow Week</a>
-                <p>Mbapp&eacute; sponsor exits, HKEX Q3 retail reads, Yue Yuen&rsquo;s factory alert, and early Double 11 shelf signals in one digest for Greater China sportswear.</p>
-                <a href="https://weikan.substack.com/p/china-sponsors-cut-mbappe-anta-li" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
-            </article>
             <article class="judgment-card fade-in">
                 <div class="judgment-meta">October 2026 &middot; Anta &amp; PUMA</div>
                 <a href="https://weikan.substack.com/p/antas-core-brands-turn-negative-just" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">Anta&rsquo;s Core Brands Turn Negative, Just as It Takes a Seat at PUMA&rsquo;s Table</a>
