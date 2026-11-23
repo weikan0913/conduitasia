@@ -30,7 +30,6 @@ body.cn-page a:link, body.cn-page a:visited { color: var(--text-light); }
     color: var(--dusty-violet);
     border-bottom-color: var(--dusty-violet);
 }
-.media-band a:link, .media-band a:visited { color: var(--text-dark); }
 .logo-mark svg { height: 32px; width: auto; }
 .preview-banner {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -134,8 +133,22 @@ section { max-width: 860px; margin: 0 auto; padding: 48px 48px 0; }
 .cta-card a:hover { color: var(--dusty-violet); }
 .media-band { background: var(--warm-white); margin-top: 56px; }
 .media-band-inner { max-width: 860px; margin: 0 auto; padding: 52px 48px; }
-.media-band p { font-size: 16px; line-height: 2; color: var(--text-dark); max-width: 700px; }
-.media-band a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(15,15,15,0.3); }
+.media-band p,
+.media-band li,
+.media-band .media-intro,
+.media-band .media-intl-note,
+.media-band .media-more { font-size: 16px; line-height: 2; color: var(--text-dark); max-width: 700px; }
+.media-band .section-label { color: var(--dusty-violet); }
+body.cn-page .media-band a:link,
+body.cn-page .media-band a:visited {
+    color: var(--text-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(15, 15, 15, 0.3);
+}
+body.cn-page .media-band a:hover {
+    color: var(--dusty-violet);
+    border-bottom-color: var(--dusty-violet);
+}
 .media-subhead { font-family: 'Noto Serif SC', serif; font-size: 17px; color: var(--text-dark); margin: 28px 0 14px; }
 .media-archive { list-style: none; margin: 0 0 8px; padding: 0; max-width: 720px; }
 .media-archive li { font-size: 15px; line-height: 1.85; color: var(--text-dark); margin-bottom: 12px; }
