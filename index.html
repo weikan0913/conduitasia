@@ -137,8 +137,20 @@
         .masthead-tagline { font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 28px; }
         .masthead h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.25; color: var(--text-light); margin-bottom: 20px; max-width: 760px; }
         .masthead p { max-width: 620px; font-size: 16px; line-height: 1.8; color: var(--mid-gray); }
+        .hero-actions { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+        .hero-cta-primary {
+            display: inline-block; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+            padding: 12px 20px; background: var(--dusty-violet); color: var(--text-light);
+            text-decoration: none; transition: opacity 0.3s ease;
+        }
+        .hero-cta-primary:hover { opacity: 0.92; color: var(--text-light); }
+        .hero-cta-secondary {
+            font-size: 14px; color: var(--mid-gray); text-decoration: none;
+            border-bottom: 1px solid rgba(136, 136, 128, 0.4); transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .hero-cta-secondary:hover { color: var(--text-light); border-bottom-color: var(--dusty-violet); }
 
-        .media-strip { background: var(--warm-white); max-width: none; margin: 90px 0 0; padding: 0; }
+        .media-strip { background: var(--warm-white); max-width: none; margin: 56px 0 0; padding: 0; }
         .media-strip-inner {
             max-width: 1200px; margin: 0 auto;
             padding: 44px 48px;
@@ -149,6 +161,10 @@
         .media-strip-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
         .media-strip-intro { font-size: 16px; line-height: 1.75; color: var(--text-dark); max-width: 920px; margin-bottom: 40px; }
         .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 44px; }
+        .media-grid-compact { grid-template-columns: 1fr; gap: 28px; max-width: 720px; margin-bottom: 24px; }
+        .media-strip-more { font-size: 14px; line-height: 1.7; color: rgba(15, 15, 15, 0.72); max-width: 720px; }
+        .media-strip-more a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(15, 15, 15, 0.25); }
+        .media-strip-more a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
         .media-card { border-top: 1px solid rgba(15, 15, 15, 0.15); padding-top: 22px; display: flex; flex-direction: column; }
         .media-card-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 12px; }
         .media-card-title { display: block; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 19px; line-height: 1.35; color: var(--text-dark); text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
@@ -161,8 +177,11 @@
         .divider { width: 24px; height: 3px; background: var(--dusty-violet); }
         .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--dusty-violet); margin-bottom: 16px; }
 
-        .judgment { max-width: 1200px; margin: 0 auto; padding: 64px 48px 0; }
-        .judgment-header { margin-bottom: 44px; max-width: 720px; }
+        .judgment { max-width: 1200px; margin: 0 auto; padding: 56px 48px 0; }
+        .judgment-header { margin-bottom: 28px; max-width: 720px; }
+        .judgment-outro { font-size: 14px; line-height: 1.75; color: var(--mid-gray); margin-top: 32px; max-width: 640px; }
+        .judgment-outro a { color: var(--text-light); text-decoration: none; border-bottom: 1px solid rgba(242, 241, 236, 0.35); }
+        .judgment-outro a:hover { color: var(--dusty-violet); border-bottom-color: var(--dusty-violet); }
         .judgment-header .divider { margin-bottom: 24px; }
         .judgment-header .section-label { margin-bottom: 14px; }
         .judgment-intro { font-size: 15px; line-height: 1.8; color: var(--mid-gray); max-width: 640px; }
@@ -232,7 +251,7 @@
         .judgment-source { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(136, 136, 128, 0.8); text-decoration: none; padding-top: 16px; border-top: 1px solid rgba(136, 136, 128, 0.2); transition: color 0.3s ease; }
         .judgment-source:hover { color: var(--dusty-violet); }
 
-        .uses { max-width: 1200px; margin: 0 auto; padding: 90px 48px; }
+        .uses { max-width: 1200px; margin: 0 auto; padding: 48px 48px 72px; }
         .uses-header { margin-bottom: 44px; }
         .uses-header .divider { margin-bottom: 24px; }
         .uses-header .section-label { margin-bottom: 0; }
@@ -259,7 +278,12 @@
         .about-text a:hover { color: var(--dusty-violet); }
         .about-compliance { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(136, 136, 128, 0.2); font-size: 13px; line-height: 1.75; color: rgba(136, 136, 128, 0.9); max-width: 680px; }
 
-        .faq { max-width: 1200px; margin: 0 auto; padding: 0 48px 90px; }
+        .home-cta { max-width: 1200px; margin: 0 auto; padding: 0 48px 72px; }
+        .home-cta-inner { max-width: 720px; padding-top: 40px; border-top: 1px solid rgba(136, 136, 128, 0.2); }
+        .home-cta-inner h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(24px, 3vw, 32px); color: var(--text-light); margin: 16px 0 14px; }
+        .home-cta-inner p { font-size: 15px; line-height: 1.85; color: var(--mid-gray); margin-bottom: 22px; max-width: 640px; }
+
+        .faq { max-width: 1200px; margin: 0 auto; padding: 0 48px 56px; }
         .faq-header { margin-bottom: 40px; max-width: 720px; }
         .faq-header .divider { margin-bottom: 24px; }
         .faq-list { max-width: 720px; display: flex; flex-direction: column; gap: 36px; }
@@ -289,7 +313,7 @@
             .nav-link { font-size: 12px; }
             body { display: flex; flex-direction: column; }
             .masthead { padding: 100px 24px 40px; order: -2; }
-            .media-strip { margin-top: 60px; order: -1; }
+            .media-strip { margin-top: 48px; }
             .media-strip-inner { padding: 36px 24px; }
             .media-strip-text { font-size: 15px; }
             .media-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -333,135 +357,13 @@
         <div class="masthead-tagline">Asia. From the Inside.</div>
         <h1>Commercial judgment for sport and lifestyle brands, from the operating side.</h1>
         <p>Conduit Asia is a strategy and advisory practice based in Hong Kong and Shanghai. Asia is not a single market; China, Korea, Japan, and Southeast Asia run on distinct channel economics, consumer sentiment, and retail calendars. We advise brand and commercial leaders on critical decisions, drawing judgment from decades of actually running brands and building categories in this region, rather than standing on the outside.</p>
+        <div class="hero-actions fade-in">
+            <a href="#work" class="hero-cta-primary" data-track="route-services">How we work &rarr;</a>
+            <a href="/insights.html" class="hero-cta-secondary">Read From the Inside &rarr;</a>
+        </div>
     </header>
 
-    <section class="judgment">
-        <div class="judgment-header fade-in">
-            <div class="divider"></div>
-            <div class="section-label">Latest</div>
-            <p class="judgment-intro"><em>From the Inside</em> is our editorial desk tracking the sports, outdoor, and lifestyle industry across Asia.</p>
-            <p class="judgment-intro">We analyze the market through three connected layers: China&rsquo;s macroeconomic and policy shifts, commercial operating mechanics (corporate disclosures, channel economics, joint ventures), and the broader cultural landscape surrounding regional sports and consumer life. Content is drawn directly from local store checks, regional trade reporting, and the analytical frameworks of our advisory practice across Greater China, Northeast Asia, and expanding corridors in Southeast Asia.</p>
-            <p class="judgment-intro">The publication is currently open and free to read on Substack as we build toward our future paid subscription tier. Latest below; archive on the <a href="/insights.html">insights page</a>.</p>
-        </div>
-        <div class="fti-feature fade-in">
-            <a class="fti-feature-main" href="https://weikan.substack.com/p/chinas-300000-jacket-night-snkrs" target="_blank" rel="noopener" data-track="out-substack-post">
-                <img class="fti-feature-thumb" src="/assets/fti-carousel-slide-01-thumb.png" width="104" height="104" alt="" loading="lazy">
-                <div class="fti-feature-body">
-                    <div class="fti-feature-top">
-                        <div class="fti-feature-brand">
-                            <img src="/assets/from-the-inside-logo-512.png" width="28" height="28" alt="">
-                            <span class="fti-feature-brand-text">From the Inside</span>
-                        </div>
-                        <span class="fti-feature-kicker">Weekday digest &middot; Nov 2026</span>
-                    </div>
-                    <p class="fti-feature-headline">China&rsquo;s 300,000-jacket night, SNKRS Reserve, and Kolon&rsquo;s 100-million-yuan mall doors</p>
-                    <p class="fti-feature-line">Peak Double 11 outerwear, Nike pre-orders, Kolon mall scale, HYROX Guangzhou, and HuaLi&rsquo;s optical stake.<span class="fti-feature-cta">Read digest &rarr;</span></p>
-                </div>
-            </a>
-            <p class="fti-feature-more"><a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Subscribe</a> &middot; <a href="https://www.instagram.com/fromtheinside.asia/" target="_blank" rel="noopener" data-track="out-instagram">Instagram</a></p>
-        </div>
-        <div class="judgment-grid">
-            <article class="judgment-card fade-in">
-                <div class="judgment-meta">November 2026 &middot; Weekday digest</div>
-                <a href="https://weikan.substack.com/p/chinas-300000-jacket-night-snkrs" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">China&rsquo;s 300,000-jacket night, SNKRS Reserve, and Kolon&rsquo;s 100-million-yuan mall doors</a>
-                <p>Peak Double 11 outerwear, Nike&rsquo;s China pre-order test, Anta&rsquo;s Korean outdoor book, HYROX trust in Guangzhou, and HuaLi&rsquo;s optical bet.</p>
-                <a href="https://weikan.substack.com/p/chinas-300000-jacket-night-snkrs" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
-            </article>
-            <article class="judgment-card fade-in">
-                <div class="judgment-meta">November 2026 &middot; Analysis</div>
-                <a href="https://weikan.substack.com/p/ons-china-fault-line" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">On Wants CHF 5.6 Billion by 2029. The Hard Part Is Still China.</a>
-                <p>High-teens growth with Shelton&rsquo;s exit in the same week: full-price discipline, celebrity risk, and where China sits inside the 2029 clock.</p>
-                <a href="https://weikan.substack.com/p/ons-china-fault-line" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
-            </article>
-            <article class="judgment-card fade-in">
-                <div class="judgment-meta">November 2026 &middot; Weekday digest</div>
-                <a href="https://weikan.substack.com/p/shanghais-import-moment-why-sport" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">Shanghai&rsquo;s import moment: why sport and outdoor schedule around CIIE</a>
-                <p>Hall 6.2 at CIIE: technical fabrics, circularity booths, and the fixed checkpoint before year-end planning, set against Double 11 discounting.</p>
-                <a href="https://weikan.substack.com/p/shanghais-import-moment-why-sport" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
-            </article>
-        </div>
-    </section>
-
-    <div class="media-strip fade-in" id="media">
-        <div class="media-strip-inner">
-            <div class="media-strip-label">In the Media</div>
-            <p class="media-strip-intro">Wei Kan, founder of Conduit Asia, a sports and lifestyle brand strategy consultancy, is a regular named source on China consumer and sport markets. The placements below are only the most recent. The full record runs longer, across the outlets listed underneath.</p>
-            <div class="outlet-row" aria-label="Outlets that have quoted Conduit Asia">
-                <span class="outlet-row-label">Quoted in</span>
-                <span class="outlet-word">Financial Times</span>
-                <span class="outlet-word">Bloomberg</span>
-                <span class="outlet-word">Reuters</span>
-                <span class="outlet-word">CNBC</span>
-                <span class="outlet-word">Wall Street Journal</span>
-                <span class="outlet-word">BBC</span>
-                <span class="outlet-word">Nikkei Asia</span>
-                <span class="outlet-word">Jing Daily</span>
-                <span class="outlet-word">Footwear News</span>
-                <span class="outlet-word">Het Financieele Dagblad</span>
-            </div>
-            <div class="media-grid">
-                <article class="media-card">
-                    <div class="media-card-meta">Reuters &middot; October 2026</div>
-                    <a class="media-card-title" href="https://www.reuters.com/business/retail-consumer/mbappes-mao-remarks-expose-costs-crossing-chinas-red-lines-2026-10-28/" target="_blank" rel="noopener">Mbapp&eacute;&rsquo;s Mao remarks expose costs of crossing China&rsquo;s red lines</a>
-                    <p class="media-card-quote">&ldquo;There is no rule in black and white for what crosses a line,&rdquo; and the line shifts with consumer mood and how platforms amplify a story.</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Nikkei Asia &middot; October 2026</div>
-                    <a class="media-card-title" href="https://asia.nikkei.com/spotlight/sports/chinese-brands-drop-soccer-star-kylian-mbappe-for-offending-nation" target="_blank" rel="noopener">Chinese brands drop soccer star Kylian Mbapp&eacute; for &lsquo;offending&rsquo; nation</a>
-                    <p class="media-card-quote">&ldquo;Domestic market sentiment overrules commercial history every time.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Nikkei Asia &middot; October 2026</div>
-                    <a class="media-card-title" href="https://asia.nikkei.com/spotlight/sports/nba-s-china-rebound-fuels-local-business-champions-global-push" target="_blank" rel="noopener">NBA&rsquo;s China rebound fuels local business champions&rsquo; global push</a>
-                    <p class="media-card-quote">&ldquo;Macao can deliver a high-profile hospitality and entertainment weekend but the harder question is whether that concentrated event translates into everyday basketball engagement in inland cities.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Nikkei Asia &middot; October 2026</div>
-                    <a class="media-card-title" href="https://asia.nikkei.com/Business/Companies/Nike-races-to-regain-China-footing-as-rivals-raise-their-game" target="_blank" rel="noopener">Nike races to regain China footing as rivals raise their game</a>
-                    <p class="media-card-quote">&ldquo;Pulling third-party online distribution back by 2027 removes a layer that trained shoppers to chase discounts,&rdquo; but &ldquo;relevance still must catch up.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Jing Daily &middot; September 2026</div>
-                    <a class="media-card-title" href="https://jingdaily.com/posts/hyrox-changes-hands-as-rivals-circle" target="_blank" rel="noopener">Hyrox changes hands as rivals circle</a>
-                    <p class="media-card-quote">&ldquo;The people setting the pace are the ones who built it. Whether they can hold that when the investors want growth is the open question.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Financial Times &middot; September 2026</div>
-                    <a class="media-card-title" href="https://www.ft.com/content/873ed533-d6b0-4276-94c2-624eb69d306b" target="_blank" rel="noopener">How Nike fell off the pace in China</a>
-                    <p class="media-card-quote">&ldquo;My read is that Nike is trying to regain pricing power online.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Financial Times &middot; August 2026</div>
-                    <a class="media-card-title" href="https://www.ft.com/content/9eae7b4f-23fe-47f4-9a95-51f6b401c9e6" target="_blank" rel="noopener">How a pesky Jordan copycat dribbled around Nike in China</a>
-                    <p class="media-card-quote">Named source throughout the FT&rsquo;s Qiaodan profile, describing the growing clout of Chinese sportswear brands as &ldquo;a permanent change&rdquo; in the market.</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">CNBC &middot; July 2026</div>
-                    <a class="media-card-title" href="https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html" target="_blank" rel="noopener">Nike was once China&rsquo;s sneaker king. Here&rsquo;s why its sales have fallen 30%</a>
-                    <p class="media-card-quote">&ldquo;It all goes back to how the consumer perceives what kind of value they want to get from a shoe.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Reuters &middot; July 2026</div>
-                    <a class="media-card-title" href="https://www.reuters.com/business/retail-consumer/after-tackling-discounts-china-nike-still-needs-win-back-shoppers-2026-07-22/" target="_blank" rel="noopener">After tackling discounts in China, Nike still needs to win back shoppers</a>
-                    <p class="media-card-quote">&ldquo;This is the right thing to do, especially at this moment. Otherwise, the consumer will always expect the discounted Nike product.&rdquo;</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Bloomberg Opinion &middot; July 2026</div>
-                    <a class="media-card-title" href="https://www.bloomberg.com/opinion/articles/2026-07-01/nike-needs-more-than-discounts-to-win-back-china" target="_blank" rel="noopener">Nike Needs More Than Discounts to Win Back China</a>
-                    <p class="media-card-quote">Cited on how local brands build their campaigns around China&rsquo;s domestic running calendar and win local racers on price.</p>
-                </article>
-                <article class="media-card">
-                    <div class="media-card-meta">Nikkei Asia &middot; June 2026</div>
-                    <a class="media-card-title" href="https://asia.nikkei.com/business/retail/lululemon-issues-china-apology-after-great-wall-yoga-event-draws-criticism" target="_blank" rel="noopener">Lululemon issues China apology after Great Wall yoga event draws criticism</a>
-                    <p class="media-card-quote">&ldquo;Calls to switch to domestic brands tend to be loud and short. The cost that matters is the slower one, a loss of the brand affection Lululemon has been building.&rdquo;</p>
-                </article>
-            </div>
-            <p class="media-strip-text">Founder Wei Kan is quoted on China consumer and sport markets by <a href="https://jingdaily.com/posts/hyrox-changes-hands-as-rivals-circle" target="_blank" rel="noopener">Jing Daily</a>, the <a href="https://www.ft.com/content/873ed533-d6b0-4276-94c2-624eb69d306b" target="_blank" rel="noopener">Financial Times</a>, <a href="https://www.bloomberg.com/opinion/articles/2026-06-04/nba-star-stephen-curry-can-take-li-ning-global" target="_blank" rel="noopener">Bloomberg</a>, <a href="https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html" target="_blank" rel="noopener">CNBC</a>, <a href="https://www.wsj.com/business/retail/nike-china-competition-running-shoes-fbd3b8c6" target="_blank" rel="noopener">The Wall Street Journal</a>, <a href="https://www.reuters.com/business/retail-consumer/mbappes-mao-remarks-expose-costs-crossing-chinas-red-lines-2026-10-28/" target="_blank" rel="noopener">Reuters</a>, <a href="https://asia.nikkei.com/spotlight/sports/chinese-brands-drop-soccer-star-kylian-mbappe-for-offending-nation" target="_blank" rel="noopener">Nikkei Asia</a>, the <a href="https://www.bbc.com/news/articles/c87r2d850q4o" target="_blank" rel="noopener">BBC</a>, <a href="https://wwd.com/footwear-news/shoe-industry-news/nike-china-strategy-problems-1238919573/" target="_blank" rel="noopener">Footwear News</a>, and <a href="https://fd.nl/bedrijfsleven/1586687/van-jinjiang-naar-beverly-hills-anta-wil-uitgroeien-tot-een-wereldmerk" target="_blank" rel="noopener">Het Financieele Dagblad</a>.</p>
-            <p class="media-strip-cta">Journalists and producers: for comment or background on China consumer and sport markets, write to <a href="mailto:wei.kan@conduitasia.com">wei.kan@conduitasia.com</a>.</p>
-        </div>
-    </div>
-
-    <section class="uses">
+    <section class="uses" id="work">
         <div class="uses-header fade-in">
             <div class="divider"></div>
             <div class="section-label">The Work</div>
@@ -509,10 +411,76 @@
                     <p>Client work is confidential and is not discussed publicly. What appears here rests on established analytical frameworks applied to information that is publicly available.</p>
                     <p>Conduit Asia is the trading name of Conduit International Limited, registered in Hong Kong. We work from Shanghai.</p>
                 </div>
-                <p class="about-compliance">Published work draws only on public information and established analytical frameworks. It contains no confidential client information and no non-public information from former employers. Conduit Asia does not provide investment advice and does not issue ratings on securities.</p>
             </div>
         </div>
     </section>
+
+    <section class="judgment">
+        <div class="judgment-header fade-in">
+            <div class="divider"></div>
+            <div class="section-label">From the Inside</div>
+            <p class="judgment-intro"><em>From the Inside</em> is our editorial desk tracking sport, outdoor, and lifestyle across Asia.</p>
+        </div>
+        <div class="judgment-grid">
+            <article class="judgment-card fade-in">
+                <div class="judgment-meta">November 2026 &middot; Weekday digest</div>
+                <a href="https://weikan.substack.com/p/chinas-300000-jacket-night-snkrs" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">China&rsquo;s 300,000-jacket night, SNKRS Reserve, and Kolon&rsquo;s 100-million-yuan mall doors</a>
+                <p>Peak Double 11 outerwear, Nike&rsquo;s China pre-order test, Anta&rsquo;s Korean outdoor book, HYROX trust in Guangzhou, and HuaLi&rsquo;s optical bet.</p>
+                <a href="https://weikan.substack.com/p/chinas-300000-jacket-night-snkrs" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
+            </article>
+            <article class="judgment-card fade-in">
+                <div class="judgment-meta">November 2026 &middot; Analysis</div>
+                <a href="https://weikan.substack.com/p/ons-china-fault-line" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">On Wants CHF 5.6 Billion by 2029. The Hard Part Is Still China.</a>
+                <p>High-teens growth with Shelton&rsquo;s exit in the same week: full-price discipline, celebrity risk, and where China sits inside the 2029 clock.</p>
+                <a href="https://weikan.substack.com/p/ons-china-fault-line" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
+            </article>
+            <article class="judgment-card fade-in">
+                <div class="judgment-meta">November 2026 &middot; Weekday digest</div>
+                <a href="https://weikan.substack.com/p/shanghais-import-moment-why-sport" target="_blank" rel="noopener" class="judgment-title" data-track="out-substack-post">Shanghai&rsquo;s import moment: why sport and outdoor schedule around CIIE</a>
+                <p>Hall 6.2 at CIIE: technical fabrics, circularity booths, and the fixed checkpoint before year-end planning, set against Double 11 discounting.</p>
+                <a href="https://weikan.substack.com/p/shanghais-import-moment-why-sport" target="_blank" rel="noopener" class="judgment-source" data-track="out-substack-post">Read on Substack &rarr;</a>
+            </article>
+        </div>
+        <p class="judgment-outro fade-in">Read more on <a href="https://weikan.substack.com" target="_blank" rel="noopener" data-track="out-substack">Substack</a> or explore the <a href="/insights.html">Insights archive</a> &rarr;</p>
+    </section>
+
+    <div class="media-strip fade-in" id="media">
+        <div class="media-strip-inner">
+            <div class="media-strip-label">In the Media</div>
+            <p class="media-strip-intro">Named source on China consumer and sport markets.</p>
+            <div class="outlet-row" aria-label="Outlets that have quoted Conduit Asia">
+                <span class="outlet-row-label">Quoted in</span>
+                <span class="outlet-word">Financial Times</span>
+                <span class="outlet-word">Bloomberg</span>
+                <span class="outlet-word">Reuters</span>
+                <span class="outlet-word">CNBC</span>
+                <span class="outlet-word">Wall Street Journal</span>
+                <span class="outlet-word">BBC</span>
+                <span class="outlet-word">Nikkei Asia</span>
+                <span class="outlet-word">Jing Daily</span>
+                <span class="outlet-word">Footwear News</span>
+                <span class="outlet-word">Het Financieele Dagblad</span>
+            </div>
+            <div class="media-grid media-grid-compact">
+                <article class="media-card">
+                    <div class="media-card-meta">Financial Times &middot; September 2026</div>
+                    <a class="media-card-title" href="https://www.ft.com/content/873ed533-d6b0-4276-94c2-624eb69d306b" target="_blank" rel="noopener">How Nike fell off the pace in China</a>
+                    <p class="media-card-quote">&ldquo;My read is that Nike is trying to regain pricing power online.&rdquo;</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">Reuters &middot; July 2026</div>
+                    <a class="media-card-title" href="https://www.reuters.com/business/retail-consumer/after-tackling-discounts-china-nike-still-needs-win-back-shoppers-2026-07-22/" target="_blank" rel="noopener">After tackling discounts in China, Nike still needs to win back shoppers</a>
+                    <p class="media-card-quote">&ldquo;This is the right thing to do, especially at this moment. Otherwise, the consumer will always expect the discounted Nike product.&rdquo;</p>
+                </article>
+                <article class="media-card">
+                    <div class="media-card-meta">Nikkei Asia &middot; October 2026</div>
+                    <a class="media-card-title" href="https://asia.nikkei.com/Business/Companies/Nike-races-to-regain-China-footing-as-rivals-raise-their-game" target="_blank" rel="noopener">Nike races to regain China footing as rivals raise their game</a>
+                    <p class="media-card-quote">&ldquo;Pulling third-party online distribution back by 2027 removes a layer that trained shoppers to chase discounts,&rdquo; but &ldquo;relevance still must catch up.&rdquo;</p>
+                </article>
+            </div>
+            <p class="media-strip-more">See the full media record on the <a href="/insights.html">Insights page</a> &rarr;</p>
+        </div>
+    </div>
 
     <section class="faq" id="faq">
         <div class="faq-header fade-in">
@@ -532,6 +500,15 @@
                 <h3>Do you take on execution work?</h3>
                 <p>We hold the strategy and commercial judgment. When a direction is set and requires execution, we can coordinate with your internal teams or regional execution partners against the same brief.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="home-cta" id="contact">
+        <div class="home-cta-inner fade-in">
+            <div class="section-label">Start a conversation</div>
+            <h2>Tell us what decision is on your desk.</h2>
+            <p>Send a short email with the commercial question, your timing, and enough context for a first read. We will reply to schedule an initial call.</p>
+            <a href="mailto:wei.kan@conduitasia.com" class="hero-cta-primary">wei.kan@conduitasia.com</a>
         </div>
     </section>
 
