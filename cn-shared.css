@@ -67,33 +67,36 @@ section { max-width: 860px; margin: 0 auto; padding: 48px 48px 0; }
 .svc-block h4 { font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 16px; margin: 26px 0 12px; color: rgba(242, 241, 236, 0.92); }
 .svc-block p { font-size: 16px; line-height: 2; color: rgba(242, 241, 236, 0.85); }
 .svc-block p + p { margin-top: 12px; }
-.path-cards-kicker {
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: var(--dusty-violet);
-    margin: 28px 0 8px;
-    max-width: 700px;
-}
 .path-card {
-    margin: 0 0 40px;
+    margin: 0 0 32px;
     max-width: 700px;
-    padding-top: 28px;
+    padding-top: 24px;
     border-top: 1px solid rgba(242, 241, 236, 0.1);
 }
+.path-card:first-of-type {
+    margin-top: 22px;
+    padding-top: 0;
+    border-top: none;
+}
 .path-card-num {
-    font-size: 11px;
-    letter-spacing: 3px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
     color: var(--dusty-violet);
-    margin-bottom: 12px;
     font-weight: 400;
+    margin-right: 14px;
 }
 .path-card-title {
     font-family: 'Noto Serif SC', serif;
     font-weight: 400;
     font-size: clamp(21px, 2.5vw, 26px);
     line-height: 1.5;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     color: var(--text-light);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0 6px;
 }
 .path-card-title a:link,
 .path-card-title a:visited {
