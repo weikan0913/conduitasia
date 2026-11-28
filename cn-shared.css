@@ -120,6 +120,29 @@ section { max-width: 860px; margin: 0 auto; padding: 48px 48px 0; }
     color: var(--dusty-violet);
     margin-top: 14px;
 }
+.cn-fork {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 860px;
+    margin: 0 auto 36px;
+    padding: 0 48px;
+}
+.cn-fork a {
+    display: block;
+    padding: 32px 28px;
+    background: var(--card-dark);
+    border: 1px solid rgba(242, 241, 236, 0.12);
+    text-decoration: none;
+    color: var(--text-light);
+    transition: border-color 0.3s ease;
+}
+.cn-fork a:hover { border-color: var(--dusty-violet); }
+.cn-fork strong { display: block; font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 20px; margin-bottom: 10px; }
+.cn-fork span { font-size: 14px; line-height: 1.85; color: rgba(242, 241, 236, 0.75); }
+@media (max-width: 768px) {
+    .cn-fork { grid-template-columns: 1fr; padding: 0 24px; }
+}
 .svc-list { list-style: none; max-width: 700px; }
 .svc-list li { font-size: 15.5px; line-height: 1.9; color: rgba(242, 241, 236, 0.85); padding-left: 20px; position: relative; margin-bottom: 8px; }
 .svc-list li::before { content: '·'; position: absolute; left: 4px; color: var(--dusty-violet); }
